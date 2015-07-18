@@ -102,7 +102,7 @@
 extends java.lang.Object
 implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="interface in mitiv.cost">DifferentiableCostFunction</a></pre>
 <div class="block">Hyperbolic approximation of the total variation.
- 
+
  The hyperbolic approximation of the total variation is a smooth (i.e. differentiable)
  cost function which can also be used to implement edge-preserving smoothness.
  The current implementation is also isotropic.</div>
@@ -156,6 +156,12 @@ implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="int
 <div class="block">The dimensions of the variables.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/cost/HyperbolicTotalVariation.html#type">type</a></strong></code>
+<div class="block">The data type.</div>
+</td>
+</tr>
 </table>
 </li>
 </ul>
@@ -195,10 +201,18 @@ implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="int
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected static void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/cost/HyperbolicTotalVariation.html#badRank()">badRank</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/cost/HyperbolicTotalVariation.html#badType()">badType</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/cost/HyperbolicTotalVariation.html#computeCostAndGradient(double, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">computeCostAndGradient</a></strong>(double&nbsp;alpha,
-                      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-                      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;gx,
+                      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vx,
+                      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vgx,
                       boolean&nbsp;clr)</code>
 <div class="block">Compute the value of the cost function and its gradient.</div>
 </td>
@@ -280,6 +294,16 @@ implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="int
 <h4>rank</h4>
 <pre>protected&nbsp;int rank</pre>
 <div class="block">The number of dimensions.</div>
+</li>
+</ul>
+<a name="type">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>type</h4>
+<pre>protected&nbsp;int type</pre>
+<div class="block">The data type.</div>
 </li>
 </ul>
 <a name="shape">
@@ -428,8 +452,8 @@ implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="int
 <li class="blockList">
 <h4>computeCostAndGradient</h4>
 <pre>public&nbsp;double&nbsp;computeCostAndGradient(double&nbsp;alpha,
-                            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-                            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;gx,
+                            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vx,
+                            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vgx,
                             boolean&nbsp;clr)</pre>
 <div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../mitiv/cost/DifferentiableCostFunction.html#computeCostAndGradient(double, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">DifferentiableCostFunction</a></code></strong></div>
 <div class="block">Compute the value of the cost function and its gradient.
@@ -464,12 +488,30 @@ implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="int
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../mitiv/cost/DifferentiableCostFunction.html#computeCostAndGradient(double, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">computeCostAndGradient</a></code>&nbsp;in interface&nbsp;<code><a href="../../mitiv/cost/DifferentiableCostFunction.html" title="interface in mitiv.cost">DifferentiableCostFunction</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - A non-negative multiplier for the cost.</dd><dd><code>x</code> - - The vector of variables.</dd><dd><code>gx</code> - - The vector to store the gradient of the cost function times the
+<dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - A non-negative multiplier for the cost.</dd><dd><code>vx</code> - - The vector of variables.</dd><dd><code>vgx</code> - - The vector to store the gradient of the cost function times the
                 weight.</dd><dd><code>clr</code> - - Indicate whether the gradient vector has to be cleared (that is,
                 filled with zero) prior to the computation.  If false, the
                 contents of the gradient vector is incremented with the gradient
                 of the cost function.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The value of the cost function times the weight.</dd></dl>
+</li>
+</ul>
+<a name="badRank()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>badRank</h4>
+<pre>protected static&nbsp;void&nbsp;badRank()</pre>
+</li>
+</ul>
+<a name="badType()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>badType</h4>
+<pre>protected static&nbsp;void&nbsp;badType()</pre>
 </li>
 </ul>
 <a name="evaluate(double, mitiv.linalg.Vector)">

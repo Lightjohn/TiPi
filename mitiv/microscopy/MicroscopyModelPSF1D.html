@@ -318,7 +318,18 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colOne"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#MicroscopyModelPSF1D()">MicroscopyModelPSF1D</a></strong>()</code>
-<div class="block">Initialize the WFFM PSF model containing parameters</div>
+<div class="block">Initialize the WFFM PSF model containing parameters
+  NA 1.4, numerical aperture
+  lambda 542e-9,  emission wavelength
+  ni 1.518, ni refractive index of the immersion medium
+  ns 0, refractive index of the specimen
+  zdepth 0, zdepth
+  dxy 64.5e-9, lateral pixel size
+  dz 160e-9 axial sampling step size
+  Nx 256, number of samples along lateral X-dimension
+  Ny 256, number of samples along lateral Y-dimension
+  Nz 64, number of samples along axial Z-dimension
+  use_depth_scaling 0</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -410,59 +421,68 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>double[]</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getGamma()">getGamma</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getDefocusMultiplyByLambda()">getDefocusMultiplyByLambda</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getGamma()">getGamma</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getInfo()">getInfo</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getLambda()">getLambda</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getMaskPupil()">getMaskPupil</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getNi()">getNi</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getPhi()">getPhi</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getPSF()">getPSF</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getPSF(int)">getPSF</a></strong>(int&nbsp;k)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getPsi()">getPsi</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getRho()">getRho</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getZernike()">getZernike</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getZernike(int)">getZernike</a></strong>(int&nbsp;k)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#setDefocus(double[])">setDefocus</a></strong>(double[]&nbsp;defocus)</code>
-<div class="block">Update the defocus and the depth functions according the parameters
- defocus.</div>
-</td>
-</tr>
 <tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#setDefocus(double[])">setDefocus</a></strong>(double[]&nbsp;defocus)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#setPhi(double[])">setPhi</a></strong>(double[]&nbsp;alpha)</code>
 <div class="block">Compute φ the part of the phase of the pupil function
  on a Zernike polynomial basis</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#setRho(double[])">setRho</a></strong>(double[]&nbsp;beta)</code>
 <div class="block">Compute the modulus ρ on a Zernike polynomial basis</div>
@@ -876,8 +896,18 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>MicroscopyModelPSF1D</h4>
 <pre>public&nbsp;MicroscopyModelPSF1D()</pre>
-<div class="block">Initialize the WFFM PSF model containing parameters</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>NA</code> - 1.4, numerical aperture</dd><dd><code>lambda</code> - 542e-9,  emission wavelength</dd><dd><code>ni</code> - 1.518, ni refractive index of the immersion medium</dd><dd><code>ns</code> - 0, refractive index of the specimen</dd><dd><code>zdepth</code> - 0, zdepth</dd><dd><code>dxy</code> - 64.5e-9, lateral pixel size</dd><dd><code>dz</code> - 160e-9 axial sampling step size</dd><dd><code>Nx</code> - 256, number of samples along lateral X-dimension</dd><dd><code>Ny</code> - 256, number of samples along lateral Y-dimension</dd><dd><code>Nz</code> - 64, number of samples along axial Z-dimension</dd><dd><code>use_depth_scaling</code> - 0</dd></dl>
+<div class="block">Initialize the WFFM PSF model containing parameters
+  NA 1.4, numerical aperture
+  lambda 542e-9,  emission wavelength
+  ni 1.518, ni refractive index of the immersion medium
+  ns 0, refractive index of the specimen
+  zdepth 0, zdepth
+  dxy 64.5e-9, lateral pixel size
+  dz 160e-9 axial sampling step size
+  Nx 256, number of samples along lateral X-dimension
+  Ny 256, number of samples along lateral Y-dimension
+  Nz 64, number of samples along axial Z-dimension
+  use_depth_scaling 0</div>
 </li>
 </ul>
 <a name="MicroscopyModelPSF1D(double, double, double, double, double, double, double, int, int, int, int)">
@@ -959,7 +989,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setDefocus</h4>
 <pre>public&nbsp;void&nbsp;setDefocus(double[]&nbsp;defocus)</pre>
-<div class="block">Update the defocus and the depth functions according the parameters
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>defocus</code> - Update the defocus and the depth functions according the parameters
  defocus. Depending on the number of elements of defocus:
  4 :  defocus = {nu_s, c_x, c_y, \nu_i}
  3 :  defocus = {c_x, c_y, \nu_i}
@@ -968,7 +998,7 @@ extends java.lang.Object</pre>
  where
  \NU_S : wavenumber in specimen medium (n_s/lambda)
  \NU_I : wavenumber in specimen medium (n_i/lambda)
- [c_y, c_x] : center of both defocus and depth function</div>
+ [c_y, c_x] : center of both defocus and depth function</dd></dl>
 </li>
 </ul>
 <a name="computePSF()">
@@ -981,7 +1011,6 @@ extends java.lang.Object</pre>
 <div class="block">Compute the point spread function
  <p>
  h_k(z) = |a_j(z)|² = |Σ_{j,k}A_k(z)|²</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - </dd><dd><code>beta</code> - </dd><dd><code>deltaX</code> - </dd><dd><code>deltaY</code> - </dd><dd><code>zdepth</code> - </dd></dl>
 </li>
 </ul>
 <a name="computePSF_3Dfft()">
@@ -1046,6 +1075,24 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;double[]&nbsp;getRho()</pre>
 </li>
 </ul>
+<a name="getLambda()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLambda</h4>
+<pre>public&nbsp;double&nbsp;getLambda()</pre>
+</li>
+</ul>
+<a name="getNi()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNi</h4>
+<pre>public&nbsp;double&nbsp;getNi()</pre>
+</li>
+</ul>
 <a name="getPhi()">
 <!--   -->
 </a>
@@ -1080,6 +1127,15 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getAlpha</h4>
 <pre>public&nbsp;double[]&nbsp;getAlpha()</pre>
+</li>
+</ul>
+<a name="getDefocusMultiplyByLambda()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefocusMultiplyByLambda</h4>
+<pre>public&nbsp;double[]&nbsp;getDefocusMultiplyByLambda()</pre>
 </li>
 </ul>
 <a name="getDefocus()">

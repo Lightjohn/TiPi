@@ -1,0 +1,898 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<title>WeightedConvolutionCost</title>
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="WeightedConvolutionCost";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../mitiv/deconv/Filter.html" title="class in mitiv.deconv"><span class="strong">PREV CLASS</span></a></li>
+<li><a href="../../mitiv/deconv/WeightingOperator.html" title="class in mitiv.deconv"><span class="strong">NEXT CLASS</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?mitiv/deconv/WeightedConvolutionCost.html" target="_top">FRAMES</a></li>
+<li><a href="WeightedConvolutionCost.html" target="_top">NO FRAMES</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>SUMMARY:&nbsp;</li>
+<li>NESTED&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">FIELD</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">CONSTR</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">METHOD</a></li>
+</ul>
+<ul class="subNavList">
+<li>DETAIL:&nbsp;</li>
+<li><a href="#field_detail">FIELD</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">CONSTR</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">METHOD</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<p class="subTitle">mitiv.deconv</p>
+<h2 title="Class WeightedConvolutionCost" class="title">Class WeightedConvolutionCost</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li>java.lang.Object</li>
+<li>
+<ul class="inheritance">
+<li>mitiv.deconv.WeightedConvolutionCost</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../mitiv/cost/CostFunction.html" title="interface in mitiv.cost">CostFunction</a>, <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="interface in mitiv.cost">DifferentiableCostFunction</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../mitiv/deconv/impl/WeightedConvolutionDouble.html" title="class in mitiv.deconv.impl">WeightedConvolutionDouble</a>, <a href="../../mitiv/deconv/impl/WeightedConvolutionFloat.html" title="class in mitiv.deconv.impl">WeightedConvolutionFloat</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public abstract class <strong>WeightedConvolutionCost</strong>
+extends java.lang.Object
+implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="interface in mitiv.cost">DifferentiableCostFunction</a></pre>
+<div class="block">Implements a quadratic cost function for models by FFT-based convolution.
+
+ <h3>Definition</h3>
+ <p>
+ The ``<i>weighted convolution</i>'' cost writes:
+ </p><p align="center">
+ f(<b><i>x</i></b>) = (<b>H</b>.<b><i>x</i></b> - <b><i>y</i></b>)<sup>t</sup>.<b>W</b>.(<b>H</b>.<b><i>x</i></b> - <b><i>y</i></b>),
+ </p><p>
+ with <b>H</b> a convolution operator and <b>W</b> a diagonal positive
+ semi-definite weighting operator.  The convolution operator writes:
+ </p><p align="center">
+ <b>H</b> = <b>R</b>.<b>F</b><sup>*</sup>.diag(<b>F</b>.<b><i>h</i></b>).<b>F</b>
+ </p><p>
+ with <b>F</b> the FFT (Fast Fourier Transform) operator, <b><i>h</i></b> the
+ point spread function (PSF) and <b>R</b> a linear operator which selects a
+ sub-region of the output of the convolution and weights it.  The * superscript
+ denotes the adjoint of the operator (complex transpose in this specific case) and
+ diag(<i><b>v</i></b>) is a diagonal operator whose diagonal elements are those of
+ the vector <i><b>v</i></b>.
+ </p><p>
+ Currently only diagonal weighting operators are implemented, thus:
+ </p><p align="center">
+ <b>W</b>&nbsp;=&nbsp;diag(<b><i>w</i></b>) .
+ </p><p>
+ If this restriction is inappropriate for your purpose, you may build your own
+ <a href="../../mitiv/cost/QuadraticCost.html" title="class in mitiv.cost"><code>QuadraticCost</code></a> function.
+ </p>
+
+ <h3>Usage in deconvolution problems</h3>
+ <p>
+ Assuming uncorrelated Gaussian noise and that the cyclic convolution (with
+ sufficient zero padding) is suitable to approximate the effects of the
+ instrument, the cost function f(<b><i>x</i></b>) can be used to implements
+ the likelihood of the data <b><i>y</i></b> given the parameters <b><i>y</i></b>
+ and with <b>W</b>&nbsp;=&nbsp;diag(<b><i>w</i></b>) the precision matrix
+ of the noise (also known as the statistical weights of the data).
+ </p>
+
+ <h3>Synopsis</h3>
+ <p>
+ Because of the many different possibilities (1D, 2D or 3D arrays with float
+ or double elements), creating a new instance of the cost function involves
+ a factory. A typical usage of the code is:
+ <pre>
+ // Create operator:
+ WeightedConvolutionCost cost = WeightedConvolutionCost.build(objectSpace, dataSpace);
+
+ // Specify the PSF (mandatory):
+ cost.setPSF(h);
+
+ // Specify the weights and the data (y mandatory, w can be null):
+ cost.setWeightsAndData(w, y);</pre>
+ where the arguments are:
+ <ul>
+
+     <li>The vector space <b>objectSpace</b> of the variables
+         <b><i>x</i></b> (the <i>object</i>).</li>
+
+     <li>The vector space <b>dataSpace</b> of the variables <b><i>y</i></b>
+         (the <i>data</i>).  The data space may be smaller than the object
+         space which involves zero padding (symbolically implemented by the
+         operator <b>R</b>).  In our implementation, <b>R</b> is defined by
+         the dimensions of the data space and the position of the first
+         element to select in the result of the cyclic convolution <b>H</b>
+         (thus we only consider <i>rectangular</i> output spaces).  By
+         default, the data space (if smaller than the result of the
+         convolution) is taken to be approximately the central part of the
+         output of <b>H</b>.  It is possible to specify a different position
+         by calling the build method with a list of offsets as additional
+         argument.</li>
+
+     <li>The PSF <b><i>h</i></b> is a shaped vector of the object space or a
+         shaped array (in the former case, the PSF must be appropriately
+         centered, in the sense of the FFT; in the latter case, the shaped
+         array is zero-padded and rolled for you; if the center of the PSF
+         is not at the geometric center of the PSF array, you may specify
+         its position).</li>
+
+     <li>The data <b><i>y</i></b> is a shaped vector of the data space or a
+         shaped array with the same dimensions as the those of the data
+         space.</li>
+
+     <li>The weights <b><i>w</i></b> can be unspecified (with
+         <b><i>w</i></b>&nbsp;=&nbsp;<tt>null</tt>) which is the same as
+         having all weights equal to 1; otherwise <b><i>w</i></b> must be
+         the same kind of object as <b><i>y</i></b> (shaped array or shaped
+         vector with the same dimensions) and all weights must be
+         nonnegative.  If weights are specified, the data are never used
+         where the weights are equal to zero which is a consistent way to
+         indicate missing data.</li>
+
+ </ul>
+ </p></div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Éric Thiébaut</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#dataSpace">dataSpace</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#objectSpace">objectSpace</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../mitiv/utils/Timer.html" title="class in mitiv.utils">Timer</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#timer">timer</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../mitiv/utils/Timer.html" title="class in mitiv.utils">Timer</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#timerForFFT">timerForFFT</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier</th>
+<th class="colLast" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected </code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#WeightedConvolutionCost(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace)">WeightedConvolutionCost</a></strong>(<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;objectSpace,
+                       <a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;dataSpace)</code>
+<div class="block">The following constructors make this class non instantiable, but still
+ let others inherit from this class.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#badWeights()">badWeights</a></strong>()</code>
+<div class="block">Throw invalid weight exception.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv">WeightedConvolutionCost</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#build(mitiv.linalg.shaped.ShapedVectorSpace)">build</a></strong>(<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;space)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv">WeightedConvolutionCost</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace)">build</a></strong>(<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;objectSpace,
+     <a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;dataSpace)</code>
+<div class="block">Build a weighted convolution cost function with centered data.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv">WeightedConvolutionCost</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">build</a></strong>(<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;objectSpace,
+     <a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;dataSpace,
+     int[]&nbsp;dataOffset)</code>
+<div class="block">Build a weighted convolution operator.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#computeCostAndGradient(double, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">computeCostAndGradient</a></strong>(double&nbsp;alpha,
+                      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+                      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;gx,
+                      boolean&nbsp;clr)</code>
+<div class="block">Compute the value of the cost function and its gradient.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#cost(double, mitiv.linalg.Vector)">cost</a></strong>(double&nbsp;alpha,
+    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#cost(double, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">cost</a></strong>(double&nbsp;alpha,
+    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;gx,
+    boolean&nbsp;clr)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#evaluate(double, mitiv.linalg.Vector)">evaluate</a></strong>(double&nbsp;alpha,
+        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</code>
+<div class="block">Compute the value of the cost function.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#getDataSpace()">getDataSpace</a></strong>()</code>
+<div class="block">Get the data space of the cost function.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#getElapsedTime()">getElapsedTime</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#getElapsedTimeInFFT()">getElapsedTimeInFFT</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#getInputSpace()">getInputSpace</a></strong>()</code>
+<div class="block">Get the input space of the cost function.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#getObjectSpace()">getObjectSpace</a></strong>()</code>
+<div class="block">Get the object space of the cost function.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static int</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#outputOffset(int, mitiv.base.Shape, mitiv.base.Shape, int[])">outputOffset</a></strong>(int&nbsp;rank,
+            <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;inputShape,
+            <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;outputShape,
+            int[]&nbsp;offset)</code>
+<div class="block">Check rank and input/output dimensions.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#resetTimers()">resetTimers</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#setPSF(mitiv.array.ShapedArray)">setPSF</a></strong>(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;psf)</code>
+<div class="block">Set the PSF of the operator.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#setPSF(mitiv.array.ShapedArray, int[])">setPSF</a></strong>(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;psf,
+      int[]&nbsp;off)</code>
+<div class="block">Set the PSF of the operator with given center coordinates.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#setPSF(mitiv.linalg.shaped.ShapedVector)">setPSF</a></strong>(<a href="../../mitiv/linalg/shaped/ShapedVector.html" title="class in mitiv.linalg.shaped">ShapedVector</a>&nbsp;psf)</code>
+<div class="block">Set the PSF of the operator.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#setWeightsAndData(mitiv.array.ShapedArray, mitiv.array.ShapedArray)">setWeightsAndData</a></strong>(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;weight,
+                 <a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;data)</code>
+<div class="block">Set the weights and the data for the cost function.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#setWeightsAndData(mitiv.linalg.shaped.ShapedVector, mitiv.linalg.shaped.ShapedVector)">setWeightsAndData</a></strong>(<a href="../../mitiv/linalg/shaped/ShapedVector.html" title="class in mitiv.linalg.shaped">ShapedVector</a>&nbsp;weight,
+                 <a href="../../mitiv/linalg/shaped/ShapedVector.html" title="class in mitiv.linalg.shaped">ShapedVector</a>&nbsp;data)</code>
+<div class="block">Set the weights and the data for the cost function.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.Object</h3>
+<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="objectSpace">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>objectSpace</h4>
+<pre>protected&nbsp;<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a> objectSpace</pre>
+</li>
+</ul>
+<a name="dataSpace">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dataSpace</h4>
+<pre>protected&nbsp;<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a> dataSpace</pre>
+</li>
+</ul>
+<a name="timerForFFT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>timerForFFT</h4>
+<pre>protected&nbsp;<a href="../../mitiv/utils/Timer.html" title="class in mitiv.utils">Timer</a> timerForFFT</pre>
+</li>
+</ul>
+<a name="timer">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>timer</h4>
+<pre>protected&nbsp;<a href="../../mitiv/utils/Timer.html" title="class in mitiv.utils">Timer</a> timer</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="WeightedConvolutionCost(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>WeightedConvolutionCost</h4>
+<pre>protected&nbsp;WeightedConvolutionCost(<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;objectSpace,
+                       <a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;dataSpace)</pre>
+<div class="block">The following constructors make this class non instantiable, but still
+ let others inherit from this class.  You must use the <code>#build()</code>
+ factory to build a convolution cost function.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getObjectSpace()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getObjectSpace</h4>
+<pre>public&nbsp;<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;getObjectSpace()</pre>
+<div class="block">Get the object space of the cost function.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The object space of the cost function.</dd></dl>
+</li>
+</ul>
+<a name="getInputSpace()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInputSpace</h4>
+<pre>public&nbsp;<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;getInputSpace()</pre>
+<div class="block">Get the input space of the cost function.
+
+ The input space is the same as the object space.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../mitiv/cost/CostFunction.html#getInputSpace()">getInputSpace</a></code>&nbsp;in interface&nbsp;<code><a href="../../mitiv/cost/CostFunction.html" title="interface in mitiv.cost">CostFunction</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>The input space of the cost function.</dd></dl>
+</li>
+</ul>
+<a name="getDataSpace()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDataSpace</h4>
+<pre>public&nbsp;<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;getDataSpace()</pre>
+<div class="block">Get the data space of the cost function.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The data space of the cost function.</dd></dl>
+</li>
+</ul>
+<a name="build(mitiv.linalg.shaped.ShapedVectorSpace)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>build</h4>
+<pre>public static&nbsp;<a href="../../mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv">WeightedConvolutionCost</a>&nbsp;build(<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;space)</pre>
+</li>
+</ul>
+<a name="build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>build</h4>
+<pre>public static&nbsp;<a href="../../mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv">WeightedConvolutionCost</a>&nbsp;build(<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;objectSpace,
+                            <a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;dataSpace)</pre>
+<div class="block">Build a weighted convolution cost function with centered data.
+ <p>
+ The object space of the operator corresponds to the variables denoted
+ as <b><i>x</i></b> in <a href="../../mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv"><code>WeightedConvolutionCost</code></a>; while the data
+ space corresponds to the variables denoted as <b><i>y</i></b> in
+ <a href="../../mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv"><code>WeightedConvolutionCost</code></a>.
+ </p>
+ <p>
+ The size of the data space must be smaller or equal that of the object
+ space which is also the input and output spaces of the cyclic
+ convolution. The rank of the object and data spaces must be the same
+ and comparing their "<i>sizes</i>" involves a comparison for all
+ dimensions. If the shape of the data space is smaller than that of the
+ object space, then the central part of the result of the cyclic
+ convolution is considered as the region corresponding to the data. The
+ factory <a href="../../mitiv/deconv/WeightedConvolutionCost.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])"><code>build(ShapedVectorSpace, ShapedVectorSpace, int[])</code></a> can
+ be used to select a different region.
+ </p>
+ <p>
+ The returned object is not a valid cost function until you set the point
+ spread function (PSF) with one of the <code>#setPSF()</code> methods and the
+ data and, optionally, the weights with one of the
+ <code>#setWeightsAndData()</code> methods.
+ </p>
+ <p>
+ See <a href="../../mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv"><code>WeightedConvolutionCost</code></a> for a detailed description of what is
+ computed by this cost function.
+ </p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>objectSpace</code> - - The object space.</dd><dd><code>dataSpace</code> - - The data space.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>An instance of the weighted convolution cost function.</dd><dt><span class="strong">See Also:</span></dt><dd><code>#build(ShapedVectorSpace, ShapedVectorSpace, int[])}</code></dd></dl>
+</li>
+</ul>
+<a name="build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>build</h4>
+<pre>public static&nbsp;<a href="../../mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv">WeightedConvolutionCost</a>&nbsp;build(<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;objectSpace,
+                            <a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;dataSpace,
+                            int[]&nbsp;dataOffset)</pre>
+<div class="block">Build a weighted convolution operator.
+ <p>
+ This version of the factory to build a weighted convolution cost function
+ let you specify precisely the position of the region corresponding to the
+ data in the result of the convolution. The offsets of this region must be
+ such that:
+
+ <pre>
+ 0 &lt;= dataOffset[k] &lt;= objectDim[k] - dataDim[k]
+ </pre>
+
+ where <code>objectDim</code> and <code>dataDim</code> are the respective
+ dimensions of the object and data spaces. If this does not hold (for
+ all <i>k</i>), an <code>ArrayIndexOutOfBoundsException</code> is thrown.
+ </p>
+ <p>
+ See <a href="../../mitiv/deconv/WeightedConvolutionCost.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace)"><code>build(ShapedVectorSpace, ShapedVectorSpace)</code></a> for more details
+ on the meaning of the object and data spaces and
+ <a href="../../mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv"><code>WeightedConvolutionCost</code></a> for a more general overview.
+ </p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>objectSpace</code> - - The object space.</dd><dd><code>dataSpace</code> - - The data space.</dd><dd><code>dataOffset</code> - - The relative position of the data within the output of the
+            convolution. It must have as many values as the rank of the
+            object and data spaces of the operator.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>A weighted convolution cost function.</dd><dt><span class="strong">See Also:</span></dt><dd><code>#build(ShapedVectorSpace, ShapedVectorSpace)}</code></dd></dl>
+</li>
+</ul>
+<a name="evaluate(double, mitiv.linalg.Vector)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>evaluate</h4>
+<pre>public&nbsp;double&nbsp;evaluate(double&nbsp;alpha,
+              <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../mitiv/cost/CostFunction.html#evaluate(double, mitiv.linalg.Vector)">CostFunction</a></code></strong></div>
+<div class="block">Compute the value of the cost function.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../mitiv/cost/CostFunction.html#evaluate(double, mitiv.linalg.Vector)">evaluate</a></code>&nbsp;in interface&nbsp;<code><a href="../../mitiv/cost/CostFunction.html" title="interface in mitiv.cost">CostFunction</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - A non-negative multiplier for the cost.</dd><dd><code>x</code> - - The vector of variables.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The value of the cost function times <code>alpha</code>.</dd></dl>
+</li>
+</ul>
+<a name="computeCostAndGradient(double, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeCostAndGradient</h4>
+<pre>public&nbsp;double&nbsp;computeCostAndGradient(double&nbsp;alpha,
+                            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+                            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;gx,
+                            boolean&nbsp;clr)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../mitiv/cost/DifferentiableCostFunction.html#computeCostAndGradient(double, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">DifferentiableCostFunction</a></code></strong></div>
+<div class="block">Compute the value of the cost function and its gradient.
+
+ <p>
+ This method is intended to compute the value and the gradient of a
+ cost function which are needed by limited memory non-linear optimization
+ methods like the non-linear conjugate gradient and quasi-Newton methods
+ such as L-BFGS.
+ <p>
+ The rationale of the <code>alpha</code> and <code>clear</code> arguments is to
+ let one builds a composite cost function efficiently.  Below is the
+ pseudo-code of an example which shows how to compute the value and the
+ gradient of a function which is a linear combination of other functions
+ (in the array <code>f</code>) with different multipliers (in the array
+ <code>alpha</code>):
+
+ <pre>
+     DifferentiableCostFunction[] f;
+     double[] alpha;
+     Vector x;
+     Vector gx;
+     double fx;
+     fx = 0.0;
+     for (int j = 0; j < f.length; ++j) {
+         fx += f[j].computeCostAndGradient(alpha[j], x, gx, (j == 0));
+     }
+ </pre>
+ 
+ Note that the gradient vector has to be cleared for the first
+ (<code>j == 0</code>) function of the list.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../mitiv/cost/DifferentiableCostFunction.html#computeCostAndGradient(double, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">computeCostAndGradient</a></code>&nbsp;in interface&nbsp;<code><a href="../../mitiv/cost/DifferentiableCostFunction.html" title="interface in mitiv.cost">DifferentiableCostFunction</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - A non-negative multiplier for the cost.</dd><dd><code>x</code> - - The vector of variables.</dd><dd><code>gx</code> - - The vector to store the gradient of the cost function times the
+                weight.</dd><dd><code>clr</code> - - Indicate whether the gradient vector has to be cleared (that is,
+                filled with zero) prior to the computation.  If false, the
+                contents of the gradient vector is incremented with the gradient
+                of the cost function.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The value of the cost function times the weight.</dd></dl>
+</li>
+</ul>
+<a name="cost(double, mitiv.linalg.Vector)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cost</h4>
+<pre>protected abstract&nbsp;double&nbsp;cost(double&nbsp;alpha,
+          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</pre>
+</li>
+</ul>
+<a name="cost(double, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cost</h4>
+<pre>protected abstract&nbsp;double&nbsp;cost(double&nbsp;alpha,
+          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;gx,
+          boolean&nbsp;clr)</pre>
+</li>
+</ul>
+<a name="setWeightsAndData(mitiv.linalg.shaped.ShapedVector, mitiv.linalg.shaped.ShapedVector)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setWeightsAndData</h4>
+<pre>public abstract&nbsp;void&nbsp;setWeightsAndData(<a href="../../mitiv/linalg/shaped/ShapedVector.html" title="class in mitiv.linalg.shaped">ShapedVector</a>&nbsp;weight,
+                     <a href="../../mitiv/linalg/shaped/ShapedVector.html" title="class in mitiv.linalg.shaped">ShapedVector</a>&nbsp;data)</pre>
+<div class="block">Set the weights and the data for the cost function.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>weight</code> - - The weights in the form of a shaped vector.  It can be
+                 <code>null</code>, in which case any weighting is discarded.
+                 If non-<code>null</code>, its values are checked for validity
+                 and it must belong to the output space of the operator.</dd><dd><code>data</code> - - The data.</dd></dl>
+</li>
+</ul>
+<a name="setWeightsAndData(mitiv.array.ShapedArray, mitiv.array.ShapedArray)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setWeightsAndData</h4>
+<pre>public abstract&nbsp;void&nbsp;setWeightsAndData(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;weight,
+                     <a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;data)</pre>
+<div class="block">Set the weights and the data for the cost function.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>weight</code> - - The weights in the form of a shaped array.  It can be
+                 <code>null</code>, in which case any weighting is discarded.
+                 If non-<code>null</code>, it is automatically converted to the
+                 correct data type and its values are checked for validity.
+                 If non-<code>null</code>, its shape must be that of the vectors
+                 of the output space of the operator.</dd><dd><code>data</code> - - The data.</dd></dl>
+</li>
+</ul>
+<a name="badWeights()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>badWeights</h4>
+<pre>protected static&nbsp;void&nbsp;badWeights()</pre>
+<div class="block">Throw invalid weight exception.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code>java.lang.IllegalArgumentException</code> - weight has an invalid value.</dd></dl>
+</li>
+</ul>
+<a name="setPSF(mitiv.linalg.shaped.ShapedVector)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPSF</h4>
+<pre>public abstract&nbsp;void&nbsp;setPSF(<a href="../../mitiv/linalg/shaped/ShapedVector.html" title="class in mitiv.linalg.shaped">ShapedVector</a>&nbsp;psf)</pre>
+<div class="block">Set the PSF of the operator.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>psf</code> - - The PSF must belongs to the input space of the operator
+              and must be centered in the sense of of the FFT.</dd></dl>
+</li>
+</ul>
+<a name="setPSF(mitiv.array.ShapedArray)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPSF</h4>
+<pre>public&nbsp;void&nbsp;setPSF(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;psf)</pre>
+<div class="block">Set the PSF of the operator.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>psf</code> - - The PSF in the form of a shaped array.  It is
+              automatically converted to the correct data type,
+              zero-padded and rolled.  It is assumed to be
+              geometrically centered (i.e. the center of the PSF
+              is at offset dim/2 along each dimension).</dd></dl>
+</li>
+</ul>
+<a name="setPSF(mitiv.array.ShapedArray, int[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPSF</h4>
+<pre>public abstract&nbsp;void&nbsp;setPSF(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;psf,
+          int[]&nbsp;off)</pre>
+<div class="block">Set the PSF of the operator with given center coordinates.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>psf</code> - - The PSF in the form of a shaped array.  It is
+              automatically converted to the correct data type,
+              zero-padded and rolled.</dd><dd><code>off</code> - - The offsets of the central element of the PSF.
+              There must be as many elements as the rank of
+              the PSF, each element is the 0-based offset of
+              the center along the corresponding dimension.</dd></dl>
+</li>
+</ul>
+<a name="outputOffset(int, mitiv.base.Shape, mitiv.base.Shape, int[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>outputOffset</h4>
+<pre>protected static&nbsp;int&nbsp;outputOffset(int&nbsp;rank,
+               <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;inputShape,
+               <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;outputShape,
+               int[]&nbsp;offset)</pre>
+<div class="block">Check rank and input/output dimensions.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>rank</code> - - The number of dimensions.</dd><dd><code>inputShape</code> - - The shape of input arrays.</dd><dd><code>output</code> - Shape - The shape of output arrays (must be smaller or
+                       equal input shape for all dimensions).</dd><dd><code>offset</code> - - For each dimension, the offset in input array
+                       of the first element to copy in output array.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The (univariate) offset of the output in the input space.</dd></dl>
+</li>
+</ul>
+<a name="resetTimers()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resetTimers</h4>
+<pre>public&nbsp;void&nbsp;resetTimers()</pre>
+</li>
+</ul>
+<a name="getElapsedTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getElapsedTime</h4>
+<pre>public&nbsp;double&nbsp;getElapsedTime()</pre>
+</li>
+</ul>
+<a name="getElapsedTimeInFFT()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getElapsedTimeInFFT</h4>
+<pre>public&nbsp;double&nbsp;getElapsedTimeInFFT()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../mitiv/deconv/Filter.html" title="class in mitiv.deconv"><span class="strong">PREV CLASS</span></a></li>
+<li><a href="../../mitiv/deconv/WeightingOperator.html" title="class in mitiv.deconv"><span class="strong">NEXT CLASS</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?mitiv/deconv/WeightedConvolutionCost.html" target="_top">FRAMES</a></li>
+<li><a href="WeightedConvolutionCost.html" target="_top">NO FRAMES</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>SUMMARY:&nbsp;</li>
+<li>NESTED&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">FIELD</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">CONSTR</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">METHOD</a></li>
+</ul>
+<ul class="subNavList">
+<li>DETAIL:&nbsp;</li>
+<li><a href="#field_detail">FIELD</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">CONSTR</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">METHOD</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+</body>
+</html>
