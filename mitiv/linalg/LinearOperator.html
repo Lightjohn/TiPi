@@ -120,31 +120,45 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#ADJOINT">ADJOINT</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#ADJOINT">ADJOINT</a></strong></code>
+<div class="block">Job value to apply the adjoint of the linear operator.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#ADJOINT_INVERSE">ADJOINT_INVERSE</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#ADJOINT_INVERSE">ADJOINT_INVERSE</a></strong></code>
+<div class="block">Job value to apply the inverse of the adjoint of the linear operator.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#DIRECT">DIRECT</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#DIRECT">DIRECT</a></strong></code>
+<div class="block">Job value to apply the linear operator.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#inputSpace">inputSpace</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#inputSpace">inputSpace</a></strong></code>
+<div class="block">The input vector space.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#INVERSE">INVERSE</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#INVERSE">INVERSE</a></strong></code>
+<div class="block">Job value to apply the inverse of the linear operator.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#INVERSE_ADJOINT">INVERSE_ADJOINT</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#INVERSE_ADJOINT">INVERSE_ADJOINT</a></strong></code>
+<div class="block">Job value to apply the inverse of the adjoint of the linear operator.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#outputSpace">outputSpace</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#outputSpace">outputSpace</a></strong></code>
+<div class="block">The output vector space.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -164,14 +178,14 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <td class="colFirst"><code>&nbsp;</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#LinearOperator(mitiv.linalg.VectorSpace)">LinearOperator</a></strong>(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;vsp)</code>
-<div class="block">Create a new LinearOperator which operates in the same vector space (endomorphism).</div>
+<div class="block">Create a new linear operator which operates in the same vector space (endomorphism).</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected </code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#LinearOperator(mitiv.linalg.VectorSpace, mitiv.linalg.VectorSpace)">LinearOperator</a></strong>(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;inp,
               <a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;out)</code>
-<div class="block">Create a new LinearOperator.</div>
+<div class="block">Create a new linear operator.</div>
 </td>
 </tr>
 </table>
@@ -275,6 +289,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>inputSpace</h4>
 <pre>protected&nbsp;<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a> inputSpace</pre>
+<div class="block">The input vector space.</div>
 </li>
 </ul>
 <a name="outputSpace">
@@ -284,6 +299,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>outputSpace</h4>
 <pre>protected&nbsp;<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a> outputSpace</pre>
+<div class="block">The output vector space.</div>
 </li>
 </ul>
 <a name="DIRECT">
@@ -293,6 +309,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>DIRECT</h4>
 <pre>public static&nbsp;int DIRECT</pre>
+<div class="block">Job value to apply the linear operator.</div>
 </li>
 </ul>
 <a name="ADJOINT">
@@ -302,6 +319,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>ADJOINT</h4>
 <pre>public static&nbsp;int ADJOINT</pre>
+<div class="block">Job value to apply the adjoint of the linear operator.</div>
 </li>
 </ul>
 <a name="INVERSE">
@@ -311,6 +329,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>INVERSE</h4>
 <pre>public static&nbsp;int INVERSE</pre>
+<div class="block">Job value to apply the inverse of the linear operator.</div>
 </li>
 </ul>
 <a name="INVERSE_ADJOINT">
@@ -320,6 +339,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>INVERSE_ADJOINT</h4>
 <pre>public static&nbsp;int INVERSE_ADJOINT</pre>
+<div class="block">Job value to apply the inverse of the adjoint of the linear operator.</div>
 </li>
 </ul>
 <a name="ADJOINT_INVERSE">
@@ -329,6 +349,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>ADJOINT_INVERSE</h4>
 <pre>public static&nbsp;int ADJOINT_INVERSE</pre>
+<div class="block">Job value to apply the inverse of the adjoint of the linear operator.</div>
 </li>
 </ul>
 </li>
@@ -346,8 +367,8 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>LinearOperator</h4>
 <pre>public&nbsp;LinearOperator(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;vsp)</pre>
-<div class="block">Create a new LinearOperator which operates in the same vector space (endomorphism).</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>vsp</code> - the vector space</dd></dl>
+<div class="block">Create a new linear operator which operates in the same vector space (endomorphism).</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>vsp</code> - - The vector space.</dd></dl>
 </li>
 </ul>
 <a name="LinearOperator(mitiv.linalg.VectorSpace, mitiv.linalg.VectorSpace)">
@@ -358,11 +379,11 @@ extends java.lang.Object</pre>
 <h4>LinearOperator</h4>
 <pre>protected&nbsp;LinearOperator(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;inp,
               <a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;out)</pre>
-<div class="block">Create a new LinearOperator.
- 
+<div class="block">Create a new linear operator.
+
  This method is protected as it may not be suitable for all linear
  operators.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>inp</code> - input vector space;</dd><dd><code>out</code> - output vector space;</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>inp</code> - - The input vector space.</dd><dd><code>out</code> - - The output vector space.</dd></dl>
 </li>
 </ul>
 </li>
@@ -403,7 +424,8 @@ extends java.lang.Object</pre>
 <h4>isEndomorphism</h4>
 <pre>public&nbsp;boolean&nbsp;isEndomorphism()</pre>
 <div class="block">Check whether a linear operator is an endomorphism.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>true is the input and output spaces of the linear operator are the same; false otherwise.</dd></dl>
+<dl><dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> is the input and output spaces of the linear operator are
+         the same; <tt>false</tt> otherwise.</dd></dl>
 </li>
 </ul>
 <a name="privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">
@@ -417,13 +439,17 @@ extends java.lang.Object</pre>
              int&nbsp;job)
                            throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Apply a linear operator (or its adjoint) to a vector.
- 
- This protected method is called by the "apply" method after checking of the
- arguments.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - the source vector</dd><dd><code>dst</code> - the destination vector</dd><dd><code>job</code> - the type of operation to apply (DIRECT, ADJOINT, etc.)</dd>
+
+ This protected method is called by the "apply" method after checking of
+ the arguments.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd><dd><code>job</code> - - The type of operation to perform (<a href="../../mitiv/linalg/LinearOperator.html#DIRECT"><code>DIRECT</code></a>,
+              <a href="../../mitiv/linalg/LinearOperator.html#ADJOINT"><code>ADJOINT</code></a>, <code>INVERSE</code> or
+              <code>INVERSE_ADJOINT</code>).</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - If adjoint is false (resp. tour), src (resp. dst) must belongs to the input vector space
- of the operator and dst (resp. src) must belongs to the output vector space of the operator.</dd></dl>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - If adjoint is false (resp. tour), src (resp. dst) must
+             belongs to the input vector space of the operator and dst
+             (resp. src) must belongs to the output vector space of the
+             operator.</dd></dl>
 </li>
 </ul>
 <a name="apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">
@@ -436,7 +462,7 @@ extends java.lang.Object</pre>
          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)
            throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Apply a linear operator to a vector.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - the source vector</dd><dd><code>dst</code> - the destination vector</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code></dd></dl>
 </li>
@@ -452,7 +478,9 @@ extends java.lang.Object</pre>
          int&nbsp;job)
            throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Apply linear operator with checking.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - The source vector.</dd><dd><code>dst</code> - The destination vector.</dd><dd><code>job</code> - The type of operation to perform (DIRECT, ADJOINT, etc.)</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd><dd><code>job</code> - - The type of operation to perform (<a href="../../mitiv/linalg/LinearOperator.html#DIRECT"><code>DIRECT</code></a>,
+              <a href="../../mitiv/linalg/LinearOperator.html#ADJOINT"><code>ADJOINT</code></a>, <code>INVERSE</code> or
+              <code>INVERSE_ADJOINT</code>).</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code></dd></dl>
 </li>
@@ -469,12 +497,13 @@ extends java.lang.Object</pre>
                       boolean&nbsp;endomorphism)
                                throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Check consistency of the arguments of a linear problem.
- 
- Check that A.x = b makes sense and.  Optionally also check that A is an endomorphism (i.e. its input and
- output spaces are the same).</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>A</code> - the LHS matrix of the problem;</dd><dd><code>b</code> - the RHS vector of the problem (must belongs to output space of
-            A);</dd><dd><code>x</code> - a vector to store the solution (must belongs to the input
-            space of A);</dd><dd><code>endomorphism</code> - output and input spaces must be the same?</dd>
+
+ Check that <b>A</b>.<b><i>x</i></b>&nbsp;=&nbsp;<b><i>b</i></b>
+ makes sense and, optionally, also check that <b>A</b> is an
+ endomorphism (<i>i.e.</i> its input and output spaces are the same).</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>A</code> - - The <i>left-hand-side</i> (LHS) matrix of the problem.</dd><dd><code>b</code> - - The <i>right-hand-side</i> (RHS) vector of the problem
+              (must belongs to output space of <b>A</b>).</dd><dd><code>x</code> - - A vector to store the solution (must belongs to the input
+              space of <b>A</b>).</dd><dd><code>endomorphism</code> - - Assert that output and input spaces are the same?</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code></dd></dl>
 </li>
@@ -489,7 +518,8 @@ extends java.lang.Object</pre>
                   <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</pre>
 <div class="block">Check the adjoint of the operator.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - A vector of the input space.</dd><dd><code>y</code> - - A vector of the output space.</dd>
-<dt><span class="strong">Returns:</span></dt><dd>The relative difference between <code>&lt;A.x|y&gt;</code> and <code>&lt;x|A'.y&gt;</code>.</dd></dl>
+<dt><span class="strong">Returns:</span></dt><dd>The relative difference between <code>&lt;A.x|y&gt;</code> and
+         <code>&lt;x|A'.y&gt;</code>.</dd></dl>
 </li>
 </ul>
 </li>

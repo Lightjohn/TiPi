@@ -92,9 +92,13 @@
 <dt><span class="strong"><a href="./mitiv/tests/AdaptativeSteepestDescent.html#AdaptativeSteepestDescent()">AdaptativeSteepestDescent()</a></span> - Constructor for class mitiv.tests.<a href="./mitiv/tests/AdaptativeSteepestDescent.html" title="class in mitiv.tests">AdaptativeSteepestDescent</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#ADJOINT">ADJOINT</a></span> - Static variable in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Job value to apply the adjoint of the linear operator.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#ADJOINT_INVERSE">ADJOINT_INVERSE</a></span> - Static variable in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Job value to apply the inverse of the adjoint of the linear operator.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#adjustPSF(mitiv.array.ShapedArray, int[])">adjustPSF(ShapedArray, int[])</a></span> - Method in class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
 <dd>
 <div class="block">Helper function to zero-pad and roll the PSF.</div>
@@ -4443,7 +4447,9 @@
 <div class="block">Get the length of a given dimension for the arguments of the convolution.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#DIRECT">DIRECT</a></span> - Static variable in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Job value to apply the linear operator.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/utils/MathUtils.html#DISK">DISK</a></span> - Static variable in class mitiv.utils.<a href="./mitiv/utils/MathUtils.html" title="class in mitiv.utils">MathUtils</a></dt>
 <dd>
 <div class="block">The Constant DISK.</div>
@@ -10678,7 +10684,9 @@
 <div class="block">The vector space for the variables <code>x</code>.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#inputSpace">inputSpace</a></span> - Variable in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The input vector space.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/io/BufferedInputDataStream.html#insure(int)">insure(int)</a></span> - Method in class mitiv.io.<a href="./mitiv/io/BufferedInputDataStream.html" title="class in mitiv.io">BufferedInputDataStream</a></dt>
 <dd>
 <div class="block">Make sure a minimum number of bytes are available in the internal buffer.</div>
@@ -10815,9 +10823,13 @@
 <div class="block">An IntScanner is designed for scanning a collection of values (of type int).</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#INVERSE">INVERSE</a></span> - Static variable in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Job value to apply the inverse of the linear operator.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#INVERSE_ADJOINT">INVERSE_ADJOINT</a></span> - Static variable in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Job value to apply the inverse of the adjoint of the linear operator.</div>
+</dd>
 <dt><a href="./mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim"><span class="strong">InverseHessianApproximation</span></a> - Enum in <a href="./mitiv/optim/package-summary.html">mitiv.optim</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#isEndomorphism()">isEndomorphism()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
@@ -11002,11 +11014,11 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#LinearOperator(mitiv.linalg.VectorSpace)">LinearOperator(VectorSpace)</a></span> - Constructor for class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
 <dd>
-<div class="block">Create a new LinearOperator which operates in the same vector space (endomorphism).</div>
+<div class="block">Create a new linear operator which operates in the same vector space (endomorphism).</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#LinearOperator(mitiv.linalg.VectorSpace, mitiv.linalg.VectorSpace)">LinearOperator(VectorSpace, VectorSpace)</a></span> - Constructor for class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
 <dd>
-<div class="block">Create a new LinearOperator.</div>
+<div class="block">Create a new linear operator.</div>
 </dd>
 <dt><a href="./mitiv/optim/LineSearch.html" title="class in mitiv.optim"><span class="strong">LineSearch</span></a> - Class in <a href="./mitiv/optim/package-summary.html">mitiv.optim</a></dt>
 <dd>
@@ -12648,7 +12660,9 @@
 <div class="block">Check rank and input/output dimensions.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#outputSpace">outputSpace</a></span> - Variable in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The output vector space.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#owns(mitiv.linalg.Vector)">owns(Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
 <div class="block">Check whether a given vector belongs to the vector space.</div>
