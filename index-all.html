@@ -1605,6 +1605,14 @@
 <dd>
 <div class="block">Build a convolution operator.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace)">build(ShapedVectorSpace, ShapedVectorSpace)</a></span> - Static method in class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
+<dd>
+<div class="block">Build a convolution operator with centered output.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">build(ShapedVectorSpace, ShapedVectorSpace, int[])</a></span> - Static method in class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
+<dd>
+<div class="block">Build a convolution operator.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/deconv/WeightedConvolutionCost.html#build(mitiv.linalg.shaped.ShapedVectorSpace)">build(ShapedVectorSpace)</a></span> - Static method in class mitiv.deconv.<a href="./mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv">WeightedConvolutionCost</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/deconv/WeightedConvolutionCost.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace)">build(ShapedVectorSpace, ShapedVectorSpace)</a></span> - Static method in class mitiv.deconv.<a href="./mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv">WeightedConvolutionCost</a></dt>
@@ -1613,7 +1621,7 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/deconv/WeightedConvolutionCost.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">build(ShapedVectorSpace, ShapedVectorSpace, int[])</a></span> - Static method in class mitiv.deconv.<a href="./mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv">WeightedConvolutionCost</a></dt>
 <dd>
-<div class="block">Build a weighted convolution operator.</div>
+<div class="block">Build a weighted convolution cost function.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/base/indexing/BoundaryConditions.html#buildIndex(int[], int, mitiv.base.indexing.BoundaryConditions)">buildIndex(int[], int, BoundaryConditions)</a></span> - Static method in enum mitiv.base.indexing.<a href="./mitiv/base/indexing/BoundaryConditions.html" title="enum in mitiv.base.indexing">BoundaryConditions</a></dt>
 <dd>
@@ -2268,30 +2276,6 @@
 <dd>
 <div class="block">Close the channel.</div>
 </dd>
-<dt><span class="strong"><a href="./mitiv/deconv/impl/WeightedConvolutionDouble1D.html#cnvl">cnvl</a></span> - Variable in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/WeightedConvolutionDouble1D.html" title="class in mitiv.deconv.impl">WeightedConvolutionDouble1D</a></dt>
-<dd>
-<div class="block">Convolution operator.</div>
-</dd>
-<dt><span class="strong"><a href="./mitiv/deconv/impl/WeightedConvolutionDouble2D.html#cnvl">cnvl</a></span> - Variable in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/WeightedConvolutionDouble2D.html" title="class in mitiv.deconv.impl">WeightedConvolutionDouble2D</a></dt>
-<dd>
-<div class="block">Convolution operator.</div>
-</dd>
-<dt><span class="strong"><a href="./mitiv/deconv/impl/WeightedConvolutionDouble3D.html#cnvl">cnvl</a></span> - Variable in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/WeightedConvolutionDouble3D.html" title="class in mitiv.deconv.impl">WeightedConvolutionDouble3D</a></dt>
-<dd>
-<div class="block">Convolution operator.</div>
-</dd>
-<dt><span class="strong"><a href="./mitiv/deconv/impl/WeightedConvolutionFloat1D.html#cnvl">cnvl</a></span> - Variable in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/WeightedConvolutionFloat1D.html" title="class in mitiv.deconv.impl">WeightedConvolutionFloat1D</a></dt>
-<dd>
-<div class="block">Convolution operator.</div>
-</dd>
-<dt><span class="strong"><a href="./mitiv/deconv/impl/WeightedConvolutionFloat2D.html#cnvl">cnvl</a></span> - Variable in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/WeightedConvolutionFloat2D.html" title="class in mitiv.deconv.impl">WeightedConvolutionFloat2D</a></dt>
-<dd>
-<div class="block">Convolution operator.</div>
-</dd>
-<dt><span class="strong"><a href="./mitiv/deconv/impl/WeightedConvolutionFloat3D.html#cnvl">cnvl</a></span> - Variable in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/WeightedConvolutionFloat3D.html" title="class in mitiv.deconv.impl">WeightedConvolutionFloat3D</a></dt>
-<dd>
-<div class="block">Convolution operator.</div>
-</dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/Zernike1D.html#coeffRadialZCumSumLog(int, int)">coeffRadialZCumSumLog(int, int)</a></span> - Method in class mitiv.microscopy.<a href="./mitiv/microscopy/Zernike1D.html" title="class in mitiv.microscopy">Zernike1D</a></dt>
 <dd>
 <div class="block">Compute the coefficient of the radial Zernike polynomial</div>
@@ -2477,10 +2461,17 @@
 <dt><span class="strong"><a href="./mitiv/utils/MathUtils.html#convol(double[], double[], int, int, int)">convol(double[], double[], int, int, int)</a></span> - Static method in class mitiv.utils.<a href="./mitiv/utils/MathUtils.html" title="class in mitiv.utils">MathUtils</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv"><span class="strong">Convolution</span></a> - Class in <a href="./mitiv/deconv/package-summary.html">mitiv.deconv</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">This class implements a linear operator to apply the convolution.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#Convolution(mitiv.linalg.shaped.ShapedVectorSpace)">Convolution(ShapedVectorSpace)</a></span> - Constructor for class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
 <dd>
-<div class="block">The following constructors make this class non instantiable, but still
+<div class="block">The following constructor make this class non instantiable, but still
+ let others inherit from this class.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#Convolution(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace)">Convolution(ShapedVectorSpace, ShapedVectorSpace)</a></span> - Constructor for class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
+<dd>
+<div class="block">The following constructor make this class non instantiable, but still
  let others inherit from this class.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/utils/MathUtils.html#convolution(double[], double[], int, int, int)">convolution(double[], double[], int, int, int)</a></span> - Static method in class mitiv.utils.<a href="./mitiv/utils/MathUtils.html" title="class in mitiv.utils">MathUtils</a></dt>
@@ -2491,7 +2482,12 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionDouble.html#ConvolutionDouble(mitiv.linalg.shaped.ShapedVectorSpace)">ConvolutionDouble(ShapedVectorSpace)</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionDouble.html" title="class in mitiv.deconv.impl">ConvolutionDouble</a></dt>
 <dd>
-<div class="block">The following constructors make this class non instantiable, but still
+<div class="block">The following constructor make this class non instantiable, but still
+ let others inherit from this class.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionDouble.html#ConvolutionDouble(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace)">ConvolutionDouble(ShapedVectorSpace, ShapedVectorSpace)</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionDouble.html" title="class in mitiv.deconv.impl">ConvolutionDouble</a></dt>
+<dd>
+<div class="block">The following constructor make this class non instantiable, but still
  let others inherit from this class.</div>
 </dd>
 <dt><a href="./mitiv/deconv/impl/ConvolutionDouble1D.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionDouble1D</span></a> - Class in <a href="./mitiv/deconv/impl/package-summary.html">mitiv.deconv.impl</a></dt>
@@ -2500,7 +2496,11 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionDouble1D.html#ConvolutionDouble1D(mitiv.linalg.shaped.ShapedVectorSpace)">ConvolutionDouble1D(ShapedVectorSpace)</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionDouble1D.html" title="class in mitiv.deconv.impl">ConvolutionDouble1D</a></dt>
 <dd>
-<div class="block">Create a new FFT-based convolution operator given the PSF.</div>
+<div class="block">Create a new convolution operator for 1D arrays of double's.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionDouble1D.html#ConvolutionDouble1D(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">ConvolutionDouble1D(ShapedVectorSpace, ShapedVectorSpace, int[])</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionDouble1D.html" title="class in mitiv.deconv.impl">ConvolutionDouble1D</a></dt>
+<dd>
+<div class="block">Create a new convolution operator for 1D arrays of double's.</div>
 </dd>
 <dt><a href="./mitiv/deconv/impl/ConvolutionDouble2D.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionDouble2D</span></a> - Class in <a href="./mitiv/deconv/impl/package-summary.html">mitiv.deconv.impl</a></dt>
 <dd>
@@ -2508,7 +2508,11 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionDouble2D.html#ConvolutionDouble2D(mitiv.linalg.shaped.ShapedVectorSpace)">ConvolutionDouble2D(ShapedVectorSpace)</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionDouble2D.html" title="class in mitiv.deconv.impl">ConvolutionDouble2D</a></dt>
 <dd>
-<div class="block">Create a new FFT-based convolution operator given the PSF.</div>
+<div class="block">Create a new convolution operator for 2D arrays of double's.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionDouble2D.html#ConvolutionDouble2D(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">ConvolutionDouble2D(ShapedVectorSpace, ShapedVectorSpace, int[])</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionDouble2D.html" title="class in mitiv.deconv.impl">ConvolutionDouble2D</a></dt>
+<dd>
+<div class="block">Create a new convolution operator for 2D arrays of double's.</div>
 </dd>
 <dt><a href="./mitiv/deconv/impl/ConvolutionDouble3D.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionDouble3D</span></a> - Class in <a href="./mitiv/deconv/impl/package-summary.html">mitiv.deconv.impl</a></dt>
 <dd>
@@ -2516,7 +2520,11 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionDouble3D.html#ConvolutionDouble3D(mitiv.linalg.shaped.ShapedVectorSpace)">ConvolutionDouble3D(ShapedVectorSpace)</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionDouble3D.html" title="class in mitiv.deconv.impl">ConvolutionDouble3D</a></dt>
 <dd>
-<div class="block">Create a new FFT-based convolution operator given the PSF.</div>
+<div class="block">Create a new convolution operator for 3D arrays of double's.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionDouble3D.html#ConvolutionDouble3D(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">ConvolutionDouble3D(ShapedVectorSpace, ShapedVectorSpace, int[])</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionDouble3D.html" title="class in mitiv.deconv.impl">ConvolutionDouble3D</a></dt>
+<dd>
+<div class="block">Create a new convolution operator for 3D arrays of double's.</div>
 </dd>
 <dt><a href="./mitiv/deconv/impl/ConvolutionFloat.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionFloat</span></a> - Class in <a href="./mitiv/deconv/impl/package-summary.html">mitiv.deconv.impl</a></dt>
 <dd>
@@ -2524,7 +2532,12 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionFloat.html#ConvolutionFloat(mitiv.linalg.shaped.ShapedVectorSpace)">ConvolutionFloat(ShapedVectorSpace)</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionFloat.html" title="class in mitiv.deconv.impl">ConvolutionFloat</a></dt>
 <dd>
-<div class="block">The following constructors make this class non instantiable, but still
+<div class="block">The following constructor make this class non instantiable, but still
+ let others inherit from this class.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionFloat.html#ConvolutionFloat(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace)">ConvolutionFloat(ShapedVectorSpace, ShapedVectorSpace)</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionFloat.html" title="class in mitiv.deconv.impl">ConvolutionFloat</a></dt>
+<dd>
+<div class="block">The following constructor make this class non instantiable, but still
  let others inherit from this class.</div>
 </dd>
 <dt><a href="./mitiv/deconv/impl/ConvolutionFloat1D.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionFloat1D</span></a> - Class in <a href="./mitiv/deconv/impl/package-summary.html">mitiv.deconv.impl</a></dt>
@@ -2533,7 +2546,11 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionFloat1D.html#ConvolutionFloat1D(mitiv.linalg.shaped.ShapedVectorSpace)">ConvolutionFloat1D(ShapedVectorSpace)</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionFloat1D.html" title="class in mitiv.deconv.impl">ConvolutionFloat1D</a></dt>
 <dd>
-<div class="block">Create a new FFT-based convolution operator given the PSF.</div>
+<div class="block">Create a new convolution operator for 1D arrays of float's.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionFloat1D.html#ConvolutionFloat1D(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">ConvolutionFloat1D(ShapedVectorSpace, ShapedVectorSpace, int[])</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionFloat1D.html" title="class in mitiv.deconv.impl">ConvolutionFloat1D</a></dt>
+<dd>
+<div class="block">Create a new convolution operator for 1D arrays of float's.</div>
 </dd>
 <dt><a href="./mitiv/deconv/impl/ConvolutionFloat2D.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionFloat2D</span></a> - Class in <a href="./mitiv/deconv/impl/package-summary.html">mitiv.deconv.impl</a></dt>
 <dd>
@@ -2541,7 +2558,11 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionFloat2D.html#ConvolutionFloat2D(mitiv.linalg.shaped.ShapedVectorSpace)">ConvolutionFloat2D(ShapedVectorSpace)</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionFloat2D.html" title="class in mitiv.deconv.impl">ConvolutionFloat2D</a></dt>
 <dd>
-<div class="block">Create a new FFT-based convolution operator given the PSF.</div>
+<div class="block">Create a new convolution operator for 2D arrays of float's.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionFloat2D.html#ConvolutionFloat2D(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">ConvolutionFloat2D(ShapedVectorSpace, ShapedVectorSpace, int[])</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionFloat2D.html" title="class in mitiv.deconv.impl">ConvolutionFloat2D</a></dt>
+<dd>
+<div class="block">Create a new convolution operator for 2D arrays of float's.</div>
 </dd>
 <dt><a href="./mitiv/deconv/impl/ConvolutionFloat3D.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionFloat3D</span></a> - Class in <a href="./mitiv/deconv/impl/package-summary.html">mitiv.deconv.impl</a></dt>
 <dd>
@@ -2549,7 +2570,11 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionFloat3D.html#ConvolutionFloat3D(mitiv.linalg.shaped.ShapedVectorSpace)">ConvolutionFloat3D(ShapedVectorSpace)</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionFloat3D.html" title="class in mitiv.deconv.impl">ConvolutionFloat3D</a></dt>
 <dd>
-<div class="block">Create a new FFT-based convolution operator given the PSF.</div>
+<div class="block">Create a new convolution operator for 3D arrays of float's.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionFloat3D.html#ConvolutionFloat3D(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">ConvolutionFloat3D(ShapedVectorSpace, ShapedVectorSpace, int[])</a></span> - Constructor for class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionFloat3D.html" title="class in mitiv.deconv.impl">ConvolutionFloat3D</a></dt>
+<dd>
+<div class="block">Create a new convolution operator for 3D arrays of float's.</div>
 </dd>
 <dt><a href="./mitiv/deconv/ConvolutionOperator.html" title="class in mitiv.deconv"><span class="strong">ConvolutionOperator</span></a> - Class in <a href="./mitiv/deconv/package-summary.html">mitiv.deconv</a></dt>
 <dd>
@@ -2562,6 +2587,10 @@
 <dt><span class="strong"><a href="./mitiv/deconv/ConvolutionOperator.html#ConvolutionOperator(mitiv.linalg.shaped.RealComplexFFT, mitiv.linalg.Vector, mitiv.linalg.Vector)">ConvolutionOperator(RealComplexFFT, Vector, Vector)</a></span> - Constructor for class mitiv.deconv.<a href="./mitiv/deconv/ConvolutionOperator.html" title="class in mitiv.deconv">ConvolutionOperator</a></dt>
 <dd>
 <div class="block">Create a new FFT-based convolution operator given the PSF or the MTF.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#convolve(boolean)">convolve(boolean)</a></span> - Method in class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
+<dd>
+<div class="block">Apply the operator to the internal workspace.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionDouble.html#convolve(boolean)">convolve(boolean)</a></span> - Method in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionDouble.html" title="class in mitiv.deconv.impl">ConvolutionDouble</a></dt>
 <dd>
@@ -4441,10 +4470,6 @@
 <dt><span class="strong"><a href="./mitiv/base/Shape.html#dimension(int)">dimension(int)</a></span> - Method in class mitiv.base.<a href="./mitiv/base/Shape.html" title="class in mitiv.base">Shape</a></dt>
 <dd>
 <div class="block">Get the length of a given dimension.</div>
-</dd>
-<dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#dimension(int)">dimension(int)</a></span> - Method in class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
-<dd>
-<div class="block">Get the length of a given dimension for the arguments of the convolution.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#DIRECT">DIRECT</a></span> - Static variable in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
 <dd>
@@ -9052,7 +9077,7 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#getNumber()">getNumber()</a></span> - Method in class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
 <dd>
-<div class="block">Get the number of elements of the arguments of the convolution.</div>
+<div class="block">Get the number of elements of the argument of the convolution.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/Vector.html#getNumber()">getNumber()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></dt>
 <dd>
@@ -9601,10 +9626,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/ShapedVectorSpace.html#getShape()">getShape()</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#getSpace()">getSpace()</a></span> - Method in class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
-<dd>
-<div class="block">Retrieve the vector space of arguments of the convolution.</div>
-</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVector.html#getSpace()">getSpace()</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVector.html" title="class in mitiv.linalg.shaped">DoubleShapedVector</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVector.html#getSpace()">getSpace()</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a></dt>
@@ -9801,7 +9822,7 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#getType()">getType()</a></span> - Method in class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
 <dd>
-<div class="block">Retrieve the type of the elements of the arguments of the convolution.</div>
+<div class="block">Retrieve the type of the elements of the argument of the convolution.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/ShapedVector.html#getType()">getType()</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/ShapedVector.html" title="class in mitiv.linalg.shaped">ShapedVector</a></dt>
 <dd>&nbsp;</dd>
@@ -12802,6 +12823,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/cost/FiniteDifferenceOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply(Vector, Vector, int)</a></span> - Method in class mitiv.cost.<a href="./mitiv/cost/FiniteDifferenceOperator.html" title="class in mitiv.cost">FiniteDifferenceOperator</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply(Vector, Vector, int)</a></span> - Method in class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/deconv/ConvolutionOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply(Vector, Vector, int)</a></span> - Method in class mitiv.deconv.<a href="./mitiv/deconv/ConvolutionOperator.html" title="class in mitiv.deconv">ConvolutionOperator</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/deconv/WeightingOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply(Vector, Vector, int)</a></span> - Method in class mitiv.deconv.<a href="./mitiv/deconv/WeightingOperator.html" title="class in mitiv.deconv">WeightingOperator</a></dt>
@@ -13022,7 +13045,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#pull(mitiv.linalg.shaped.ShapedVector)">pull(ShapedVector)</a></span> - Method in class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
 <dd>
-<div class="block">Extract real part of the internal workspace.</div>
+<div class="block">Retrieve the result of the convolution.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionDouble.html#pull(mitiv.linalg.shaped.ShapedVector)">pull(ShapedVector)</a></span> - Method in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionDouble.html" title="class in mitiv.deconv.impl">ConvolutionDouble</a></dt>
 <dd>&nbsp;</dd>
@@ -13030,12 +13053,24 @@
 <dd>
 <div class="block">Copy real part of workspace into output array.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionDouble1D.html#pull(double[])">pull(double[])</a></span> - Method in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionDouble1D.html" title="class in mitiv.deconv.impl">ConvolutionDouble1D</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionDouble2D.html#pull(double[])">pull(double[])</a></span> - Method in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionDouble2D.html" title="class in mitiv.deconv.impl">ConvolutionDouble2D</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionDouble3D.html#pull(double[])">pull(double[])</a></span> - Method in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionDouble3D.html" title="class in mitiv.deconv.impl">ConvolutionDouble3D</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionFloat.html#pull(mitiv.linalg.shaped.ShapedVector)">pull(ShapedVector)</a></span> - Method in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionFloat.html" title="class in mitiv.deconv.impl">ConvolutionFloat</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionFloat.html#pull(float[])">pull(float[])</a></span> - Method in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionFloat.html" title="class in mitiv.deconv.impl">ConvolutionFloat</a></dt>
 <dd>
 <div class="block">Copy real part of workspace into output array.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionFloat1D.html#pull(float[])">pull(float[])</a></span> - Method in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionFloat1D.html" title="class in mitiv.deconv.impl">ConvolutionFloat1D</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionFloat2D.html#pull(float[])">pull(float[])</a></span> - Method in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionFloat2D.html" title="class in mitiv.deconv.impl">ConvolutionFloat2D</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/deconv/impl/ConvolutionFloat3D.html#pull(float[])">pull(float[])</a></span> - Method in class mitiv.deconv.impl.<a href="./mitiv/deconv/impl/ConvolutionFloat3D.html" title="class in mitiv.deconv.impl">ConvolutionFloat3D</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#push(mitiv.linalg.shaped.ShapedVector)">push(ShapedVector)</a></span> - Method in class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
 <dd>
 <div class="block">Copy data to the internal workspace.</div>
@@ -15892,8 +15927,6 @@
 <dd>
 <div class="block">The dimensions of the variables.</div>
 </dd>
-<dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#shape">shape</a></span> - Variable in class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="./mitiv/base/Shaped.html" title="interface in mitiv.base"><span class="strong">Shaped</span></a> - Interface in <a href="./mitiv/base/package-summary.html">mitiv.base</a></dt>
 <dd>
 <div class="block">A Shaped object stores rectangular multi-dimensional arrays of elements.</div>
@@ -17293,8 +17326,6 @@
 <div class="block">Compute the roots of a 2nd degree polynomial.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/utils/Poly.html#SolveQuadratic(double, double, double, double[])">SolveQuadratic(double, double, double, double[])</a></span> - Static method in class mitiv.utils.<a href="./mitiv/utils/Poly.html" title="class in mitiv.utils">Poly</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/deconv/Convolution.html#space">space</a></span> - Variable in class mitiv.deconv.<a href="./mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/Vector.html#space">space</a></span> - Variable in class mitiv.linalg.<a href="./mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></dt>
 <dd>

@@ -120,7 +120,7 @@ implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="int
  </p><p>
  with <b>F</b> the FFT (Fast Fourier Transform) operator, <b><i>h</i></b> the
  point spread function (PSF) and <b>R</b> a linear operator which selects a
- sub-region of the output of the convolution and weights it.  The * superscript
+ sub-region of the output of the convolution.  The * superscript
  denotes the adjoint of the operator (complex transpose in this specific case) and
  diag(<i><b>v</i></b>) is a diagonal operator whose diagonal elements are those of
  the vector <i><b>v</i></b>.
@@ -294,7 +294,7 @@ implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="int
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/WeightedConvolutionCost.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">build</a></strong>(<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;objectSpace,
      <a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;dataSpace,
      int[]&nbsp;dataOffset)</code>
-<div class="block">Build a weighted convolution operator.</div>
+<div class="block">Build a weighted convolution cost function.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -425,7 +425,7 @@ implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="int
 <ul class="blockList">
 <li class="blockList">
 <h4>objectSpace</h4>
-<pre>protected&nbsp;<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a> objectSpace</pre>
+<pre>protected final&nbsp;<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a> objectSpace</pre>
 </li>
 </ul>
 <a name="dataSpace">
@@ -434,7 +434,7 @@ implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="int
 <ul class="blockList">
 <li class="blockList">
 <h4>dataSpace</h4>
-<pre>protected&nbsp;<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a> dataSpace</pre>
+<pre>protected final&nbsp;<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a> dataSpace</pre>
 </li>
 </ul>
 <a name="timerForFFT">
@@ -580,7 +580,7 @@ implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="int
 <pre>public static&nbsp;<a href="../../mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv">WeightedConvolutionCost</a>&nbsp;build(<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;objectSpace,
                             <a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;dataSpace,
                             int[]&nbsp;dataOffset)</pre>
-<div class="block">Build a weighted convolution operator.
+<div class="block">Build a weighted convolution cost function.
  <p>
  This version of the factory to build a weighted convolution cost function
  let you specify precisely the position of the region corresponding to the
