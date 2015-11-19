@@ -214,14 +214,14 @@ extends java.lang.Object</pre>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Deconvolution.html#firstDeconvolutionCG(double)">firstDeconvolutionCG</a></strong>(double&nbsp;alpha)</code>
-<div class="block">Use the conjugate gradients to deconvoluate the image</div>
+<div class="block">Use the conjugate gradients to deconvolve the image</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Deconvolution.html#firstDeconvolutionCG(double, boolean)">firstDeconvolutionCG</a></strong>(double&nbsp;alpha,
                     boolean&nbsp;isPsfSplitted)</code>
-<div class="block">Use the conjugate gradients to deconvoluate the image</div>
+<div class="block">Use the conjugate gradients to deconvolve the image</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -229,7 +229,7 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Deconvolution.html#firstDeconvolutionCG(double, int, boolean)">firstDeconvolutionCG</a></strong>(double&nbsp;alpha,
                     int&nbsp;job,
                     boolean&nbsp;isPsfSplitted)</code>
-<div class="block">Use the conjugate gradients to deconvoluate the image</div>
+<div class="block">Use the conjugate gradients to deconvolve the image</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -275,7 +275,7 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Deconvolution.html#nextDeconvolutionCG(double)">nextDeconvolutionCG</a></strong>(double&nbsp;alpha)</code>
-<div class="block">Use the conjugate gradients to deconvoluate the image.<br>
+<div class="block">Use the conjugate gradients to deconvolve the image.<br>
  Do less computations and allocations.</div>
 </td>
 </tr>
@@ -283,7 +283,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code><a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Deconvolution.html#nextDeconvolutionCG(double, int)">nextDeconvolutionCG</a></strong>(double&nbsp;alpha,
                    int&nbsp;job)</code>
-<div class="block">Use the conjugate gradients to deconvoluate the image.<br>
+<div class="block">Use the conjugate gradients to deconvolve the image.<br>
  Do less computations and allocations.</div>
 </td>
 </tr>
@@ -582,7 +582,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>firstDeconvolutionCG</h4>
 <pre>public&nbsp;<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;firstDeconvolutionCG(double&nbsp;alpha)</pre>
-<div class="block">Use the conjugate gradients to deconvoluate the image</div>
+<div class="block">Use the conjugate gradients to deconvolve the image</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - </dd>
 <dt><span class="strong">Returns:</span></dt><dd>The bufferedImage for the input value given</dd></dl>
 </li>
@@ -595,7 +595,7 @@ extends java.lang.Object</pre>
 <h4>firstDeconvolutionCG</h4>
 <pre>public&nbsp;<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;firstDeconvolutionCG(double&nbsp;alpha,
                                boolean&nbsp;isPsfSplitted)</pre>
-<div class="block">Use the conjugate gradients to deconvoluate the image</div>
+<div class="block">Use the conjugate gradients to deconvolve the image</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - </dd><dd><code>isPsfSplitted</code> - If the psf is centered or not</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The bufferedImage for the input value given</dd></dl>
 </li>
@@ -609,7 +609,7 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;firstDeconvolutionCG(double&nbsp;alpha,
                                int&nbsp;job,
                                boolean&nbsp;isPsfSplitted)</pre>
-<div class="block">Use the conjugate gradients to deconvoluate the image</div>
+<div class="block">Use the conjugate gradients to deconvolve the image</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - </dd><dd><code>job</code> - see static PROCESSING_?</dd><dd><code>isPsfSplitted</code> - If the psf is centered or not</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The bufferedImage for the input value given</dd></dl>
 </li>
@@ -621,7 +621,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>nextDeconvolutionCG</h4>
 <pre>public&nbsp;<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;nextDeconvolutionCG(double&nbsp;alpha)</pre>
-<div class="block">Use the conjugate gradients to deconvoluate the image.<br>
+<div class="block">Use the conjugate gradients to deconvolve the image.<br>
  Do less computations and allocations.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - </dd>
 <dt><span class="strong">Returns:</span></dt><dd>The bufferedImage for the input value given</dd></dl>
@@ -635,7 +635,7 @@ extends java.lang.Object</pre>
 <h4>nextDeconvolutionCG</h4>
 <pre>public&nbsp;<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;nextDeconvolutionCG(double&nbsp;alpha,
                               int&nbsp;job)</pre>
-<div class="block">Use the conjugate gradients to deconvoluate the image.<br>
+<div class="block">Use the conjugate gradients to deconvolve the image.<br>
  Do less computations and allocations.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - </dd><dd><code>job</code> - see static PROCESSING_?</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The bufferedImage for the input value given</dd></dl>
