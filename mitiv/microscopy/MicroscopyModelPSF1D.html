@@ -119,7 +119,7 @@ extends java.lang.Object</pre>
 <dl><dt><span class="strong">Version:</span></dt>
   <dd></dd>
 <dt><span class="strong">Author:</span></dt>
-  <dd>Boba Fett <boba.fett@bounty-hunter.sw></dd></dl>
+  <dd>Ferréol Soulez   <ferreol.soulez@epfl.ch></dd></dl>
 </li>
 </ul>
 </div>
@@ -276,29 +276,33 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#radius">radius</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#pupil_area">pupil_area</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#radius">radius</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>protected double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#rho">rho</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#sum_defocus_over_depth">sum_defocus_over_depth</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#sum_depth_over_defocus">sum_depth_over_defocus</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#use_depth_scaling">use_depth_scaling</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#Z">Z</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#zdepth">zdepth</a></strong></code>&nbsp;</td>
 </tr>
@@ -423,45 +427,49 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getNi()">getNi</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getNZern()">getNZern</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getPhi()">getPhi</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getPSF()">getPSF</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getPSF(int)">getPSF</a></strong>(int&nbsp;k)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getPsi()">getPsi</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getRho()">getRho</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getZernike()">getZernike</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#getZernike(int)">getZernike</a></strong>(int&nbsp;k)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#setDefocus(double[])">setDefocus</a></strong>(double[]&nbsp;defocus)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#setPhi(double[])">setPhi</a></strong>(double[]&nbsp;alpha)</code>
 <div class="block">Compute φ the part of the phase of the pupil function
  on a Zernike polynomial basis</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/microscopy/MicroscopyModelPSF1D.html#setRho(double[])">setRho</a></strong>(double[]&nbsp;beta)</code>
 <div class="block">Compute the modulus ρ on a Zernike polynomial basis</div>
@@ -750,6 +758,15 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>radius</h4>
 <pre>protected&nbsp;double radius</pre>
+</li>
+</ul>
+<a name="pupil_area">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pupil_area</h4>
+<pre>protected&nbsp;double pupil_area</pre>
 </li>
 </ul>
 <a name="NormZ1">
@@ -1138,6 +1155,15 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getZernike</h4>
 <pre>public&nbsp;double[]&nbsp;getZernike()</pre>
+</li>
+</ul>
+<a name="getNZern()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNZern</h4>
+<pre>public&nbsp;int&nbsp;getNZern()</pre>
 </li>
 </ul>
 <a name="getZernike(int)">
