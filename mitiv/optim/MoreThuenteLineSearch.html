@@ -34,7 +34,7 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
+<li><a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
 <li><a href="../../mitiv/optim/NonLinearConjugateGradient.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
@@ -154,14 +154,15 @@ extends <a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim"
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/MoreThuenteLineSearch.html#iterateHook(double, double)">iterateHook</a></strong>(double&nbsp;f,
-           double&nbsp;g)</code>
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/MoreThuenteLineSearch.html#iterateHook(double, double, double)">iterateHook</a></strong>(double&nbsp;s1,
+           double&nbsp;f1,
+           double&nbsp;g1)</code>
 <div class="block">Protected abstract method to iterate during a line search.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a></code></td>
+<td class="colFirst"><code>protected int</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/MoreThuenteLineSearch.html#startHook()">startHook</a></strong>()</code>
 <div class="block">Protected method to set internals at the start of a line search.</div>
 </td>
@@ -172,7 +173,7 @@ extends <a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim"
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;mitiv.optim.<a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim">LineSearch</a></h3>
-<code><a href="../../mitiv/optim/LineSearch.html#converged()">converged</a>, <a href="../../mitiv/optim/LineSearch.html#finished()">finished</a>, <a href="../../mitiv/optim/LineSearch.html#getMessage()">getMessage</a>, <a href="../../mitiv/optim/LineSearch.html#getStatus()">getStatus</a>, <a href="../../mitiv/optim/LineSearch.html#getStep()">getStep</a>, <a href="../../mitiv/optim/LineSearch.html#hasErrors()">hasErrors</a>, <a href="../../mitiv/optim/LineSearch.html#hasWarnings()">hasWarnings</a>, <a href="../../mitiv/optim/LineSearch.html#iterate(double, double, double)">iterate</a>, <a href="../../mitiv/optim/LineSearch.html#start(double, double, double, double, double)">start</a></code></li>
+<code><a href="../../mitiv/optim/LineSearch.html#converged()">converged</a>, <a href="../../mitiv/optim/LineSearch.html#finished()">finished</a>, <a href="../../mitiv/optim/LineSearch.html#getMessage()">getMessage</a>, <a href="../../mitiv/optim/LineSearch.html#getMessage(int)">getMessage</a>, <a href="../../mitiv/optim/LineSearch.html#getStatus()">getStatus</a>, <a href="../../mitiv/optim/LineSearch.html#getStep()">getStep</a>, <a href="../../mitiv/optim/LineSearch.html#hasErrors()">hasErrors</a>, <a href="../../mitiv/optim/LineSearch.html#hasWarnings()">hasWarnings</a>, <a href="../../mitiv/optim/LineSearch.html#iterate(double, double, double)">iterate</a>, <a href="../../mitiv/optim/LineSearch.html#start(double, double, double, double, double)">start</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -220,7 +221,7 @@ extends <a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim"
 <ul class="blockList">
 <li class="blockList">
 <h4>startHook</h4>
-<pre>protected&nbsp;<a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a>&nbsp;startHook()</pre>
+<pre>protected&nbsp;int&nbsp;startHook()</pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/LineSearch.html#startHook()">LineSearch</a></code></strong></div>
 <div class="block">Protected method to set internals at the start of a line search.
 
@@ -233,15 +234,16 @@ extends <a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim"
 <dt><span class="strong">Returns:</span></dt><dd>The new status of the line search instance, in principle <code>LineSearch.SEARCH</code>.</dd></dl>
 </li>
 </ul>
-<a name="iterateHook(double, double)">
+<a name="iterateHook(double, double, double)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>iterateHook</h4>
-<pre>protected&nbsp;<a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a>&nbsp;iterateHook(double&nbsp;f,
-                           double&nbsp;g)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/LineSearch.html#iterateHook(double, double)">LineSearch</a></code></strong></div>
+<pre>protected&nbsp;int&nbsp;iterateHook(double&nbsp;s1,
+              double&nbsp;f1,
+              double&nbsp;g1)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/LineSearch.html#iterateHook(double, double, double)">LineSearch</a></code></strong></div>
 <div class="block">Protected abstract method to iterate during a line search.
 
  This protected method is called by the <a href="../../mitiv/optim/LineSearch.html#iterate(double, double, double)"><code>LineSearch.iterate(double, double, double)</code></a> method to check whether line
@@ -250,12 +252,12 @@ extends <a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim"
  the caller method, <a href="../../mitiv/optim/LineSearch.html#iterate(double, double, double)"><code>LineSearch.iterate(double, double, double)</code></a>, takes care of safeguarding the step.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/optim/LineSearch.html#iterateHook(double, double)">iterateHook</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim">LineSearch</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>f</code> - The value of the function at <code>x = x0 + stp*p</code> where <code>x0</code>
+<dd><code><a href="../../mitiv/optim/LineSearch.html#iterateHook(double, double, double)">iterateHook</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim">LineSearch</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>s1</code> - The value of the step (same as the value returned by <a href="../../mitiv/optim/LineSearch.html#getStep()"><code>LineSearch.getStep()</code></a>).</dd><dd><code>f1</code> - The value of the function at <code>x1 = x0 + s1*p</code> where <code>x0</code>
              are the variables at the start of the line search and <code>p</code> is the
-             search direction.</dd><dd><code>g</code> - The directional derivative at <code>x</code>, that is <code>p'.g(x)</code> the
+             search direction.</dd><dd><code>g1</code> - The directional derivative at <code>x1</code>, that is <code>p'.g(x1)</code> the
              inner product between the search direction and the function gradient at
-             <code>x</code>.</dd>
+             <code>x1</code>.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The new status of the line search instance.</dd></dl>
 </li>
 </ul>
@@ -284,7 +286,7 @@ extends <a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim"
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
+<li><a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
 <li><a href="../../mitiv/optim/NonLinearConjugateGradient.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">

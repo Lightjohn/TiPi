@@ -34,7 +34,7 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../mitiv/optim/BLMVM.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
+<li><a href="../../mitiv/optim/ArmijoLineSearch.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
 <li><a href="../../mitiv/optim/ConvexSetProjector.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
@@ -99,7 +99,7 @@
 <li class="blockList">
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../mitiv/optim/GeneralBounds.html" title="class in mitiv.optim">GeneralBounds</a>, <a href="../../mitiv/optim/SimpleBounds.html" title="class in mitiv.optim">SimpleBounds</a>, <a href="../../mitiv/optim/SimpleLowerBound.html" title="class in mitiv.optim">SimpleLowerBound</a>, <a href="../../mitiv/optim/SimpleUpperBound.html" title="class in mitiv.optim">SimpleUpperBound</a></dd>
+<dd><a href="../../mitiv/optim/SimpleBounds.html" title="class in mitiv.optim">SimpleBounds</a>, <a href="../../mitiv/optim/SimpleLowerBound.html" title="class in mitiv.optim">SimpleLowerBound</a>, <a href="../../mitiv/optim/SimpleUpperBound.html" title="class in mitiv.optim">SimpleUpperBound</a></dd>
 </dl>
 <hr>
 <br>
@@ -168,104 +168,25 @@ extends <a href="../../mitiv/optim/ConvexSetProjector.html" title="class in miti
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#_projectDirection(mitiv.linalg.Vector, mitiv.linalg.Vector, boolean, mitiv.linalg.Vector, double[])">_projectDirection</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-                 <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;d,
-                 boolean&nbsp;ascent,
-                 <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dp,
-                 double[]&nbsp;bnd)</code>
-<div class="block">Protected method to project a direction to the null-space of the
- linearized constraints.</div>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#_projectGradient(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">_projectGradient</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+                <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;g,
+                <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;gp)</code>
+<div class="block">Protected method to project the gradient.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#checkBounds(double, double, boolean)">checkBounds</a></strong>(double&nbsp;lowerBound,
-           double&nbsp;upperBound,
-           boolean&nbsp;single)</code>
-<div class="block">Check whether upper and lower bounds are valid (throw an IllegalArgumentException otherwise).</div>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#projectGradient(mitiv.linalg.Vector, mitiv.linalg.Vector)">projectGradient</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+               <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;g)</code>
+<div class="block">Project the gradient of bounded variables (in-place version).</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#checkLowerBound(double, boolean)">checkLowerBound</a></strong>(double&nbsp;lowerBound,
-               boolean&nbsp;single)</code>
-<div class="block">Check whether a lower bound is valid (throw an IllegalArgumentException otherwise).</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#checkUpperBound(double, boolean)">checkUpperBound</a></strong>(double&nbsp;upperBound,
-               boolean&nbsp;single)</code>
-<div class="block">Check whether an upper bound is valid (throw an IllegalArgumentException otherwise).</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#clamp(double, double, double)">clamp</a></strong>(double&nbsp;x,
-     double&nbsp;xmin,
-     double&nbsp;xmax)</code>
-<div class="block">Force a variable in an interval.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static float</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#clamp(float, float, float)">clamp</a></strong>(float&nbsp;x,
-     float&nbsp;xmin,
-     float&nbsp;xmax)</code>
-<div class="block">Force a variable in an interval.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>float</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#convertToFloat(double)">convertToFloat</a></strong>(double&nbsp;value)</code>
-<div class="block">Convert a double to a float taking car of maximum allowed absolute values.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#max(double, double)">max</a></strong>(double&nbsp;a,
-   double&nbsp;b)</code>
-<div class="block">Get the maximum of two single precision doubleing point values.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static float</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#max(float, float)">max</a></strong>(float&nbsp;a,
-   float&nbsp;b)</code>
-<div class="block">Get the maximum of two single precision floating point values.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#min(double, double)">min</a></strong>(double&nbsp;a,
-   double&nbsp;b)</code>
-<div class="block">Get the minimum of two single precision floating point values.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static float</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#min(float, float)">min</a></strong>(float&nbsp;a,
-   float&nbsp;b)</code>
-<div class="block">Get the minimum of two single precision floating point values.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#projectDirection(mitiv.linalg.Vector, mitiv.linalg.Vector, boolean, mitiv.linalg.Vector)">projectDirection</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-                <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;d,
-                boolean&nbsp;ascent,
-                <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dp)</code>
-<div class="block">Project a direction to the null-space of the linearized constraints.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#projectDirection(mitiv.linalg.Vector, mitiv.linalg.Vector, boolean, mitiv.linalg.Vector, double[])">projectDirection</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-                <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;d,
-                boolean&nbsp;ascent,
-                <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dp,
-                double[]&nbsp;bnd)</code>
-<div class="block">Project a direction to the null-space of the linearized constraints.</div>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/BoundProjector.html#projectGradient(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">projectGradient</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+               <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;g,
+               <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;gp)</code>
+<div class="block">Project the gradient of bounded variables.</div>
 </td>
 </tr>
 </table>
@@ -274,7 +195,7 @@ extends <a href="../../mitiv/optim/ConvexSetProjector.html" title="class in miti
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;mitiv.optim.<a href="../../mitiv/optim/ConvexSetProjector.html" title="class in mitiv.optim">ConvexSetProjector</a></h3>
-<code><a href="../../mitiv/optim/ConvexSetProjector.html#_projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">_projectVariables</a>, <a href="../../mitiv/optim/ConvexSetProjector.html#getInputSpace()">getInputSpace</a>, <a href="../../mitiv/optim/ConvexSetProjector.html#getOutputSpace()">getOutputSpace</a>, <a href="../../mitiv/optim/ConvexSetProjector.html#getSpace()">getSpace</a>, <a href="../../mitiv/optim/ConvexSetProjector.html#projectVariables(mitiv.linalg.Vector)">projectVariables</a>, <a href="../../mitiv/optim/ConvexSetProjector.html#projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">projectVariables</a></code></li>
+<code><a href="../../mitiv/optim/ConvexSetProjector.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">_apply</a>, <a href="../../mitiv/optim/ConvexSetProjector.html#apply(mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/optim/ConvexSetProjector.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/optim/ConvexSetProjector.html#getInputSpace()">getInputSpace</a>, <a href="../../mitiv/optim/ConvexSetProjector.html#getOutputSpace()">getOutputSpace</a>, <a href="../../mitiv/optim/ConvexSetProjector.html#getSpace()">getSpace</a>, <a href="../../mitiv/optim/ConvexSetProjector.html#max(double, double)">max</a>, <a href="../../mitiv/optim/ConvexSetProjector.html#max(float, float)">max</a>, <a href="../../mitiv/optim/ConvexSetProjector.html#min(double, double)">min</a>, <a href="../../mitiv/optim/ConvexSetProjector.html#min(float, float)">min</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -314,186 +235,71 @@ extends <a href="../../mitiv/optim/ConvexSetProjector.html" title="class in miti
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="projectDirection(mitiv.linalg.Vector, mitiv.linalg.Vector, boolean, mitiv.linalg.Vector)">
+<a name="projectGradient(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>projectDirection</h4>
-<pre>public&nbsp;void&nbsp;projectDirection(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-                    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;d,
-                    boolean&nbsp;ascent,
-                    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dp)</pre>
-<div class="block">Project a direction to the null-space of the linearized constraints.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - The variables (in principle they should be feasible).</dd><dd><code>d</code> - - The direction to be projected.</dd><dd><code>ascent</code> - - If true `d` is an ascent direction, otherwise
-                 `d` is a descent direction.  Typically, one set
-                 `ascent` true if `d` is the gradient.</dd><dd><code>dp</code> - - The projected direction (can be the same as <code>d</code>).</dd></dl>
-</li>
-</ul>
-<a name="projectDirection(mitiv.linalg.Vector, mitiv.linalg.Vector, boolean, mitiv.linalg.Vector, double[])">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>projectDirection</h4>
-<pre>public&nbsp;void&nbsp;projectDirection(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-                    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;d,
-                    boolean&nbsp;ascent,
-                    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dp,
-                    double[]&nbsp;bnd)</pre>
-<div class="block">Project a direction to the null-space of the linearized constraints.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - The variables (in principle they should be feasible).</dd><dd><code>d</code> - - The direction to be projected.</dd><dd><code>ascent</code> - - If true <code>d</code> is an ascent direction, otherwise
-                 <code>d</code> is a descent direction.  Typically, one set
-                 <code>ascent</code> true if <code>d</code> is the gradient.</dd><dd><code>dp</code> - - The projected direction (can be the same as <code>d</code>).</dd><dd><code>bnd</code> - - An array of two values used to store step bounds, the
-                 first value is the ``<i>free path length</i>'' (the
-                 largest step length which can be taken along the
-                 projected direction without crossing any bounds), the
-                 second value is the smallest step length above which
-                 the variables will remain unchanged because of bounds.
-                 If <code>ascent</code> is false, then the line search seeks
-                 for improved variables as: <code>x + alpha*d</code>;
-                 otherwise, the line search seeks for improved variables
-                 as: <code>x - alpha*d</code>.  In both cases <code>alpha</code>
-                 is the nonnegative step length to which the computed
-                 bounds apply.</dd></dl>
-</li>
-</ul>
-<a name="_projectDirection(mitiv.linalg.Vector, mitiv.linalg.Vector, boolean, mitiv.linalg.Vector, double[])">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>_projectDirection</h4>
-<pre>protected abstract&nbsp;void&nbsp;_projectDirection(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-                     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;d,
-                     boolean&nbsp;ascent,
-                     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dp,
-                     double[]&nbsp;bnd)</pre>
-<div class="block">Protected method to project a direction to the null-space of the
- linearized constraints.
+<h4>projectGradient</h4>
+<pre>public&nbsp;void&nbsp;projectGradient(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+                   <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;g,
+                   <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;gp)</pre>
+<div class="block">Project the gradient of bounded variables.
+ 
+ <p>
+ Produce a direction <i>gp</i> such that its opposite -<i>gp</i> is
+ the steepest feasible descent direction.
+ </p>
 
  <p>
- This abstract method must be overridden by instantiable sub-classes,
- it is guaranteed to be called with checked arguments.  The input and
- output vectors can be the same.
+ Alternately, <i>g</i> can be an ascent direction and the result
+ <i>gp</i> is such that -<i>gp</i> is the feasible direction
+ which minimize the Euclidean norm of <i>g</i>&nbsp;-&nbsp;<i>gp</i>.
  </p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - The variables (they belongs to the feasible space).</dd><dd><code>d</code> - - The input direction to be projected.</dd><dd><code>ascent</code> - - If true `d` is an ascent direction, otherwise
-                 `d` is a descent direction.</dd><dd><code>dp</code> - - The projected direction.</dd><dd><code>bnd</code> - - Bounds for the step length.</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - The variables (must be <i>feasible</i>, that is within
+             the bounds).</dd><dd><code>g</code> - - The gradient at <i>x</i>.</dd><dd><code>gp</code> - - The result, i.e. the projected gradient.  The operation
+             can be done in-place, with <i>g</i> and <i>gp</i> the
+             same vector.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - if its arguments do not belong to the
+         correct vector space.</dd></dl>
 </li>
 </ul>
-<a name="convertToFloat(double)">
+<a name="projectGradient(mitiv.linalg.Vector, mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>convertToFloat</h4>
-<pre>public final&nbsp;float&nbsp;convertToFloat(double&nbsp;value)</pre>
-<div class="block">Convert a double to a float taking car of maximum allowed absolute values.</div>
+<h4>projectGradient</h4>
+<pre>public&nbsp;void&nbsp;projectGradient(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+                   <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;g)</pre>
+<div class="block">Project the gradient of bounded variables (in-place version).</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - The variables (must be <i>feasible</i>, that is within
+             the bounds).</dd><dd><code>g</code> - - On entry, the gradient or the ascent direction at
+             <i>x</i>; on exit, the projected gradient or feasible
+             ascent direction.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - if its arguments do not belong to the
+         correct vector space.</dd><dt><span class="strong">See Also:</span></dt><dd><code>#projectGradient(Vector, Vector, Vector)}.</code></dd></dl>
 </li>
 </ul>
-<a name="checkLowerBound(double, boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>checkLowerBound</h4>
-<pre>public final&nbsp;void&nbsp;checkLowerBound(double&nbsp;lowerBound,
-                   boolean&nbsp;single)</pre>
-<div class="block">Check whether a lower bound is valid (throw an IllegalArgumentException otherwise).</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>lowerBound</code> - - The lower bound.</dd><dd><code>single</code> - - Bound will be used in single precision.</dd></dl>
-</li>
-</ul>
-<a name="checkUpperBound(double, boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>checkUpperBound</h4>
-<pre>public final&nbsp;void&nbsp;checkUpperBound(double&nbsp;upperBound,
-                   boolean&nbsp;single)</pre>
-<div class="block">Check whether an upper bound is valid (throw an IllegalArgumentException otherwise).</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>upperBound</code> - - The upper bound.</dd><dd><code>single</code> - - Bound will be used in single precision.</dd></dl>
-</li>
-</ul>
-<a name="checkBounds(double, double, boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>checkBounds</h4>
-<pre>public final&nbsp;void&nbsp;checkBounds(double&nbsp;lowerBound,
-               double&nbsp;upperBound,
-               boolean&nbsp;single)</pre>
-<div class="block">Check whether upper and lower bounds are valid (throw an IllegalArgumentException otherwise).</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>lowerBound</code> - - The lower bound.</dd><dd><code>upperBound</code> - - The upper bound.</dd><dd><code>single</code> - - Bounds will be used in single precision.</dd></dl>
-</li>
-</ul>
-<a name="min(double, double)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>min</h4>
-<pre>public static final&nbsp;double&nbsp;min(double&nbsp;a,
-         double&nbsp;b)</pre>
-<div class="block">Get the minimum of two single precision floating point values.</div>
-</li>
-</ul>
-<a name="max(double, double)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>max</h4>
-<pre>public static final&nbsp;double&nbsp;max(double&nbsp;a,
-         double&nbsp;b)</pre>
-<div class="block">Get the maximum of two single precision doubleing point values.</div>
-</li>
-</ul>
-<a name="clamp(double, double, double)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>clamp</h4>
-<pre>public static final&nbsp;double&nbsp;clamp(double&nbsp;x,
-           double&nbsp;xmin,
-           double&nbsp;xmax)</pre>
-<div class="block">Force a variable in an interval.</div>
-</li>
-</ul>
-<a name="min(float, float)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>min</h4>
-<pre>public static final&nbsp;float&nbsp;min(float&nbsp;a,
-        float&nbsp;b)</pre>
-<div class="block">Get the minimum of two single precision floating point values.</div>
-</li>
-</ul>
-<a name="max(float, float)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>max</h4>
-<pre>public static final&nbsp;float&nbsp;max(float&nbsp;a,
-        float&nbsp;b)</pre>
-<div class="block">Get the maximum of two single precision floating point values.</div>
-</li>
-</ul>
-<a name="clamp(float, float, float)">
+<a name="_projectGradient(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>clamp</h4>
-<pre>public static final&nbsp;float&nbsp;clamp(float&nbsp;x,
-          float&nbsp;xmin,
-          float&nbsp;xmax)</pre>
-<div class="block">Force a variable in an interval.</div>
+<h4>_projectGradient</h4>
+<pre>protected abstract&nbsp;void&nbsp;_projectGradient(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+                    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;g,
+                    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;gp)</pre>
+<div class="block">Protected method to project the gradient.
+ 
+ <p>
+ This abstract method must be overridden by instantiable sub-classes,
+ it is guaranteed to be called with checked arguments.  The output
+ vector <i>gp</i> can be the same as the input vector <i>g</i>.
+ </p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - The variables.</dd><dd><code>g</code> - - The gradient.</dd><dd><code>gp</code> - - The projected gradient.</dd></dl>
 </li>
 </ul>
 </li>
@@ -521,7 +327,7 @@ extends <a href="../../mitiv/optim/ConvexSetProjector.html" title="class in miti
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../mitiv/optim/BLMVM.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
+<li><a href="../../mitiv/optim/ArmijoLineSearch.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
 <li><a href="../../mitiv/optim/ConvexSetProjector.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">

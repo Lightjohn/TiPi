@@ -60,7 +60,7 @@
 <ul class="subNavList">
 <li>SUMMARY:&nbsp;</li>
 <li>NESTED&nbsp;|&nbsp;</li>
-<li><a href="#fields_inherited_from_class_mitiv.deconv.Convolution">FIELD</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_mitiv.deconv.WeightedConvolutionOperator">FIELD</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor_summary">CONSTR</a>&nbsp;|&nbsp;</li>
 <li><a href="#method_summary">METHOD</a></li>
 </ul>
@@ -91,15 +91,10 @@
 <li><a href="../../../mitiv/linalg/shaped/ShapedLinearOperator.html" title="class in mitiv.linalg.shaped">mitiv.linalg.shaped.ShapedLinearOperator</a></li>
 <li>
 <ul class="inheritance">
-<li><a href="../../../mitiv/deconv/Convolution.html" title="class in mitiv.deconv">mitiv.deconv.Convolution</a></li>
-<li>
-<ul class="inheritance">
-<li><a href="../../../mitiv/deconv/impl/ConvolutionFloat.html" title="class in mitiv.deconv.impl">mitiv.deconv.impl.ConvolutionFloat</a></li>
+<li><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html" title="class in mitiv.deconv">mitiv.deconv.WeightedConvolutionOperator</a></li>
 <li>
 <ul class="inheritance">
 <li>mitiv.deconv.impl.ConvolutionFloat2D</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -119,10 +114,19 @@
 <hr>
 <br>
 <pre>public class <strong>ConvolutionFloat2D</strong>
-extends <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html" title="class in mitiv.deconv.impl">ConvolutionFloat</a></pre>
-<div class="block">Implements FFT-based convolution for 2D arrays of float's.</div>
+extends <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html" title="class in mitiv.deconv">WeightedConvolutionOperator</a></pre>
+<div class="block">Implements a FFT-based weighted convolution for 2D arrays of float's.
+
+ <p>
+ It is recommended not to directly instantiate this class but rather use
+ one of the factory methods of the parent class
+ <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html" title="class in mitiv.deconv"><code>WeightedConvolutionOperator</code></a>.<code>build()</code>.  Have a look at the
+ documentation of <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html" title="class in mitiv.deconv"><code>WeightedConvolutionOperator</code></a> for a description
+ of what exaclty does this kind of operator.
+ </p></div>
 <dl><dt><span class="strong">Author:</span></dt>
-  <dd>Éric Thiébaut</dd></dl>
+  <dd>Éric Thiébaut</dd>
+<dt><span class="strong">See Also:</span></dt><dd><code>WeightedConvolutionOperator}</code></dd></dl>
 </li>
 </ul>
 </div>
@@ -136,11 +140,11 @@ extends <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html" title="class 
 </a>
 <h3>Field Summary</h3>
 <ul class="blockList">
-<li class="blockList"><a name="fields_inherited_from_class_mitiv.deconv.Convolution">
+<li class="blockList"><a name="fields_inherited_from_class_mitiv.deconv.WeightedConvolutionOperator">
 <!--   -->
 </a>
-<h3>Fields inherited from class&nbsp;mitiv.deconv.<a href="../../../mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></h3>
-<code><a href="../../../mitiv/deconv/Convolution.html#timer">timer</a>, <a href="../../../mitiv/deconv/Convolution.html#timerForFFT">timerForFFT</a></code></li>
+<h3>Fields inherited from class&nbsp;mitiv.deconv.<a href="../../../mitiv/deconv/WeightedConvolutionOperator.html" title="class in mitiv.deconv">WeightedConvolutionOperator</a></h3>
+<code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#timer">timer</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#timerForFFT">timerForFFT</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="fields_inherited_from_class_mitiv.linalg.LinearOperator">
@@ -170,15 +174,10 @@ extends <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html" title="class 
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../mitiv/deconv/impl/ConvolutionFloat2D.html#ConvolutionFloat2D(mitiv.linalg.shaped.ShapedVectorSpace)">ConvolutionFloat2D</a></strong>(<a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;space)</code>
-<div class="block">Create a new convolution operator for 2D arrays of float's.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><code><strong><a href="../../../mitiv/deconv/impl/ConvolutionFloat2D.html#ConvolutionFloat2D(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">ConvolutionFloat2D</a></strong>(<a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;inp,
-                  <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;out,
-                  int[]&nbsp;off)</code>
-<div class="block">Create a new convolution operator for 2D arrays of float's.</div>
+<td class="colOne"><code><strong><a href="../../../mitiv/deconv/impl/ConvolutionFloat2D.html#ConvolutionFloat2D(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">ConvolutionFloat2D</a></strong>(<a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;inputSpace,
+                  <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;outputSpace,
+                  int[]&nbsp;first)</code>
+<div class="block">Create a new FFT-based convolution operator given the PSF.</div>
 </td>
 </tr>
 </table>
@@ -197,37 +196,53 @@ extends <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html" title="class 
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../mitiv/deconv/impl/ConvolutionFloat2D.html#backwardFFT(float[])">backwardFFT</a></strong>(float[]&nbsp;z)</code>
-<div class="block">Apply in-place backward complex FFT.</div>
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../mitiv/deconv/impl/ConvolutionFloat2D.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply</a></strong>(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
+         <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+         int&nbsp;job)</code>
+<div class="block">Apply a linear operator (or its adjoint) to a vector.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../mitiv/deconv/impl/ConvolutionFloat2D.html#forwardFFT(float[])">forwardFFT</a></strong>(float[]&nbsp;z)</code>
-<div class="block">Apply in-place forward complex FFT.</div>
+<td class="colLast"><code><strong><a href="../../../mitiv/deconv/impl/ConvolutionFloat2D.html#setPSF(mitiv.array.ShapedArray)">setPSF</a></strong>(<a href="../../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;arr)</code>
+<div class="block">Set the PSF of the operator.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../mitiv/deconv/impl/ConvolutionFloat2D.html#pull(float[])">pull</a></strong>(float[]&nbsp;x)</code>
-<div class="block">Copy real part of workspace into output array.</div>
+<td class="colLast"><code><strong><a href="../../../mitiv/deconv/impl/ConvolutionFloat2D.html#setPSF(mitiv.array.ShapedArray, int[])">setPSF</a></strong>(<a href="../../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;arr,
+      int[]&nbsp;cen)</code>
+<div class="block">Set the PSF of the operator with given center coordinates.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../mitiv/deconv/impl/ConvolutionFloat2D.html#setPSF(mitiv.linalg.shaped.ShapedVector)">setPSF</a></strong>(<a href="../../../mitiv/linalg/shaped/ShapedVector.html" title="class in mitiv.linalg.shaped">ShapedVector</a>&nbsp;vec)</code>
+<div class="block">Set the PSF of the operator.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../mitiv/deconv/impl/ConvolutionFloat2D.html#setWeights(mitiv.array.ShapedArray, boolean)">setWeights</a></strong>(<a href="../../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;arr,
+          boolean&nbsp;copy)</code>
+<div class="block">Set the weights of the operator.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../mitiv/deconv/impl/ConvolutionFloat2D.html#setWeights(mitiv.linalg.shaped.ShapedVector, boolean)">setWeights</a></strong>(<a href="../../../mitiv/linalg/shaped/ShapedVector.html" title="class in mitiv.linalg.shaped">ShapedVector</a>&nbsp;vec,
+          boolean&nbsp;copy)</code>
+<div class="block">Set the weights of the operator.</div>
 </td>
 </tr>
 </table>
 <ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_mitiv.deconv.impl.ConvolutionFloat">
+<li class="blockList"><a name="methods_inherited_from_class_mitiv.deconv.WeightedConvolutionOperator">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;mitiv.deconv.impl.<a href="../../../mitiv/deconv/impl/ConvolutionFloat.html" title="class in mitiv.deconv.impl">ConvolutionFloat</a></h3>
-<code><a href="../../../mitiv/deconv/impl/ConvolutionFloat.html#backwardFFT()">backwardFFT</a>, <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html#convolve(boolean)">convolve</a>, <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html#forwardFFT()">forwardFFT</a>, <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html#getWorkspace()">getWorkspace</a>, <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html#pull(mitiv.linalg.shaped.ShapedVector)">pull</a>, <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html#push(float[])">push</a>, <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html#push(mitiv.linalg.shaped.ShapedVector)">push</a>, <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html#setPSF(mitiv.array.ShapedArray, int[])">setPSF</a>, <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html#setPSF(mitiv.linalg.shaped.ShapedVector)">setPSF</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_mitiv.deconv.Convolution">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;mitiv.deconv.<a href="../../../mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></h3>
-<code><a href="../../../mitiv/deconv/Convolution.html#adjustPSF(mitiv.array.ShapedArray, int[])">adjustPSF</a>, <a href="../../../mitiv/deconv/Convolution.html#build(mitiv.linalg.shaped.ShapedVectorSpace)">build</a>, <a href="../../../mitiv/deconv/Convolution.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace)">build</a>, <a href="../../../mitiv/deconv/Convolution.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">build</a>, <a href="../../../mitiv/deconv/Convolution.html#center(mitiv.base.Shape)">center</a>, <a href="../../../mitiv/deconv/Convolution.html#getElapsedTime()">getElapsedTime</a>, <a href="../../../mitiv/deconv/Convolution.html#getElapsedTimeInFFT()">getElapsedTimeInFFT</a>, <a href="../../../mitiv/deconv/Convolution.html#getNumber()">getNumber</a>, <a href="../../../mitiv/deconv/Convolution.html#getRank()">getRank</a>, <a href="../../../mitiv/deconv/Convolution.html#getType()">getType</a>, <a href="../../../mitiv/deconv/Convolution.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply</a>, <a href="../../../mitiv/deconv/Convolution.html#resetTimers()">resetTimers</a>, <a href="../../../mitiv/deconv/Convolution.html#setPSF(mitiv.array.ShapedArray)">setPSF</a></code></li>
+<h3>Methods inherited from class&nbsp;mitiv.deconv.<a href="../../../mitiv/deconv/WeightedConvolutionOperator.html" title="class in mitiv.deconv">WeightedConvolutionOperator</a></h3>
+<code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#adjustPSF(mitiv.array.ShapedArray, int[])">adjustPSF</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#badWeights()">badWeights</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#build(mitiv.linalg.shaped.ShapedVectorSpace)">build</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace)">build</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">build</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#checkWeight(double)">checkWeight</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#checkWeight(float)">checkWeight</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#checkWeights(double[], boolean)">checkWeights</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#checkWeights(float[], boolean)">checkWeights</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#getElapsedTime()">getElapsedTime</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#getElapsedTimeInFFT()">getElapsedTimeInFFT</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#outputOffset(int, mitiv.base.Shape, mitiv.base.Shape, int[])">outputOffset</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#resetTimers()">resetTimers</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#setWeights(mitiv.array.ShapedArray)">setWeights</a>, <a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#setWeights(mitiv.linalg.shaped.ShapedVector)">setWeights</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_mitiv.linalg.shaped.ShapedLinearOperator">
@@ -264,29 +279,17 @@ extends <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html" title="class 
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="ConvolutionFloat2D(mitiv.linalg.shaped.ShapedVectorSpace)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ConvolutionFloat2D</h4>
-<pre>public&nbsp;ConvolutionFloat2D(<a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;space)</pre>
-<div class="block">Create a new convolution operator for 2D arrays of float's.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>space</code> - - The input and output space.</dd></dl>
-</li>
-</ul>
 <a name="ConvolutionFloat2D(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ConvolutionFloat2D</h4>
-<pre>public&nbsp;ConvolutionFloat2D(<a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;inp,
-                  <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;out,
-                  int[]&nbsp;off)</pre>
-<div class="block">Create a new convolution operator for 2D arrays of float's.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>inp</code> - - The input space.</dd><dd><code>out</code> - - The output space.</dd><dd><code>off</code> - - The position of the output relative to the result
-              of the convolution.</dd></dl>
+<pre>public&nbsp;ConvolutionFloat2D(<a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;inputSpace,
+                  <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;outputSpace,
+                  int[]&nbsp;first)</pre>
+<div class="block">Create a new FFT-based convolution operator given the PSF.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>FFT</code> - - The Fast Fourier Transform operator.</dd><dd><code>psf</code> - - The point spread function.</dd></dl>
 </li>
 </ul>
 </li>
@@ -297,47 +300,118 @@ extends <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html" title="class 
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="forwardFFT(float[])">
+<a name="setPSF(mitiv.linalg.shaped.ShapedVector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>forwardFFT</h4>
-<pre>public final&nbsp;void&nbsp;forwardFFT(float[]&nbsp;z)</pre>
-<div class="block">Apply in-place forward complex FFT.</div>
+<h4>setPSF</h4>
+<pre>public&nbsp;void&nbsp;setPSF(<a href="../../../mitiv/linalg/shaped/ShapedVector.html" title="class in mitiv.linalg.shaped">ShapedVector</a>&nbsp;vec)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#setPSF(mitiv.linalg.shaped.ShapedVector)">WeightedConvolutionOperator</a></code></strong></div>
+<div class="block">Set the PSF of the operator.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../mitiv/deconv/impl/ConvolutionFloat.html#forwardFFT(float[])">forwardFFT</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/deconv/impl/ConvolutionFloat.html" title="class in mitiv.deconv.impl">ConvolutionFloat</a></code></dd>
-</dl>
+<dd><code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#setPSF(mitiv.linalg.shaped.ShapedVector)">setPSF</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html" title="class in mitiv.deconv">WeightedConvolutionOperator</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>vec</code> - - The PSF must belongs to the input space of the operator
+              and must be centered in the sense of of the FFT.</dd></dl>
 </li>
 </ul>
-<a name="backwardFFT(float[])">
+<a name="setPSF(mitiv.array.ShapedArray)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>backwardFFT</h4>
-<pre>public final&nbsp;void&nbsp;backwardFFT(float[]&nbsp;z)</pre>
-<div class="block">Apply in-place backward complex FFT.</div>
+<h4>setPSF</h4>
+<pre>public&nbsp;void&nbsp;setPSF(<a href="../../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;arr)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#setPSF(mitiv.array.ShapedArray)">WeightedConvolutionOperator</a></code></strong></div>
+<div class="block">Set the PSF of the operator.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../mitiv/deconv/impl/ConvolutionFloat.html#backwardFFT(float[])">backwardFFT</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/deconv/impl/ConvolutionFloat.html" title="class in mitiv.deconv.impl">ConvolutionFloat</a></code></dd>
-</dl>
+<dd><code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#setPSF(mitiv.array.ShapedArray)">setPSF</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html" title="class in mitiv.deconv">WeightedConvolutionOperator</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>arr</code> - - The PSF in the form of a shaped array.  It is
+              automatically converted to the correct data type,
+              zero-padded and rolled.  It is assumed to be
+              geometrically centered.</dd></dl>
 </li>
 </ul>
-<a name="pull(float[])">
+<a name="setPSF(mitiv.array.ShapedArray, int[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPSF</h4>
+<pre>public&nbsp;void&nbsp;setPSF(<a href="../../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;arr,
+          int[]&nbsp;cen)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#setPSF(mitiv.array.ShapedArray, int[])">WeightedConvolutionOperator</a></code></strong></div>
+<div class="block">Set the PSF of the operator with given center coordinates.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#setPSF(mitiv.array.ShapedArray, int[])">setPSF</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html" title="class in mitiv.deconv">WeightedConvolutionOperator</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>arr</code> - - The PSF in the form of a shaped array.  It is
+              automatically converted to the correct data type,
+              zero-padded and rolled.</dd><dd><code>cen</code> - - The coordinates of the central element of the PSF.
+              There must be as many coordinates as the rank of
+              the PSF, each coordinate is the 0-based offset of
+              the center along the corresponding dimension.</dd></dl>
+</li>
+</ul>
+<a name="setWeights(mitiv.linalg.shaped.ShapedVector, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setWeights</h4>
+<pre>public&nbsp;void&nbsp;setWeights(<a href="../../../mitiv/linalg/shaped/ShapedVector.html" title="class in mitiv.linalg.shaped">ShapedVector</a>&nbsp;vec,
+              boolean&nbsp;copy)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#setWeights(mitiv.linalg.shaped.ShapedVector, boolean)">WeightedConvolutionOperator</a></code></strong></div>
+<div class="block">Set the weights of the operator.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#setWeights(mitiv.linalg.shaped.ShapedVector, boolean)">setWeights</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html" title="class in mitiv.deconv">WeightedConvolutionOperator</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>vec</code> - - The weights in the form of a shaped vector.  Its values are
+               checked for validity.  It must belong to the output space
+               of the operator.</dd><dd><code>copy</code> - - If true, a copy (not a reference) of the contents of <i>vec</i>
+               is forced.</dd></dl>
+</li>
+</ul>
+<a name="setWeights(mitiv.array.ShapedArray, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setWeights</h4>
+<pre>public&nbsp;void&nbsp;setWeights(<a href="../../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;arr,
+              boolean&nbsp;copy)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#setWeights(mitiv.array.ShapedArray, boolean)">WeightedConvolutionOperator</a></code></strong></div>
+<div class="block">Set the weights of the operator.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html#setWeights(mitiv.array.ShapedArray, boolean)">setWeights</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/deconv/WeightedConvolutionOperator.html" title="class in mitiv.deconv">WeightedConvolutionOperator</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>arr</code> - - The weights in the form of a shaped array.  It is automatically
+               converted to the correct data type and its values are checked for
+               validity.  Its shape must be that of the vectors of the output
+               space of the operator.</dd><dd><code>copy</code> - - If true, a copy (not a reference) of the contents of <i>arr</i>
+               is forced.</dd></dl>
+</li>
+</ul>
+<a name="privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>pull</h4>
-<pre>public&nbsp;void&nbsp;pull(float[]&nbsp;x)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/deconv/impl/ConvolutionFloat.html#pull(float[])">ConvolutionFloat</a></code></strong></div>
-<div class="block">Copy real part of workspace into output array.</div>
+<h4>privApply</h4>
+<pre>protected&nbsp;void&nbsp;privApply(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
+             <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+             int&nbsp;job)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/linalg/LinearOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
+<div class="block">Apply a linear operator (or its adjoint) to a vector.
+ 
+ This protected method is called by the "apply" method after checking of the
+ arguments.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../mitiv/deconv/impl/ConvolutionFloat.html#pull(float[])">pull</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/deconv/impl/ConvolutionFloat.html" title="class in mitiv.deconv.impl">ConvolutionFloat</a></code></dd>
-</dl>
+<dd><code><a href="../../../mitiv/linalg/LinearOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - the source vector</dd><dd><code>dst</code> - the destination vector</dd><dd><code>job</code> - the type of operation to apply (DIRECT, ADJOINT, etc.)</dd></dl>
 </li>
 </ul>
 </li>
@@ -391,7 +465,7 @@ extends <a href="../../../mitiv/deconv/impl/ConvolutionFloat.html" title="class 
 <ul class="subNavList">
 <li>SUMMARY:&nbsp;</li>
 <li>NESTED&nbsp;|&nbsp;</li>
-<li><a href="#fields_inherited_from_class_mitiv.deconv.Convolution">FIELD</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_mitiv.deconv.WeightedConvolutionOperator">FIELD</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor_summary">CONSTR</a>&nbsp;|&nbsp;</li>
 <li><a href="#method_summary">METHOD</a></li>
 </ul>

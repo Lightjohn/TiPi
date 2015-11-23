@@ -82,8 +82,7 @@
 <li><a href="mitiv/optim/package-tree.html">mitiv.optim</a>, </li>
 <li><a href="mitiv/random/package-tree.html">mitiv.random</a>, </li>
 <li><a href="mitiv/tests/package-tree.html">mitiv.tests</a>, </li>
-<li><a href="mitiv/utils/package-tree.html">mitiv.utils</a>, </li>
-<li><a href="mitiv/utils/reconstruction/package-tree.html">mitiv.utils.reconstruction</a></li>
+<li><a href="mitiv/utils/package-tree.html">mitiv.utils</a></li>
 </ul>
 </div>
 <div class="contentContainer">
@@ -537,7 +536,6 @@
 <ul>
 <li type="circle">mitiv.optim.<a href="mitiv/optim/BoundProjector.html" title="class in mitiv.optim"><span class="strong">BoundProjector</span></a>
 <ul>
-<li type="circle">mitiv.optim.<a href="mitiv/optim/GeneralBounds.html" title="class in mitiv.optim"><span class="strong">GeneralBounds</span></a></li>
 <li type="circle">mitiv.optim.<a href="mitiv/optim/SimpleBounds.html" title="class in mitiv.optim"><span class="strong">SimpleBounds</span></a></li>
 <li type="circle">mitiv.optim.<a href="mitiv/optim/SimpleLowerBound.html" title="class in mitiv.optim"><span class="strong">SimpleLowerBound</span></a></li>
 <li type="circle">mitiv.optim.<a href="mitiv/optim/SimpleUpperBound.html" title="class in mitiv.optim"><span class="strong">SimpleUpperBound</span></a></li>
@@ -560,6 +558,8 @@
 <li type="circle">mitiv.io.<a href="mitiv/io/BufferedOutputDataStream.html" title="class in mitiv.io"><span class="strong">BufferedOutputDataStream</span></a></li>
 </ul>
 </li>
+<li type="circle">mitiv.optim.<a href="mitiv/optim/LBFGS.html" title="class in mitiv.optim"><span class="strong">LBFGS</span></a> (implements mitiv.optim.<a href="mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a>)</li>
+<li type="circle">mitiv.optim.<a href="mitiv/optim/LBFGSB.html" title="class in mitiv.optim"><span class="strong">LBFGSB</span></a> (implements mitiv.optim.<a href="mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a>)</li>
 <li type="circle">mitiv.tests.<a href="mitiv/tests/LinearConjGradTest.html" title="class in mitiv.tests"><span class="strong">LinearConjGradTest</span></a></li>
 <li type="circle">mitiv.linalg.<a href="mitiv/linalg/LinearConjugateGradient.html" title="class in mitiv.linalg"><span class="strong">LinearConjugateGradient</span></a></li>
 <li type="circle">mitiv.invpb.<a href="mitiv/invpb/LinearDeconvolver.html" title="class in mitiv.invpb"><span class="strong">LinearDeconvolver</span></a></li>
@@ -573,26 +573,18 @@
 <li type="circle">mitiv.linalg.<a href="mitiv/linalg/ScaleOperator.html" title="class in mitiv.linalg"><span class="strong">ScaleOperator</span></a></li>
 <li type="circle">mitiv.linalg.shaped.<a href="mitiv/linalg/shaped/ShapedLinearOperator.html" title="class in mitiv.linalg.shaped"><span class="strong">ShapedLinearOperator</span></a> (implements mitiv.base.<a href="mitiv/base/Traits.html" title="interface in mitiv.base">Traits</a>)
 <ul>
-<li type="circle">mitiv.deconv.<a href="mitiv/deconv/Convolution.html" title="class in mitiv.deconv"><span class="strong">Convolution</span></a>
-<ul>
-<li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/ConvolutionDouble.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionDouble</span></a>
+<li type="circle">mitiv.deconv.<a href="mitiv/deconv/ConvolutionOperator.html" title="class in mitiv.deconv"><span class="strong">ConvolutionOperator</span></a></li>
+<li type="circle">mitiv.linalg.shaped.<a href="mitiv/linalg/shaped/RealComplexFFT.html" title="class in mitiv.linalg.shaped"><span class="strong">RealComplexFFT</span></a></li>
+<li type="circle">mitiv.deconv.<a href="mitiv/deconv/WeightedConvolutionOperator.html" title="class in mitiv.deconv"><span class="strong">WeightedConvolutionOperator</span></a>
 <ul>
 <li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/ConvolutionDouble1D.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionDouble1D</span></a></li>
 <li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/ConvolutionDouble2D.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionDouble2D</span></a></li>
 <li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/ConvolutionDouble3D.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionDouble3D</span></a></li>
-</ul>
-</li>
-<li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/ConvolutionFloat.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionFloat</span></a>
-<ul>
 <li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/ConvolutionFloat1D.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionFloat1D</span></a></li>
 <li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/ConvolutionFloat2D.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionFloat2D</span></a></li>
 <li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/ConvolutionFloat3D.html" title="class in mitiv.deconv.impl"><span class="strong">ConvolutionFloat3D</span></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li type="circle">mitiv.deconv.<a href="mitiv/deconv/ConvolutionOperator.html" title="class in mitiv.deconv"><span class="strong">ConvolutionOperator</span></a></li>
-<li type="circle">mitiv.linalg.shaped.<a href="mitiv/linalg/shaped/RealComplexFFT.html" title="class in mitiv.linalg.shaped"><span class="strong">RealComplexFFT</span></a></li>
 </ul>
 </li>
 <li type="circle">mitiv.deconv.<a href="mitiv/deconv/WeightingOperator.html" title="class in mitiv.deconv"><span class="strong">WeightingOperator</span></a></li>
@@ -602,7 +594,6 @@
 <ul>
 <li type="circle">mitiv.optim.<a href="mitiv/optim/ArmijoLineSearch.html" title="class in mitiv.optim"><span class="strong">ArmijoLineSearch</span></a></li>
 <li type="circle">mitiv.optim.<a href="mitiv/optim/MoreThuenteLineSearch.html" title="class in mitiv.optim"><span class="strong">MoreThuenteLineSearch</span></a></li>
-<li type="circle">mitiv.optim.<a href="mitiv/optim/NonmonotoneLineSearch.html" title="class in mitiv.optim"><span class="strong">NonmonotoneLineSearch</span></a></li>
 </ul>
 </li>
 <li type="circle">mitiv.utils.<a href="mitiv/utils/MathUtils.html" title="class in mitiv.utils"><span class="strong">MathUtils</span></a></li>
@@ -611,6 +602,7 @@
 <li type="circle">mitiv.tests.<a href="mitiv/tests/MinPack1Tests.html" title="class in mitiv.tests"><span class="strong">MinPack1Tests</span></a></li>
 <li type="circle">mitiv.utils.<a href="mitiv/utils/mitivCLI.html" title="class in mitiv.utils"><span class="strong">mitivCLI</span></a></li>
 <li type="circle">mitiv.utils.<a href="mitiv/utils/NavigableImagePanel.ZoomDevice.html" title="class in mitiv.utils"><span class="strong">NavigableImagePanel.ZoomDevice</span></a></li>
+<li type="circle">mitiv.optim.<a href="mitiv/optim/NonLinearConjugateGradient.html" title="class in mitiv.optim"><span class="strong">NonLinearConjugateGradient</span></a> (implements mitiv.optim.<a href="mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a>)</li>
 <li type="circle">mitiv.random.<a href="mitiv/random/NormalDistribution.html" title="class in mitiv.random"><span class="strong">NormalDistribution</span></a> (implements mitiv.random.<a href="mitiv/random/DoubleGenerator.html" title="interface in mitiv.random">DoubleGenerator</a>, mitiv.random.<a href="mitiv/random/FloatGenerator.html" title="interface in mitiv.random">FloatGenerator</a>)</li>
 <li type="circle">mitiv.utils.<a href="mitiv/utils/Poly.html" title="class in mitiv.utils"><span class="strong">Poly</span></a></li>
 <li type="circle">mitiv.cost.<a href="mitiv/cost/PseudoL1Norm.html" title="class in mitiv.cost"><span class="strong">PseudoL1Norm</span></a> (implements mitiv.cost.<a href="mitiv/cost/ProximalOperator.html" title="interface in mitiv.cost">ProximalOperator</a>)
@@ -631,21 +623,7 @@
 </ul>
 </li>
 <li type="circle">mitiv.base.indexing.<a href="mitiv/base/indexing/Range.html" title="class in mitiv.base.indexing"><span class="strong">Range</span></a></li>
-<li type="circle">mitiv.utils.reconstruction.<a href="mitiv/utils/reconstruction/ReconstructionJob.html" title="class in mitiv.utils.reconstruction"><span class="strong">ReconstructionJob</span></a> (implements java.lang.Runnable)</li>
 <li type="circle">mitiv.invpb.<a href="mitiv/invpb/ReconstructionSynchronizer.html" title="class in mitiv.invpb"><span class="strong">ReconstructionSynchronizer</span></a></li>
-<li type="circle">mitiv.utils.reconstruction.<a href="mitiv/utils/reconstruction/ReconstructionThreadToken.html" title="class in mitiv.utils.reconstruction"><span class="strong">ReconstructionThreadToken</span></a></li>
-<li type="circle">mitiv.optim.<a href="mitiv/optim/ReverseCommunicationOptimizer.html" title="class in mitiv.optim"><span class="strong">ReverseCommunicationOptimizer</span></a>
-<ul>
-<li type="circle">mitiv.optim.<a href="mitiv/optim/BLMVM.html" title="class in mitiv.optim"><span class="strong">BLMVM</span></a></li>
-<li type="circle">mitiv.optim.<a href="mitiv/optim/ReverseCommunicationOptimizerWithLineSearch.html" title="class in mitiv.optim"><span class="strong">ReverseCommunicationOptimizerWithLineSearch</span></a>
-<ul>
-<li type="circle">mitiv.optim.<a href="mitiv/optim/LBFGS.html" title="class in mitiv.optim"><span class="strong">LBFGS</span></a></li>
-<li type="circle">mitiv.optim.<a href="mitiv/optim/NonLinearConjugateGradient.html" title="class in mitiv.optim"><span class="strong">NonLinearConjugateGradient</span></a></li>
-<li type="circle">mitiv.optim.<a href="mitiv/optim/VMLMB.html" title="class in mitiv.optim"><span class="strong">VMLMB</span></a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li type="circle">mitiv.array.<a href="mitiv/array/Scalar.html" title="class in mitiv.array"><span class="strong">Scalar</span></a> (implements mitiv.array.<a href="mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>)
 <ul>
 <li type="circle">mitiv.array.<a href="mitiv/array/ByteScalar.html" title="class in mitiv.array"><span class="strong">ByteScalar</span></a> (implements mitiv.array.<a href="mitiv/array/ByteArray.html" title="interface in mitiv.array">ByteArray</a>)</li>
@@ -659,11 +637,6 @@
 <li type="circle">mitiv.base.<a href="mitiv/base/Shape.html" title="class in mitiv.base"><span class="strong">Shape</span></a></li>
 <li type="circle">mitiv.invpb.<a href="mitiv/invpb/SimpleViewer.html" title="class in mitiv.invpb"><span class="strong">SimpleViewer</span></a> (implements mitiv.invpb.<a href="mitiv/invpb/ReconstructionViewer.html" title="interface in mitiv.invpb">ReconstructionViewer</a>)</li>
 <li type="circle">mitiv.array.<a href="mitiv/array/TestArray.html" title="class in mitiv.array"><span class="strong">TestArray</span></a></li>
-<li type="circle">java.lang.Thread (implements java.lang.Runnable)
-<ul>
-<li type="circle">mitiv.utils.reconstruction.<a href="mitiv/utils/reconstruction/ReconstructionThread.html" title="class in mitiv.utils.reconstruction"><span class="strong">ReconstructionThread</span></a></li>
-</ul>
-</li>
 <li type="circle">java.lang.Throwable (implements java.io.Serializable)
 <ul>
 <li type="circle">java.lang.Exception
@@ -708,26 +681,8 @@
 </li>
 </ul>
 </li>
-<li type="circle">mitiv.deconv.<a href="mitiv/deconv/WeightedConvolutionCost.html" title="class in mitiv.deconv"><span class="strong">WeightedConvolutionCost</span></a> (implements mitiv.cost.<a href="mitiv/cost/DifferentiableCostFunction.html" title="interface in mitiv.cost">DifferentiableCostFunction</a>)
-<ul>
-<li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/WeightedConvolutionDouble.html" title="class in mitiv.deconv.impl"><span class="strong">WeightedConvolutionDouble</span></a>
-<ul>
-<li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/WeightedConvolutionDouble1D.html" title="class in mitiv.deconv.impl"><span class="strong">WeightedConvolutionDouble1D</span></a></li>
-<li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/WeightedConvolutionDouble2D.html" title="class in mitiv.deconv.impl"><span class="strong">WeightedConvolutionDouble2D</span></a></li>
-<li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/WeightedConvolutionDouble3D.html" title="class in mitiv.deconv.impl"><span class="strong">WeightedConvolutionDouble3D</span></a></li>
-</ul>
-</li>
-<li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/WeightedConvolutionFloat.html" title="class in mitiv.deconv.impl"><span class="strong">WeightedConvolutionFloat</span></a>
-<ul>
-<li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/WeightedConvolutionFloat1D.html" title="class in mitiv.deconv.impl"><span class="strong">WeightedConvolutionFloat1D</span></a></li>
-<li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/WeightedConvolutionFloat2D.html" title="class in mitiv.deconv.impl"><span class="strong">WeightedConvolutionFloat2D</span></a></li>
-<li type="circle">mitiv.deconv.impl.<a href="mitiv/deconv/impl/WeightedConvolutionFloat3D.html" title="class in mitiv.deconv.impl"><span class="strong">WeightedConvolutionFloat3D</span></a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li type="circle">mitiv.linalg.<a href="mitiv/linalg/WeightGenerator.html" title="class in mitiv.linalg"><span class="strong">WeightGenerator</span></a></li>
-<li type="circle">mitiv.microscopy.<a href="mitiv/microscopy/Zernike.html" title="class in mitiv.microscopy"><span class="strong">Zernike</span></a></li>
+<li type="circle">mitiv.microscopy.<a href="mitiv/microscopy/Zernike1D.html" title="class in mitiv.microscopy"><span class="strong">Zernike1D</span></a></li>
 </ul>
 </li>
 </ul>
@@ -756,6 +711,7 @@
 <li type="circle">mitiv.base.mapping.<a href="mitiv/base/mapping/LongScanner.html" title="interface in mitiv.base.mapping"><span class="strong">LongScanner</span></a></li>
 <li type="circle">mitiv.invpb.<a href="mitiv/invpb/ReconstructionJob.html" title="interface in mitiv.invpb"><span class="strong">ReconstructionJob</span></a></li>
 <li type="circle">mitiv.invpb.<a href="mitiv/invpb/ReconstructionViewer.html" title="interface in mitiv.invpb"><span class="strong">ReconstructionViewer</span></a></li>
+<li type="circle">mitiv.optim.<a href="mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim"><span class="strong">ReverseCommunicationOptimizer</span></a></li>
 <li type="circle">mitiv.base.<a href="mitiv/base/Shaped.html" title="interface in mitiv.base"><span class="strong">Shaped</span></a>
 <ul>
 <li type="circle">mitiv.array.<a href="mitiv/array/ByteArray.html" title="interface in mitiv.array"><span class="strong">ByteArray</span></a></li>
@@ -830,7 +786,6 @@
 <li type="circle">mitiv.io.<a href="mitiv/io/DataFormat.html" title="enum in mitiv.io"><span class="strong">DataFormat</span></a></li>
 <li type="circle">mitiv.io.<a href="mitiv/io/ColorModel.html" title="enum in mitiv.io"><span class="strong">ColorModel</span></a></li>
 <li type="circle">mitiv.optim.<a href="mitiv/optim/OptimTask.html" title="enum in mitiv.optim"><span class="strong">OptimTask</span></a></li>
-<li type="circle">mitiv.optim.<a href="mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim"><span class="strong">LineSearchStatus</span></a></li>
 <li type="circle">mitiv.optim.<a href="mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim"><span class="strong">InverseHessianApproximation</span></a></li>
 </ul>
 </li>

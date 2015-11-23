@@ -35,7 +35,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
-<li><a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
+<li><a href="../../mitiv/optim/MoreThuenteLineSearch.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?mitiv/optim/LineSearch.html" target="_top">FRAMES</a></li>
@@ -94,7 +94,7 @@
 <li class="blockList">
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../mitiv/optim/ArmijoLineSearch.html" title="class in mitiv.optim">ArmijoLineSearch</a>, <a href="../../mitiv/optim/MoreThuenteLineSearch.html" title="class in mitiv.optim">MoreThuenteLineSearch</a>, <a href="../../mitiv/optim/NonmonotoneLineSearch.html" title="class in mitiv.optim">NonmonotoneLineSearch</a></dd>
+<dd><a href="../../mitiv/optim/ArmijoLineSearch.html" title="class in mitiv.optim">ArmijoLineSearch</a>, <a href="../../mitiv/optim/MoreThuenteLineSearch.html" title="class in mitiv.optim">MoreThuenteLineSearch</a></dd>
 </dl>
 <hr>
 <br>
@@ -339,7 +339,7 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#SEARCH">SEARCH</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a></code></td>
+<td class="colFirst"><code>protected int</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#status">status</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -424,56 +424,63 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a></code></td>
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#getMessage(int)">getMessage</a></strong>(int&nbsp;code)</code>
+<div class="block">Get a literal description of a line search status.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#getStatus()">getStatus</a></strong>()</code>
 <div class="block">Get the current line search status.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#getStep()">getStep</a></strong>()</code>
 <div class="block">Get the current step length.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#hasErrors()">hasErrors</a></strong>()</code>
 <div class="block">Check whether line search was stopped upon an error.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#hasWarnings()">hasWarnings</a></strong>()</code>
 <div class="block">Check whether line search was stopped with a warning.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#iterate(double, double, double)">iterate</a></strong>(double&nbsp;alpha,
-       double&nbsp;f,
-       double&nbsp;df)</code>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#iterate(double, double, double)">iterate</a></strong>(double&nbsp;s1,
+       double&nbsp;f1,
+       double&nbsp;g1)</code>
 <div class="block">Perform a line search iteration.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected abstract <a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#iterateHook(double, double)">iterateHook</a></strong>(double&nbsp;f,
-           double&nbsp;df)</code>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract int</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#iterateHook(double, double, double)">iterateHook</a></strong>(double&nbsp;s1,
+           double&nbsp;f1,
+           double&nbsp;g1)</code>
 <div class="block">Protected abstract method to iterate during a line search.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a></code></td>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#start(double, double, double, double, double)">start</a></strong>(double&nbsp;f0,
      double&nbsp;g0,
      double&nbsp;nextStep,
-     double&nbsp;minStep,
-     double&nbsp;maxStep)</code>
+     double&nbsp;stepMin,
+     double&nbsp;stepMax)</code>
 <div class="block">Start a new line search.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected <a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a></code></td>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#startHook()">startHook</a></strong>()</code>
 <div class="block">Protected method to set internals at the start of a line search.</div>
 </td>
@@ -741,7 +748,7 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>status</h4>
-<pre>protected&nbsp;<a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a> status</pre>
+<pre>protected&nbsp;int status</pre>
 </li>
 </ul>
 </li>
@@ -775,17 +782,17 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>start</h4>
-<pre>public&nbsp;<a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a>&nbsp;start(double&nbsp;f0,
-                     double&nbsp;g0,
-                     double&nbsp;nextStep,
-                     double&nbsp;minStep,
-                     double&nbsp;maxStep)</pre>
+<pre>public&nbsp;int&nbsp;start(double&nbsp;f0,
+        double&nbsp;g0,
+        double&nbsp;nextStep,
+        double&nbsp;stepMin,
+        double&nbsp;stepMax)</pre>
 <div class="block">Start a new line search.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>f0</code> - Function value at <code>x0</code>, the start of the line search.</dd><dd><code>g0</code> - Directional derivative at <code>x0</code>, must be strictly negative.</dd><dd><code>nextStep</code> - Guess for the next step length (must be strictly greater
                    than 0 and this value will be returned by <a href="../../mitiv/optim/LineSearch.html#getStep()"><code>getStep()</code></a>
                    for the first iteration of the line search after clipping
-                   into the step bounds).</dd><dd><code>minStep</code> - The lower bound for the step length (must be greater or
-                   equal 0).</dd><dd><code>maxStep</code> - The upper bound for the step length (must be strictly greater
+                   into the step bounds).</dd><dd><code>stepMin</code> - The lower bound for the step length (must be greater or
+                   equal 0).</dd><dd><code>stepMax</code> - The upper bound for the step length (must be strictly greater
                    than <code>stepMin</code>).</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The state of the line search.</dd></dl>
 </li>
@@ -796,19 +803,19 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>iterate</h4>
-<pre>public&nbsp;<a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a>&nbsp;iterate(double&nbsp;alpha,
-                       double&nbsp;f,
-                       double&nbsp;df)</pre>
+<pre>public&nbsp;int&nbsp;iterate(double&nbsp;s1,
+          double&nbsp;f1,
+          double&nbsp;g1)</pre>
 <div class="block">Perform a line search iteration.
 
  This method is used to submit the function value (and its directional derivative)
  at the new position to try.  Upon return, this method indicates whether the line
  search has converged.  Otherwise, it computes a new step to try.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - The value of the step (same as the value returned by <a href="../../mitiv/optim/LineSearch.html#getStep()"><code>getStep()</code></a>).</dd><dd><code>f</code> - The value of the function at <code>x = x0 + alpha*p</code> where <code>x0</code>
-               are the variables at the start of the line search and <code>p</code> is the
-               search direction.</dd><dd><code>df</code> - The directional derivative at <code>x</code>, that is <code>p'.g(x)</code> the
-               inner product between the search direction and the function gradient at
-               <code>x</code>.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>s1</code> - The value of the step (same as the value returned by <a href="../../mitiv/optim/LineSearch.html#getStep()"><code>getStep()</code></a>).</dd><dd><code>f1</code> - The value of the function at <code>x1 = x0 + s1*p</code> where <code>x0</code>
+             are the variables at the start of the line search and <code>p</code> is the
+             search direction.</dd><dd><code>g1</code> - The directional derivative at <code>x1</code>, that is <code>p'.g(x1)</code> the
+             inner product between the search direction and the function gradient at
+             <code>x1</code>.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The new status of the line search instance.</dd></dl>
 </li>
 </ul>
@@ -818,7 +825,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>startHook</h4>
-<pre>protected&nbsp;<a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a>&nbsp;startHook()</pre>
+<pre>protected&nbsp;int&nbsp;startHook()</pre>
 <div class="block">Protected method to set internals at the start of a line search.
 
  This protected method is called by the <a href="../../mitiv/optim/LineSearch.html#start(double, double, double, double, double)"><code>start(double, double, double, double, double)</code></a> method to set attributes of the
@@ -827,25 +834,26 @@ extends java.lang.Object</pre>
 <dl><dt><span class="strong">Returns:</span></dt><dd>The new status of the line search instance, in principle <code>LineSearch.SEARCH</code>.</dd></dl>
 </li>
 </ul>
-<a name="iterateHook(double, double)">
+<a name="iterateHook(double, double, double)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>iterateHook</h4>
-<pre>protected abstract&nbsp;<a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a>&nbsp;iterateHook(double&nbsp;f,
-                           double&nbsp;df)</pre>
+<pre>protected abstract&nbsp;int&nbsp;iterateHook(double&nbsp;s1,
+              double&nbsp;f1,
+              double&nbsp;g1)</pre>
 <div class="block">Protected abstract method to iterate during a line search.
 
  This protected method is called by the <a href="../../mitiv/optim/LineSearch.html#iterate(double, double, double)"><code>iterate(double, double, double)</code></a> method to check whether line
  search has converged and, otherwise, to compute the next step to try (stored
  as attribute <code>stp</code>).  The provided arguments have been checked.  Upon return,
  the caller method, <a href="../../mitiv/optim/LineSearch.html#iterate(double, double, double)"><code>iterate(double, double, double)</code></a>, takes care of safeguarding the step.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>f</code> - The value of the function at <code>x = x0 + stp*p</code> where <code>x0</code>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>s1</code> - The value of the step (same as the value returned by <a href="../../mitiv/optim/LineSearch.html#getStep()"><code>getStep()</code></a>).</dd><dd><code>f1</code> - The value of the function at <code>x1 = x0 + s1*p</code> where <code>x0</code>
              are the variables at the start of the line search and <code>p</code> is the
-             search direction.</dd><dd><code>df</code> - The directional derivative at <code>x</code>, that is <code>p'.g(x)</code> the
+             search direction.</dd><dd><code>g1</code> - The directional derivative at <code>x1</code>, that is <code>p'.g(x1)</code> the
              inner product between the search direction and the function gradient at
-             <code>x</code>.</dd>
+             <code>x1</code>.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The new status of the line search instance.</dd></dl>
 </li>
 </ul>
@@ -869,9 +877,21 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getStatus</h4>
-<pre>public final&nbsp;<a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a>&nbsp;getStatus()</pre>
+<pre>public final&nbsp;int&nbsp;getStatus()</pre>
 <div class="block">Get the current line search status.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>The line search status.</dd></dl>
+</li>
+</ul>
+<a name="getMessage(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMessage</h4>
+<pre>public final&nbsp;java.lang.String&nbsp;getMessage(int&nbsp;code)</pre>
+<div class="block">Get a literal description of a line search status.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>code</code> - A line search status (e.g. as returned by <a href="../../mitiv/optim/LineSearch.html#getStatus()"><code>getStatus()</code></a>).</dd>
+<dt><span class="strong">Returns:</span></dt><dd>A string describing the line search status.</dd></dl>
 </li>
 </ul>
 <a name="getMessage()">
@@ -952,7 +972,7 @@ extends java.lang.Object</pre>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
-<li><a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
+<li><a href="../../mitiv/optim/MoreThuenteLineSearch.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?mitiv/optim/LineSearch.html" target="_top">FRAMES</a></li>

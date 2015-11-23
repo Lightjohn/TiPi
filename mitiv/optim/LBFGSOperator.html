@@ -34,7 +34,7 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../mitiv/optim/LBFGS.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
+<li><a href="../../mitiv/optim/LBFGSB.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
 <li><a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
@@ -102,12 +102,13 @@
 <pre>public class <strong>LBFGSOperator</strong>
 extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></pre>
 <div class="block">Implement limited memory quasi-Newton approximation of the inverse Hessian.
-
- The approximation of the inverse of Hessian is based on BFGS (Broyden,
- Fletcher, Goldfarb & Shanno) updates using the 2-loop recursive algorithm of
- Strang (described by Nocedal, 1980) combined with a preconditioner (initial
- approximation of the inverse Hessian) or automatic scalings (along the ideas
- of Gilbert & Lemaréchal (1989); and Shanno).</div>
+ 
+ The approximation of the inverse of Hessian is based on BFGS
+ (Broyden, Fletcher, Goldfarb & Shanno) updates using the 2-loop recursive
+ algorithm of Strang (described by Nocedal, 1980) combined with a
+ preconditioner (initial approximation of the inverse Hessian) or
+ automatic scalings (along the ideas of Gilbert & Lemaréchal (1989; and
+ Shanno).</div>
 <dl><dt><span class="strong">Author:</span></dt>
   <dd>Éric Thiébaut.</dd></dl>
 </li>
@@ -130,7 +131,7 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected double[]</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#beta">beta</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#alpha">alpha</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
@@ -198,7 +199,7 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <tr class="rowColor">
 <td class="colOne"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#LBFGSOperator(mitiv.linalg.VectorSpace, int)">LBFGSOperator</a></strong>(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;space,
              int&nbsp;m)</code>
-<div class="block">Create a limited memory BFGS operator without preconditioner.</div>
+<div class="block">Create a new rank-one linear operator.</div>
 </td>
 </tr>
 </table>
@@ -370,13 +371,13 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <pre>protected&nbsp;double gamma</pre>
 </li>
 </ul>
-<a name="beta">
+<a name="alpha">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>beta</h4>
-<pre>protected&nbsp;double[] beta</pre>
+<h4>alpha</h4>
+<pre>protected&nbsp;double[] alpha</pre>
 </li>
 </ul>
 <a name="H0">
@@ -413,8 +414,12 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <h4>LBFGSOperator</h4>
 <pre>public&nbsp;LBFGSOperator(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;space,
              int&nbsp;m)</pre>
-<div class="block">Create a limited memory BFGS operator without preconditioner.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>space</code> - - The vector space to operate on.</dd><dd><code>m</code> - - The number of previous updates to memorize.</dd></dl>
+<div class="block">Create a new rank-one linear operator.
+ 
+ A rank-one operator is A = u.v' thus:
+ 
+ A.x = (v'.x) u = <v|x> u</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>u</code> - the left vector</dd><dd><code>v</code> - the right vector</dd></dl>
 </li>
 </ul>
 <a name="LBFGSOperator(mitiv.linalg.LinearOperator, int)">
@@ -426,13 +431,13 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <pre>public&nbsp;LBFGSOperator(<a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a>&nbsp;H0,
              int&nbsp;m)</pre>
 <div class="block">Create a limited memory BFGS operator with a preconditioner.
-
+ 
  The LBFGS operator just stores a reference to the preconditioner
  <code>H0</code> and does not assume that the preconditioner is a constant
- operator. It is therefore possible for the caller to adjust the
- preconditioner at every iteration. The LBFGS operator will have the same
- input and output spaces as the preconditioner and can be thought as a
- refined version of <code>H0</code>.</div>
+ operator.  It is therefore possible for the caller to adjust the
+ preconditioner at every iteration.  The LBFGS operator will have
+ the same input and output spaces as the preconditioner and can be
+ thought as a refined version of <code>H0</code>.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>H0</code> - - The preconditioner.</dd><dd><code>m</code> - - The number of previous updates to memorize.</dd></dl>
 </li>
 </ul>
@@ -452,7 +457,7 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <h4>reset</h4>
 <pre>public&nbsp;void&nbsp;reset()</pre>
 <div class="block">Reset the operator.
-
+ 
  Forget all memorized pairs.</div>
 </li>
 </ul>
@@ -464,10 +469,9 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <h4>setScaling</h4>
 <pre>public&nbsp;void&nbsp;setScaling(<a href="../../mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim">InverseHessianApproximation</a>&nbsp;value)</pre>
 <div class="block">Set the scaling of the initial approximation of the inverse Hessian.
-
- The best scaling strategy is probably
- <code>#InverseHessianApproximation.BY_SY_OVER_YY</code> when no preconditioner <code>H0</code> is
- provided.</div>
+ 
+ The best scaling strategy is probably <code>#InverseHessianApproximation.BY_SY_OVER_YY</code>
+ when no preconditioner <code>H0</code> is provided.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - - The strategy to use.</dd></dl>
 </li>
 </ul>
@@ -490,9 +494,9 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <h4>setScale</h4>
 <pre>public&nbsp;void&nbsp;setScale(double&nbsp;value)</pre>
 <div class="block">Set the scaling parameter.
-
+ 
  This automatically set the scaling strategy to <code>#USER_SCALING</code>.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - - The value of gamma. Must be strictly positive.</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - - The value of gamma.  Must be strictly positive.</dd></dl>
 </li>
 </ul>
 <a name="getScale()">
@@ -503,10 +507,10 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <h4>getScale</h4>
 <pre>public&nbsp;double&nbsp;getScale()</pre>
 <div class="block">Get the scaling parameter.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>The current value of <code>gamma</code>, the scaling parameter of the
-         initial approximation of the inverse Hessian (that is the
-         preconditioner <code>H0</code>, or the identity if no preconditioner
-         is given).</dd></dl>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The current value of <code>gamma</code>, the scaling parameter of
+ the initial approximation of the inverse Hessian (that is the
+ preconditioner <code>H0</code>, or the identity if no preconditioner is
+ given).</dd></dl>
 </li>
 </ul>
 <a name="slot(int)">
@@ -518,17 +522,14 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <pre>protected&nbsp;int&nbsp;slot(int&nbsp;k)</pre>
 <div class="block">Get slot index of a saved pair of variables and gradient differences.
 
- The offset <code>k</code> must be between <code>0</code> and <code>mp</code>
- (inclusive); <code>slot(0)</code> is the index of the slot just after the last
- saved one, that is the one which will be used for the next update;
- <code>slot(1)</code> is the last saved pair (newest one), <code>slot(2)</code> is
- the previous pair, ..., <code>slot(mp)</code> is the oldest saved pair.
-
- In principle, <code>k</code> in the range <code>1</code> to <code>mp</code> (inclusive)
- is used to apply the operator; while <code>k = 0</code> is only used to update
- the operator.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>k</code> - - The offset.</dd>
-<dt><span class="strong">Returns:</span></dt><dd>The index of <code>k</code>-th slot relative to the current iteration.</dd></dl>
+ The offset <code>k</code> must be greater or equal <code>1 - mp</code>;
+ <code>slot(0)</code> is the last saved pair (newest one), <code>slot(-1)</code>
+ is the previous pair, ..., <code>slot(1 - mp)</code> is the oldest saved
+ pair.   Offset can also be positive, for instance, <code>slot(1)</code> is
+ the index of the slot just after the last saved one, that is the next
+ position of the mark.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>k</code> - - The offset with respect to the last saved pair.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The index of <code>k</code>-th slot relative to the last saved pair.</dd></dl>
 </li>
 </ul>
 <a name="s(int)">
@@ -560,15 +561,13 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
              int&nbsp;job)</pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
 <div class="block">Apply a linear operator (or its adjoint) to a vector.
-
- This protected method is called by the "apply" method after checking of
- the arguments.</div>
+ 
+ This protected method is called by the "apply" method after checking of the
+ arguments.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../mitiv/linalg/LinearOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd><dd><code>job</code> - - The type of operation to perform (<a href="../../mitiv/linalg/LinearOperator.html#DIRECT"><code>LinearOperator.DIRECT</code></a>,
-              <a href="../../mitiv/linalg/LinearOperator.html#ADJOINT"><code>LinearOperator.ADJOINT</code></a>, <code>INVERSE</code> or
-              <code>INVERSE_ADJOINT</code>).</dd></dl>
+<dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - the source vector</dd><dd><code>dst</code> - the destination vector</dd><dd><code>job</code> - the type of operation to apply (DIRECT, ADJOINT, etc.)</dd></dl>
 </li>
 </ul>
 <a name="update(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">
@@ -614,7 +613,7 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../mitiv/optim/LBFGS.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
+<li><a href="../../mitiv/optim/LBFGSB.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
 <li><a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">

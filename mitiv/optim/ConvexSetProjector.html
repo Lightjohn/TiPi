@@ -35,7 +35,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../mitiv/optim/BoundProjector.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
-<li><a href="../../mitiv/optim/GeneralBounds.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
+<li><a href="../../mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?mitiv/optim/ConvexSetProjector.html" target="_top">FRAMES</a></li>
@@ -106,8 +106,7 @@ extends java.lang.Object</pre>
  A ConvexSetProjector can be used to implement convex constraints.
  Although it operates on a vector space, a ConvexSetProjector is not
  a linear operator.  It is an idempotent endomorphism and can be
- applied <i>in-place</i> that is with the same input and output vector.
- </p></div>
+ applied <i>in-place</i> that is with the same input and output vector.</p></div>
 <dl><dt><span class="strong">Author:</span></dt>
   <dd>Éric Thiébaut.</dd></dl>
 </li>
@@ -168,9 +167,22 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/ConvexSetProjector.html#_projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">_projectVariables</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-                 <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;xp)</code>
-<div class="block">Protected method to project the variables to the feasible set.</div>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/ConvexSetProjector.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">_apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;xp)</code>
+<div class="block">Protected method to apply the projector to the variables.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/ConvexSetProjector.html#apply(mitiv.linalg.Vector)">apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</code>
+<div class="block">Apply the projector (in-place version).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/ConvexSetProjector.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;xp)</code>
+<div class="block">Apply the projector.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -192,16 +204,31 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/ConvexSetProjector.html#projectVariables(mitiv.linalg.Vector)">projectVariables</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</code>
-<div class="block">Project the variables to the feasible set (in-place version).</div>
+<td class="colFirst"><code>protected static double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/ConvexSetProjector.html#max(double, double)">max</a></strong>(double&nbsp;a,
+   double&nbsp;b)</code>
+<div class="block">Get the maximum of two double precision floating point values.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/ConvexSetProjector.html#projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">projectVariables</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-                <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;xp)</code>
-<div class="block">Project the variables to the feasible set.</div>
+<td class="colFirst"><code>protected static float</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/ConvexSetProjector.html#max(float, float)">max</a></strong>(float&nbsp;a,
+   float&nbsp;b)</code>
+<div class="block">Get the maximum of two single precision floating point values.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/ConvexSetProjector.html#min(double, double)">min</a></strong>(double&nbsp;a,
+   double&nbsp;b)</code>
+<div class="block">Get the minimum of two double precision floating point values.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static float</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/ConvexSetProjector.html#min(float, float)">min</a></strong>(float&nbsp;a,
+   float&nbsp;b)</code>
+<div class="block">Get the minimum of two single precision floating point values.</div>
 </td>
 </tr>
 </table>
@@ -290,16 +317,16 @@ extends java.lang.Object</pre>
 <div class="block">Get the vector space to which operate the projector.</div>
 </li>
 </ul>
-<a name="projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">
+<a name="apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>projectVariables</h4>
-<pre>public&nbsp;void&nbsp;projectVariables(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-                    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;xp)</pre>
-<div class="block">Project the variables to the feasible set.
-
+<h4>apply</h4>
+<pre>public&nbsp;void&nbsp;apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;xp)</pre>
+<div class="block">Apply the projector.
+ 
  <p>
  Given input variables <i>x</i>, the projection produces feasible
  output variables <i>xp</i> that are within the bounds.  The input
@@ -312,14 +339,14 @@ extends java.lang.Object</pre>
          correct vector space.</dd></dl>
 </li>
 </ul>
-<a name="projectVariables(mitiv.linalg.Vector)">
+<a name="apply(mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>projectVariables</h4>
-<pre>public&nbsp;void&nbsp;projectVariables(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</pre>
-<div class="block">Project the variables to the feasible set (in-place version).</div>
+<h4>apply</h4>
+<pre>public&nbsp;void&nbsp;apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</pre>
+<div class="block">Apply the projector (in-place version).</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - On entry, the unconstrained variables; on exit, the
              projected variables.</dd>
 <dt><span class="strong">Throws:</span></dt>
@@ -327,22 +354,66 @@ extends java.lang.Object</pre>
          correct vector space.</dd></dl>
 </li>
 </ul>
-<a name="_projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">
+<a name="_apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
-<h4>_projectVariables</h4>
-<pre>protected abstract&nbsp;void&nbsp;_projectVariables(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-                     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;xp)</pre>
-<div class="block">Protected method to project the variables to the feasible set.
-
+<h4>_apply</h4>
+<pre>protected abstract&nbsp;void&nbsp;_apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;xp)</pre>
+<div class="block">Protected method to apply the projector to the variables.
+ 
  <p>
  This abstract method must be overridden by instantiable sub-classes,
  it is guaranteed to be called with checked arguments.  The input and
  output vectors can be the same.
  </p></div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - The source.</dd><dd><code>xp</code> - - The destination.</dd></dl>
+</li>
+</ul>
+<a name="min(float, float)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>min</h4>
+<pre>protected static final&nbsp;float&nbsp;min(float&nbsp;a,
+        float&nbsp;b)</pre>
+<div class="block">Get the minimum of two single precision floating point values.</div>
+</li>
+</ul>
+<a name="max(float, float)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>max</h4>
+<pre>protected static final&nbsp;float&nbsp;max(float&nbsp;a,
+        float&nbsp;b)</pre>
+<div class="block">Get the maximum of two single precision floating point values.</div>
+</li>
+</ul>
+<a name="min(double, double)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>min</h4>
+<pre>protected static final&nbsp;double&nbsp;min(double&nbsp;a,
+         double&nbsp;b)</pre>
+<div class="block">Get the minimum of two double precision floating point values.</div>
+</li>
+</ul>
+<a name="max(double, double)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>max</h4>
+<pre>protected static final&nbsp;double&nbsp;max(double&nbsp;a,
+         double&nbsp;b)</pre>
+<div class="block">Get the maximum of two double precision floating point values.</div>
 </li>
 </ul>
 </li>
@@ -371,7 +442,7 @@ extends java.lang.Object</pre>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../mitiv/optim/BoundProjector.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
-<li><a href="../../mitiv/optim/GeneralBounds.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
+<li><a href="../../mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?mitiv/optim/ConvexSetProjector.html" target="_top">FRAMES</a></li>
