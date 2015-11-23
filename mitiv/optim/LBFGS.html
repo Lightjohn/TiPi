@@ -35,7 +35,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
-<li><a href="../../mitiv/optim/LBFGSB.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
+<li><a href="../../mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?mitiv/optim/LBFGS.html" target="_top">FRAMES</a></li>
@@ -85,23 +85,51 @@
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
+<li><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="class in mitiv.optim">mitiv.optim.ReverseCommunicationOptimizer</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../mitiv/optim/ReverseCommunicationOptimizerWithLineSearch.html" title="class in mitiv.optim">mitiv.optim.ReverseCommunicationOptimizerWithLineSearch</a></li>
+<li>
+<ul class="inheritance">
 <li>mitiv.optim.LBFGS</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
-<dl>
-<dt>All Implemented Interfaces:</dt>
-<dd><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a></dd>
-</dl>
 <hr>
 <br>
 <pre>public class <strong>LBFGS</strong>
-extends java.lang.Object
-implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a></pre>
-<div class="block">Multivariate non-linear optimization by L-BFGS/VMLM method.</div>
+extends <a href="../../mitiv/optim/ReverseCommunicationOptimizerWithLineSearch.html" title="class in mitiv.optim">ReverseCommunicationOptimizerWithLineSearch</a></pre>
+<div class="block">Multivariate non-linear optimization by L-BFGS/VMLM method.
+
+ <p>
+ LBFGS implements a limited memory quasi-Newton method for unconstrained
+ optimization with Broyden-Fletcher-Goldfarb-Shanno (BFGS) updates using
+ Strang's two-loop recursive formula (Nocedal, 1980).
+ </p>
+
+ <p>
+ Combined with a Moré & Thuente (1984) line search, the implemented method is
+ similar to VMLM (Nocedal, 1980) or L-BFGS (Liu & Nocedal, 1989) algorithms.
+ </p>
+
+ <h3>References</h3>
+  <ul>
+  <li>Nocedal, J. "<i>Updating Quasi-Newton Matrices with Limited Storage</i>,"
+      Mathematics of Computation <b>35</b>, pp.&nbsp;773-782 (1980).</li>
+  <li>Moré, J. J. & Thuente, D. J. "<i>Line search algorithms with guaranteed
+      sufficient decrease</i>," TOMS, ACM Press <b>20</b>, pp.&nbsp;286-307
+      (1994).</li>
+  <li>Liu, D. C. & Nocedal, J. "<i>On the limited memory BFGS method for
+      large scale optimization</i>," Mathematical programming <b>45</b>,
+      pp.&nbsp;503-528 (1989).</li>
+  </ul></div>
 <dl><dt><span class="strong">Author:</span></dt>
   <dd>Éric Thiébaut.</dd></dl>
 </li>
@@ -129,8 +157,10 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#BAD_H0">BAD_H0</a></strong></code>&nbsp;</td>
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#delta">delta</a></strong></code>
+<div class="block">Relative threshold for the sufficient descent condition.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected double</code></td>
@@ -140,105 +170,70 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#epsilon">epsilon</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#epsilon">epsilon</a></strong></code>
+<div class="block">Small relative size for the initial step or after a restart.</div>
+</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#evaluations">evaluations</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#f0">f0</a></strong></code>
 <div class="block">Function value at X0.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#g0">g0</a></strong></code>
 <div class="block">Gradient at X0.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#gatol">gatol</a></strong></code>
+<div class="block">Absolute threshold for the norm or the gradient for convergence.</div>
+</td>
+</tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#g0norm">g0norm</a></strong></code>
-<div class="block">Euclidean norm of the gradient at X0.</div>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#ginit">ginit</a></strong></code>
+<div class="block">Norm or the initial gradient.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#g1norm">g1norm</a></strong></code>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#gnorm">gnorm</a></strong></code>
 <div class="block">Euclidean norm of the gradient at the last accepted step.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#gatol">gatol</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#grtol">grtol</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#gtest">gtest</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#grtol">grtol</a></strong></code>
+<div class="block">Relative threshold for the norm or the gradient (relative to the norm
+ of the initial gradient) for convergence.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#H">H</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#H">H</a></strong></code>
+<div class="block">LBFGS approximation of the inverse Hessian</div>
+</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#iterations">iterations</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected <a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim">LineSearch</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#lnsrch">lnsrch</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#LNSRCH_ERROR">LNSRCH_ERROR</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#LNSRCH_WARNING">LNSRCH_WARNING</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#NO_PROBLEM">NO_PROBLEM</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#p">p</a></strong></code>
 <div class="block">The (anti-)search direction.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#pnorm">pnorm</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#reason">reason</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#restarts">restarts</a></strong></code>&nbsp;</td>
-</tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#stpmax">stpmax</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#stpmax">stpmax</a></strong></code>
+<div class="block">Upper relative step bound.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#stpmin">stpmin</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected <a href="../../mitiv/optim/OptimTask.html" title="enum in mitiv.optim">OptimTask</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#task">task</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#tiny">tiny</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#stpmin">stpmin</a></strong></code>
+<div class="block">Lower relative step bound.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
@@ -248,11 +243,18 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 </tr>
 </table>
 <ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_mitiv.optim.ReverseCommunicationOptimizerWithLineSearch">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;mitiv.optim.<a href="../../mitiv/optim/ReverseCommunicationOptimizerWithLineSearch.html" title="class in mitiv.optim">ReverseCommunicationOptimizerWithLineSearch</a></h3>
+<code><a href="../../mitiv/optim/ReverseCommunicationOptimizerWithLineSearch.html#lnsrch">lnsrch</a></code></li>
+</ul>
+<ul class="blockList">
 <li class="blockList"><a name="fields_inherited_from_class_mitiv.optim.ReverseCommunicationOptimizer">
 <!--   -->
 </a>
-<h3>Fields inherited from interface&nbsp;mitiv.optim.<a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a></h3>
-<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#FAILURE">FAILURE</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#SUCCESS">SUCCESS</a></code></li>
+<h3>Fields inherited from class&nbsp;mitiv.optim.<a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="class in mitiv.optim">ReverseCommunicationOptimizer</a></h3>
+<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#BAD_PRECONDITIONER">BAD_PRECONDITIONER</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#evaluations">evaluations</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#FAILURE">FAILURE</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#iterations">iterations</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#lineSearchStatus">lineSearchStatus</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#LNSRCH_ERROR">LNSRCH_ERROR</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#LNSRCH_WARNING">LNSRCH_WARNING</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#NO_PROBLEMS">NO_PROBLEMS</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#reason">reason</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#restarts">restarts</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#SUCCESS">SUCCESS</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#task">task</a></code></li>
 </ul>
 </li>
 </ul>
@@ -299,35 +301,9 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#getEvaluations()">getEvaluations</a></strong>()</code>
-<div class="block">Get the number of function (and gradient) evaluations since
- last start.</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#getGradientThreshold()">getGradientThreshold</a></strong>()</code>
 <div class="block">Query the gradient threshold for the convergence criterion.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#getIterations()">getIterations</a></strong>()</code>
-<div class="block">Get the iteration number.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#getMessage(int)">getMessage</a></strong>(int&nbsp;reason)</code>
-<div class="block">Query a textual description of the reason of an abnormal
- termination.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#getReason()">getReason</a></strong>()</code>
-<div class="block">Get the code corresponding to the reason of the abnormal termination.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -337,50 +313,57 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#getRestarts()">getRestarts</a></strong>()</code>
-<div class="block">Get the number of restarts.</div>
-</td>
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#initialStep(mitiv.linalg.Vector, double)">initialStep</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+           double&nbsp;dnorm)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../mitiv/optim/OptimTask.html" title="enum in mitiv.optim">OptimTask</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#getTask()">getTask</a></strong>()</code>
-<div class="block">Get the current pending task.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../mitiv/optim/OptimTask.html" title="enum in mitiv.optim">OptimTask</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#iterate(mitiv.linalg.Vector, double, mitiv.linalg.Vector)">iterate</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x1,
-       double&nbsp;f1,
-       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;g1)</code>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#iterate(mitiv.linalg.Vector, double, mitiv.linalg.Vector)">iterate</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+       double&nbsp;f,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;g)</code>
 <div class="block">Proceed with next iteration.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../mitiv/optim/OptimTask.html" title="enum in mitiv.optim">OptimTask</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#restart()">restart</a></strong>()</code>
 <div class="block">Restart the search.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#setAbsoluteTolerance(double)">setAbsoluteTolerance</a></strong>(double&nbsp;gatol)</code>
 <div class="block">Set the absolute tolerance for the convergence criterion.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#setRelativeTolerance(double)">setRelativeTolerance</a></strong>(double&nbsp;grtol)</code>
 <div class="block">Set the relative tolerance for the convergence criterion.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../mitiv/optim/OptimTask.html" title="enum in mitiv.optim">OptimTask</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGS.html#start()">start</a></strong>()</code>
 <div class="block">Start the search.</div>
 </td>
 </tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_mitiv.optim.ReverseCommunicationOptimizerWithLineSearch">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;mitiv.optim.<a href="../../mitiv/optim/ReverseCommunicationOptimizerWithLineSearch.html" title="class in mitiv.optim">ReverseCommunicationOptimizerWithLineSearch</a></h3>
+<code><a href="../../mitiv/optim/ReverseCommunicationOptimizerWithLineSearch.html#getErrorMessage()">getErrorMessage</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_mitiv.optim.ReverseCommunicationOptimizer">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;mitiv.optim.<a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="class in mitiv.optim">ReverseCommunicationOptimizer</a></h3>
+<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#failure(int)">failure</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getEvaluations()">getEvaluations</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getIterations()">getIterations</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getReason()">getReason</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getRestarts()">getRestarts</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getTask()">getTask</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#lineSearchFailure(mitiv.optim.LineSearchStatus)">lineSearchFailure</a>, <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#schedule(mitiv.optim.OptimTask)">schedule</a></code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
 <!--   -->
@@ -402,42 +385,6 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <!--   -->
 </a>
 <h3>Field Detail</h3>
-<a name="NO_PROBLEM">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>NO_PROBLEM</h4>
-<pre>public static&nbsp;int NO_PROBLEM</pre>
-</li>
-</ul>
-<a name="BAD_H0">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>BAD_H0</h4>
-<pre>public static&nbsp;int BAD_H0</pre>
-</li>
-</ul>
-<a name="LNSRCH_WARNING">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>LNSRCH_WARNING</h4>
-<pre>public static&nbsp;int LNSRCH_WARNING</pre>
-</li>
-</ul>
-<a name="LNSRCH_ERROR">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>LNSRCH_ERROR</h4>
-<pre>public static&nbsp;int LNSRCH_ERROR</pre>
-</li>
-</ul>
 <a name="H">
 <!--   -->
 </a>
@@ -445,60 +392,17 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <li class="blockList">
 <h4>H</h4>
 <pre>protected&nbsp;<a href="../../mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a> H</pre>
+<div class="block">LBFGS approximation of the inverse Hessian</div>
 </li>
 </ul>
-<a name="lnsrch">
+<a name="delta">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>lnsrch</h4>
-<pre>protected&nbsp;<a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim">LineSearch</a> lnsrch</pre>
-</li>
-</ul>
-<a name="task">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>task</h4>
-<pre>protected&nbsp;<a href="../../mitiv/optim/OptimTask.html" title="enum in mitiv.optim">OptimTask</a> task</pre>
-</li>
-</ul>
-<a name="reason">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>reason</h4>
-<pre>protected&nbsp;int reason</pre>
-</li>
-</ul>
-<a name="evaluations">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>evaluations</h4>
-<pre>protected&nbsp;int evaluations</pre>
-</li>
-</ul>
-<a name="iterations">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>iterations</h4>
-<pre>protected&nbsp;int iterations</pre>
-</li>
-</ul>
-<a name="restarts">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>restarts</h4>
-<pre>protected&nbsp;int restarts</pre>
+<h4>delta</h4>
+<pre>protected&nbsp;double delta</pre>
+<div class="block">Relative threshold for the sufficient descent condition.</div>
 </li>
 </ul>
 <a name="epsilon">
@@ -508,24 +412,7 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <li class="blockList">
 <h4>epsilon</h4>
 <pre>protected&nbsp;double epsilon</pre>
-</li>
-</ul>
-<a name="tiny">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>tiny</h4>
-<pre>protected&nbsp;double tiny</pre>
-</li>
-</ul>
-<a name="pnorm">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>pnorm</h4>
-<pre>protected&nbsp;double pnorm</pre>
+<div class="block">Small relative size for the initial step or after a restart.</div>
 </li>
 </ul>
 <a name="grtol">
@@ -535,6 +422,8 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <li class="blockList">
 <h4>grtol</h4>
 <pre>protected&nbsp;double grtol</pre>
+<div class="block">Relative threshold for the norm or the gradient (relative to the norm
+ of the initial gradient) for convergence.</div>
 </li>
 </ul>
 <a name="gatol">
@@ -544,15 +433,17 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <li class="blockList">
 <h4>gatol</h4>
 <pre>protected&nbsp;double gatol</pre>
+<div class="block">Absolute threshold for the norm or the gradient for convergence.</div>
 </li>
 </ul>
-<a name="gtest">
+<a name="ginit">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>gtest</h4>
-<pre>protected&nbsp;double gtest</pre>
+<h4>ginit</h4>
+<pre>protected&nbsp;double ginit</pre>
+<div class="block">Norm or the initial gradient.</div>
 </li>
 </ul>
 <a name="stpmin">
@@ -562,6 +453,7 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <li class="blockList">
 <h4>stpmin</h4>
 <pre>protected&nbsp;double stpmin</pre>
+<div class="block">Lower relative step bound.</div>
 </li>
 </ul>
 <a name="stpmax">
@@ -571,6 +463,7 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <li class="blockList">
 <h4>stpmax</h4>
 <pre>protected&nbsp;double stpmax</pre>
+<div class="block">Upper relative step bound.</div>
 </li>
 </ul>
 <a name="x0">
@@ -611,9 +504,10 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <h4>p</h4>
 <pre>protected&nbsp;<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a> p</pre>
 <div class="block">The (anti-)search direction.
- 
- An iterate is computed as: x1 = x0 - alpha*p
- with alpha > 0.</div>
+
+ <p>
+ An iterate is computed as: x = x0 - alpha*p with alpha > 0.
+ </p></div>
 </li>
 </ul>
 <a name="alpha">
@@ -636,24 +530,14 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <div class="block">Directional derivative at X0.</div>
 </li>
 </ul>
-<a name="g1norm">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>g1norm</h4>
-<pre>protected&nbsp;double g1norm</pre>
-<div class="block">Euclidean norm of the gradient at the last accepted step.</div>
-</li>
-</ul>
-<a name="g0norm">
+<a name="gnorm">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>g0norm</h4>
-<pre>protected&nbsp;double g0norm</pre>
-<div class="block">Euclidean norm of the gradient at X0.</div>
+<h4>gnorm</h4>
+<pre>protected&nbsp;double gnorm</pre>
+<div class="block">Euclidean norm of the gradient at the last accepted step.</div>
 </li>
 </ul>
 </li>
@@ -694,103 +578,6 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="getTask()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getTask</h4>
-<pre>public&nbsp;<a href="../../mitiv/optim/OptimTask.html" title="enum in mitiv.optim">OptimTask</a>&nbsp;getTask()</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getTask()">ReverseCommunicationOptimizer</a></code></strong></div>
-<div class="block">Get the current pending task.</div>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getTask()">getTask</a></code>&nbsp;in interface&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a></code></dd>
-<dt><span class="strong">Returns:</span></dt><dd>The pending task to perform..</dd></dl>
-</li>
-</ul>
-<a name="getIterations()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getIterations</h4>
-<pre>public&nbsp;int&nbsp;getIterations()</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getIterations()">ReverseCommunicationOptimizer</a></code></strong></div>
-<div class="block">Get the iteration number.</div>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getIterations()">getIterations</a></code>&nbsp;in interface&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a></code></dd>
-<dt><span class="strong">Returns:</span></dt><dd>The number of iterations since last start.</dd></dl>
-</li>
-</ul>
-<a name="getEvaluations()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getEvaluations</h4>
-<pre>public&nbsp;int&nbsp;getEvaluations()</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getEvaluations()">ReverseCommunicationOptimizer</a></code></strong></div>
-<div class="block">Get the number of function (and gradient) evaluations since
- last start.</div>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getEvaluations()">getEvaluations</a></code>&nbsp;in interface&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a></code></dd>
-<dt><span class="strong">Returns:</span></dt><dd>The number of function and gradient evaluations since
-         last start.</dd></dl>
-</li>
-</ul>
-<a name="getRestarts()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getRestarts</h4>
-<pre>public&nbsp;int&nbsp;getRestarts()</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getRestarts()">ReverseCommunicationOptimizer</a></code></strong></div>
-<div class="block">Get the number of restarts.</div>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getRestarts()">getRestarts</a></code>&nbsp;in interface&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a></code></dd>
-<dt><span class="strong">Returns:</span></dt><dd>The number of times algorithm has been restarted since
-         last start.</dd></dl>
-</li>
-</ul>
-<a name="getMessage(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getMessage</h4>
-<pre>public&nbsp;java.lang.String&nbsp;getMessage(int&nbsp;reason)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getMessage(int)">ReverseCommunicationOptimizer</a></code></strong></div>
-<div class="block">Query a textual description of the reason of an abnormal
- termination.</div>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getMessage(int)">getMessage</a></code>&nbsp;in interface&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>reason</code> - - The code given by <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getReason()"><code>ReverseCommunicationOptimizer.getReason()</code></a>().</dd>
-<dt><span class="strong">Returns:</span></dt><dd>A textual description of the reason of the abnormal
-         termination.</dd></dl>
-</li>
-</ul>
-<a name="getReason()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getReason</h4>
-<pre>public&nbsp;int&nbsp;getReason()</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getReason()">ReverseCommunicationOptimizer</a></code></strong></div>
-<div class="block">Get the code corresponding to the reason of the abnormal termination.</div>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#getReason()">getReason</a></code>&nbsp;in interface&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a></code></dd>
-<dt><span class="strong">Returns:</span></dt><dd>A numerical code corresponding to the reason of the abnormal
-         termination.</dd><dt><span class="strong">See Also:</span></dt><dd><code>#getMessage}();</code></dd></dl>
-</li>
-</ul>
 <a name="start()">
 <!--   -->
 </a>
@@ -798,11 +585,11 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <li class="blockList">
 <h4>start</h4>
 <pre>public&nbsp;<a href="../../mitiv/optim/OptimTask.html" title="enum in mitiv.optim">OptimTask</a>&nbsp;start()</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#start()">ReverseCommunicationOptimizer</a></code></strong></div>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#start()">ReverseCommunicationOptimizer</a></code></strong></div>
 <div class="block">Start the search.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#start()">start</a></code>&nbsp;in interface&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a></code></dd>
+<dd><code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#start()">start</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="class in mitiv.optim">ReverseCommunicationOptimizer</a></code></dd>
 <dt><span class="strong">Returns:</span></dt><dd>The next task to perform.</dd></dl>
 </li>
 </ul>
@@ -813,11 +600,11 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <li class="blockList">
 <h4>restart</h4>
 <pre>public&nbsp;<a href="../../mitiv/optim/OptimTask.html" title="enum in mitiv.optim">OptimTask</a>&nbsp;restart()</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#restart()">ReverseCommunicationOptimizer</a></code></strong></div>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#restart()">ReverseCommunicationOptimizer</a></code></strong></div>
 <div class="block">Restart the search.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#restart()">restart</a></code>&nbsp;in interface&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a></code></dd>
+<dd><code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#restart()">restart</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="class in mitiv.optim">ReverseCommunicationOptimizer</a></code></dd>
 <dt><span class="strong">Returns:</span></dt><dd>The next task to perform.</dd></dl>
 </li>
 </ul>
@@ -827,16 +614,26 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>iterate</h4>
-<pre>public&nbsp;<a href="../../mitiv/optim/OptimTask.html" title="enum in mitiv.optim">OptimTask</a>&nbsp;iterate(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x1,
-                double&nbsp;f1,
-                <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;g1)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#iterate(mitiv.linalg.Vector, double, mitiv.linalg.Vector)">ReverseCommunicationOptimizer</a></code></strong></div>
+<pre>public&nbsp;<a href="../../mitiv/optim/OptimTask.html" title="enum in mitiv.optim">OptimTask</a>&nbsp;iterate(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+                double&nbsp;f,
+                <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;g)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#iterate(mitiv.linalg.Vector, double, mitiv.linalg.Vector)">ReverseCommunicationOptimizer</a></code></strong></div>
 <div class="block">Proceed with next iteration.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#iterate(mitiv.linalg.Vector, double, mitiv.linalg.Vector)">iterate</a></code>&nbsp;in interface&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>x1</code> - - The current set of variables.</dd><dd><code>f1</code> - - The value of the function at <code>x</code>.</dd><dd><code>g1</code> - - The value of the gradient at <code>x</code>.</dd>
+<dd><code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html#iterate(mitiv.linalg.Vector, double, mitiv.linalg.Vector)">iterate</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="class in mitiv.optim">ReverseCommunicationOptimizer</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - The current set of variables.</dd><dd><code>f</code> - - The value of the function at <code>x</code>.</dd><dd><code>g</code> - - The value of the gradient at <code>x</code>.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The next task to perform.</dd></dl>
+</li>
+</ul>
+<a name="initialStep(mitiv.linalg.Vector, double)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initialStep</h4>
+<pre>protected&nbsp;double&nbsp;initialStep(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+                 double&nbsp;dnorm)</pre>
 </li>
 </ul>
 <a name="setAbsoluteTolerance(double)">
@@ -895,7 +692,7 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <h4>getGradientThreshold</h4>
 <pre>public&nbsp;double&nbsp;getGradientThreshold()</pre>
 <div class="block">Query the gradient threshold for the convergence criterion.
- 
+
  The convergence of the optimization method is achieved when the
  Euclidean norm of the gradient at a new iterate is less or equal
  the threshold:
@@ -935,7 +732,7 @@ implements <a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title=
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
-<li><a href="../../mitiv/optim/LBFGSB.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
+<li><a href="../../mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?mitiv/optim/LBFGS.html" target="_top">FRAMES</a></li>
