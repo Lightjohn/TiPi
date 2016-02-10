@@ -1069,7 +1069,7 @@ extends java.lang.Object</pre>
 <pre>public static&nbsp;double[]&nbsp;catArray(double[]&nbsp;a,
                 double[]&nbsp;b)</pre>
 <div class="block">Standard deviation of the matrix σ.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - the a</dd><dd><code>b</code> - </dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - the a</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the double</dd></dl>
 </li>
 </ul>
@@ -1392,7 +1392,7 @@ extends java.lang.Object</pre>
 <pre>public static&nbsp;double[]&nbsp;abs2(double[]&nbsp;x,
             int&nbsp;isComplex)</pre>
 <div class="block">Returns the squared absolute value of 1d array.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - array</dd><dd><code>isComplex</code> - </dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>IN</code> - array</dd>
 <dt><span class="strong">Returns:</span></dt><dd>square absolute value.</dd></dl>
 </li>
 </ul>
@@ -1407,7 +1407,7 @@ extends java.lang.Object</pre>
             int&nbsp;end,
             int&nbsp;isComplex)</pre>
 <div class="block">Returns the squared absolute value of 1d array.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - </dd><dd><code>begin</code> - </dd><dd><code>end</code> - </dd><dd><code>isComplex</code> - </dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>IN</code> - array</dd>
 <dt><span class="strong">Returns:</span></dt><dd>square absolute value.</dd></dl>
 </li>
 </ul>
@@ -1556,7 +1556,7 @@ extends java.lang.Object</pre>
 <div class="block">Display image of an 2d array
  
  Different from the "pli" function, uses "naviguablePanel" for a better displaying.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>A</code> - the a</dd><dd><code>W</code> - </dd><dd><code>H</code> - </dd><dd><code>colorMap</code> - the color map</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>A</code> - the a</dd><dd><code>colorMap</code> - the color map</dd></dl>
 </li>
 </ul>
 <a name="fftPli2(double[][])">
@@ -1612,7 +1612,7 @@ extends java.lang.Object</pre>
                   int&nbsp;h,
                   int&nbsp;d)</pre>
 <div class="block">Shift zero-frequency component to center of spectrum.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>A</code> - the a</dd><dd><code>w</code> - </dd><dd><code>h</code> - </dd><dd><code>d</code> - </dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>A</code> - the a</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the double[][]</dd></dl>
 </li>
 </ul>
@@ -1626,7 +1626,7 @@ extends java.lang.Object</pre>
                   int&nbsp;w,
                   int&nbsp;h)</pre>
 <div class="block">Shift zero-frequency component to center of spectrum.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>A</code> - the a</dd><dd><code>w</code> - </dd><dd><code>h</code> - </dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>A</code> - the a</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the double[][]</dd></dl>
 </li>
 </ul>
@@ -1679,8 +1679,6 @@ extends java.lang.Object</pre>
 <h4>avg</h4>
 <pre>public static&nbsp;double&nbsp;avg(double[]&nbsp;a)</pre>
 <div class="block">Average or mean value of array</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="avg(long[])">
@@ -1691,8 +1689,6 @@ extends java.lang.Object</pre>
 <h4>avg</h4>
 <pre>public static&nbsp;double&nbsp;avg(long[]&nbsp;a)</pre>
 <div class="block">Average or mean value of array</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="avg(double[][])">
@@ -1703,8 +1699,6 @@ extends java.lang.Object</pre>
 <h4>avg</h4>
 <pre>public static&nbsp;double&nbsp;avg(double[][]&nbsp;a)</pre>
 <div class="block">Average or mean value of array</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="avg(double[][][])">
@@ -1715,8 +1709,6 @@ extends java.lang.Object</pre>
 <h4>avg</h4>
 <pre>public static&nbsp;double&nbsp;avg(double[][][]&nbsp;a)</pre>
 <div class="block">Average or mean value of array</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="sum(double[])">
@@ -1727,8 +1719,6 @@ extends java.lang.Object</pre>
 <h4>sum</h4>
 <pre>public static&nbsp;double&nbsp;sum(double[]&nbsp;a)</pre>
 <div class="block">Sum of the values in the array</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="sum(double[], int, int)">
@@ -1741,8 +1731,6 @@ extends java.lang.Object</pre>
          int&nbsp;begin,
          int&nbsp;end)</pre>
 <div class="block">Sum of the values in the array</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - </dd><dd><code>begin</code> - </dd><dd><code>end</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="sum(long[])">
@@ -1753,8 +1741,6 @@ extends java.lang.Object</pre>
 <h4>sum</h4>
 <pre>public static&nbsp;long&nbsp;sum(long[]&nbsp;array)</pre>
 <div class="block">Sum of the values in the array</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>array</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="sum(double[][])">
@@ -1765,8 +1751,6 @@ extends java.lang.Object</pre>
 <h4>sum</h4>
 <pre>public static&nbsp;double&nbsp;sum(double[][]&nbsp;array)</pre>
 <div class="block">Sum of the values in the array</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>array</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="sum(double[][][])">
@@ -1777,8 +1761,6 @@ extends java.lang.Object</pre>
 <h4>sum</h4>
 <pre>public static&nbsp;double&nbsp;sum(double[][][]&nbsp;array)</pre>
 <div class="block">Sum of the values in the array</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>array</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="innerProd(double[], double[])">
@@ -1884,8 +1866,6 @@ extends java.lang.Object</pre>
 <h4>std</h4>
 <pre>public static&nbsp;double&nbsp;std(double[]&nbsp;a)</pre>
 <div class="block">Standard deviation of an 1d array σ</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="std(double[][])">
@@ -1896,8 +1876,6 @@ extends java.lang.Object</pre>
 <h4>std</h4>
 <pre>public static&nbsp;double&nbsp;std(double[][]&nbsp;a)</pre>
 <div class="block">Standard deviation of the matrix σ</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="std(double[][][])">
@@ -1908,8 +1886,6 @@ extends java.lang.Object</pre>
 <h4>std</h4>
 <pre>public static&nbsp;double&nbsp;std(double[][][]&nbsp;a)</pre>
 <div class="block">Standard deviation of the matrix σ</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="var(double[])">
@@ -1921,8 +1897,6 @@ extends java.lang.Object</pre>
 <pre>public static&nbsp;double&nbsp;var(double[]&nbsp;a)</pre>
 <div class="block">Variance σ² of a 1d array
  var = 1/N \sum_i (x_i - E[x])^2 = E[x'x]-E[x]^2</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="var(double[][])">
@@ -1933,8 +1907,6 @@ extends java.lang.Object</pre>
 <h4>var</h4>
 <pre>public static&nbsp;double&nbsp;var(double[][]&nbsp;a)</pre>
 <div class="block">Variance of the matrix</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="var(double[][][])">
@@ -1946,8 +1918,6 @@ extends java.lang.Object</pre>
 <pre>public static&nbsp;double&nbsp;var(double[][][]&nbsp;a)</pre>
 <div class="block">Variance σ² of the 3d matrix
  var = 1/N \sum_i (x_i - E[x])^2</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>a</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
 <a name="stat(double[][])">
@@ -2096,7 +2066,7 @@ extends java.lang.Object</pre>
                 int&nbsp;height,
                 int&nbsp;depth)</pre>
 <div class="block">Returns 2d array (column major) of a 1d array.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>In</code> - 1d array of double</dd><dd><code>width</code> - </dd><dd><code>height</code> - </dd><dd><code>depth</code> - </dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>In</code> - 1d array of double</dd><dd><code>H</code> - the h</dd>
 <dt><span class="strong">Returns:</span></dt><dd>2d array</dd></dl>
 </li>
 </ul>
@@ -2157,7 +2127,7 @@ extends java.lang.Object</pre>
 <pre>public static&nbsp;double&nbsp;mse(double[]&nbsp;yEstimate,
          double[]&nbsp;yTrue)</pre>
 <div class="block">Cum sum.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>yEstimate</code> - </dd><dd><code>yTrue</code> - </dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>tab</code> - the tab</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the double[]</dd></dl>
 </li>
 </ul>

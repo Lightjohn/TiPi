@@ -365,9 +365,7 @@ extends java.lang.Object</pre>
   Compute a Zernike polynomial of size Height rows and Width columns
   of degree J over the radius of the pupil.
   <p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>Height</code> - number of rows</dd><dd><code>Width</code> - number of columns
-  radius the radius of the Zernike polynomial
-  J mod number of the Zernike polynomials (Noll indexing)</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>J</code> - mod number of the Zernike polynomials (Noll indexing)</dd><dd><code>Height</code> - number of rows</dd><dd><code>Width</code> - number of columns</dd><dd><code>radius</code> - the radius of the Zernike polynomial</dd></dl>
 </li>
 </ul>
 <a name="Zernike1D(int, int, int, double)">
@@ -416,10 +414,8 @@ extends java.lang.Object</pre>
                                   k! ((n+m)/2-k)! ((n-m)/2-k)!
   <p>
   Utilisation du logarithme de la somme cumulé
-  <p>
-  k = mod number of the Zernike polynomials (Noll indexing)</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>n</code> - </dd><dd><code>m</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
+  <p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>k</code> - mod number of the Zernike polynomials (Noll indexing)</dd><dd><code>n</code> - </dd><dd><code>m</code> - </dd></dl>
 </li>
 </ul>
 <a name="radialZDegree(int, int)">
@@ -470,8 +466,7 @@ extends java.lang.Object</pre>
   <p>
   The logarithm of the cumulated sum is used in place of the classic factorial
   <p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>J</code> - </dd><dd><code>W</code> - </dd><dd><code>H</code> - </dd><dd><code>radius</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd></dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>k</code> - mod number of the Zernike polynomials (Noll indexing)</dd><dd><code>n</code> - </dd><dd><code>m</code> - </dd></dl>
 </li>
 </ul>
 <a name="zernikePupilMultipleOpt(int, int, int, double, int)">
@@ -490,7 +485,7 @@ extends java.lang.Object</pre>
  Z_even(r,theta) = R_mn*zr*cos(m*theta)
  Z_odd(r,theta) = R_mn*zr*sin(m*theta)
  Zr(r) =</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>Nzer</code> - </dd><dd><code>W</code> - </dd><dd><code>H</code> - </dd><dd><code>radius</code> - of the pupil</dd><dd><code>normalise</code> - </dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>Nzern</code> - Number of Zernike mod</dd><dd><code>Nx</code> - Number of pixels along x axis</dd><dd><code>Ny</code> - Number of pixels y axis</dd><dd><code>radius</code> - of the pupil</dd>
 <dt><span class="strong">Returns:</span></dt><dd>Nzern Zernike polynomials over a radius</dd></dl>
 </li>
 </ul>
@@ -508,7 +503,7 @@ extends java.lang.Object</pre>
 <div class="block">Create Nzern Zernike polynomials over a radius
  Pre-compute the power distance r, r^2 = r*r, r^3=r^2*r, ect.
  Pre-compute the pupil coordinate</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>Nzer</code> - </dd><dd><code>H</code> - </dd><dd><code>W</code> - </dd><dd><code>radius</code> - of the pupil</dd><dd><code>normalise</code> - </dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>Nzern</code> - Number of Zernike mod</dd><dd><code>Nx</code> - Number of pixels along x axis</dd><dd><code>Ny</code> - Number of pixels y axis</dd><dd><code>radius</code> - of the pupil</dd>
 <dt><span class="strong">Returns:</span></dt><dd>Nzern Zernike polynomials over a radius</dd></dl>
 </li>
 </ul>

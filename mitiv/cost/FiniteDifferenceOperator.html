@@ -358,20 +358,16 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
                   throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
 <div class="block">Apply a linear operator (or its adjoint) to a vector.
-
- This protected method is called by the "apply" method after checking of
- the arguments.</div>
+ 
+ This protected method is called by the "apply" method after checking of the
+ arguments.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../mitiv/linalg/LinearOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd><dd><code>job</code> - - The type of operation to perform (<a href="../../mitiv/linalg/LinearOperator.html#DIRECT"><code>LinearOperator.DIRECT</code></a>,
-              <a href="../../mitiv/linalg/LinearOperator.html#ADJOINT"><code>LinearOperator.ADJOINT</code></a>, <code>INVERSE</code> or
-              <code>INVERSE_ADJOINT</code>).</dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - the source vector</dd><dd><code>dst</code> - the destination vector</dd><dd><code>job</code> - the type of operation to apply (DIRECT, ADJOINT, etc.)</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - If adjoint is false (resp. tour), src (resp. dst) must
-             belongs to the input vector space of the operator and dst
-             (resp. src) must belongs to the output vector space of the
-             operator.</dd></dl>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - If adjoint is false (resp. tour), src (resp. dst) must belongs to the input vector space
+ of the operator and dst (resp. src) must belongs to the output vector space of the operator.</dd></dl>
 </li>
 </ul>
 </li>

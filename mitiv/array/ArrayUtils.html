@@ -133,53 +133,6 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/array/ArrayUtils.html#crop(mitiv.array.ShapedArray, mitiv.base.Shape)">crop</a></strong>(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;array,
-    <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;shape)</code>
-<div class="block">Crop the central part of a shaped array.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/array/ArrayUtils.html#crop(mitiv.array.ShapedArray, mitiv.base.Shape, int[])">crop</a></strong>(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;array,
-    <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;shape,
-    int[]&nbsp;offset)</code>
-<div class="block">Crop a specific part of a shaped array.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/array/ArrayUtils.html#pad(mitiv.array.ShapedArray, mitiv.base.Shape)">pad</a></strong>(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;array,
-   <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;shape)</code>
-<div class="block">Zero-pad a shaped array.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/array/ArrayUtils.html#pad(mitiv.array.ShapedArray, mitiv.base.Shape, java.lang.Double)">pad</a></strong>(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;array,
-   <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;shape,
-   java.lang.Double&nbsp;value)</code>
-<div class="block">Pad a shaped array with a specific value.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/array/ArrayUtils.html#pad(mitiv.array.ShapedArray, mitiv.base.Shape, int[])">pad</a></strong>(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;array,
-   <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;shape,
-   int[]&nbsp;offset)</code>
-<div class="block">Zero-pad a shaped array with given offsets.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/array/ArrayUtils.html#pad(mitiv.array.ShapedArray, mitiv.base.Shape, int[], double)">pad</a></strong>(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;array,
-   <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;shape,
-   int[]&nbsp;offset,
-   double&nbsp;value)</code>
-<div class="block">Pad a shaped array with a given value and given offsets.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/array/ArrayUtils.html#roll(mitiv.array.ShapedArray)">roll</a></strong>(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;arr)</code>
 <div class="block">Roll the dimensions of a shaped array.</div>
 </td>
@@ -405,6 +358,13 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>static short[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/array/ArrayUtils.html#toShort(short[])">toShort</a></strong>(short[]&nbsp;src)</code>
 <div class="block">Convert an array of <code>short</code>'s into an array of <code>short</code>'.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/array/ArrayUtils.html#zeroPadding(mitiv.array.ShapedArray, mitiv.base.Shape)">zeroPadding</a></strong>(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;inputArray,
+           <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;outputShape)</code>
+<div class="block">Zero-pad a shaped array.</div>
 </td>
 </tr>
 </table>
@@ -1058,14 +1018,14 @@ extends java.lang.Object</pre>
          from those of <code>src</code>.</dd></dl>
 </li>
 </ul>
-<a name="pad(mitiv.array.ShapedArray, mitiv.base.Shape)">
+<a name="zeroPadding(mitiv.array.ShapedArray, mitiv.base.Shape)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>pad</h4>
-<pre>public static&nbsp;<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;pad(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;array,
-              <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;shape)</pre>
+<h4>zeroPadding</h4>
+<pre>public static&nbsp;<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;zeroPadding(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;inputArray,
+                      <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;outputShape)</pre>
 <div class="block">Zero-pad a shaped array.
  <p>
  Zero-padding consists in adding zeros around an array to build a larger
@@ -1076,150 +1036,17 @@ extends java.lang.Object</pre>
  in the input array.  The operation is lazy: if no padding is needed
  (that is, if the shapes are the same), the input array is returned.
  Otherwise, the contents of the input array is pasted into a larger
- output array approximately at the geometric center of this former
+ output array approximately at the geometrical center of this former
  array.  More specifically, the number of zeros at the beginning of a
  given dimension is equal to:
  <pre>
  (outDim/2) - (inpDim/2)
  </pre>
  assuming integer arithmetic and where <code>outDim</code> and <code>inpDim</code>
- are the respective lengths of the given dimension in the output and
+ are the respective length of the given dimension in the output and
  input arrays.
  </p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>array</code> - - The input array.</dd><dd><code>shape</code> - - The shape of the result.</dd>
-<dt><span class="strong">Returns:</span></dt><dd>A shaped array of the given shape.</dd></dl>
-</li>
-</ul>
-<a name="pad(mitiv.array.ShapedArray, mitiv.base.Shape, java.lang.Double)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>pad</h4>
-<pre>public static&nbsp;<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;pad(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;array,
-              <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;shape,
-              java.lang.Double&nbsp;value)</pre>
-<div class="block">Pad a shaped array with a specific value.
- <p>
- This function behaves as <a href="../../mitiv/array/ArrayUtils.html#pad(mitiv.array.ShapedArray, mitiv.base.Shape)"><code>pad(ShapedArray,Shape)</code></a> except that
- the padding elements are set to the given value.
- </p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>array</code> - - The input array.</dd><dd><code>shape</code> - - The shape of the result.</dd><dd><code>value</code> - - The value of the padding elements (it is silently
-                converted to the element type of the output array which
-                is the same as that of the input array).</dd>
-<dt><span class="strong">Returns:</span></dt><dd>A shaped array of the given shape.</dd></dl>
-</li>
-</ul>
-<a name="pad(mitiv.array.ShapedArray, mitiv.base.Shape, int[])">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>pad</h4>
-<pre>public static&nbsp;<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;pad(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;array,
-              <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;shape,
-              int[]&nbsp;offset)</pre>
-<div class="block">Zero-pad a shaped array with given offsets.
- <p>
- This function behaves as <a href="../../mitiv/array/ArrayUtils.html#pad(mitiv.array.ShapedArray, mitiv.base.Shape)"><code>pad(ShapedArray,Shape)</code></a> except that
- specific offsets are given.
- </p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>array</code> - - The input array.</dd><dd><code>shape</code> - - The shape of the result.</dd><dd><code>offset</code> - - The offsets along each dimenions of the input array
-                 relative to the result.  If <code>null</code>, the contents
-                 of the array is approximately at the geometric center
-                 of the result.</dd>
-<dt><span class="strong">Returns:</span></dt><dd>A shaped array of the given shape.</dd></dl>
-</li>
-</ul>
-<a name="pad(mitiv.array.ShapedArray, mitiv.base.Shape, int[], double)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>pad</h4>
-<pre>public static&nbsp;<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;pad(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;array,
-              <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;shape,
-              int[]&nbsp;offset,
-              double&nbsp;value)</pre>
-<div class="block">Pad a shaped array with a given value and given offsets.
- <p>
- Padding consists in adding elements with a given value around an array
- to build a larger array.
- </p><p>
- There must be as many dimensions in the result as in the input array
- and all dimensions must be greater or equal the corresponding dimension
- in the input array.  The operation is lazy: if no padding is needed
- (that is, if the shapes are the same), the input array is returned.
- Otherwise, the contents of the input array is pasted into a larger
- output array approximately at the geometric center of this former
- array.  More specifically, the number of elements added at the
- beginning of a given dimension is equal to:
- <pre>
- (outDim/2) - (inpDim/2)
- </pre>
- assuming integer arithmetic and where <code>outDim</code> and <code>inpDim</code>
- are the respective lengths of the given dimension in the output and
- input arrays.
- </p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>array</code> - - The input array.</dd><dd><code>shape</code> - - The shape of the result.</dd><dd><code>offset</code> - - The offsets along each dimension of the input array
-                 relative to the result.  If <code>null</code>, the contents
-                 of the array is approximately at the geometric center
-                 of the result.</dd><dd><code>value</code> - - The value of the padding elements (it is silently
-                 converted to the element type of the output array which
-                 is the same as that of the input array).</dd>
-<dt><span class="strong">Returns:</span></dt><dd>A shaped array of the given shape.</dd></dl>
-</li>
-</ul>
-<a name="crop(mitiv.array.ShapedArray, mitiv.base.Shape)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>crop</h4>
-<pre>public static&nbsp;<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;crop(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;array,
-               <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;shape)</pre>
-<div class="block">Crop the central part of a shaped array.
- <p>
- This function returns the central region of the input array.  More
- specifically, the first element taken along a given dimension is at
- offset:
- <pre>
- (inpDim/2) - (outDim/2)
- </pre>
- assuming integer arithmetic and where <code>outDim</code> and <code>inpDim</code>
- are the respective lengths of the considerd dimension in the output and
- input arrays.
- </p><p>
- The operation is lazzy in the sense that it returns either the input
- array (if the cropped region is the same as the input array) or a view
- inside the input array.
- </p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>array</code> - - The input array.</dd><dd><code>shape</code> - - The shape of the result.</dd>
-<dt><span class="strong">Returns:</span></dt><dd>A shaped array of the given shape.</dd></dl>
-</li>
-</ul>
-<a name="crop(mitiv.array.ShapedArray, mitiv.base.Shape, int[])">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>crop</h4>
-<pre>public static&nbsp;<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;crop(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;array,
-               <a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;shape,
-               int[]&nbsp;offset)</pre>
-<div class="block">Crop a specific part of a shaped array.
- <p>
- Padding consists in adding elements with a given value around an array
- to build a larger array.
- </p><p>
- The operation is lazzy in the sense that it returns either the input
- array (if the cropped region is the same as the input array) or a view
- inside the input array.
- </p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>array</code> - - The input array.</dd><dd><code>shape</code> - - The shape of the result.</dd><dd><code>offset</code> - - The offsets along each dimensions of the cropped region
-                 relative to the input array.  If <code>null</code>, the
-                 cropped region corresponds to approximately the central
-                 part of the input array.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>inputArray</code> - - The input array.</dd><dd><code>outputShape</code> - - The shape of the result.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>A shaped array of the given shape.</dd></dl>
 </li>
 </ul>
