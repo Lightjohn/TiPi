@@ -66,23 +66,6 @@
 <div class="contentContainer">
 <ul class="blockList">
 <li class="blockList">
-<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Interface Summary table, listing interfaces, and an explanation">
-<caption><span>Interface Summary</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Interface</th>
-<th class="colLast" scope="col">Description</th>
-</tr>
-<tbody>
-<tr class="altColor">
-<td class="colFirst"><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a></td>
-<td class="colLast">
-<div class="block">Interface for multivariate optimization methods with reverse communication.</div>
-</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li class="blockList">
 <table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation">
 <caption><span>Class Summary</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
@@ -97,16 +80,27 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><a href="../../mitiv/optim/BLMVM.html" title="class in mitiv.optim">BLMVM</a></td>
+<td class="colLast">
+<div class="block">Multivariate non-linear optimization with simple bound constraints by
+ BLMVM method.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="../../mitiv/optim/BoundProjector.html" title="class in mitiv.optim">BoundProjector</a></td>
 <td class="colLast">
 <div class="block">Abstract class for bound projection.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../mitiv/optim/ConvexSetProjector.html" title="class in mitiv.optim">ConvexSetProjector</a></td>
 <td class="colLast">
 <div class="block">Abstract class for projection on a convex set.</div>
 </td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../mitiv/optim/GeneralBounds.html" title="class in mitiv.optim">GeneralBounds</a></td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><a href="../../mitiv/optim/LBFGS.html" title="class in mitiv.optim">LBFGS</a></td>
@@ -115,33 +109,42 @@
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="../../mitiv/optim/LBFGSB.html" title="class in mitiv.optim">LBFGSB</a></td>
-<td class="colLast">
-<div class="block">Multivariate non-linear optimization with simple bound constraints by
- L-BFGS-B/VMLM-B method.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><a href="../../mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a></td>
 <td class="colLast">
 <div class="block">Implement limited memory quasi-Newton approximation of the inverse Hessian.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../mitiv/optim/LineSearch.html" title="class in mitiv.optim">LineSearch</a></td>
 <td class="colLast">
 <div class="block">Base class for line search routines.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../mitiv/optim/MoreThuenteLineSearch.html" title="class in mitiv.optim">MoreThuenteLineSearch</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../mitiv/optim/NonLinearConjugateGradient.html" title="class in mitiv.optim">NonLinearConjugateGradient</a></td>
 <td class="colLast">
 <div class="block">Non-linear conjugate gradient methods.</div>
 </td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../mitiv/optim/NonmonotoneLineSearch.html" title="class in mitiv.optim">NonmonotoneLineSearch</a></td>
+<td class="colLast">
+<div class="block">Nonmonotone line search method.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../mitiv/optim/ReverseCommunicationOptimizer.html" title="class in mitiv.optim">ReverseCommunicationOptimizer</a></td>
+<td class="colLast">
+<div class="block">Interface for multivariate optimization methods with reverse communication.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../mitiv/optim/ReverseCommunicationOptimizerWithLineSearch.html" title="class in mitiv.optim">ReverseCommunicationOptimizerWithLineSearch</a></td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><a href="../../mitiv/optim/SimpleBounds.html" title="class in mitiv.optim">SimpleBounds</a></td>
@@ -161,6 +164,13 @@
 <div class="block">Implements a simple upper bound projector.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../mitiv/optim/VMLMB.html" title="class in mitiv.optim">VMLMB</a></td>
+<td class="colLast">
+<div class="block">Multivariate non-linear optimization with simple bound constraints by
+ VMLMB/BLMVM method.</div>
+</td>
+</tr>
 </tbody>
 </table>
 </li>
@@ -177,6 +187,21 @@
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../mitiv/optim/OptimStatus.html" title="enum in mitiv.optim">OptimStatus</a></td>
+<td class="colLast">
+<div class="block">Values returned by the reverse communication version of optimization
+ algorithms.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="../../mitiv/optim/OptimTask.html" title="enum in mitiv.optim">OptimTask</a></td>
 <td class="colLast">
 <div class="block">Values returned by the reverse communication version of optimization

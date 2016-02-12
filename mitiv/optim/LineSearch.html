@@ -35,7 +35,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
-<li><a href="../../mitiv/optim/MoreThuenteLineSearch.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
+<li><a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?mitiv/optim/LineSearch.html" target="_top">FRAMES</a></li>
@@ -94,7 +94,7 @@
 <li class="blockList">
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../mitiv/optim/ArmijoLineSearch.html" title="class in mitiv.optim">ArmijoLineSearch</a>, <a href="../../mitiv/optim/MoreThuenteLineSearch.html" title="class in mitiv.optim">MoreThuenteLineSearch</a></dd>
+<dd><a href="../../mitiv/optim/ArmijoLineSearch.html" title="class in mitiv.optim">ArmijoLineSearch</a>, <a href="../../mitiv/optim/MoreThuenteLineSearch.html" title="class in mitiv.optim">MoreThuenteLineSearch</a>, <a href="../../mitiv/optim/NonmonotoneLineSearch.html" title="class in mitiv.optim">NonmonotoneLineSearch</a></dd>
 </dl>
 <hr>
 <br>
@@ -106,101 +106,123 @@ extends java.lang.Object</pre>
 
  <p>
  Line search aims at approximately solving the problem:
+
  <pre>
      min f(x0 + alpha*d)
  </pre>
+
  where the minimization is carried out with respect to the step length
- <i>alpha</i>&nbsp;&gt;&nbsp;0, <i>x0</i> are the current variables, <i>d</i> is
- the search direction and <i>f</i>(<i>x</i>) is a multivariate function.  The
- search direction <i>d</i> must be a descent direction, that is there
+ <i>alpha</i>&nbsp;&gt;&nbsp;0, <i>x0</i> are the current variables, <i>d</i>
+ is the search direction and <i>f</i>(<i>x</i>) is a multivariate function.
+ The search direction <i>d</i> must be a descent direction, that is there
  exists <i>epsilon</i> &gt; 0 such that for any <i>alpha</i> such that
  0&nbsp;&lt;&nbsp;<i>alpha</i>&nbsp;&lt;&nbsp;<i>epsilon</i>, the following
  strict inequality holds:
+
  <pre>
-     f(x0 + alpha*d) < f(x0)
+ f(x0 + alpha * d) < f(x0)
  </pre>
  </p>
 
  <p>
  Line search is used in numerical optimization of smooth multivariate
- functions.  The other part of the optimization consists in choosing
- good search directions.  In this context, it is important to choose an
- efficient step without too many function evaluations.  To that end,
- <i>alpha</i> is usually chosen so as to satisfy the so-called Wolfe
- conditions:
+ functions. The other part of the optimization consists in choosing good
+ search directions. In this context, it is important to choose an efficient
+ step without too many function evaluations. To that end, <i>alpha</i> is
+ usually chosen so as to satisfy the so-called Wolfe conditions:
+
  <pre>
      f(x0 + alpha*d) - f(x0) <= sigma1*alpha*d'.g(x0)           (1)
      d'.g(x0 + alpha*d) >= sigma2*d'.g(x0)                      (2)
  </pre>
- where <i>g</i>(<i>x</i>) is the gradient of <i>f</i>(<i>x</i>) with respect to
- <i>x</i> and <i>d</i><sup>t</sup>.<i>g</i> denotes the inner product between <i>d</i>
- and <i>g</i> while <i>sigma</i><sub>1</sub> and <i>sigma</i><sub>2</sub> are constants
- such that:
+
+ where <i>g</i>(<i>x</i>) is the gradient of <i>f</i>(<i>x</i>) with respect
+ to <i>x</i> and <i>d</i><sup>t</sup>.<i>g</i> denotes the inner product
+ between <i>d</i> and <i>g</i> while <i>sigma</i><sub>1</sub> and <i>sigma</i>
+ <sub>2</sub> are constants such that:
+
  <pre>
-     0 < sigma1 < sigma2 < 1.
+ 0 < sigma1 < sigma2 < 1.
  </pre>
+
  The first Wolfe condition (1) ensures a sufficient decrease of the function
- and avoids making too long steps while the second Wolfe condition (2)
- ensures a sufficient reduction of the gradient along the search direction
- thus avoiding making too short steps.  The first inequality (1) is
- also called the Armijo condition.  Sometimes, the strong Wolfe condition:
+ and avoids making too long steps while the second Wolfe condition (2) ensures
+ a sufficient reduction of the gradient along the search direction thus
+ avoiding making too short steps. The first inequality (1) is also called the
+ Armijo condition. Sometimes, the strong Wolfe condition:
+
  <pre>
      |d'.g(x0 + alpha*d)| <= sigma2*|d'.g(x0)|                  (3)
  </pre>
- is used in place of (2).  The conjunction of (1) and (2) &#8212; or (1) and (3) &#8212;
- with 0&nbsp;&lt;&nbsp;<i>sigma</i><sub>1</sub>&nbsp;&lt;&nbsp;<i>sigma</i><sub>2</sub>&nbsp;&lt;&nbsp;1
- warrants global convergence.</p>
+
+ is used in place of (2). The conjunction of (1) and (2) &#8212; or (1) and
+ (3) &#8212; with 0&nbsp;&lt;&nbsp;<i>sigma</i><sub>1</sub>&nbsp;&lt;&nbsp;
+ <i>sigma</i><sub>2</sub>&nbsp;&lt;&nbsp;1 warrants global convergence.
+ </p>
 
  <p>
  Alternative conditions are the Goldstein conditions:
+
  <pre>
      (1 - sigma)*alpha*d'.g(x0) <= f(x0 + alpha*d) - f(x0) <= sigma*alpha*d'.g(x0)
  </pre>
+
  with 0&nbsp;&lt;&nbsp;<i>sigma</i>&nbsp;&lt;&nbsp;1/2.
  </p>
 
  <p>
  Equivalently, defining:
+
  <pre>
-    phi(alpha) = f(x0 + alpha*d) - f(x0)
+ phi(alpha) = f(x0 + alpha * d) - f(x0)
  </pre>
+
  the problem amounts to:
+
  <pre>
     min phi(alpha)
  </pre>
- with respect to <i>alpha</i>.  For a smooth function <i>f</i>(<i>x</i>),
- the derivative of <i>phi</i>(<i>alpha</i>) is:
+
+ with respect to <i>alpha</i>. For a smooth function <i>f</i>(<i>x</i>), the
+ derivative of <i>phi</i>(<i>alpha</i>) is:
+
  <pre>
     phi'(alpha) = d'.g(x0 + alpha*d)
  </pre>
+
  and the Wolfe conditions write:
+
  <pre>
     phi(alpha) <= sigma1*phi'(0)*alpha
     phi'(alpha) >= sigma2*phi'(0)
     |phi'(alpha)| <= sigma2*|phi'(0)|
  </pre>
  </p>
- 
- <p>Rounding errors may prevent using the value of the function
- <i>f</i>(<i>x</i>), in this case, the "<i>approximate Wolfe
- conditions</i>" [2] may be used instead of the Wolfe conditions:
+
+ <p>
+ Rounding errors may prevent using the value of the function <i>f</i>(<i>x</i>
+ ), in this case, the "<i>approximate Wolfe conditions</i>" [2] may be used
+ instead of the Wolfe conditions:
+
  <pre>
    sigma2*d'.g(x0) <= d'.g(x0 + alpha*d) <= (2*sigma1 - 1)*d'.g(x0)
  </pre>
- The first inequality is just the second Wolfe condition while the
- second inequality is the first Wolfe condition when <i>f</i>(<i>x</i>)
- is quadratic (and <i>alpha</i>&nbsp;&gt;&nbsp;0).  Since
- <i>g</i>(<i>x0</i>)<sup>t</sup>.<i>d</i>&nbsp;&lt;&nbsp;0, then
- 0&nbsp;&lt;&nbsp;<i>sigma</i><sub>1</sub>&nbsp;&lt;&nbsp;min(<i>sigma</i><sub>2</sub>,1/2).
+
+ The first inequality is just the second Wolfe condition while the second
+ inequality is the first Wolfe condition when <i>f</i>(<i>x</i>) is quadratic
+ (and <i>alpha</i>&nbsp;&gt;&nbsp;0). Since <i>g</i>(<i>x0</i>)<sup>t</sup>.
+ <i>d</i>&nbsp;&lt;&nbsp;0, then 0&nbsp;&lt;&nbsp;<i>sigma</i><sub>1</sub>
+ &nbsp;&lt;&nbsp;min(<i>sigma</i><sub>2</sub>,1/2).
 
  <h2>Using line search</h2>
 
  <ol type="a">
-   <li>choose search direction <i>d</i> at <i>x0</i>;</li>
-   <li>compute <i>f0</i>&nbsp;=&nbsp;<i>f</i>(<i>x0</i>) and
-       <i>g0</i>&nbsp;=&nbsp;<i>g</i>(<i>x0</i>)<sup>t</sup>.<i>d</i>;</li>
-   <li>perform line search:
-     <pre>
+ <li>choose search direction <i>d</i> at <i>x0</i>;</li>
+ <li>compute <i>f0</i>&nbsp;=&nbsp;<i>f</i>(<i>x0</i>) and <i>g0</i>
+ &nbsp;=&nbsp;<i>g</i>(<i>x0</i>)<sup>t</sup>.<i>d</i>;</li>
+ <li>perform line search:
+
+ <pre>
      SomeLineSearchClass lineSearch = new SomeLineSearchClass();
      double alpha = 1.0; // first step to try
      lineSearch.start(f0, g0, alpha, 0.0, 1E2*alpha);
@@ -211,47 +233,60 @@ extends java.lang.Object</pre>
         g1 = d'.g(x1);
         lineSearch.next(alpha, f1, g1);
      }
-     </pre>
-     or:
-     <pre>
+ </pre>
+
+ or:
+
+ <pre>
      SomeLineSearchClass lineSearch = new SomeLineSearchClass();
      double alpha = 1.0; // first step to try
-     int status = lineSearch.start(f0, g0, alpha, 0.0, 1E2*alpha);
-     while (status == LineSearch.SEARCH) {
+     LineSearchTask task = lineSearch.start(f0, g0, alpha, 0.0, 1E2*alpha);
+     while (task == LineSearch.SEARCH) {
         alpha = lineSearch.getStep();
         x1 = x0 + alpha*d;
         f1 = f(x1);
         g1 = d'.g(x1);
-        status = lineSearch.next(alpha, f1, g1);
+        task = lineSearch.next(alpha, f1, g1);
      }
-     </pre>
-   </li>
+ </pre>
+
+ </li>
  </ol>
 
- <p>Beware that you can have an infinite loop if you do not check for the
- finish condition.</p>
+ <p>
+ Beware that you can have an infinite loop if you do not check for the finish
+ condition.
+ </p>
 
 
  <h2>Rationale</h2>
 
- <p>The line search routines only work on scalars, they do not store the
- "<i>vectors</i>" <i>x0</i>, <i>d</i>, <i>g</i>(<i>x</i>), <i>etc</i>.</p>
+ <p>
+ The line search routines only work on scalars, they do not store the
+ "<i>vectors</i>" <i>x0</i>, <i>d</i>, <i>g</i>(<i>x</i>), <i>etc</i>.
+ </p>
 
- <p>When starting a line search, the initial parameters <i>x0</i>, function
- value <i>f0</i>&nbsp;=&nbsp;<i>f</i>(<i>x0</i>), directional derivative
- <i>g0</i>&nbsp;=&nbsp;<i>g</i>(<i>x0</i>)<sup>t</sup>.<i>d</i>, search direction
- <i>d</i> and first step size must be known.</p>
- 
+ <p>
+ When starting a line search, the initial parameters <i>x0</i>, function value
+ <i>f0</i>&nbsp;=&nbsp;<i>f</i>(<i>x0</i>), directional derivative <i>g0</i>
+ &nbsp;=&nbsp;<i>g</i>(<i>x0</i>)<sup>t</sup>.<i>d</i>, search direction
+ <i>d</i> and first step size must be known.
+ </p>
+
  <h2>References</h2>
  <dl>
- <dt>[1]</dt><dd>Nocedal, J. &amp; Wright, S.J., "<i>Numerical Optimization</i>", Springer Verlag, (2006).</dd>
+ <dt>[1]</dt>
+ <dd>Nocedal, J. &amp; Wright, S.J., "<i>Numerical Optimization</i>", Springer
+ Verlag, (2006).</dd>
  <dt>[2]</dt>
-   <dd>Hager, W.W. &amp; Zhang, H., "<i>A New Conjugate Gradient
-      Method with Guaranteed Descent and an Efficient Line Search</i>",
-      SIAM, J. Optim. <b>16</b>, 170-192 (2005).</dd>
+ <dd>Hager, W.W. &amp; Zhang, H., "<i>A New Conjugate Gradient Method with
+ Guaranteed Descent and an Efficient Line Search</i>", SIAM, J. Optim.
+ <b>16</b>, 170-192 (2005).</dd>
  </dl></div>
 <dl><dt><span class="strong">Author:</span></dt>
-  <dd>&Eacute;ric Thi&eacute;baut <a href="mailto:eric.thiebaut@univ-lyon1.fr">eric.thiebaut@univ-lyon1.fr</a></dd></dl>
+  <dd>&Eacute;ric Thi&eacute;baut
+         <a href="mailto:eric.thiebaut@univ-lyon1.fr">eric.thiebaut@univ-lyon1
+         .fr</a></dd></dl>
 </li>
 </ul>
 </div>
@@ -271,76 +306,12 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#CONVERGENCE">CONVERGENCE</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#ERROR_BAD_WORKSPACE">ERROR_BAD_WORKSPACE</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#ERROR_CORRUPTED_WORKSPACE">ERROR_CORRUPTED_WORKSPACE</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#ERROR_ILLEGAL_ADDRESS">ERROR_ILLEGAL_ADDRESS</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#ERROR_ILLEGAL_FX">ERROR_ILLEGAL_FX</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#ERROR_INITIAL_DERIVATIVE_GE_ZERO">ERROR_INITIAL_DERIVATIVE_GE_ZERO</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#ERROR_NOT_A_DESCENT">ERROR_NOT_A_DESCENT</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#ERROR_NOT_STARTED">ERROR_NOT_STARTED</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#ERROR_STP_CHANGED">ERROR_STP_CHANGED</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#ERROR_STP_GT_STPMAX">ERROR_STP_GT_STPMAX</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#ERROR_STP_LT_STPMIN">ERROR_STP_LT_STPMIN</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#ERROR_STP_OUTSIDE_BRACKET">ERROR_STP_OUTSIDE_BRACKET</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#ERROR_STPMIN_GT_STPMAX">ERROR_STPMIN_GT_STPMAX</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#ERROR_STPMIN_LT_ZERO">ERROR_STPMIN_LT_ZERO</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#finit">finit</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#ginit">ginit</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#SEARCH">SEARCH</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#status">status</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected double</code></td>
@@ -353,22 +324,6 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#stpmin">stpmin</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#WARNING_ROUNDING_ERRORS_PREVENT_PROGRESS">WARNING_ROUNDING_ERRORS_PREVENT_PROGRESS</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#WARNING_STP_EQ_STPMAX">WARNING_STP_EQ_STPMAX</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#WARNING_STP_EQ_STPMIN">WARNING_STP_EQ_STPMIN</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#WARNING_XTOL_TEST_SATISFIED">WARNING_XTOL_TEST_SATISFIED</a></strong></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -411,26 +366,26 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#finished()">finished</a></strong>()</code>
-<div class="block">Check whether line search is finished (either because of convergence
- or because of an error).</div>
+<td class="colFirst"><code>protected <a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#failure(mitiv.optim.OptimStatus)">failure</a></strong>(<a href="../../mitiv/optim/OptimStatus.html" title="enum in mitiv.optim">OptimStatus</a>&nbsp;status)</code>
+<div class="block">Set internal state to indicate a failure.</div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#finished()">finished</a></strong>()</code>
+<div class="block">Check whether line search is finished (either because of convergence or
+ because of an error).</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#getMessage()">getMessage</a></strong>()</code>
 <div class="block">Get a literal description of the current line search status.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#getMessage(int)">getMessage</a></strong>(int&nbsp;code)</code>
-<div class="block">Get a literal description of a line search status.</div>
-</td>
-</tr>
 <tr class="altColor">
-<td class="colFirst"><code>int</code></td>
+<td class="colFirst"><code><a href="../../mitiv/optim/OptimStatus.html" title="enum in mitiv.optim">OptimStatus</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#getStatus()">getStatus</a></strong>()</code>
 <div class="block">Get the current line search status.</div>
 </td>
@@ -442,47 +397,64 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#getTask()">getTask</a></strong>()</code>
+<div class="block">Get the current line search status.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#hasErrors()">hasErrors</a></strong>()</code>
 <div class="block">Check whether line search was stopped upon an error.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#hasWarnings()">hasWarnings</a></strong>()</code>
 <div class="block">Check whether line search was stopped with a warning.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#iterate(double, double, double)">iterate</a></strong>(double&nbsp;s1,
-       double&nbsp;f1,
-       double&nbsp;g1)</code>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#iterate(double, double, double)">iterate</a></strong>(double&nbsp;alpha,
+       double&nbsp;f,
+       double&nbsp;df)</code>
 <div class="block">Perform a line search iteration.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected abstract int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#iterateHook(double, double, double)">iterateHook</a></strong>(double&nbsp;s1,
-           double&nbsp;f1,
-           double&nbsp;g1)</code>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#iterateHook(double, double)">iterateHook</a></strong>(double&nbsp;f,
+           double&nbsp;df)</code>
 <div class="block">Protected abstract method to iterate during a line search.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>int</code></td>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#start(double, double, double, double, double)">start</a></strong>(double&nbsp;f0,
      double&nbsp;g0,
      double&nbsp;nextStep,
-     double&nbsp;stepMin,
-     double&nbsp;stepMax)</code>
+     double&nbsp;minStep,
+     double&nbsp;maxStep)</code>
 <div class="block">Start a new line search.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected int</code></td>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#startHook()">startHook</a></strong>()</code>
 <div class="block">Protected method to set internals at the start of a line search.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#success(mitiv.optim.LineSearchTask)">success</a></strong>(<a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a>&nbsp;task)</code>
+<div class="block">Set next line search task.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#warning(mitiv.optim.OptimStatus)">warning</a></strong>(<a href="../../mitiv/optim/OptimStatus.html" title="enum in mitiv.optim">OptimStatus</a>&nbsp;status)</code>
+<div class="block">Set internal state to indicate a non-fatal abnormal termination.</div>
 </td>
 </tr>
 </table>
@@ -507,196 +479,6 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Field Detail</h3>
-<a name="ERROR_ILLEGAL_FX">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ERROR_ILLEGAL_FX</h4>
-<pre>public static final&nbsp;int ERROR_ILLEGAL_FX</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.ERROR_ILLEGAL_FX">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="ERROR_ILLEGAL_ADDRESS">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ERROR_ILLEGAL_ADDRESS</h4>
-<pre>public static final&nbsp;int ERROR_ILLEGAL_ADDRESS</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.ERROR_ILLEGAL_ADDRESS">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="ERROR_CORRUPTED_WORKSPACE">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ERROR_CORRUPTED_WORKSPACE</h4>
-<pre>public static final&nbsp;int ERROR_CORRUPTED_WORKSPACE</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.ERROR_CORRUPTED_WORKSPACE">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="ERROR_BAD_WORKSPACE">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ERROR_BAD_WORKSPACE</h4>
-<pre>public static final&nbsp;int ERROR_BAD_WORKSPACE</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.ERROR_BAD_WORKSPACE">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="ERROR_STP_CHANGED">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ERROR_STP_CHANGED</h4>
-<pre>public static final&nbsp;int ERROR_STP_CHANGED</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.ERROR_STP_CHANGED">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="ERROR_STP_OUTSIDE_BRACKET">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ERROR_STP_OUTSIDE_BRACKET</h4>
-<pre>public static final&nbsp;int ERROR_STP_OUTSIDE_BRACKET</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.ERROR_STP_OUTSIDE_BRACKET">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="ERROR_NOT_A_DESCENT">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ERROR_NOT_A_DESCENT</h4>
-<pre>public static final&nbsp;int ERROR_NOT_A_DESCENT</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.ERROR_NOT_A_DESCENT">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="ERROR_STPMIN_GT_STPMAX">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ERROR_STPMIN_GT_STPMAX</h4>
-<pre>public static final&nbsp;int ERROR_STPMIN_GT_STPMAX</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.ERROR_STPMIN_GT_STPMAX">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="ERROR_STPMIN_LT_ZERO">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ERROR_STPMIN_LT_ZERO</h4>
-<pre>public static final&nbsp;int ERROR_STPMIN_LT_ZERO</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.ERROR_STPMIN_LT_ZERO">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="ERROR_STP_LT_STPMIN">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ERROR_STP_LT_STPMIN</h4>
-<pre>public static final&nbsp;int ERROR_STP_LT_STPMIN</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.ERROR_STP_LT_STPMIN">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="ERROR_STP_GT_STPMAX">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ERROR_STP_GT_STPMAX</h4>
-<pre>public static final&nbsp;int ERROR_STP_GT_STPMAX</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.ERROR_STP_GT_STPMAX">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="ERROR_INITIAL_DERIVATIVE_GE_ZERO">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ERROR_INITIAL_DERIVATIVE_GE_ZERO</h4>
-<pre>public static final&nbsp;int ERROR_INITIAL_DERIVATIVE_GE_ZERO</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.ERROR_INITIAL_DERIVATIVE_GE_ZERO">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="ERROR_NOT_STARTED">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ERROR_NOT_STARTED</h4>
-<pre>public static final&nbsp;int ERROR_NOT_STARTED</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.ERROR_NOT_STARTED">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="SEARCH">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>SEARCH</h4>
-<pre>public static final&nbsp;int SEARCH</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.SEARCH">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="CONVERGENCE">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>CONVERGENCE</h4>
-<pre>public static final&nbsp;int CONVERGENCE</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.CONVERGENCE">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="WARNING_ROUNDING_ERRORS_PREVENT_PROGRESS">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>WARNING_ROUNDING_ERRORS_PREVENT_PROGRESS</h4>
-<pre>public static final&nbsp;int WARNING_ROUNDING_ERRORS_PREVENT_PROGRESS</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.WARNING_ROUNDING_ERRORS_PREVENT_PROGRESS">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="WARNING_XTOL_TEST_SATISFIED">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>WARNING_XTOL_TEST_SATISFIED</h4>
-<pre>public static final&nbsp;int WARNING_XTOL_TEST_SATISFIED</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.WARNING_XTOL_TEST_SATISFIED">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="WARNING_STP_EQ_STPMAX">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>WARNING_STP_EQ_STPMAX</h4>
-<pre>public static final&nbsp;int WARNING_STP_EQ_STPMAX</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.WARNING_STP_EQ_STPMAX">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="WARNING_STP_EQ_STPMIN">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>WARNING_STP_EQ_STPMIN</h4>
-<pre>public static final&nbsp;int WARNING_STP_EQ_STPMIN</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../constant-values.html#mitiv.optim.LineSearch.WARNING_STP_EQ_STPMIN">Constant Field Values</a></dd></dl>
-</li>
-</ul>
 <a name="stp">
 <!--   -->
 </a>
@@ -736,19 +518,10 @@ extends java.lang.Object</pre>
 <a name="ginit">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>ginit</h4>
 <pre>protected&nbsp;double ginit</pre>
-</li>
-</ul>
-<a name="status">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>status</h4>
-<pre>protected&nbsp;int status</pre>
 </li>
 </ul>
 </li>
@@ -782,18 +555,19 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>start</h4>
-<pre>public&nbsp;int&nbsp;start(double&nbsp;f0,
-        double&nbsp;g0,
-        double&nbsp;nextStep,
-        double&nbsp;stepMin,
-        double&nbsp;stepMax)</pre>
+<pre>public&nbsp;<a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a>&nbsp;start(double&nbsp;f0,
+                   double&nbsp;g0,
+                   double&nbsp;nextStep,
+                   double&nbsp;minStep,
+                   double&nbsp;maxStep)</pre>
 <div class="block">Start a new line search.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>f0</code> - Function value at <code>x0</code>, the start of the line search.</dd><dd><code>g0</code> - Directional derivative at <code>x0</code>, must be strictly negative.</dd><dd><code>nextStep</code> - Guess for the next step length (must be strictly greater
-                   than 0 and this value will be returned by <a href="../../mitiv/optim/LineSearch.html#getStep()"><code>getStep()</code></a>
-                   for the first iteration of the line search after clipping
-                   into the step bounds).</dd><dd><code>stepMin</code> - The lower bound for the step length (must be greater or
-                   equal 0).</dd><dd><code>stepMax</code> - The upper bound for the step length (must be strictly greater
-                   than <code>stepMin</code>).</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>f0</code> - Function value at <code>x0</code>, the start of the line search.</dd><dd><code>g0</code> - Directional derivative at <code>x0</code>, must be strictly
+            negative.</dd><dd><code>nextStep</code> - Guess for the next step length (must be strictly greater than
+            0 and this value will be returned by <a href="../../mitiv/optim/LineSearch.html#getStep()"><code>getStep()</code></a> for the
+            first iteration of the line search after clipping into the
+            step bounds).</dd><dd><code>minStep</code> - The lower bound for the step length (must be greater or equal
+            0).</dd><dd><code>maxStep</code> - The upper bound for the step length (must be strictly greater
+            than <code>stepMin</code>).</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The state of the line search.</dd></dl>
 </li>
 </ul>
@@ -803,19 +577,21 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>iterate</h4>
-<pre>public&nbsp;int&nbsp;iterate(double&nbsp;s1,
-          double&nbsp;f1,
-          double&nbsp;g1)</pre>
+<pre>public&nbsp;<a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a>&nbsp;iterate(double&nbsp;alpha,
+                     double&nbsp;f,
+                     double&nbsp;df)</pre>
 <div class="block">Perform a line search iteration.
 
- This method is used to submit the function value (and its directional derivative)
- at the new position to try.  Upon return, this method indicates whether the line
- search has converged.  Otherwise, it computes a new step to try.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>s1</code> - The value of the step (same as the value returned by <a href="../../mitiv/optim/LineSearch.html#getStep()"><code>getStep()</code></a>).</dd><dd><code>f1</code> - The value of the function at <code>x1 = x0 + s1*p</code> where <code>x0</code>
-             are the variables at the start of the line search and <code>p</code> is the
-             search direction.</dd><dd><code>g1</code> - The directional derivative at <code>x1</code>, that is <code>p'.g(x1)</code> the
-             inner product between the search direction and the function gradient at
-             <code>x1</code>.</dd>
+ This method is used to submit the function value (and its directional
+ derivative) at the new position to try. Upon return, this method
+ indicates whether the line search has converged. Otherwise, it computes a
+ new step to try.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - The value of the step (same as the value returned by
+            <a href="../../mitiv/optim/LineSearch.html#getStep()"><code>getStep()</code></a>).</dd><dd><code>f</code> - The value of the function at <code>x = x0 + alpha*p</code> where
+            <code>x0</code> are the variables at the start of the line search
+            and <code>p</code> is the search direction.</dd><dd><code>df</code> - The directional derivative at <code>x</code>, that is
+            <code>p'.g(x)</code> the inner product between the search direction
+            and the function gradient at <code>x</code>.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The new status of the line search instance.</dd></dl>
 </li>
 </ul>
@@ -825,36 +601,43 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>startHook</h4>
-<pre>protected&nbsp;int&nbsp;startHook()</pre>
+<pre>protected&nbsp;void&nbsp;startHook()</pre>
 <div class="block">Protected method to set internals at the start of a line search.
 
- This protected method is called by the <a href="../../mitiv/optim/LineSearch.html#start(double, double, double, double, double)"><code>start(double, double, double, double, double)</code></a> method to set attributes of the
- line search instance after starting a new search.  It can be overwritten as needed,
- the default method does nothing but return <code>LineSearch.SEARCH</code>.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>The new status of the line search instance, in principle <code>LineSearch.SEARCH</code>.</dd></dl>
+ This protected method is called by the <a href="../../mitiv/optim/LineSearch.html#start(double, double, double, double, double)"><code>start(double, double, double, double, double)</code></a> method to set
+ attributes of the line search instance after starting a new search. It
+ can be overwritten as needed, the default method does nothing but set the
+ next task to be <code>LineSearch.SEARCH</code>.
+
+ Derived line search classes which override this method should call @{link
+ success} or @{link failure} to set the next task on success or to set the
+ reason of the error on failure.</div>
 </li>
 </ul>
-<a name="iterateHook(double, double, double)">
+<a name="iterateHook(double, double)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>iterateHook</h4>
-<pre>protected abstract&nbsp;int&nbsp;iterateHook(double&nbsp;s1,
-              double&nbsp;f1,
-              double&nbsp;g1)</pre>
+<pre>protected abstract&nbsp;void&nbsp;iterateHook(double&nbsp;f,
+               double&nbsp;df)</pre>
 <div class="block">Protected abstract method to iterate during a line search.
 
- This protected method is called by the <a href="../../mitiv/optim/LineSearch.html#iterate(double, double, double)"><code>iterate(double, double, double)</code></a> method to check whether line
- search has converged and, otherwise, to compute the next step to try (stored
- as attribute <code>stp</code>).  The provided arguments have been checked.  Upon return,
- the caller method, <a href="../../mitiv/optim/LineSearch.html#iterate(double, double, double)"><code>iterate(double, double, double)</code></a>, takes care of safeguarding the step.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>s1</code> - The value of the step (same as the value returned by <a href="../../mitiv/optim/LineSearch.html#getStep()"><code>getStep()</code></a>).</dd><dd><code>f1</code> - The value of the function at <code>x1 = x0 + s1*p</code> where <code>x0</code>
-             are the variables at the start of the line search and <code>p</code> is the
-             search direction.</dd><dd><code>g1</code> - The directional derivative at <code>x1</code>, that is <code>p'.g(x1)</code> the
-             inner product between the search direction and the function gradient at
-             <code>x1</code>.</dd>
-<dt><span class="strong">Returns:</span></dt><dd>The new status of the line search instance.</dd></dl>
+ This protected method is called by the <a href="../../mitiv/optim/LineSearch.html#iterate(double, double, double)"><code>iterate(double, double, double)</code></a> method to check
+ whether line search has converged and, otherwise, to compute the next
+ step to try (stored as attribute <code>stp</code>). The provided arguments
+ have been checked. Upon return, the caller method, <a href="../../mitiv/optim/LineSearch.html#iterate(double, double, double)"><code>iterate(double, double, double)</code></a>,
+ takes care of safeguarding the step.
+
+ This method in derived line search classes must call @{link success}
+ or @{link failure} to set the next task on success or to set the reason
+ of the error on failure.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>f</code> - The value of the function at <code>x = x0 + stp*p</code> where
+            <code>x0</code> are the variables at the start of the line search
+            and <code>p</code> is the search direction.</dd><dd><code>df</code> - The directional derivative at <code>x</code>, that is
+            <code>p'.g(x)</code> the inner product between the search direction
+            and the function gradient at <code>x</code>.</dd></dl>
 </li>
 </ul>
 <a name="getStep()">
@@ -866,9 +649,20 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;double&nbsp;getStep()</pre>
 <div class="block">Get the current step length.
 
- This method should be called to query the value of the step to try
- during a line search.</div>
+ This method should be called to query the value of the step to try during
+ a line search.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>The value of the step length.</dd></dl>
+</li>
+</ul>
+<a name="getTask()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTask</h4>
+<pre>public final&nbsp;<a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a>&nbsp;getTask()</pre>
+<div class="block">Get the current line search status.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The line search status.</dd></dl>
 </li>
 </ul>
 <a name="getStatus()">
@@ -877,21 +671,49 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getStatus</h4>
-<pre>public final&nbsp;int&nbsp;getStatus()</pre>
+<pre>public final&nbsp;<a href="../../mitiv/optim/OptimStatus.html" title="enum in mitiv.optim">OptimStatus</a>&nbsp;getStatus()</pre>
 <div class="block">Get the current line search status.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>The line search status.</dd></dl>
 </li>
 </ul>
-<a name="getMessage(int)">
+<a name="failure(mitiv.optim.OptimStatus)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getMessage</h4>
-<pre>public final&nbsp;java.lang.String&nbsp;getMessage(int&nbsp;code)</pre>
-<div class="block">Get a literal description of a line search status.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>code</code> - A line search status (e.g. as returned by <a href="../../mitiv/optim/LineSearch.html#getStatus()"><code>getStatus()</code></a>).</dd>
-<dt><span class="strong">Returns:</span></dt><dd>A string describing the line search status.</dd></dl>
+<h4>failure</h4>
+<pre>protected final&nbsp;<a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a>&nbsp;failure(<a href="../../mitiv/optim/OptimStatus.html" title="enum in mitiv.optim">OptimStatus</a>&nbsp;status)</pre>
+<div class="block">Set internal state to indicate a failure.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>status</code> - - The new line search status (must not be
+            <code>OptimStatus.SUCCESS</code>).</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The new line search task which has been set to
+         <code>LineSearchTask.ERROR</code>.</dd></dl>
+</li>
+</ul>
+<a name="warning(mitiv.optim.OptimStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>warning</h4>
+<pre>protected final&nbsp;<a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a>&nbsp;warning(<a href="../../mitiv/optim/OptimStatus.html" title="enum in mitiv.optim">OptimStatus</a>&nbsp;status)</pre>
+<div class="block">Set internal state to indicate a non-fatal abnormal termination.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>task</code> - - The new line search status (must not be
+            <code>OptimStatus.SUCCESS</code>).</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The next line search task.</dd></dl>
+</li>
+</ul>
+<a name="success(mitiv.optim.LineSearchTask)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>success</h4>
+<pre>protected final&nbsp;<a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a>&nbsp;success(<a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a>&nbsp;task)</pre>
+<div class="block">Set next line search task.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>task</code> - - The next line search task (must not be
+            <code>LineSearchTask.ERROR</code>).</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The next line search task.</dd></dl>
 </li>
 </ul>
 <a name="getMessage()">
@@ -942,8 +764,8 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>finished</h4>
 <pre>public final&nbsp;boolean&nbsp;finished()</pre>
-<div class="block">Check whether line search is finished (either because of convergence
- or because of an error).</div>
+<div class="block">Check whether line search is finished (either because of convergence or
+ because of an error).</div>
 </li>
 </ul>
 </li>
@@ -972,7 +794,7 @@ extends java.lang.Object</pre>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim"><span class="strong">PREV CLASS</span></a></li>
-<li><a href="../../mitiv/optim/MoreThuenteLineSearch.html" title="class in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
+<li><a href="../../mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?mitiv/optim/LineSearch.html" target="_top">FRAMES</a></li>

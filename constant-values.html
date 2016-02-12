@@ -926,7 +926,7 @@
 <ul class="blockList">
 <li class="blockList">
 <table border="0" cellpadding="3" cellspacing="0" summary="Constant Field Values table, listing constant fields, and values">
-<caption><span>mitiv.microscopy.<a href="mitiv/microscopy/MicroscopyModelPSF1D.html" title="class in mitiv.microscopy">MicroscopyModelPSF1D</a></span><span class="tabEnd">&nbsp;</span></caption>
+<caption><span>mitiv.microscopy.<a href="mitiv/microscopy/PSF_Estimation.html" title="class in mitiv.microscopy">PSF_Estimation</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th scope="col">Constant Field</th>
@@ -934,17 +934,50 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><a name="mitiv.microscopy.MicroscopyModelPSF1D.DEUXPI">
+<td class="colFirst"><a name="mitiv.microscopy.PSF_Estimation.ALPHA">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
+<td><code><a href="mitiv/microscopy/PSF_Estimation.html#ALPHA">ALPHA</a></code></td>
+<td class="colLast"><code>2</code></td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a name="mitiv.microscopy.PSF_Estimation.BETA">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
+<td><code><a href="mitiv/microscopy/PSF_Estimation.html#BETA">BETA</a></code></td>
+<td class="colLast"><code>3</code></td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a name="mitiv.microscopy.PSF_Estimation.DEFOCUS">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
+<td><code><a href="mitiv/microscopy/PSF_Estimation.html#DEFOCUS">DEFOCUS</a></code></td>
+<td class="colLast"><code>1</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table border="0" cellpadding="3" cellspacing="0" summary="Constant Field Values table, listing constant fields, and values">
+<caption><span>mitiv.microscopy.<a href="mitiv/microscopy/WideFieldModel.html" title="class in mitiv.microscopy">WideFieldModel</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th scope="col">Constant Field</th>
+<th class="colLast" scope="col">Value</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a name="mitiv.microscopy.WideFieldModel.DEUXPI">
 <!--   -->
 </a><code>protected&nbsp;static&nbsp;final&nbsp;double</code></td>
-<td><code><a href="mitiv/microscopy/MicroscopyModelPSF1D.html#DEUXPI">DEUXPI</a></code></td>
+<td><code><a href="mitiv/microscopy/WideFieldModel.html#DEUXPI">DEUXPI</a></code></td>
 <td class="colLast"><code>6.283185307179586</code></td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a name="mitiv.microscopy.MicroscopyModelPSF1D.NORMALIZED">
+<td class="colFirst"><a name="mitiv.microscopy.WideFieldModel.NORMALIZED">
 <!--   -->
 </a><code>protected&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/microscopy/MicroscopyModelPSF1D.html#NORMALIZED">NORMALIZED</a></code></td>
+<td><code><a href="mitiv/microscopy/WideFieldModel.html#NORMALIZED">NORMALIZED</a></code></td>
 <td class="colLast"><code>1</code></td>
 </tr>
 </tbody>
@@ -956,151 +989,6 @@
 </a>
 <h2 title="mitiv.optim">mitiv.optim.*</h2>
 <ul class="blockList">
-<li class="blockList">
-<table border="0" cellpadding="3" cellspacing="0" summary="Constant Field Values table, listing constant fields, and values">
-<caption><span>mitiv.optim.<a href="mitiv/optim/LineSearch.html" title="class in mitiv.optim">LineSearch</a></span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th scope="col">Constant Field</th>
-<th class="colLast" scope="col">Value</th>
-</tr>
-<tbody>
-<tr class="altColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.CONVERGENCE">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#CONVERGENCE">CONVERGENCE</a></code></td>
-<td class="colLast"><code>1</code></td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.ERROR_BAD_WORKSPACE">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#ERROR_BAD_WORKSPACE">ERROR_BAD_WORKSPACE</a></code></td>
-<td class="colLast"><code>-10</code></td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.ERROR_CORRUPTED_WORKSPACE">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#ERROR_CORRUPTED_WORKSPACE">ERROR_CORRUPTED_WORKSPACE</a></code></td>
-<td class="colLast"><code>-11</code></td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.ERROR_ILLEGAL_ADDRESS">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#ERROR_ILLEGAL_ADDRESS">ERROR_ILLEGAL_ADDRESS</a></code></td>
-<td class="colLast"><code>-12</code></td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.ERROR_ILLEGAL_FX">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#ERROR_ILLEGAL_FX">ERROR_ILLEGAL_FX</a></code></td>
-<td class="colLast"><code>-13</code></td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.ERROR_INITIAL_DERIVATIVE_GE_ZERO">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#ERROR_INITIAL_DERIVATIVE_GE_ZERO">ERROR_INITIAL_DERIVATIVE_GE_ZERO</a></code></td>
-<td class="colLast"><code>-2</code></td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.ERROR_NOT_A_DESCENT">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#ERROR_NOT_A_DESCENT">ERROR_NOT_A_DESCENT</a></code></td>
-<td class="colLast"><code>-7</code></td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.ERROR_NOT_STARTED">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#ERROR_NOT_STARTED">ERROR_NOT_STARTED</a></code></td>
-<td class="colLast"><code>-1</code></td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.ERROR_STP_CHANGED">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#ERROR_STP_CHANGED">ERROR_STP_CHANGED</a></code></td>
-<td class="colLast"><code>-9</code></td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.ERROR_STP_GT_STPMAX">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#ERROR_STP_GT_STPMAX">ERROR_STP_GT_STPMAX</a></code></td>
-<td class="colLast"><code>-3</code></td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.ERROR_STP_LT_STPMIN">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#ERROR_STP_LT_STPMIN">ERROR_STP_LT_STPMIN</a></code></td>
-<td class="colLast"><code>-4</code></td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.ERROR_STP_OUTSIDE_BRACKET">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#ERROR_STP_OUTSIDE_BRACKET">ERROR_STP_OUTSIDE_BRACKET</a></code></td>
-<td class="colLast"><code>-8</code></td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.ERROR_STPMIN_GT_STPMAX">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#ERROR_STPMIN_GT_STPMAX">ERROR_STPMIN_GT_STPMAX</a></code></td>
-<td class="colLast"><code>-6</code></td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.ERROR_STPMIN_LT_ZERO">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#ERROR_STPMIN_LT_ZERO">ERROR_STPMIN_LT_ZERO</a></code></td>
-<td class="colLast"><code>-5</code></td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.SEARCH">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#SEARCH">SEARCH</a></code></td>
-<td class="colLast"><code>0</code></td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.WARNING_ROUNDING_ERRORS_PREVENT_PROGRESS">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#WARNING_ROUNDING_ERRORS_PREVENT_PROGRESS">WARNING_ROUNDING_ERRORS_PREVENT_PROGRESS</a></code></td>
-<td class="colLast"><code>2</code></td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.WARNING_STP_EQ_STPMAX">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#WARNING_STP_EQ_STPMAX">WARNING_STP_EQ_STPMAX</a></code></td>
-<td class="colLast"><code>4</code></td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.WARNING_STP_EQ_STPMIN">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#WARNING_STP_EQ_STPMIN">WARNING_STP_EQ_STPMIN</a></code></td>
-<td class="colLast"><code>5</code></td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a name="mitiv.optim.LineSearch.WARNING_XTOL_TEST_SATISFIED">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/LineSearch.html#WARNING_XTOL_TEST_SATISFIED">WARNING_XTOL_TEST_SATISFIED</a></code></td>
-<td class="colLast"><code>3</code></td>
-</tr>
-</tbody>
-</table>
-</li>
 <li class="blockList">
 <table border="0" cellpadding="3" cellspacing="0" summary="Constant Field Values table, listing constant fields, and values">
 <caption><span>mitiv.optim.<a href="mitiv/optim/NonLinearConjugateGradient.html" title="class in mitiv.optim">NonLinearConjugateGradient</a></span><span class="tabEnd">&nbsp;</span></caption>
@@ -1122,105 +1010,105 @@
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
 <td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#DEFAULT_METHOD">DEFAULT_METHOD</a></code></td>
-<td class="colLast"><code>520</code></td>
+<td class="colLast"><code>771</code></td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.FAILURE">
+<td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.DELTA">
 <!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#FAILURE">FAILURE</a></code></td>
-<td class="colLast"><code>-1</code></td>
+</a><code>public&nbsp;static&nbsp;final&nbsp;double</code></td>
+<td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#DELTA">DELTA</a></code></td>
+<td class="colLast"><code>0.05</code></td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.EPSILON">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;double</code></td>
+<td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#EPSILON">EPSILON</a></code></td>
+<td class="colLast"><code>0.01</code></td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.FLETCHER">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
 <td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#FLETCHER">FLETCHER</a></code></td>
 <td class="colLast"><code>4</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.FLETCHER_REEVES">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
 <td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#FLETCHER_REEVES">FLETCHER_REEVES</a></code></td>
 <td class="colLast"><code>1</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.HAGER_ZHANG">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
 <td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#HAGER_ZHANG">HAGER_ZHANG</a></code></td>
 <td class="colLast"><code>8</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.HESTENES_STIEFEL">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
 <td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#HESTENES_STIEFEL">HESTENES_STIEFEL</a></code></td>
 <td class="colLast"><code>2</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.LIU_STOREY">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
 <td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#LIU_STOREY">LIU_STOREY</a></code></td>
 <td class="colLast"><code>5</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.PERRY_SHANNO">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
 <td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#PERRY_SHANNO">PERRY_SHANNO</a></code></td>
 <td class="colLast"><code>7</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.POLAK_RIBIERE_POLYAK">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
 <td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#POLAK_RIBIERE_POLYAK">POLAK_RIBIERE_POLYAK</a></code></td>
 <td class="colLast"><code>3</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.POWELL">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
 <td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#POWELL">POWELL</a></code></td>
 <td class="colLast"><code>256</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.SHANNO_PHUA">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
 <td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#SHANNO_PHUA">SHANNO_PHUA</a></code></td>
 <td class="colLast"><code>512</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.STPMAX">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;double</code></td>
 <td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#STPMAX">STPMAX</a></code></td>
-<td class="colLast"><code>1000000.0</code></td>
+<td class="colLast"><code>1.0E20</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.STPMIN">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;double</code></td>
 <td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#STPMIN">STPMIN</a></code></td>
 <td class="colLast"><code>1.0E-20</code></td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><a name="mitiv.optim.NonLinearConjugateGradient.SUCCESS">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
-<td><code><a href="mitiv/optim/NonLinearConjugateGradient.html#SUCCESS">SUCCESS</a></code></td>
-<td class="colLast"><code>0</code></td>
-</tr>
 </tbody>
 </table>
 </li>
 <li class="blockList">
 <table border="0" cellpadding="3" cellspacing="0" summary="Constant Field Values table, listing constant fields, and values">
-<caption><span>mitiv.optim.<a href="mitiv/optim/ReverseCommunicationOptimizer.html" title="interface in mitiv.optim">ReverseCommunicationOptimizer</a></span><span class="tabEnd">&nbsp;</span></caption>
+<caption><span>mitiv.optim.<a href="mitiv/optim/ReverseCommunicationOptimizer.html" title="class in mitiv.optim">ReverseCommunicationOptimizer</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th scope="col">Constant Field</th>
