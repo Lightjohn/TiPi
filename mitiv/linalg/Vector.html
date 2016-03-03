@@ -182,26 +182,6 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">axpby</a></strong>(double&nbsp;alpha,
-     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-     double&nbsp;beta,
-     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>
-<div class="block">Compute the linear combination of two vectors.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">axpbypcz</a></strong>(double&nbsp;alpha,
-        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-        double&nbsp;beta,
-        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-        double&nbsp;gamma,
-        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z)</code>
-<div class="block">Compute the linear combination of three vectors.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#belongsTo(mitiv.linalg.VectorSpace)">belongsTo</a></strong>(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;space)</code>
 <div class="block">Check whether a vector belongs to a given vector space.</div>
@@ -211,6 +191,26 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code><a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#clone()">clone</a></strong>()</code>
 <div class="block">Create a clone of the vector.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine</a></strong>(double&nbsp;alpha,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+       double&nbsp;beta,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>
+<div class="block">Compute the linear combination of two vectors.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine</a></strong>(double&nbsp;alpha,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+       double&nbsp;beta,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
+       double&nbsp;gamma,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z)</code>
+<div class="block">Compute the linear combination of three vectors.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -667,17 +667,17 @@ extends java.lang.Object</pre>
  Set to zero all elements of the vector.</div>
 </li>
 </ul>
-<a name="axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">
+<a name="combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>axpby</h4>
-<pre>public final&nbsp;void&nbsp;axpby(double&nbsp;alpha,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-         double&nbsp;beta,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)
-                 throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
+<h4>combine</h4>
+<pre>public final&nbsp;void&nbsp;combine(double&nbsp;alpha,
+           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+           double&nbsp;beta,
+           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)
+                   throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Compute the linear combination of two vectors.
 
  In pseudo-code, this method performs the following operation:
@@ -691,19 +691,19 @@ extends java.lang.Object</pre>
  vector space.</dd></dl>
 </li>
 </ul>
-<a name="axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">
+<a name="combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>axpbypcz</h4>
-<pre>public final&nbsp;void&nbsp;axpbypcz(double&nbsp;alpha,
-            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-            double&nbsp;beta,
-            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-            double&nbsp;gamma,
-            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z)
-                    throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
+<h4>combine</h4>
+<pre>public final&nbsp;void&nbsp;combine(double&nbsp;alpha,
+           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+           double&nbsp;beta,
+           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
+           double&nbsp;gamma,
+           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z)
+                   throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Compute the linear combination of three vectors.
 
  In pseudo-code, this method performs the following operation:

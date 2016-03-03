@@ -196,44 +196,46 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_axpby</a></strong>(double&nbsp;alpha,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-      double&nbsp;beta,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_axpby</a></strong>(double&nbsp;alpha,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-      double&nbsp;beta,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
-<div class="block">Compute a linear combination of two vectors (low level).</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_axpbypcz</a></strong>(double&nbsp;alpha,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-         double&nbsp;beta,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-         double&nbsp;gamma,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
-<div class="block">Compute a linear combination of two vectors (low level).</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_clone(mitiv.linalg.Vector)">_clone</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec)</code>
 <div class="block">Create a new vector from this vector space as a copy of another vector.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_combine</a></strong>(double&nbsp;alpha,
+        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+        double&nbsp;beta,
+        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_combine</a></strong>(double&nbsp;alpha,
+        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+        double&nbsp;beta,
+        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
+        double&nbsp;gamma,
+        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z,
+        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
+<div class="block">Compute a linear combination of two vectors (low level).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_combine</a></strong>(double&nbsp;alpha,
+        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+        double&nbsp;beta,
+        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
+        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
+<div class="block">Compute a linear combination of two vectors (low level).</div>
+</td>
+</tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">_copy</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>&nbsp;</td>
+     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
+<div class="block">Copy the contents of a vector into another one (low level).</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected abstract double</code></td>
@@ -284,45 +286,45 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">axpby</a></strong>(double&nbsp;alpha,
-     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-     double&nbsp;beta,
-     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>
-<div class="block">Compute a linear combination of two vectors.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">axpby</a></strong>(double&nbsp;alpha,
-     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-     double&nbsp;beta,
-     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
-<div class="block">Compute a linear combination of two vectors.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">axpbypcz</a></strong>(double&nbsp;alpha,
-        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-        double&nbsp;beta,
-        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-        double&nbsp;gamma,
-        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z,
-        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
-<div class="block">Compute a linear combination of three vectors.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#check(mitiv.linalg.Vector)">check</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)</code>
 <div class="block">Make sure a given vector belongs to the vector space.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#clone(mitiv.linalg.Vector)">clone</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec)</code>
 <div class="block">Create a new vector as a clone of another vector.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine</a></strong>(double&nbsp;alpha,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+       double&nbsp;beta,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>
+<div class="block">Compute a linear combination of two vectors.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">combine</a></strong>(double&nbsp;alpha,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+       double&nbsp;beta,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
+       double&nbsp;gamma,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
+<div class="block">Compute a linear combination of three vectors.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">combine</a></strong>(double&nbsp;alpha,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+       double&nbsp;beta,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
+       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
+<div class="block">Compute a linear combination of two vectors.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -699,17 +701,17 @@ extends java.lang.Object</pre>
           double&nbsp;alpha)</pre>
 </li>
 </ul>
-<a name="axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">
+<a name="combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>axpby</h4>
-<pre>public final&nbsp;void&nbsp;axpby(double&nbsp;alpha,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-         double&nbsp;beta,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)
-                 throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
+<h4>combine</h4>
+<pre>public final&nbsp;void&nbsp;combine(double&nbsp;alpha,
+           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+           double&nbsp;beta,
+           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)
+                   throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Compute a linear combination of two vectors.
 
  In pseudo-code, this method does:
@@ -721,37 +723,37 @@ extends java.lang.Object</pre>
  This abstract method must be overwritten by its descendants. As this
  method can be used to emulate other operations (as copy, zero, etc.),
  actual code should be optimized for specific factors alpha and/or beta
- equal to +/-1 or 0.  In particular when ALPHA is zero, then X must not
- be referenced.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - the scalar factor for vector X</dd><dd><code>x</code> - the vector X</dd><dd><code>beta</code> - the scalar factor for vector Y</dd><dd><code>y</code> - the vector Y (also used to store the result)</dd>
+ equal to +/-1 or 0.  In particular when <code>alpha</code> is zero, then
+ <code>x</code> must not be referenced.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - The scalar factor for vector <code>x</code>.</dd><dd><code>x</code> - - A vector.</dd><dd><code>beta</code> - - The scalar factor for vector <code>y</code>.</dd><dd><code>y</code> - - Another vector.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - X and Y must belong to this vector space.</dd></dl>
 </li>
 </ul>
-<a name="_axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">
+<a name="_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>_axpby</h4>
-<pre>protected&nbsp;void&nbsp;_axpby(double&nbsp;alpha,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-          double&nbsp;beta,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</pre>
+<h4>_combine</h4>
+<pre>protected&nbsp;void&nbsp;_combine(double&nbsp;alpha,
+            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+            double&nbsp;beta,
+            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</pre>
 </li>
 </ul>
-<a name="axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">
+<a name="combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>axpby</h4>
-<pre>public final&nbsp;void&nbsp;axpby(double&nbsp;alpha,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-         double&nbsp;beta,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)
-                 throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
+<h4>combine</h4>
+<pre>public final&nbsp;void&nbsp;combine(double&nbsp;alpha,
+           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+           double&nbsp;beta,
+           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
+           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)
+                   throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Compute a linear combination of two vectors.
 
  In pseudo-code, this method performs the following operation:
@@ -770,17 +772,17 @@ extends java.lang.Object</pre>
 <dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - X and Y must belong to this vector space.</dd></dl>
 </li>
 </ul>
-<a name="_axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">
+<a name="_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>_axpby</h4>
-<pre>protected abstract&nbsp;void&nbsp;_axpby(double&nbsp;alpha,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-          double&nbsp;beta,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
+<h4>_combine</h4>
+<pre>protected abstract&nbsp;void&nbsp;_combine(double&nbsp;alpha,
+            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+            double&nbsp;beta,
+            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
+            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
 <div class="block">Compute a linear combination of two vectors (low level).
 
  This abstract method must be overwritten by the descendants of this
@@ -794,20 +796,20 @@ extends java.lang.Object</pre>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - The scalar factor for vector <code>x</code>.</dd><dd><code>x</code> - - A vector.</dd><dd><code>beta</code> - - The scalar factor for vector <code>y</code>.</dd><dd><code>y</code> - - Another vector.</dd><dd><code>dst</code> - - The destination vector.</dd></dl>
 </li>
 </ul>
-<a name="axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">
+<a name="combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>axpbypcz</h4>
-<pre>public final&nbsp;void&nbsp;axpbypcz(double&nbsp;alpha,
-            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-            double&nbsp;beta,
-            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-            double&nbsp;gamma,
-            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z,
-            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)
-                    throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
+<h4>combine</h4>
+<pre>public final&nbsp;void&nbsp;combine(double&nbsp;alpha,
+           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+           double&nbsp;beta,
+           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
+           double&nbsp;gamma,
+           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z,
+           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)
+                   throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Compute a linear combination of three vectors.
 
  In pseudo-code, this method performs the following operation:
@@ -821,19 +823,19 @@ extends java.lang.Object</pre>
  vector space.</dd></dl>
 </li>
 </ul>
-<a name="_axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">
+<a name="_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>_axpbypcz</h4>
-<pre>protected abstract&nbsp;void&nbsp;_axpbypcz(double&nbsp;alpha,
-             <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-             double&nbsp;beta,
-             <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-             double&nbsp;gamma,
-             <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z,
-             <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
+<h4>_combine</h4>
+<pre>protected abstract&nbsp;void&nbsp;_combine(double&nbsp;alpha,
+            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+            double&nbsp;beta,
+            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
+            double&nbsp;gamma,
+            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z,
+            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
 <div class="block">Compute a linear combination of two vectors (low level).
 
  This abstract method must be overwritten by the descendants of this
@@ -851,11 +853,7 @@ extends java.lang.Object</pre>
 <pre>public final&nbsp;void&nbsp;copy(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)
                 throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
-<div class="block">Copy the contents of a vector into another one.
-
- This basic implementation calls axpby() method and is expected to be
- overwritten with a more efficient version by the descendants of this
- class.</div>
+<div class="block">Copy the contents of a vector into another one.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - source vector</dd><dd><code>dst</code> - - destination vector</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - SRC and DST must belong to this vector space.</dd></dl>
@@ -869,6 +867,15 @@ extends java.lang.Object</pre>
 <h4>_copy</h4>
 <pre>protected&nbsp;void&nbsp;_copy(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
+<div class="block">Copy the contents of a vector into another one (low level).
+
+ This basic implementation calls <a href="../../mitiv/linalg/VectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)"><code>_combine(double, Vector, double, Vector)</code></a>
+ method and is expected to be overwritten with a more efficient version by the
+ descendants of this class.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - source vector</dd><dd><code>dst</code> - - destination vector</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - <code>src</code> and <code>dst</code> must belong to
+ this vector space.</dd></dl>
 </li>
 </ul>
 <a name="swap(mitiv.linalg.Vector, mitiv.linalg.Vector)">
