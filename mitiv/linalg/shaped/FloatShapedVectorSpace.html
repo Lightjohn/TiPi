@@ -211,7 +211,9 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
       <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
       double&nbsp;beta,
       <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-      <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>&nbsp;</td>
+      <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
+<div class="block">Compute a linear combination of two vectors (low level).</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
@@ -221,7 +223,9 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
          <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
          double&nbsp;gamma,
          <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z,
-         <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>&nbsp;</td>
+         <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
+<div class="block">Compute a linear combination of two vectors (low level).</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../../mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a></code></td>
@@ -246,86 +250,95 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">_dot</a></strong>(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;w,
+    <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+    <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>
+<div class="block">Compute the inner product of three vectors or a weighted inner product
+ of two vectors.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_fill(mitiv.linalg.Vector, double)">_fill</a></strong>(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
      double&nbsp;alpha)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_norm1(mitiv.linalg.Vector)">_norm1</a></strong>(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_norm2(mitiv.linalg.Vector)">_norm2</a></strong>(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_normInf(mitiv.linalg.Vector)">_normInf</a></strong>(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_swap(mitiv.linalg.shaped.FloatShapedVector, mitiv.linalg.shaped.FloatShapedVector)">_swap</a></strong>(<a href="../../../mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a>&nbsp;vx,
      <a href="../../../mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a>&nbsp;vy)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_swap(mitiv.linalg.Vector, mitiv.linalg.Vector)">_swap</a></strong>(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
      <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a></code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#clone(mitiv.linalg.shaped.FloatShapedVector)">clone</a></strong>(<a href="../../../mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a>&nbsp;vec)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a></code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#clone(mitiv.linalg.Vector)">clone</a></strong>(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec)</code>
 <div class="block">Create a new vector as a clone of another vector.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#copy(float[], mitiv.linalg.Vector)">copy</a></strong>(float[]&nbsp;src,
     <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a></code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#create()">create</a></strong>()</code>
 <div class="block">Create a new vector from this vector space with undefined contents.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a></code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#create(double)">create</a></strong>(double&nbsp;value)</code>
 <div class="block">Create a new vector from this vector space filled with given value.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a></code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#create(mitiv.array.FloatArray)">create</a></strong>(<a href="../../../mitiv/array/FloatArray.html" title="interface in mitiv.array">FloatArray</a>&nbsp;arr)</code>
 <div class="block">Create a new vector initialized with the contents of an array.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a></code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#create(mitiv.array.FloatArray, boolean)">create</a></strong>(<a href="../../../mitiv/array/FloatArray.html" title="interface in mitiv.array">FloatArray</a>&nbsp;arr,
       boolean&nbsp;forceCopy)</code>
 <div class="block">Create a new vector initialized with the contents of an array.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a></code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#create(mitiv.array.ShapedArray)">create</a></strong>(<a href="../../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;arr)</code>
 <div class="block">Create a new vector initialized with the contents of an array.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a></code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#create(mitiv.array.ShapedArray, boolean)">create</a></strong>(<a href="../../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;arr,
       boolean&nbsp;forceCopy)</code>
 <div class="block">Create a new vector initialized with the contents of an array.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a></code></td>
 <td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#wrap(float[])">wrap</a></strong>(float[]&nbsp;x)</code>&nbsp;</td>
 </tr>
@@ -342,7 +355,7 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;mitiv.linalg.<a href="../../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></h3>
-<code><a href="../../../mitiv/linalg/VectorSpace.html#_scale(mitiv.linalg.Vector, double)">_scale</a>, <a href="../../../mitiv/linalg/VectorSpace.html#_zero(mitiv.linalg.Vector)">_zero</a>, <a href="../../../mitiv/linalg/VectorSpace.html#axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">axpby</a>, <a href="../../../mitiv/linalg/VectorSpace.html#axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">axpby</a>, <a href="../../../mitiv/linalg/VectorSpace.html#axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">axpbypcz</a>, <a href="../../../mitiv/linalg/VectorSpace.html#check(mitiv.linalg.Vector)">check</a>, <a href="../../../mitiv/linalg/VectorSpace.html#copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">copy</a>, <a href="../../../mitiv/linalg/VectorSpace.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">dot</a>, <a href="../../../mitiv/linalg/VectorSpace.html#fill(mitiv.linalg.Vector, double)">fill</a>, <a href="../../../mitiv/linalg/VectorSpace.html#getNumber()">getNumber</a>, <a href="../../../mitiv/linalg/VectorSpace.html#norm1(mitiv.linalg.Vector)">norm1</a>, <a href="../../../mitiv/linalg/VectorSpace.html#norm2(mitiv.linalg.Vector)">norm2</a>, <a href="../../../mitiv/linalg/VectorSpace.html#normInf(mitiv.linalg.Vector)">normInf</a>, <a href="../../../mitiv/linalg/VectorSpace.html#one()">one</a>, <a href="../../../mitiv/linalg/VectorSpace.html#owns(mitiv.linalg.Vector)">owns</a>, <a href="../../../mitiv/linalg/VectorSpace.html#scale(mitiv.linalg.Vector, double)">scale</a>, <a href="../../../mitiv/linalg/VectorSpace.html#swap(mitiv.linalg.Vector, mitiv.linalg.Vector)">swap</a>, <a href="../../../mitiv/linalg/VectorSpace.html#zero()">zero</a>, <a href="../../../mitiv/linalg/VectorSpace.html#zero(mitiv.linalg.Vector)">zero</a></code></li>
+<code><a href="../../../mitiv/linalg/VectorSpace.html#_scale(mitiv.linalg.Vector, double)">_scale</a>, <a href="../../../mitiv/linalg/VectorSpace.html#_zero(mitiv.linalg.Vector)">_zero</a>, <a href="../../../mitiv/linalg/VectorSpace.html#axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">axpby</a>, <a href="../../../mitiv/linalg/VectorSpace.html#axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">axpby</a>, <a href="../../../mitiv/linalg/VectorSpace.html#axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">axpbypcz</a>, <a href="../../../mitiv/linalg/VectorSpace.html#check(mitiv.linalg.Vector)">check</a>, <a href="../../../mitiv/linalg/VectorSpace.html#copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">copy</a>, <a href="../../../mitiv/linalg/VectorSpace.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">dot</a>, <a href="../../../mitiv/linalg/VectorSpace.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">dot</a>, <a href="../../../mitiv/linalg/VectorSpace.html#fill(mitiv.linalg.Vector, double)">fill</a>, <a href="../../../mitiv/linalg/VectorSpace.html#getNumber()">getNumber</a>, <a href="../../../mitiv/linalg/VectorSpace.html#norm1(mitiv.linalg.Vector)">norm1</a>, <a href="../../../mitiv/linalg/VectorSpace.html#norm2(mitiv.linalg.Vector)">norm2</a>, <a href="../../../mitiv/linalg/VectorSpace.html#normInf(mitiv.linalg.Vector)">normInf</a>, <a href="../../../mitiv/linalg/VectorSpace.html#one()">one</a>, <a href="../../../mitiv/linalg/VectorSpace.html#owns(mitiv.linalg.Vector)">owns</a>, <a href="../../../mitiv/linalg/VectorSpace.html#scale(mitiv.linalg.Vector, double)">scale</a>, <a href="../../../mitiv/linalg/VectorSpace.html#swap(mitiv.linalg.Vector, mitiv.linalg.Vector)">swap</a>, <a href="../../../mitiv/linalg/VectorSpace.html#zero()">zero</a>, <a href="../../../mitiv/linalg/VectorSpace.html#zero(mitiv.linalg.Vector)">zero</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -606,10 +619,10 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html#_clone(mitiv.linalg.Vector)">VectorSpace</a></code></strong></div>
 <div class="block">Create a new vector from this vector space as a copy of another vector.
 
- This protected method is called by <a href="../../../mitiv/linalg/VectorSpace.html#clone(mitiv.linalg.Vector)"><code>VectorSpace.clone(mitiv.linalg.Vector)</code></a> to do the real work after
- checking the argument.  Derived classes can implement a more efficient
- version than this one which is based on the <a href="../../../mitiv/linalg/VectorSpace.html#create()"><code>VectorSpace.create()</code></a> method and the
- <a href="../../../mitiv/linalg/VectorSpace.html#_copy(mitiv.linalg.Vector, mitiv.linalg.Vector)"><code>VectorSpace._copy(mitiv.linalg.Vector, mitiv.linalg.Vector)</code></a> protected method.</div>
+ This protected method is called by <a href="../../../mitiv/linalg/VectorSpace.html#clone(mitiv.linalg.Vector)"><code>VectorSpace.clone(mitiv.linalg.Vector)</code></a> to do the real work
+ after checking the argument.  Derived classes can implement a more
+ efficient version than this one which is based on the <a href="../../../mitiv/linalg/VectorSpace.html#create()"><code>VectorSpace.create()</code></a>
+ method and the <a href="../../../mitiv/linalg/VectorSpace.html#_copy(mitiv.linalg.Vector, mitiv.linalg.Vector)"><code>VectorSpace._copy(mitiv.linalg.Vector, mitiv.linalg.Vector)</code></a> protected method.</div>
 <dl>
 <dt><strong>Overrides:</strong></dt>
 <dd><code><a href="../../../mitiv/linalg/VectorSpace.html#_clone(mitiv.linalg.Vector)">_clone</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></dd>
@@ -699,15 +712,39 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html#_dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">VectorSpace</a></code></strong></div>
 <div class="block">Compute the inner product of two vectors.
  <p>
- This abstract method must be overwritten by its descendants to implement the
- inner product.  The passed arguments are guaranteed to belong to this vector
- space.
+ This abstract method must be overwritten by its descendants to
+ implement the inner product.  The passed arguments are guaranteed to
+ belong to this vector space.
  </p></div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../mitiv/linalg/VectorSpace.html#_dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">_dot</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - A vector of this vector space.</dd><dd><code>y</code> - - Another vector of this vector space.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The inner product of <b>x</b> and <b>y</b>.</dd></dl>
+</li>
+</ul>
+<a name="_dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>_dot</h4>
+<pre>protected&nbsp;double&nbsp;_dot(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;w,
+          <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+          <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html#_dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">VectorSpace</a></code></strong></div>
+<div class="block">Compute the inner product of three vectors or a weighted inner product
+ of two vectors.
+ <p>
+ This abstract method must be overwritten by its descendants to
+ implement the inner product.  The passed arguments are guaranteed to
+ belong to this vector space.
+ </p></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../mitiv/linalg/VectorSpace.html#_dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">_dot</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>w</code> - - A vector of this vector space.</dd><dd><code>x</code> - - Another vector of this vector space.</dd><dd><code>y</code> - - Yet another vector of this vector space.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The inner product of <b>w</b>, <b>x</b> and <b>y</b>.</dd></dl>
 </li>
 </ul>
 <a name="_norm2(mitiv.linalg.Vector)">
@@ -776,10 +813,21 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
           double&nbsp;beta,
           <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
           <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html#_axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">VectorSpace</a></code></strong></div>
+<div class="block">Compute a linear combination of two vectors (low level).
+
+ This abstract method must be overwritten by the descendants of this
+ class.  It is guaranteed that all passed vectors belong to the same
+ vector space.
+
+ As this method can be used to emulate other operations (as copy, zero,
+ etc.), actual code should be optimized for specific factors alpha
+ and/or <code>beta</code> equal to +/-1 or 0.  In particular when <code>alpha</code> (or <code>beta</code>) is zero, then <code>x</code> (or <code>y</code>) must
+ not be referenced.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../mitiv/linalg/VectorSpace.html#_axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_axpby</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></dd>
-</dl>
+<dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - The scalar factor for vector <code>x</code>.</dd><dd><code>x</code> - - A vector.</dd><dd><code>beta</code> - - The scalar factor for vector <code>y</code>.</dd><dd><code>y</code> - - Another vector.</dd><dd><code>dst</code> - - The destination vector.</dd></dl>
 </li>
 </ul>
 <a name="_axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">
@@ -795,10 +843,16 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
              double&nbsp;gamma,
              <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z,
              <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html#_axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">VectorSpace</a></code></strong></div>
+<div class="block">Compute a linear combination of two vectors (low level).
+
+ This abstract method must be overwritten by the descendants of this
+ class.  It is guaranteed that all passed vectors belong to the same
+ vector space.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../mitiv/linalg/VectorSpace.html#_axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_axpbypcz</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></dd>
-</dl>
+<dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - The scalar factor for vector <code>x</code>.</dd><dd><code>x</code> - - A vector.</dd><dd><code>beta</code> - - The scalar factor for vector <code>y</code>.</dd><dd><code>y</code> - - Another vector.</dd><dd><code>gamma</code> - - The scalar factor for vector <code>z</code>.</dd><dd><code>z</code> - - Yet another vector.</dd><dd><code>dst</code> - - The destination vector.</dd></dl>
 </li>
 </ul>
 </li>

@@ -208,7 +208,9 @@ extends java.lang.Object</pre>
       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
       double&nbsp;beta,
       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>&nbsp;</td>
+      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
+<div class="block">Compute a linear combination of two vectors (low level).</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
@@ -218,7 +220,9 @@ extends java.lang.Object</pre>
          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
          double&nbsp;gamma,
          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>&nbsp;</td>
+         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
+<div class="block">Compute a linear combination of two vectors (low level).</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
@@ -239,37 +243,46 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected abstract double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">_dot</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;w,
+    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>
+<div class="block">Compute the inner product of three vectors or a weighted inner product
+ of two vectors.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_fill(mitiv.linalg.Vector, double)">_fill</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
      double&nbsp;alpha)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected abstract double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_norm1(mitiv.linalg.Vector)">_norm1</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_norm2(mitiv.linalg.Vector)">_norm2</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected abstract double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_normInf(mitiv.linalg.Vector)">_normInf</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_scale(mitiv.linalg.Vector, double)">_scale</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v,
       double&nbsp;alpha)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_swap(mitiv.linalg.Vector, mitiv.linalg.Vector)">_swap</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_zero(mitiv.linalg.Vector)">_zero</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">axpby</a></strong>(double&nbsp;alpha,
      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
@@ -278,7 +291,7 @@ extends java.lang.Object</pre>
 <div class="block">Compute a linear combination of two vectors.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">axpby</a></strong>(double&nbsp;alpha,
      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
@@ -288,7 +301,7 @@ extends java.lang.Object</pre>
 <div class="block">Compute a linear combination of two vectors.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">axpbypcz</a></strong>(double&nbsp;alpha,
         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
@@ -300,52 +313,65 @@ extends java.lang.Object</pre>
 <div class="block">Compute a linear combination of three vectors.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#check(mitiv.linalg.Vector)">check</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)</code>
 <div class="block">Make sure a given vector belongs to the vector space.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#clone(mitiv.linalg.Vector)">clone</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec)</code>
 <div class="block">Create a new vector as a clone of another vector.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">copy</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
 <div class="block">Copy the contents of a vector into another one.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#create()">create</a></strong>()</code>
 <div class="block">Create a new vector from this vector space with undefined contents.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>abstract <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#create(double)">create</a></strong>(double&nbsp;alpha)</code>
 <div class="block">Create a new vector from this vector space filled with given value.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">dot</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>
 <div class="block">Compute the inner product of two vectors.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">dot</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;w,
+   <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+   <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>
+<div class="block">Compute the inner product of three vectors or a weighted inner product
+ of two vectors.</div>
+</td>
+</tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#fill(mitiv.linalg.Vector, double)">fill</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-    double&nbsp;alpha)</code>&nbsp;</td>
+    double&nbsp;alpha)</code>
+<div class="block">Fill a vector with a value.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#getNumber()">getNumber</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#getNumber()">getNumber</a></strong>()</code>
+<div class="block">Get the number of components of the vectors of a vector space.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>double</code></td>
@@ -381,7 +407,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#scale(mitiv.linalg.Vector, double)">scale</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v,
      double&nbsp;alpha)</code>
-<div class="block">Multiply the values of the vector by a constant factor.</div>
+<div class="block">Multiply the components of a vector by a constant factor.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -466,6 +492,8 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getNumber</h4>
 <pre>public final&nbsp;int&nbsp;getNumber()</pre>
+<div class="block">Get the number of components of the vectors of a vector space.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The number of components of the vectors of this vector space.</dd></dl>
 </li>
 </ul>
 <a name="create()">
@@ -502,13 +530,37 @@ extends java.lang.Object</pre>
 <div class="block">Compute the inner product of two vectors.
 
  The inner product, also called dot or scalar product of two vectors, is
- the sum of the products of the corresponding elements of the two vectors.
- The inner product is defined on a vector space, the two vectors must belong
- to this vector space.</div>
+ the sum of the products of the corresponding elements of the two
+ vectors.  The inner product is defined on a vector space, the two
+ vectors must belong to this vector space.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - A vector of this vector space.</dd><dd><code>y</code> - - Another vector of this vector space.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The inner product of <b>x</b> and <b>y</b>.</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - <b>x</b> and <b>y</b> must belong to this vector space.</dd></dl>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - <b>x</b> and <b>y</b> must belong to
+ this vector space.</dd></dl>
+</li>
+</ul>
+<a name="dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dot</h4>
+<pre>public final&nbsp;double&nbsp;dot(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;w,
+         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</pre>
+<div class="block">Compute the inner product of three vectors or a weighted inner product
+ of two vectors.
+
+ The inner product of three vectors is the sum of the products of the
+ corresponding elements of the three vectors.  The inner product is
+ defined on a vector space, the three vectors must belong to this vector
+ space.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>w</code> - - A vector of this vector space.</dd><dd><code>x</code> - - Another vector of this vector space.</dd><dd><code>y</code> - - Yet another vector of this vector space.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The inner product of <b>w</b>, <b>x</b> and <b>y</b>.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - <b>w</b>, <b>x</b> and <b>y</b> must
+ belong to this vector space.</dd></dl>
 </li>
 </ul>
 <a name="_dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">
@@ -518,18 +570,35 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>_dot</h4>
 <pre>protected abstract&nbsp;double&nbsp;_dot(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)
-                        throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
+          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</pre>
 <div class="block">Compute the inner product of two vectors.
  <p>
- This abstract method must be overwritten by its descendants to implement the
- inner product.  The passed arguments are guaranteed to belong to this vector
- space.
+ This abstract method must be overwritten by its descendants to
+ implement the inner product.  The passed arguments are guaranteed to
+ belong to this vector space.
  </p></div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - A vector of this vector space.</dd><dd><code>y</code> - - Another vector of this vector space.</dd>
-<dt><span class="strong">Returns:</span></dt><dd>The inner product of <b>x</b> and <b>y</b>.</dd>
-<dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - <b>x</b> and <b>y</b> must belong to this vector space.</dd></dl>
+<dt><span class="strong">Returns:</span></dt><dd>The inner product of <b>x</b> and <b>y</b>.</dd></dl>
+</li>
+</ul>
+<a name="_dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>_dot</h4>
+<pre>protected abstract&nbsp;double&nbsp;_dot(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;w,
+          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</pre>
+<div class="block">Compute the inner product of three vectors or a weighted inner product
+ of two vectors.
+ <p>
+ This abstract method must be overwritten by its descendants to
+ implement the inner product.  The passed arguments are guaranteed to
+ belong to this vector space.
+ </p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>w</code> - - A vector of this vector space.</dd><dd><code>x</code> - - Another vector of this vector space.</dd><dd><code>y</code> - - Yet another vector of this vector space.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The inner product of <b>w</b>, <b>x</b> and <b>y</b>.</dd></dl>
 </li>
 </ul>
 <a name="norm2(mitiv.linalg.Vector)">
@@ -616,7 +685,7 @@ extends java.lang.Object</pre>
 <h4>scale</h4>
 <pre>public&nbsp;void&nbsp;scale(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v,
          double&nbsp;alpha)</pre>
-<div class="block">Multiply the values of the vector by a constant factor.</div>
+<div class="block">Multiply the components of a vector by a constant factor.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - The scale factor.</dd></dl>
 </li>
 </ul>
@@ -644,17 +713,17 @@ extends java.lang.Object</pre>
 <div class="block">Compute a linear combination of two vectors.
 
  In pseudo-code, this method does:
-
+ <pre>
  y[i] = alpha*x[i] + beta*y[i];
-
- for all indices i.
+ </pre>
+ for all indices <code>i</code>.
 
  This abstract method must be overwritten by its descendants. As this
  method can be used to emulate other operations (as copy, zero, etc.),
  actual code should be optimized for specific factors alpha and/or beta
  equal to +/-1 or 0.  In particular when ALPHA is zero, then X must not
  be referenced.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - scalar factor for vector X</dd><dd><code>x</code> - the vector X</dd><dd><code>beta</code> - scalar factor for vector Y</dd><dd><code>y</code> - the vector Y (also used to store the result)</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - the scalar factor for vector X</dd><dd><code>x</code> - the vector X</dd><dd><code>beta</code> - the scalar factor for vector Y</dd><dd><code>y</code> - the vector Y (also used to store the result)</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - X and Y must belong to this vector space.</dd></dl>
 </li>
@@ -685,18 +754,18 @@ extends java.lang.Object</pre>
                  throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Compute a linear combination of two vectors.
 
- In pseudo-code, this method does:
-
+ In pseudo-code, this method performs the following operation:
+ <pre>
  dst[i] = alpha*x[i] + beta*y[i];
-
- for all indices i.
+ </pre>
+ for all indices <code>i</code>.
 
  This abstract method must be overwritten by its descendants. As this
  method can be used to emulate other operations (as copy, zero, etc.),
  actual code should be optimized for specific factors alpha and/or beta
  equal to +/-1 or 0.  In particular when ALPHA (or BETA) is zero, then X
  (or Y) must not be referenced.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - scalar factor for vector X</dd><dd><code>x</code> - the vector X</dd><dd><code>beta</code> - scalar factor for vector Y</dd><dd><code>y</code> - the vector Y</dd><dd><code>dst</code> - the destination vector</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - The scalar factor for vector <code>x</code>.</dd><dd><code>x</code> - - A vector.</dd><dd><code>beta</code> - - The scalar factor for vector <code>y</code>.</dd><dd><code>y</code> - - Another vector.</dd><dd><code>dst</code> - - The destination vector.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - X and Y must belong to this vector space.</dd></dl>
 </li>
@@ -712,6 +781,17 @@ extends java.lang.Object</pre>
           double&nbsp;beta,
           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
           <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
+<div class="block">Compute a linear combination of two vectors (low level).
+
+ This abstract method must be overwritten by the descendants of this
+ class.  It is guaranteed that all passed vectors belong to the same
+ vector space.
+
+ As this method can be used to emulate other operations (as copy, zero,
+ etc.), actual code should be optimized for specific factors alpha
+ and/or <code>beta</code> equal to +/-1 or 0.  In particular when <code>alpha</code> (or <code>beta</code>) is zero, then <code>x</code> (or <code>y</code>) must
+ not be referenced.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - The scalar factor for vector <code>x</code>.</dd><dd><code>x</code> - - A vector.</dd><dd><code>beta</code> - - The scalar factor for vector <code>y</code>.</dd><dd><code>y</code> - - Another vector.</dd><dd><code>dst</code> - - The destination vector.</dd></dl>
 </li>
 </ul>
 <a name="axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">
@@ -730,16 +810,15 @@ extends java.lang.Object</pre>
                     throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Compute a linear combination of three vectors.
 
- In pseudo-code, this method does:
-
+ In pseudo-code, this method performs the following operation:
+ <pre>
  dst[i] = alpha*x[i] + beta*y[i] + gamma*z[i];
-
- for all indices i.
-
- This abstract method must be overwritten by its descendants.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - scalar factor for vector X</dd><dd><code>x</code> - the vector X</dd><dd><code>beta</code> - scalar factor for vector Y</dd><dd><code>y</code> - the vector Y</dd><dd><code>gamma</code> - scalar factor for vector Z</dd><dd><code>z</code> - the vector Z</dd><dd><code>dst</code> - the destination vector</dd>
+ </pre>
+ for all indices <code>i</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - The scalar factor for vector <code>x</code>.</dd><dd><code>x</code> - - A vector.</dd><dd><code>beta</code> - - The scalar factor for vector <code>y</code>.</dd><dd><code>y</code> - - Another vector.</dd><dd><code>gamma</code> - - The scalar factor for vector <code>z</code>.</dd><dd><code>z</code> - - Yet another vector.</dd><dd><code>dst</code> - - The destination vector.</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - X and Y must belong to this vector space.</dd></dl>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - all vectors must belong to the same
+ vector space.</dd></dl>
 </li>
 </ul>
 <a name="_axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">
@@ -755,6 +834,12 @@ extends java.lang.Object</pre>
              double&nbsp;gamma,
              <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z,
              <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
+<div class="block">Compute a linear combination of two vectors (low level).
+
+ This abstract method must be overwritten by the descendants of this
+ class.  It is guaranteed that all passed vectors belong to the same
+ vector space.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - The scalar factor for vector <code>x</code>.</dd><dd><code>x</code> - - A vector.</dd><dd><code>beta</code> - - The scalar factor for vector <code>y</code>.</dd><dd><code>y</code> - - Another vector.</dd><dd><code>gamma</code> - - The scalar factor for vector <code>z</code>.</dd><dd><code>z</code> - - Yet another vector.</dd><dd><code>dst</code> - - The destination vector.</dd></dl>
 </li>
 </ul>
 <a name="copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">
@@ -838,10 +923,10 @@ extends java.lang.Object</pre>
 <pre>protected&nbsp;<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;_clone(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec)</pre>
 <div class="block">Create a new vector from this vector space as a copy of another vector.
 
- This protected method is called by <a href="../../mitiv/linalg/VectorSpace.html#clone(mitiv.linalg.Vector)"><code>clone(mitiv.linalg.Vector)</code></a> to do the real work after
- checking the argument.  Derived classes can implement a more efficient
- version than this one which is based on the <a href="../../mitiv/linalg/VectorSpace.html#create()"><code>create()</code></a> method and the
- <a href="../../mitiv/linalg/VectorSpace.html#_copy(mitiv.linalg.Vector, mitiv.linalg.Vector)"><code>_copy(mitiv.linalg.Vector, mitiv.linalg.Vector)</code></a> protected method.</div>
+ This protected method is called by <a href="../../mitiv/linalg/VectorSpace.html#clone(mitiv.linalg.Vector)"><code>clone(mitiv.linalg.Vector)</code></a> to do the real work
+ after checking the argument.  Derived classes can implement a more
+ efficient version than this one which is based on the <a href="../../mitiv/linalg/VectorSpace.html#create()"><code>create()</code></a>
+ method and the <a href="../../mitiv/linalg/VectorSpace.html#_copy(mitiv.linalg.Vector, mitiv.linalg.Vector)"><code>_copy(mitiv.linalg.Vector, mitiv.linalg.Vector)</code></a> protected method.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>vec</code> - - A vector from this space (this has been checked).</dd>
 <dt><span class="strong">Returns:</span></dt><dd>A new duplicate copy of the vector <code>v</code>.</dd></dl>
 </li>
@@ -877,9 +962,7 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;void&nbsp;zero(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)</pre>
 <div class="block">Fill a vector with zeros.
 
- This basic implementation calls axpby() method and is expected to be
- overwritten with a more efficient version by the descendants of this
- class.</div>
+ This method set to zero all elements of a vector.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>v</code> - A vector of this space.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - V must belong to this vector space.</dd></dl>
@@ -902,6 +985,12 @@ extends java.lang.Object</pre>
 <h4>fill</h4>
 <pre>public&nbsp;void&nbsp;fill(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
         double&nbsp;alpha)</pre>
+<div class="block">Fill a vector with a value.
+
+ This method set all elements of a vector with a value.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - A vector of this space.</dd><dd><code>alpha</code> - A scalar value.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - V must belong to this vector space.</dd></dl>
 </li>
 </ul>
 <a name="_fill(mitiv.linalg.Vector, double)">

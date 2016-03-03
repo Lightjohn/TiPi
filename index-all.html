@@ -1429,7 +1429,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/Vector.html#axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">axpby(double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></dt>
 <dd>
-<div class="block">Compute a linear combination of two vectors.</div>
+<div class="block">Compute the linear combination of two vectors.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">axpby(double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
@@ -1448,7 +1448,9 @@
 <dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#axpbypcz(float, float[], float, float[], float, float[], float[])">axpbypcz(float, float[], float, float[], float, float[], float[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/Vector.html#axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">axpbypcz(double, Vector, double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Compute the linear combination of three vectors.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">axpbypcz(double, Vector, double, Vector, double, Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
 <div class="block">Compute a linear combination of three vectors.</div>
@@ -4561,9 +4563,18 @@
 <dd>
 <div class="block">Compute the inner product of this vector with another vector.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/linalg/Vector.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">dot(Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></dt>
+<dd>
+<div class="block">Compute the inner product of this vector with two other vectors.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">dot(Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
 <div class="block">Compute the inner product of two vectors.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">dot(Vector, Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
+<dd>
+<div class="block">Compute the inner product of three vectors or a weighted inner product
+ of two vectors.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/base/Traits.html#DOUBLE">DOUBLE</a></span> - Static variable in interface mitiv.base.<a href="./mitiv/base/Traits.html" title="interface in mitiv.base">Traits</a></dt>
 <dd>
@@ -5888,9 +5899,13 @@
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVector.html#fill(mitiv.random.FloatGenerator)">fill(FloatGenerator)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/Vector.html#fill(double)">fill(double)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Fill the vector with a value.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#fill(mitiv.linalg.Vector, double)">fill(Vector, double)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Fill a vector with a value.</div>
+</dd>
 <dt><a href="./mitiv/deconv/Filter.html" title="class in mitiv.deconv"><span class="strong">Filter</span></a> - Class in <a href="./mitiv/deconv/package-summary.html">mitiv.deconv</a></dt>
 <dd>
 <div class="block">This class contain all the methods to compute the solutions</div>
@@ -9098,7 +9113,9 @@
 <div class="block">Get the size of the vector.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#getNumber()">getNumber()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Get the number of components of the vectors of a vector space.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/cost/DifferentiableInverseProblemCost.html#getNumberOfFunctionCalls()">getNumberOfFunctionCalls()</a></span> - Method in class mitiv.cost.<a href="./mitiv/cost/DifferentiableInverseProblemCost.html" title="class in mitiv.cost">DifferentiableInverseProblemCost</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/cost/DifferentiableInverseProblemCost.html#getNumberOfGradientCalls()">getNumberOfGradientCalls()</a></span> - Method in class mitiv.cost.<a href="./mitiv/cost/DifferentiableInverseProblemCost.html" title="class in mitiv.cost">DifferentiableInverseProblemCost</a></dt>
@@ -12545,7 +12562,9 @@
 <div class="block">Compute the L1 norm of an array.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/Vector.html#norm1()">norm1()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Compute the L1 norm of the vector.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#norm1(mitiv.linalg.Vector)">norm1(Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
 <div class="block">Compute the L1 norm of a vector.</div>
@@ -12559,7 +12578,9 @@
 <div class="block">Compute the Euclidean (L2) norm of an array.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/Vector.html#norm2()">norm2()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Compute the Euclidean (L2) norm of the vector.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#norm2(mitiv.linalg.Vector)">norm2(Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
 <div class="block">Compute the Euclidean (L2) norm of a vector.</div>
@@ -12593,7 +12614,9 @@
 <div class="block">Compute the infinite norm of an array.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/Vector.html#normInf()">normInf()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Compute the infinite norm of the vector.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#normInf(mitiv.linalg.Vector)">normInf(Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
 <div class="block">Compute the infinite norm of a vector.</div>
@@ -13974,7 +13997,7 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#scale(mitiv.linalg.Vector, double)">scale(Vector, double)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
-<div class="block">Multiply the values of the vector by a constant factor.</div>
+<div class="block">Multiply the components of a vector by a constant factor.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/utils/CommonUtils.html#SCALE">SCALE</a></span> - Static variable in class mitiv.utils.<a href="./mitiv/utils/CommonUtils.html" title="class in mitiv.utils">CommonUtils</a></dt>
 <dd>
@@ -22799,7 +22822,9 @@ the order they are declared.</div>
 <dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#zero(float[][][])">zero(float[][][])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/Vector.html#zero()">zero()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Fill the vector with zeros.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#zero()">zero()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
 <div class="block">Create a new vector of zero's.</div>
@@ -22833,13 +22858,17 @@ the order they are declared.</div>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#_axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_axpby(double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#_axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_axpby(double, Vector, double, Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Compute a linear combination of two vectors (low level).</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#_axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_axpbypcz(double, Vector, double, Vector, double, Vector, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html#_axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_axpbypcz(double, Vector, double, Vector, double, Vector, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html" title="class in mitiv.linalg.shaped">FloatShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#_axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_axpbypcz(double, Vector, double, Vector, double, Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Compute a linear combination of two vectors (low level).</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#_clone(mitiv.linalg.shaped.DoubleShapedVector)">_clone(DoubleShapedVector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#_clone(mitiv.linalg.Vector)">_clone(Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
@@ -22864,11 +22893,20 @@ the order they are declared.</div>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#_dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">_dot(Vector, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#_dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">_dot(Vector, Vector, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html#_dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">_dot(Vector, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html" title="class in mitiv.linalg.shaped">FloatShapedVectorSpace</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html#_dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">_dot(Vector, Vector, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html" title="class in mitiv.linalg.shaped">FloatShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#_dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">_dot(Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
 <div class="block">Compute the inner product of two vectors.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#_dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">_dot(Vector, Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
+<dd>
+<div class="block">Compute the inner product of three vectors or a weighted inner product
+ of two vectors.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#_fill(mitiv.linalg.Vector, double)">_fill(Vector, double)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
