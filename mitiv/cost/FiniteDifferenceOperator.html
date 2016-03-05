@@ -187,7 +187,7 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <td class="colLast"><code><strong><a href="../../mitiv/cost/FiniteDifferenceOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
       <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
       int&nbsp;job)</code>
-<div class="block">Apply a linear operator (or its adjoint) to a vector.</div>
+<div class="block">Implement the operations performed by a linear operator out-of-place.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -200,7 +200,7 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;mitiv.linalg.<a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></h3>
-<code><a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkAdjoint(mitiv.linalg.Vector, mitiv.linalg.Vector)">checkAdjoint</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkLinearProblem(mitiv.linalg.LinearOperator, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">checkLinearProblem</a>, <a href="../../mitiv/linalg/LinearOperator.html#getInputSpace()">getInputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#getOutputSpace()">getOutputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#isEndomorphism()">isEndomorphism</a></code></li>
+<code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, int)">_apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkAdjoint(mitiv.linalg.Vector, mitiv.linalg.Vector)">checkAdjoint</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkLinearProblem(mitiv.linalg.LinearOperator, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">checkLinearProblem</a>, <a href="../../mitiv/linalg/LinearOperator.html#getInputSpace()">getInputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#getOutputSpace()">getOutputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#isEndomorphism()">isEndomorphism</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -357,21 +357,17 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
           int&nbsp;job)
                throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
-<div class="block">Apply a linear operator (or its adjoint) to a vector.
+<div class="block">Implement the operations performed by a linear operator out-of-place.
 
- This protected method is called by the "apply" method after checking of
- the arguments.</div>
+ This protected method is called by the `apply` method after checking of
+ the arguments.  The operation is performed out-of-place which means that
+ source and destination vectors are guaranteed to be different.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd><dd><code>job</code> - - The type of operation to perform (<a href="../../mitiv/linalg/LinearOperator.html#DIRECT"><code>LinearOperator.DIRECT</code></a>,
-              <a href="../../mitiv/linalg/LinearOperator.html#ADJOINT"><code>LinearOperator.ADJOINT</code></a>, <code>INVERSE</code> or
-              <code>INVERSE_ADJOINT</code>).</dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd><dd><code>job</code> - - The type of operation to perform.</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - If adjoint is false (resp. tour), src (resp. dst) must
-             belongs to the input vector space of the operator and dst
-             (resp. src) must belongs to the output vector space of the
-             operator.</dd></dl>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code></dd></dl>
 </li>
 </ul>
 </li>

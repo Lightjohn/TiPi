@@ -148,20 +148,8 @@ extends <a href="../../mitiv/optim/ReverseCommunicationOptimizerWithLineSearch.h
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/VMLMB.html#delta">delta</a></strong></code>
-<div class="block">Relative threshold for the sufficient descent condition.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/VMLMB.html#dg0">dg0</a></strong></code>
 <div class="block">Directional derivative at X0.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/VMLMB.html#epsilon">epsilon</a></strong></code>
-<div class="block">Small relative size for the initial step or after a restart.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -208,46 +196,40 @@ extends <a href="../../mitiv/optim/ReverseCommunicationOptimizerWithLineSearch.h
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="../../mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/VMLMB.html#H">H</a></strong></code>
-<div class="block">LBFGS approximation of the inverse Hessian</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/VMLMB.html#p">p</a></strong></code>
 <div class="block">The (anti-)search direction.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/VMLMB.html#pnorm">pnorm</a></strong></code>
 <div class="block">The norm of the search direction.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/optim/BoundProjector.html" title="class in mitiv.optim">BoundProjector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/VMLMB.html#projector">projector</a></strong></code>
 <div class="block">Projector to use to impose constraints.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/VMLMB.html#stpmax">stpmax</a></strong></code>
 <div class="block">Upper relative step bound.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/VMLMB.html#stpmin">stpmin</a></strong></code>
 <div class="block">Lower relative step bound.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/VMLMB.html#tmp">tmp</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/VMLMB.html#x0">x0</a></strong></code>
 <div class="block">Variables at the start of the line search.</div>
@@ -392,36 +374,6 @@ extends <a href="../../mitiv/optim/ReverseCommunicationOptimizerWithLineSearch.h
 <!--   -->
 </a>
 <h3>Field Detail</h3>
-<a name="H">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>H</h4>
-<pre>protected&nbsp;<a href="../../mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a> H</pre>
-<div class="block">LBFGS approximation of the inverse Hessian</div>
-</li>
-</ul>
-<a name="delta">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>delta</h4>
-<pre>protected&nbsp;double delta</pre>
-<div class="block">Relative threshold for the sufficient descent condition.</div>
-</li>
-</ul>
-<a name="epsilon">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>epsilon</h4>
-<pre>protected&nbsp;double epsilon</pre>
-<div class="block">Small relative size for the initial step or after a restart.</div>
-</li>
-</ul>
 <a name="grtol">
 <!--   -->
 </a>

@@ -217,30 +217,30 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_combine</a></strong>(double&nbsp;alpha,
+<td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_combine</a></strong>(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+        double&nbsp;alpha,
         <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
         double&nbsp;beta,
-        <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-        double&nbsp;gamma,
-        <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z,
-        <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
+        <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>
 <div class="block">Compute a linear combination of two vectors (low level).</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_combine</a></strong>(double&nbsp;alpha,
+<td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_combine</a></strong>(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+        double&nbsp;alpha,
         <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
         double&nbsp;beta,
         <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-        <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
+        double&nbsp;gamma,
+        <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z)</code>
 <div class="block">Compute a linear combination of two vectors (low level).</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">_copy</a></strong>(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-     <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
+<td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">_copy</a></strong>(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+     <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src)</code>
 <div class="block">Copy the contents of a vector into another one (low level).</div>
 </td>
 </tr>
@@ -267,9 +267,9 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_multiply(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">_multiply</a></strong>(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vx,
-         <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vy,
-         <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../mitiv/linalg/shaped/FloatShapedVectorSpace.html#_multiply(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">_multiply</a></strong>(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+         <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vx,
+         <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vy)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected double</code></td>
@@ -358,7 +358,7 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;mitiv.linalg.<a href="../../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></h3>
-<code><a href="../../../mitiv/linalg/VectorSpace.html#_scale(mitiv.linalg.Vector, double)">_scale</a>, <a href="../../../mitiv/linalg/VectorSpace.html#_zero(mitiv.linalg.Vector)">_zero</a>, <a href="../../../mitiv/linalg/VectorSpace.html#check(mitiv.linalg.Vector)">check</a>, <a href="../../../mitiv/linalg/VectorSpace.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine</a>, <a href="../../../mitiv/linalg/VectorSpace.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">combine</a>, <a href="../../../mitiv/linalg/VectorSpace.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">combine</a>, <a href="../../../mitiv/linalg/VectorSpace.html#copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">copy</a>, <a href="../../../mitiv/linalg/VectorSpace.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">dot</a>, <a href="../../../mitiv/linalg/VectorSpace.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">dot</a>, <a href="../../../mitiv/linalg/VectorSpace.html#fill(mitiv.linalg.Vector, double)">fill</a>, <a href="../../../mitiv/linalg/VectorSpace.html#getNumber()">getNumber</a>, <a href="../../../mitiv/linalg/VectorSpace.html#multiply(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">multiply</a>, <a href="../../../mitiv/linalg/VectorSpace.html#norm1(mitiv.linalg.Vector)">norm1</a>, <a href="../../../mitiv/linalg/VectorSpace.html#norm2(mitiv.linalg.Vector)">norm2</a>, <a href="../../../mitiv/linalg/VectorSpace.html#normInf(mitiv.linalg.Vector)">normInf</a>, <a href="../../../mitiv/linalg/VectorSpace.html#one()">one</a>, <a href="../../../mitiv/linalg/VectorSpace.html#owns(mitiv.linalg.Vector)">owns</a>, <a href="../../../mitiv/linalg/VectorSpace.html#scale(mitiv.linalg.Vector, double)">scale</a>, <a href="../../../mitiv/linalg/VectorSpace.html#swap(mitiv.linalg.Vector, mitiv.linalg.Vector)">swap</a>, <a href="../../../mitiv/linalg/VectorSpace.html#zero()">zero</a>, <a href="../../../mitiv/linalg/VectorSpace.html#zero(mitiv.linalg.Vector)">zero</a></code></li>
+<code><a href="../../../mitiv/linalg/VectorSpace.html#_scale(mitiv.linalg.Vector, double)">_scale</a>, <a href="../../../mitiv/linalg/VectorSpace.html#_zero(mitiv.linalg.Vector)">_zero</a>, <a href="../../../mitiv/linalg/VectorSpace.html#check(mitiv.linalg.Vector)">check</a>, <a href="../../../mitiv/linalg/VectorSpace.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine</a>, <a href="../../../mitiv/linalg/VectorSpace.html#combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine</a>, <a href="../../../mitiv/linalg/VectorSpace.html#combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine</a>, <a href="../../../mitiv/linalg/VectorSpace.html#copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">copy</a>, <a href="../../../mitiv/linalg/VectorSpace.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">dot</a>, <a href="../../../mitiv/linalg/VectorSpace.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">dot</a>, <a href="../../../mitiv/linalg/VectorSpace.html#fill(mitiv.linalg.Vector, double)">fill</a>, <a href="../../../mitiv/linalg/VectorSpace.html#getNumber()">getNumber</a>, <a href="../../../mitiv/linalg/VectorSpace.html#multiply(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">multiply</a>, <a href="../../../mitiv/linalg/VectorSpace.html#norm1(mitiv.linalg.Vector)">norm1</a>, <a href="../../../mitiv/linalg/VectorSpace.html#norm2(mitiv.linalg.Vector)">norm2</a>, <a href="../../../mitiv/linalg/VectorSpace.html#normInf(mitiv.linalg.Vector)">normInf</a>, <a href="../../../mitiv/linalg/VectorSpace.html#one()">one</a>, <a href="../../../mitiv/linalg/VectorSpace.html#owns(mitiv.linalg.Vector)">owns</a>, <a href="../../../mitiv/linalg/VectorSpace.html#scale(mitiv.linalg.Vector, double)">scale</a>, <a href="../../../mitiv/linalg/VectorSpace.html#swap(mitiv.linalg.Vector, mitiv.linalg.Vector)">swap</a>, <a href="../../../mitiv/linalg/VectorSpace.html#zero()">zero</a>, <a href="../../../mitiv/linalg/VectorSpace.html#zero(mitiv.linalg.Vector)">zero</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -658,8 +658,8 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
 <ul class="blockList">
 <li class="blockList">
 <h4>_copy</h4>
-<pre>protected&nbsp;void&nbsp;_copy(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-         <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
+<pre>protected&nbsp;void&nbsp;_copy(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+         <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src)</pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html#_copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">VectorSpace</a></code></strong></div>
 <div class="block">Copy the contents of a vector into another one (low level).
 
@@ -669,7 +669,7 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
 <dl>
 <dt><strong>Overrides:</strong></dt>
 <dd><code><a href="../../../mitiv/linalg/VectorSpace.html#_copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">_copy</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - source vector</dd><dd><code>dst</code> - - destination vector</dd></dl>
+<dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - destination vector</dd><dd><code>src</code> - - source vector</dd></dl>
 </li>
 </ul>
 <a name="_swap(mitiv.linalg.Vector, mitiv.linalg.Vector)">
@@ -801,18 +801,18 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
 </dl>
 </li>
 </ul>
-<a name="_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">
+<a name="_combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>_combine</h4>
-<pre>protected&nbsp;void&nbsp;_combine(double&nbsp;alpha,
+<pre>protected&nbsp;void&nbsp;_combine(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+            double&nbsp;alpha,
             <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
             double&nbsp;beta,
-            <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
-            <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">VectorSpace</a></code></strong></div>
+            <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html#_combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">VectorSpace</a></code></strong></div>
 <div class="block">Compute a linear combination of two vectors (low level).
 
  This abstract method must be overwritten by the descendants of this
@@ -825,24 +825,24 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
  not be referenced.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../mitiv/linalg/VectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_combine</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - The scalar factor for vector <code>x</code>.</dd><dd><code>x</code> - - A vector.</dd><dd><code>beta</code> - - The scalar factor for vector <code>y</code>.</dd><dd><code>y</code> - - Another vector.</dd><dd><code>dst</code> - - The destination vector.</dd></dl>
+<dd><code><a href="../../../mitiv/linalg/VectorSpace.html#_combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_combine</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - The destination vector.</dd><dd><code>alpha</code> - - The scalar factor for vector <code>x</code>.</dd><dd><code>x</code> - - A vector.</dd><dd><code>beta</code> - - The scalar factor for vector <code>y</code>.</dd><dd><code>y</code> - - Another vector.</dd></dl>
 </li>
 </ul>
-<a name="_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">
+<a name="_combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>_combine</h4>
-<pre>protected&nbsp;void&nbsp;_combine(double&nbsp;alpha,
+<pre>protected&nbsp;void&nbsp;_combine(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+            double&nbsp;alpha,
             <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
             double&nbsp;beta,
             <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
             double&nbsp;gamma,
-            <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z,
-            <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">VectorSpace</a></code></strong></div>
+            <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;z)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html#_combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">VectorSpace</a></code></strong></div>
 <div class="block">Compute a linear combination of two vectors (low level).
 
  This abstract method must be overwritten by the descendants of this
@@ -850,8 +850,8 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
  vector space.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../mitiv/linalg/VectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_combine</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - The scalar factor for vector <code>x</code>.</dd><dd><code>x</code> - - A vector.</dd><dd><code>beta</code> - - The scalar factor for vector <code>y</code>.</dd><dd><code>y</code> - - Another vector.</dd><dd><code>gamma</code> - - The scalar factor for vector <code>z</code>.</dd><dd><code>z</code> - - Yet another vector.</dd><dd><code>dst</code> - - The destination vector.</dd></dl>
+<dd><code><a href="../../../mitiv/linalg/VectorSpace.html#_combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_combine</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - The destination vector.</dd><dd><code>alpha</code> - - The scalar factor for vector <code>x</code>.</dd><dd><code>x</code> - - A vector.</dd><dd><code>beta</code> - - The scalar factor for vector <code>y</code>.</dd><dd><code>y</code> - - Another vector.</dd><dd><code>gamma</code> - - The scalar factor for vector <code>z</code>.</dd><dd><code>z</code> - - Yet another vector.</dd></dl>
 </li>
 </ul>
 <a name="_multiply(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">
@@ -860,9 +860,9 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="cla
 <ul class="blockListLast">
 <li class="blockList">
 <h4>_multiply</h4>
-<pre>protected&nbsp;void&nbsp;_multiply(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vx,
-             <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vy,
-             <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
+<pre>protected&nbsp;void&nbsp;_multiply(<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+             <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vx,
+             <a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vy)</pre>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../mitiv/linalg/VectorSpace.html#_multiply(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">_multiply</a></code>&nbsp;in class&nbsp;<code><a href="../../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></dd>

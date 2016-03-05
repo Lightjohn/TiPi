@@ -123,6 +123,8 @@
 <dd>
 <div class="block">The current step length.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/optim/LBFGSOperator.html#alpha">alpha</a></span> - Variable in class mitiv.optim.<a href="./mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/optim/VMLMB.html#alpha">alpha</a></span> - Variable in class mitiv.optim.<a href="./mitiv/optim/VMLMB.html" title="class in mitiv.optim">VMLMB</a></dt>
 <dd>
 <div class="block">The current step length.</div>
@@ -155,12 +157,22 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply(Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
 <dd>
-<div class="block">Apply a linear operator to a vector.</div>
+<div class="block">Apply linear operator.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply(Vector, Vector, int)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
 <dd>
-<div class="block">Apply linear operator with checking.</div>
+<div class="block">Apply a given operation implemented by a linear operator.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector)">apply(Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
+<dd>
+<div class="block">Apply linear operator in-place.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, int)">apply(Vector, int)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
+<dd>
+<div class="block">Apply in-place a given operation implemented a linear operator.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/optim/LBFGSOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">apply(Vector, Vector, Vector)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/BiPhotonModel.html#apply_J_defocus(double[])">apply_J_defocus(double[])</a></span> - Method in class mitiv.microscopy.<a href="./mitiv/microscopy/BiPhotonModel.html" title="class in mitiv.microscopy">BiPhotonModel</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/WideFieldModel.html#apply_J_defocus(double[])">apply_J_defocus(double[])</a></span> - Method in class mitiv.microscopy.<a href="./mitiv/microscopy/WideFieldModel.html" title="class in mitiv.microscopy">WideFieldModel</a></dt>
@@ -173,13 +185,13 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/WideFieldModel.html#apply_J_rho(double[])">apply_J_rho(double[])</a></span> - Method in class mitiv.microscopy.<a href="./mitiv/microscopy/WideFieldModel.html" title="class in mitiv.microscopy">WideFieldModel</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/cost/ProximalOperator.html#applyProx(double, mitiv.linalg.Vector, mitiv.linalg.Vector, double)">applyProx(double, Vector, Vector, double)</a></span> - Method in interface mitiv.cost.<a href="./mitiv/cost/ProximalOperator.html" title="interface in mitiv.cost">ProximalOperator</a></dt>
+<dt><span class="strong"><a href="./mitiv/cost/ProximalOperator.html#applyProx(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double)">applyProx(Vector, double, Vector, double)</a></span> - Method in interface mitiv.cost.<a href="./mitiv/cost/ProximalOperator.html" title="interface in mitiv.cost">ProximalOperator</a></dt>
 <dd>
 <div class="block">Apply the proximal operator of a cost function.</div>
 </dd>
-<dt><span class="strong"><a href="./mitiv/cost/PseudoL1NormOfBoundedDoubleVector.html#applyProx(double, mitiv.linalg.Vector, mitiv.linalg.Vector, double)">applyProx(double, Vector, Vector, double)</a></span> - Method in class mitiv.cost.<a href="./mitiv/cost/PseudoL1NormOfBoundedDoubleVector.html" title="class in mitiv.cost">PseudoL1NormOfBoundedDoubleVector</a></dt>
+<dt><span class="strong"><a href="./mitiv/cost/PseudoL1NormOfBoundedDoubleVector.html#applyProx(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double)">applyProx(Vector, double, Vector, double)</a></span> - Method in class mitiv.cost.<a href="./mitiv/cost/PseudoL1NormOfBoundedDoubleVector.html" title="class in mitiv.cost">PseudoL1NormOfBoundedDoubleVector</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/cost/PseudoL1NormOfDoubleVector.html#applyProx(double, mitiv.linalg.Vector, mitiv.linalg.Vector, double)">applyProx(double, Vector, Vector, double)</a></span> - Method in class mitiv.cost.<a href="./mitiv/cost/PseudoL1NormOfDoubleVector.html" title="class in mitiv.cost">PseudoL1NormOfDoubleVector</a></dt>
+<dt><span class="strong"><a href="./mitiv/cost/PseudoL1NormOfDoubleVector.html#applyProx(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double)">applyProx(Vector, double, Vector, double)</a></span> - Method in class mitiv.cost.<a href="./mitiv/cost/PseudoL1NormOfDoubleVector.html" title="class in mitiv.cost">PseudoL1NormOfDoubleVector</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./mitiv/optim/ArmijoLineSearch.html" title="class in mitiv.optim"><span class="strong">ArmijoLineSearch</span></a> - Class in <a href="./mitiv/optim/package-summary.html">mitiv.optim</a></dt>
 <dd>
@@ -1504,8 +1516,6 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/PSF_Estimation.html#BETA">BETA</a></span> - Static variable in class mitiv.microscopy.<a href="./mitiv/microscopy/PSF_Estimation.html" title="class in mitiv.microscopy">PSF_Estimation</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/optim/LBFGSOperator.html#beta">beta</a></span> - Variable in class mitiv.optim.<a href="./mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/random/UniformDistribution.html#biasDouble">biasDouble</a></span> - Variable in class mitiv.random.<a href="./mitiv/random/UniformDistribution.html" title="class in mitiv.random">UniformDistribution</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/random/UniformDistribution.html#biasFloat">biasFloat</a></span> - Variable in class mitiv.random.<a href="./mitiv/random/UniformDistribution.html" title="class in mitiv.random">UniformDistribution</a></dt>
@@ -1542,6 +1552,12 @@
 <div class="block">Abstract class for bound projection.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/optim/BoundProjector.html#BoundProjector(mitiv.linalg.VectorSpace)">BoundProjector(VectorSpace)</a></span> - Constructor for class mitiv.optim.<a href="./mitiv/optim/BoundProjector.html" title="class in mitiv.optim">BoundProjector</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim"><span class="strong">BoxedSet</span></a> - Class in <a href="./mitiv/optim/package-summary.html">mitiv.optim</a></dt>
+<dd>
+<div class="block">Implementation of boxed set for MiTiV vectors.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/optim/BoxedSet.html#BoxedSet(mitiv.linalg.VectorSpace)">BoxedSet(VectorSpace)</a></span> - Constructor for class mitiv.optim.<a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/tests/MinPack1Tests.html#BP">BP</a></span> - Static variable in class mitiv.tests.<a href="./mitiv/tests/MinPack1Tests.html" title="class in mitiv.tests">MinPack1Tests</a></dt>
 <dd>&nbsp;</dd>
@@ -2301,27 +2317,27 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(int, double, double[], double, double[])">combine(int, double, double[], double, double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(int, double, double[], double, double[], double[])">combine(int, double, double[], double, double[], double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(double[], int, double, double[], double, double[])">combine(double[], int, double, double[], double, double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(double, double[], double, double[])">combine(double, double[], double, double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(double, double[], double, double[], double[])">combine(double, double[], double, double[], double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(double[], double, double[], double, double[])">combine(double[], double, double[], double, double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(int, double, float[], double, float[])">combine(int, double, float[], double, float[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(int, double, float[], double, float[], float[])">combine(int, double, float[], double, float[], float[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(float[], int, double, float[], double, float[])">combine(float[], int, double, float[], double, float[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(double, float[], double, float[])">combine(double, float[], double, float[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(double, float[], double, float[], float[])">combine(double, float[], double, float[], float[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(float[], double, float[], double, float[])">combine(float[], double, float[], double, float[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(int, double, double[], double, double[], double, double[], double[])">combine(int, double, double[], double, double[], double, double[], double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(double[], int, double, double[], double, double[], double, double[])">combine(double[], int, double, double[], double, double[], double, double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(double, double[], double, double[], double, double[], double[])">combine(double, double[], double, double[], double, double[], double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(double[], double, double[], double, double[], double, double[])">combine(double[], double, double[], double, double[], double, double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(int, double, float[], double, float[], double, float[], float[])">combine(int, double, float[], double, float[], double, float[], float[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(float[], int, double, float[], double, float[], double, float[])">combine(float[], int, double, float[], double, float[], double, float[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(float, float[], float, float[], float, float[], float[])">combine(float, float[], float, float[], float, float[], float[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#combine(float[], float, float[], float, float[], float, float[])">combine(float[], float, float[], float, float[], float, float[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/Vector.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine(double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></dt>
 <dd>
@@ -2335,11 +2351,11 @@
 <dd>
 <div class="block">Compute a linear combination of two vectors.</div>
 </dd>
-<dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">combine(double, Vector, double, Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine(Vector, double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
 <div class="block">Compute a linear combination of two vectors.</div>
 </dd>
-<dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">combine(double, Vector, double, Vector, double, Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine(Vector, double, Vector, double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
 <div class="block">Compute a linear combination of three vectors.</div>
 </dd>
@@ -2766,9 +2782,9 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/array/ShortScalar.html#copy()">copy()</a></span> - Method in class mitiv.array.<a href="./mitiv/array/ShortScalar.html" title="class in mitiv.array">ShortScalar</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#copy(int, double[], double[])">copy(int, double[], double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#copy(double[], int, double[])">copy(double[], int, double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#copy(int, float[], float[])">copy(int, float[], float[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#copy(float[], int, float[])">copy(float[], int, float[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#copy(double[], double[])">copy(double[], double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
@@ -3726,6 +3742,10 @@
 <dd>
 <div class="block">Create a new vector from this vector space filled with given value.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/optim/BoxedSet.html#create(mitiv.linalg.VectorSpace)">create(VectorSpace)</a></span> - Static method in class mitiv.optim.<a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></dt>
+<dd>
+<div class="block">Create a new boxed set.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/utils/MathUtils.html#create3DSquare(int, int, int)">create3DSquare(int, int, int)</a></span> - Static method in class mitiv.utils.<a href="./mitiv/utils/MathUtils.html" title="class in mitiv.utils">MathUtils</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/io/BufferedImageUtils.html#createNewBufferedImage(java.awt.image.BufferedImage)">createNewBufferedImage(BufferedImage)</a></span> - Static method in class mitiv.io.<a href="./mitiv/io/BufferedImageUtils.html" title="class in mitiv.io">BufferedImageUtils</a></dt>
@@ -4357,10 +4377,6 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/optim/NonLinearConjugateGradient.html#DELTA">DELTA</a></span> - Static variable in class mitiv.optim.<a href="./mitiv/optim/NonLinearConjugateGradient.html" title="class in mitiv.optim">NonLinearConjugateGradient</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/optim/VMLMB.html#delta">delta</a></span> - Variable in class mitiv.optim.<a href="./mitiv/optim/VMLMB.html" title="class in mitiv.optim">VMLMB</a></dt>
-<dd>
-<div class="block">Relative threshold for the sufficient descent condition.</div>
-</dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/WideFieldModel.html#deltaX">deltaX</a></span> - Variable in class mitiv.microscopy.<a href="./mitiv/microscopy/WideFieldModel.html" title="class in mitiv.microscopy">WideFieldModel</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/WideFieldModel.html#deltaY">deltaY</a></span> - Variable in class mitiv.microscopy.<a href="./mitiv/microscopy/WideFieldModel.html" title="class in mitiv.microscopy">WideFieldModel</a></dt>
@@ -4384,6 +4400,18 @@
 <dt><span class="strong"><a href="./mitiv/optim/VMLMB.html#dg0">dg0</a></span> - Variable in class mitiv.optim.<a href="./mitiv/optim/VMLMB.html" title="class in mitiv.optim">VMLMB</a></dt>
 <dd>
 <div class="block">Directional derivative at X0.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/DiagonalOperator.html#diag">diag</a></span> - Variable in class mitiv.linalg.<a href="./mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="./mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg"><span class="strong">DiagonalOperator</span></a> - Class in <a href="./mitiv/linalg/package-summary.html">mitiv.linalg</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/DiagonalOperator.html#DiagonalOperator(mitiv.linalg.VectorSpace)">DiagonalOperator(VectorSpace)</a></span> - Constructor for class mitiv.linalg.<a href="./mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></dt>
+<dd>
+<div class="block">Create a new diagonal operator.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/DiagonalOperator.html#DiagonalOperator(mitiv.linalg.Vector)">DiagonalOperator(Vector)</a></span> - Constructor for class mitiv.linalg.<a href="./mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></dt>
+<dd>
+<div class="block">Create a new diagonal operator.</div>
 </dd>
 <dt><a href="./mitiv/cost/DifferentiableCostFunction.html" title="interface in mitiv.cost"><span class="strong">DifferentiableCostFunction</span></a> - Interface in <a href="./mitiv/cost/package-summary.html">mitiv.cost</a></dt>
 <dd>
@@ -4675,6 +4703,13 @@
 <div class="block">Define the global operations which can be applied to an array with a
  specific type.</div>
 </dd>
+<dt><a href="./mitiv/optim/DoubleBoxedSet.html" title="class in mitiv.optim"><span class="strong">DoubleBoxedSet</span></a> - Class in <a href="./mitiv/optim/package-summary.html">mitiv.optim</a></dt>
+<dd>
+<div class="block">Implementation of boxed set for vectors of double precision floating point
+ elements.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/optim/DoubleBoxedSet.html#DoubleBoxedSet(mitiv.linalg.shaped.DoubleShapedVectorSpace)">DoubleBoxedSet(DoubleShapedVectorSpace)</a></span> - Constructor for class mitiv.optim.<a href="./mitiv/optim/DoubleBoxedSet.html" title="class in mitiv.optim">DoubleBoxedSet</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="./mitiv/base/mapping/DoubleFunction.html" title="interface in mitiv.base.mapping"><span class="strong">DoubleFunction</span></a> - Interface in <a href="./mitiv/base/mapping/package-summary.html">mitiv.base.mapping</a></dt>
 <dd>
 <div class="block">A DoubleFunction has an <a href="./mitiv/base/mapping/DoubleFunction.html#apply(double)"><code>DoubleFunction.apply(double)</code></a> method to map a double argument to a double result.</div>
@@ -4762,10 +4797,6 @@
 </dd>
 <dt><span class="strong"><a href="./mitiv/optim/NonLinearConjugateGradient.html#EPSILON">EPSILON</a></span> - Static variable in class mitiv.optim.<a href="./mitiv/optim/NonLinearConjugateGradient.html" title="class in mitiv.optim">NonLinearConjugateGradient</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/optim/VMLMB.html#epsilon">epsilon</a></span> - Variable in class mitiv.optim.<a href="./mitiv/optim/VMLMB.html" title="class in mitiv.optim">VMLMB</a></dt>
-<dd>
-<div class="block">Small relative size for the initial step or after a restart.</div>
-</dd>
 <dt><span class="strong"><a href="./mitiv/base/Shape.html#equals(mitiv.base.Shape)">equals(Shape)</a></span> - Method in class mitiv.base.<a href="./mitiv/base/Shape.html" title="class in mitiv.base">Shape</a></dt>
 <dd>
 <div class="block">Check whether another shape is the same as this one.</div>
@@ -5890,9 +5921,9 @@
 <dd>
 <div class="block">Read as much data as possible.</div>
 </dd>
-<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#fill(int, double[], double)">fill(int, double[], double)</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#fill(double[], int, double)">fill(double[], int, double)</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#fill(int, float[], double)">fill(int, float[], double)</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#fill(float[], int, double)">fill(float[], int, double)</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVector.html#fill(mitiv.random.DoubleGenerator)">fill(DoubleGenerator)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVector.html" title="class in mitiv.linalg.shaped">DoubleShapedVector</a></dt>
 <dd>&nbsp;</dd>
@@ -5922,6 +5953,22 @@
 <div class="block">Filter the channels of an image stored as a shaped array to produce
  a floating point image suitable for inverse problem data processing.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/optim/BoxedSet.html#findFreeVariables(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, int)">findFreeVariables(Vector, Vector, Vector, int)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></dt>
+<dd>
+<div class="block">Find the non-binding constraints.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/optim/DoubleBoxedSet.html#findFreeVariables(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, int)">findFreeVariables(Vector, Vector, Vector, int)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/DoubleBoxedSet.html" title="class in mitiv.optim">DoubleBoxedSet</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/FloatBoxedSet.html#findFreeVariables(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, int)">findFreeVariables(Vector, Vector, Vector, int)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/FloatBoxedSet.html" title="class in mitiv.optim">FloatBoxedSet</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/BoxedSet.html#findStepLimits(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">findStepLimits(Vector, Vector, int)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></dt>
+<dd>
+<div class="block">Find the limits of the step size.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/optim/DoubleBoxedSet.html#findStepLimits(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">findStepLimits(Vector, Vector, int)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/DoubleBoxedSet.html" title="class in mitiv.optim">DoubleBoxedSet</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/FloatBoxedSet.html#findStepLimits(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">findStepLimits(Vector, Vector, int)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/FloatBoxedSet.html" title="class in mitiv.optim">FloatBoxedSet</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/optim/LineSearch.html#finished()">finished()</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/LineSearch.html" title="class in mitiv.optim">LineSearch</a></dt>
 <dd>
 <div class="block">Check whether line search is finished (either because of convergence or
@@ -7586,6 +7633,13 @@
 <div class="block">Define the global operations which can be applied to an array with a
  specific type.</div>
 </dd>
+<dt><a href="./mitiv/optim/FloatBoxedSet.html" title="class in mitiv.optim"><span class="strong">FloatBoxedSet</span></a> - Class in <a href="./mitiv/optim/package-summary.html">mitiv.optim</a></dt>
+<dd>
+<div class="block">Implementation of boxed set for vectors of single precision floating point
+ elements.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/optim/FloatBoxedSet.html#FloatBoxedSet(mitiv.linalg.shaped.FloatShapedVectorSpace)">FloatBoxedSet(FloatShapedVectorSpace)</a></span> - Constructor for class mitiv.optim.<a href="./mitiv/optim/FloatBoxedSet.html" title="class in mitiv.optim">FloatBoxedSet</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="./mitiv/base/mapping/FloatFunction.html" title="interface in mitiv.base.mapping"><span class="strong">FloatFunction</span></a> - Interface in <a href="./mitiv/base/mapping/package-summary.html">mitiv.base.mapping</a></dt>
 <dd>
 <div class="block">A FloatFunction has an <a href="./mitiv/base/mapping/FloatFunction.html#apply(float)"><code>FloatFunction.apply(float)</code></a> method to map a float argument to a float result.</div>
@@ -8467,8 +8521,6 @@
 <dd>
 <div class="block">Get the description of the boundary conditions.</div>
 </dd>
-<dt><span class="strong"><a href="./mitiv/optim/InverseHessianApproximation.html#getDescription()">getDescription()</a></span> - Method in enum mitiv.optim.<a href="./mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim">InverseHessianApproximation</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/optim/LineSearchStatus.html#getDescription()">getDescription()</a></span> - Method in enum mitiv.optim.<a href="./mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim">LineSearchStatus</a></dt>
 <dd>
 <div class="block">Query the description of the optimization task.</div>
@@ -8477,6 +8529,12 @@
 <dd>
 <div class="block">Query the description of the optimization task.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/linalg/DiagonalOperator.html#getDiagonal()">getDiagonal()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></dt>
+<dd>
+<div class="block">Get the elements of a diagonal operator .</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/IdentityOperator.html#getDiagonal()">getDiagonal()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/IdentityOperator.html" title="class in mitiv.linalg">IdentityOperator</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/array/Array1D.html#getDimension(int)">getDimension(int)</a></span> - Method in class mitiv.array.<a href="./mitiv/array/Array1D.html" title="class in mitiv.array">Array1D</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/array/Array2D.html#getDimension(int)">getDimension(int)</a></span> - Method in class mitiv.array.<a href="./mitiv/array/Array2D.html" title="class in mitiv.array">Array2D</a></dt>
@@ -8592,8 +8650,6 @@
 <dd>
 <div class="block">Get a unique numerical identifier of the boundary conditions.</div>
 </dd>
-<dt><span class="strong"><a href="./mitiv/optim/InverseHessianApproximation.html#getIdentifier()">getIdentifier()</a></span> - Method in enum mitiv.optim.<a href="./mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim">InverseHessianApproximation</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/utils/NavigableImagePanel.html#getImageOrigin()">getImageOrigin()</a></span> - Method in class mitiv.utils.<a href="./mitiv/utils/NavigableImagePanel.html" title="class in mitiv.utils">NavigableImagePanel</a></dt>
 <dd>
 <div class="block">Gets the image origin.</div>
@@ -8634,6 +8690,8 @@
 <dd>
 <div class="block">Get the input space of the cost function.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/linalg/LinearEndomorphism.html#getInputSpace()">getInputSpace()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearEndomorphism.html" title="class in mitiv.linalg">LinearEndomorphism</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#getInputSpace()">getInputSpace()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
 <dd>
 <div class="block">Get the input space of a linear operator.</div>
@@ -9484,6 +9542,8 @@
 <dd>
 <div class="block">get the output stream of the viewer.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/linalg/LinearEndomorphism.html#getOutputSpace()">getOutputSpace()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearEndomorphism.html" title="class in mitiv.linalg">LinearEndomorphism</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#getOutputSpace()">getOutputSpace()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
 <dd>
 <div class="block">Get the output space of a linear operator.</div>
@@ -9671,6 +9731,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/ShapedVectorSpace.html#getShape()">getShape()</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/LinearEndomorphism.html#getSpace()">getSpace()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearEndomorphism.html" title="class in mitiv.linalg">LinearEndomorphism</a></dt>
+<dd>
+<div class="block">Get the space on which operates the linear endomorphism.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVector.html#getSpace()">getSpace()</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVector.html" title="class in mitiv.linalg.shaped">DoubleShapedVector</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVector.html#getSpace()">getSpace()</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVector.html" title="class in mitiv.linalg.shaped">FloatShapedVector</a></dt>
@@ -10016,10 +10080,6 @@
 <div class="block">LBFGS approximation of the inverse Hessian</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/optim/LBFGS.html#H">H</a></span> - Variable in class mitiv.optim.<a href="./mitiv/optim/LBFGS.html" title="class in mitiv.optim">LBFGS</a></dt>
-<dd>
-<div class="block">LBFGS approximation of the inverse Hessian</div>
-</dd>
-<dt><span class="strong"><a href="./mitiv/optim/VMLMB.html#H">H</a></span> - Variable in class mitiv.optim.<a href="./mitiv/optim/VMLMB.html" title="class in mitiv.optim">VMLMB</a></dt>
 <dd>
 <div class="block">LBFGS approximation of the inverse Hessian</div>
 </dd>
@@ -10906,7 +10966,7 @@
 <dd>
 <div class="block">Job value to apply the inverse of the adjoint of the linear operator.</div>
 </dd>
-<dt><a href="./mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim"><span class="strong">InverseHessianApproximation</span></a> - Enum in <a href="./mitiv/optim/package-summary.html">mitiv.optim</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/LinearEndomorphism.html#isEndomorphism()">isEndomorphism()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearEndomorphism.html" title="class in mitiv.linalg">LinearEndomorphism</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#isEndomorphism()">isEndomorphism()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
 <dd>
@@ -11094,6 +11154,10 @@
 <dd>
 <div class="block">Double version.</div>
 </dd>
+<dt><a href="./mitiv/linalg/LinearEndomorphism.html" title="class in mitiv.linalg"><span class="strong">LinearEndomorphism</span></a> - Class in <a href="./mitiv/linalg/package-summary.html">mitiv.linalg</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/LinearEndomorphism.html#LinearEndomorphism(mitiv.linalg.VectorSpace)">LinearEndomorphism(VectorSpace)</a></span> - Constructor for class mitiv.linalg.<a href="./mitiv/linalg/LinearEndomorphism.html" title="class in mitiv.linalg">LinearEndomorphism</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg"><span class="strong">LinearOperator</span></a> - Class in <a href="./mitiv/linalg/package-summary.html">mitiv.linalg</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#LinearOperator(mitiv.linalg.VectorSpace)">LinearOperator(VectorSpace)</a></span> - Constructor for class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
@@ -11864,8 +11928,6 @@
 <dd>
 <div class="block">Sets the mark of the internal buffer at its current position.</div>
 </dd>
-<dt><span class="strong"><a href="./mitiv/optim/LBFGSOperator.html#mark">mark</a></span> - Variable in class mitiv.optim.<a href="./mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/WideFieldModel.html#maskPupil">maskPupil</a></span> - Variable in class mitiv.microscopy.<a href="./mitiv/microscopy/WideFieldModel.html" title="class in mitiv.microscopy">WideFieldModel</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/io/DataFormat.html#match(java.lang.String)">match(String)</a></span> - Method in enum mitiv.io.<a href="./mitiv/io/DataFormat.html" title="enum in mitiv.io">DataFormat</a></dt>
@@ -12359,6 +12421,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/cost/DifferentiableInverseProblemCost.html#mu">mu</a></span> - Variable in class mitiv.cost.<a href="./mitiv/cost/DifferentiableInverseProblemCost.html" title="class in mitiv.cost">DifferentiableInverseProblemCost</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/Vector.html#multiply(mitiv.linalg.Vector)">multiply(Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></dt>
+<dd>
+<div class="block">Perform a component-wise multiplication by another vector.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#multiply(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">multiply(Vector, Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
 <div class="block">Perform a component-wise multiplication of two vectors.</div>
@@ -12896,6 +12962,14 @@
 <dd>
 <div class="block">Project a direction to the null-space of the linearized constraints.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/optim/BoxedSet.html#projectDirection(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, int)">projectDirection(Vector, Vector, Vector, int)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></dt>
+<dd>
+<div class="block">Project a direction.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/optim/DoubleBoxedSet.html#projectDirection(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, int)">projectDirection(Vector, Vector, Vector, int)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/DoubleBoxedSet.html" title="class in mitiv.optim">DoubleBoxedSet</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/FloatBoxedSet.html#projectDirection(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, int)">projectDirection(Vector, Vector, Vector, int)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/FloatBoxedSet.html" title="class in mitiv.optim">FloatBoxedSet</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/optim/BLMVM.html#projector">projector</a></span> - Variable in class mitiv.optim.<a href="./mitiv/optim/BLMVM.html" title="class in mitiv.optim">BLMVM</a></dt>
 <dd>
 <div class="block">Projector to use to impose constraints.</div>
@@ -12903,6 +12977,10 @@
 <dt><span class="strong"><a href="./mitiv/optim/VMLMB.html#projector">projector</a></span> - Variable in class mitiv.optim.<a href="./mitiv/optim/VMLMB.html" title="class in mitiv.optim">VMLMB</a></dt>
 <dd>
 <div class="block">Projector to use to impose constraints.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/optim/BoxedSet.html#projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">projectVariables(Vector, Vector)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></dt>
+<dd>
+<div class="block">Project variables into the boxed set.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/optim/ConvexSetProjector.html#projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">projectVariables(Vector, Vector)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/ConvexSetProjector.html" title="class in mitiv.optim">ConvexSetProjector</a></dt>
 <dd>
@@ -12912,6 +12990,10 @@
 <dd>
 <div class="block">Project the variables to the feasible set (in-place version).</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/optim/DoubleBoxedSet.html#projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">projectVariables(Vector, Vector)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/DoubleBoxedSet.html" title="class in mitiv.optim">DoubleBoxedSet</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/FloatBoxedSet.html#projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">projectVariables(Vector, Vector)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/FloatBoxedSet.html" title="class in mitiv.optim">FloatBoxedSet</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="./mitiv/cost/ProximalOperator.html" title="interface in mitiv.cost"><span class="strong">ProximalOperator</span></a> - Interface in <a href="./mitiv/cost/package-summary.html">mitiv.cost</a></dt>
 <dd>
 <div class="block">Interface for cost functions implementing their proximal operator.</div>
@@ -15580,6 +15662,12 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/WideFieldModel.html#setDefocus(double[])">setDefocus(double[])</a></span> - Method in class mitiv.microscopy.<a href="./mitiv/microscopy/WideFieldModel.html" title="class in mitiv.microscopy">WideFieldModel</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/DiagonalOperator.html#setDiagonal(mitiv.linalg.Vector)">setDiagonal(Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></dt>
+<dd>
+<div class="block">Set the elements of a diagonal operator .</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/IdentityOperator.html#setDiagonal(mitiv.linalg.Vector)">setDiagonal(Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/IdentityOperator.html" title="class in mitiv.linalg">IdentityOperator</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/tests/AdaptativeSteepestDescent.html#setFavorStepGrowth(boolean)">setFavorStepGrowth(boolean)</a></span> - Method in class mitiv.tests.<a href="./mitiv/tests/AdaptativeSteepestDescent.html" title="class in mitiv.tests">AdaptativeSteepestDescent</a></dt>
 <dd>
 <div class="block">Set strategy for next step length.</div>
@@ -15629,6 +15717,22 @@
 <dt><span class="strong"><a href="./commands/TotalVariationDeconvolution.html#setLowerBound(double)">setLowerBound(double)</a></span> - Method in class commands.<a href="./commands/TotalVariationDeconvolution.html" title="class in commands">TotalVariationDeconvolution</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/PSF_Estimation.html#setLowerBound(double)">setLowerBound(double)</a></span> - Method in class mitiv.microscopy.<a href="./mitiv/microscopy/PSF_Estimation.html" title="class in mitiv.microscopy">PSF_Estimation</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/BoxedSet.html#setLowerBound(double)">setLowerBound(double)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></dt>
+<dd>
+<div class="block">Set the lower bound of the variables.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/optim/BoxedSet.html#setLowerBound(mitiv.linalg.Vector)">setLowerBound(Vector)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></dt>
+<dd>
+<div class="block">Set the lower bound of the variables.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/optim/DoubleBoxedSet.html#setLowerBound(double)">setLowerBound(double)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/DoubleBoxedSet.html" title="class in mitiv.optim">DoubleBoxedSet</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/DoubleBoxedSet.html#setLowerBound(mitiv.linalg.Vector)">setLowerBound(Vector)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/DoubleBoxedSet.html" title="class in mitiv.optim">DoubleBoxedSet</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/FloatBoxedSet.html#setLowerBound(double)">setLowerBound(double)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/FloatBoxedSet.html" title="class in mitiv.optim">FloatBoxedSet</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/FloatBoxedSet.html#setLowerBound(mitiv.linalg.Vector)">setLowerBound(Vector)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/FloatBoxedSet.html" title="class in mitiv.optim">FloatBoxedSet</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./commands/TotalVariationDeconvolution.html#setMaximumIterations(int)">setMaximumIterations(int)</a></span> - Method in class commands.<a href="./commands/TotalVariationDeconvolution.html" title="class in commands">TotalVariationDeconvolution</a></dt>
 <dd>&nbsp;</dd>
@@ -15808,7 +15912,7 @@
 <dd>
 <div class="block">Set the scaling parameter.</div>
 </dd>
-<dt><span class="strong"><a href="./mitiv/optim/LBFGSOperator.html#setScaling(mitiv.optim.InverseHessianApproximation)">setScaling(InverseHessianApproximation)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a></dt>
+<dt><span class="strong"><a href="./mitiv/optim/LBFGSOperator.html#setScaling(int)">setScaling(int)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a></dt>
 <dd>
 <div class="block">Set the scaling of the initial approximation of the inverse Hessian.</div>
 </dd>
@@ -15865,6 +15969,22 @@
 <dt><span class="strong"><a href="./commands/TotalVariationDeconvolution.html#setUpperBound(double)">setUpperBound(double)</a></span> - Method in class commands.<a href="./commands/TotalVariationDeconvolution.html" title="class in commands">TotalVariationDeconvolution</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/PSF_Estimation.html#setUpperBound(double)">setUpperBound(double)</a></span> - Method in class mitiv.microscopy.<a href="./mitiv/microscopy/PSF_Estimation.html" title="class in mitiv.microscopy">PSF_Estimation</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/BoxedSet.html#setUpperBound(double)">setUpperBound(double)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></dt>
+<dd>
+<div class="block">Set the upper bound of the variables.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/optim/BoxedSet.html#setUpperBound(mitiv.linalg.Vector)">setUpperBound(Vector)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></dt>
+<dd>
+<div class="block">Set the upper bound of the variables.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/optim/DoubleBoxedSet.html#setUpperBound(double)">setUpperBound(double)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/DoubleBoxedSet.html" title="class in mitiv.optim">DoubleBoxedSet</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/DoubleBoxedSet.html#setUpperBound(mitiv.linalg.Vector)">setUpperBound(Vector)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/DoubleBoxedSet.html" title="class in mitiv.optim">DoubleBoxedSet</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/FloatBoxedSet.html#setUpperBound(double)">setUpperBound(double)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/FloatBoxedSet.html" title="class in mitiv.optim">FloatBoxedSet</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/FloatBoxedSet.html#setUpperBound(mitiv.linalg.Vector)">setUpperBound(Vector)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/FloatBoxedSet.html" title="class in mitiv.optim">FloatBoxedSet</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/RankOneOperator.html#setV(mitiv.linalg.Vector)">setV(Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/RankOneOperator.html" title="class in mitiv.linalg">RankOneOperator</a></dt>
 <dd>
@@ -17351,16 +17471,20 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/utils/Poly.html#SolveCubic(double, double, double, double[])">SolveCubic(double, double, double, double[])</a></span> - Static method in class mitiv.utils.<a href="./mitiv/utils/Poly.html" title="class in mitiv.utils">Poly</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/TruncatedConjugateGradient.html#solveQuadratic(double, double, double, double[])">solveQuadratic(double, double, double, double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/TruncatedConjugateGradient.html" title="class in mitiv.linalg">TruncatedConjugateGradient</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/TruncatedConjugateGradient.html#solveQuadratic(double[], double, double, double)">solveQuadratic(double[], double, double, double)</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/TruncatedConjugateGradient.html" title="class in mitiv.linalg">TruncatedConjugateGradient</a></dt>
 <dd>
 <div class="block">Compute the roots of a 2nd degree polynomial.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/utils/Poly.html#SolveQuadratic(double, double, double, double[])">SolveQuadratic(double, double, double, double[])</a></span> - Static method in class mitiv.utils.<a href="./mitiv/utils/Poly.html" title="class in mitiv.utils">Poly</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/LinearEndomorphism.html#space">space</a></span> - Variable in class mitiv.linalg.<a href="./mitiv/linalg/LinearEndomorphism.html" title="class in mitiv.linalg">LinearEndomorphism</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/Vector.html#space">space</a></span> - Variable in class mitiv.linalg.<a href="./mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></dt>
 <dd>
 <div class="block">Reference to the VectorSpace to which this vector belongs.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/optim/BoxedSet.html#space">space</a></span> - Variable in class mitiv.optim.<a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/optim/ConvexSetProjector.html#space">space</a></span> - Variable in class mitiv.optim.<a href="./mitiv/optim/ConvexSetProjector.html" title="class in mitiv.optim">ConvexSetProjector</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/utils/MathUtils.html#span(double, double, double)">span(double, double, double)</a></span> - Static method in class mitiv.utils.<a href="./mitiv/utils/MathUtils.html" title="class in mitiv.utils">MathUtils</a></dt>
@@ -19887,6 +20011,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/base/Traits.html#UNKNOWN_BYTE_ORDER">UNKNOWN_BYTE_ORDER</a></span> - Static variable in interface mitiv.base.<a href="./mitiv/base/Traits.html" title="interface in mitiv.base">Traits</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/BoxedSet.html#unsetBounds()">unsetBounds()</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></dt>
+<dd>
+<div class="block">Unset the bound.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/io/FormatOptions.html#unsetColorModel()">unsetColorModel()</a></span> - Method in class mitiv.io.<a href="./mitiv/io/FormatOptions.html" title="class in mitiv.io">FormatOptions</a></dt>
 <dd>
 <div class="block">Unset the color model.</div>
@@ -19899,10 +20027,18 @@
 <dd>
 <div class="block">Forget the assumed function least value.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/optim/BoxedSet.html#unsetLowerBound()">unsetLowerBound()</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></dt>
+<dd>
+<div class="block">Unset the lower bound(s).</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/io/FormatOptions.html#unsetMaxValue()">unsetMaxValue()</a></span> - Method in class mitiv.io.<a href="./mitiv/io/FormatOptions.html" title="class in mitiv.io">FormatOptions</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/io/FormatOptions.html#unsetMinValue()">unsetMinValue()</a></span> - Method in class mitiv.io.<a href="./mitiv/io/FormatOptions.html" title="class in mitiv.io">FormatOptions</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/BoxedSet.html#unsetUpperBound()">unsetUpperBound()</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></dt>
+<dd>
+<div class="block">Unset the upper bound(s).</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/base/mapping/ByteScanner.html#update(byte)">update(byte)</a></span> - Method in interface mitiv.base.mapping.<a href="./mitiv/base/mapping/ByteScanner.html" title="interface in mitiv.base.mapping">ByteScanner</a></dt>
 <dd>
 <div class="block">Update the scanner with an additional value of the collection.</div>
@@ -19932,10 +20068,17 @@
 <div class="block">Update LBFGS operator with a new pair of variables and gradient
  differences.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/optim/LBFGSOperator.html#update(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">update(Vector, Vector, Vector, Vector, boolean)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a></dt>
+<dd>
+<div class="block">Update LBFGS operator with a new pair of variables and gradient
+ differences.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/invpb/ReconstructionSynchronizer.html#updateParameters(double[], boolean[])">updateParameters(double[], boolean[])</a></span> - Method in class mitiv.invpb.<a href="./mitiv/invpb/ReconstructionSynchronizer.html" title="class in mitiv.invpb">ReconstructionSynchronizer</a></dt>
 <dd>
 <div class="block">Update the values of the reconstruction parameters.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/optim/LBFGSOperator.html#updates">updates</a></span> - Variable in class mitiv.optim.<a href="./mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/WideFieldModel.html#use_depth_scaling">use_depth_scaling</a></span> - Variable in class mitiv.microscopy.<a href="./mitiv/microscopy/WideFieldModel.html" title="class in mitiv.microscopy">WideFieldModel</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/RealComplexFFT.html#useSystemArrayCopy">useSystemArrayCopy</a></span> - Variable in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/RealComplexFFT.html" title="class in mitiv.linalg.shaped">RealComplexFFT</a></dt>
@@ -19957,10 +20100,6 @@
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/io/DataFormat.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum mitiv.io.<a href="./mitiv/io/DataFormat.html" title="enum in mitiv.io">DataFormat</a></dt>
-<dd>
-<div class="block">Returns the enum constant of this type with the specified name.</div>
-</dd>
-<dt><span class="strong"><a href="./mitiv/optim/InverseHessianApproximation.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum mitiv.optim.<a href="./mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim">InverseHessianApproximation</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </dd>
@@ -19991,11 +20130,6 @@ the order they are declared.</div>
 the order they are declared.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/io/DataFormat.html#values()">values()</a></span> - Static method in enum mitiv.io.<a href="./mitiv/io/DataFormat.html" title="enum in mitiv.io">DataFormat</a></dt>
-<dd>
-<div class="block">Returns an array containing the constants of this enum type, in
-the order they are declared.</div>
-</dd>
-<dt><span class="strong"><a href="./mitiv/optim/InverseHessianApproximation.html#values()">values()</a></span> - Static method in enum mitiv.optim.<a href="./mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim">InverseHessianApproximation</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum type, in
 the order they are declared.</div>
@@ -22783,9 +22917,9 @@ the order they are declared.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/Zernike.html#zernumeroNoll(int)">zernumeroNoll(int)</a></span> - Static method in class mitiv.microscopy.<a href="./mitiv/microscopy/Zernike.html" title="class in mitiv.microscopy">Zernike</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#zero(int, double[])">zero(int, double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#zero(double[], int)">zero(double[], int)</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#zero(int, float[])">zero(int, float[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#zero(float[], int)">zero(float[], int)</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#zero(double[])">zero(double[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
@@ -22837,17 +22971,25 @@ the order they are declared.</div>
 <dd>
 <div class="block">Apply the LHS operator A = Ht.W.H + mu*Q</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/linalg/DiagonalOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply(Vector, Vector, int)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/IdentityOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply(Vector, Vector, int)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/IdentityOperator.html" title="class in mitiv.linalg">IdentityOperator</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply(Vector, Vector, int)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
 <dd>
-<div class="block">Apply a linear operator (or its adjoint) to a vector.</div>
+<div class="block">Implement the operations performed by a linear operator out-of-place.</div>
+</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, int)">_apply(Vector, int)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
+<dd>
+<div class="block">Implement the operations performed by a linear operator in-place.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/RankOneOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply(Vector, Vector, int)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/RankOneOperator.html" title="class in mitiv.linalg">RankOneOperator</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/ScaleOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply(Vector, Vector, int)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/ScaleOperator.html" title="class in mitiv.linalg">ScaleOperator</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/RealComplexFFT.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply(Vector, Vector, int)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/RealComplexFFT.html" title="class in mitiv.linalg.shaped">RealComplexFFT</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/optim/LBFGSOperator.html#_apply(mitiv.linalg.Vector, int)">_apply(Vector, int)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/optim/LBFGSOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply(Vector, Vector, int)</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a></dt>
 <dd>&nbsp;</dd>
@@ -22867,23 +23009,23 @@ the order they are declared.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_combine(double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_combine(double, Vector, double, Vector, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#_combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_combine(Vector, double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_combine(double, Vector, double, Vector, double, Vector, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#_combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_combine(Vector, double, Vector, double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_combine(double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html" title="class in mitiv.linalg.shaped">FloatShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_combine(double, Vector, double, Vector, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html" title="class in mitiv.linalg.shaped">FloatShapedVectorSpace</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html#_combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_combine(Vector, double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html" title="class in mitiv.linalg.shaped">FloatShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_combine(double, Vector, double, Vector, double, Vector, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html" title="class in mitiv.linalg.shaped">FloatShapedVectorSpace</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html#_combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_combine(Vector, double, Vector, double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html" title="class in mitiv.linalg.shaped">FloatShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_combine(double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_combine(double, Vector, double, Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#_combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_combine(Vector, double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
 <div class="block">Compute a linear combination of two vectors (low level).</div>
 </dd>
-<dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, mitiv.linalg.Vector)">_combine(double, Vector, double, Vector, double, Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#_combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_combine(Vector, double, Vector, double, Vector, double, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
 <div class="block">Compute a linear combination of two vectors (low level).</div>
 </dd>

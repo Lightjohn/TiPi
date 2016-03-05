@@ -177,8 +177,8 @@ extends <a href="../../mitiv/optim/BoundProjector.html" title="class in mitiv.op
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/SimpleLowerBound.html#_projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">_projectVariables</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-                 <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/SimpleLowerBound.html#_projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">_projectVariables</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+                 <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src)</code>
 <div class="block">Protected method to project the variables to the feasible set.</div>
 </td>
 </tr>
@@ -257,8 +257,8 @@ extends <a href="../../mitiv/optim/BoundProjector.html" title="class in mitiv.op
 <ul class="blockList">
 <li class="blockList">
 <h4>_projectVariables</h4>
-<pre>protected&nbsp;void&nbsp;_projectVariables(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-                     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
+<pre>protected&nbsp;void&nbsp;_projectVariables(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+                     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src)</pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/ConvexSetProjector.html#_projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">ConvexSetProjector</a></code></strong></div>
 <div class="block">Protected method to project the variables to the feasible set.
 
@@ -270,7 +270,7 @@ extends <a href="../../mitiv/optim/BoundProjector.html" title="class in mitiv.op
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../mitiv/optim/ConvexSetProjector.html#_projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">_projectVariables</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/optim/ConvexSetProjector.html" title="class in mitiv.optim">ConvexSetProjector</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source.</dd><dd><code>dst</code> - - The destination.</dd></dl>
+<dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - The output projected variables.</dd><dd><code>src</code> - - The input variables.</dd></dl>
 </li>
 </ul>
 <a name="_projectDirection(mitiv.linalg.Vector, mitiv.linalg.Vector, boolean, mitiv.linalg.Vector, double[])">

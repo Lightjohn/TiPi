@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-<title>ScaleOperator</title>
+<title>LinearEndomorphism</title>
 <link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ScaleOperator";
+        parent.document.title="LinearEndomorphism";
     }
 //-->
 </script>
@@ -34,12 +34,12 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../mitiv/linalg/RankOneOperator.html" title="class in mitiv.linalg"><span class="strong">PREV CLASS</span></a></li>
-<li><a href="../../mitiv/linalg/TruncatedConjugateGradient.html" title="class in mitiv.linalg"><span class="strong">NEXT CLASS</span></a></li>
+<li><a href="../../mitiv/linalg/LinearConjugateGradient.html" title="class in mitiv.linalg"><span class="strong">PREV CLASS</span></a></li>
+<li><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../index.html?mitiv/linalg/ScaleOperator.html" target="_top">FRAMES</a></li>
-<li><a href="ScaleOperator.html" target="_top">NO FRAMES</a></li>
+<li><a href="../../index.html?mitiv/linalg/LinearEndomorphism.html" target="_top">FRAMES</a></li>
+<li><a href="LinearEndomorphism.html" target="_top">NO FRAMES</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
 <li><a href="../../allclasses-noframe.html">All Classes</a></li>
@@ -78,7 +78,7 @@
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <p class="subTitle">mitiv.linalg</p>
-<h2 title="Class ScaleOperator" class="title">Class ScaleOperator</h2>
+<h2 title="Class LinearEndomorphism" class="title">Class LinearEndomorphism</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -88,7 +88,7 @@
 <li><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">mitiv.linalg.LinearOperator</a></li>
 <li>
 <ul class="inheritance">
-<li>mitiv.linalg.ScaleOperator</li>
+<li>mitiv.linalg.LinearEndomorphism</li>
 </ul>
 </li>
 </ul>
@@ -97,9 +97,13 @@
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></dd>
+</dl>
 <hr>
 <br>
-<pre>public class <strong>ScaleOperator</strong>
+<pre>public abstract class <strong>LinearEndomorphism</strong>
 extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></pre>
 </li>
 </ul>
@@ -120,8 +124,8 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/ScaleOperator.html#scale">scale</a></strong></code>&nbsp;</td>
+<td class="colFirst"><code>protected <a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearEndomorphism.html#space">space</a></strong></code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -142,18 +146,12 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
 <caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
-<th class="colOne" scope="col">Constructor and Description</th>
+<th class="colFirst" scope="col">Modifier</th>
+<th class="colLast" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../mitiv/linalg/ScaleOperator.html#ScaleOperator(mitiv.linalg.VectorSpace)">ScaleOperator</a></strong>(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;vsp)</code>
-<div class="block">Create a new scale operator which operates on a given vector space.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><code><strong><a href="../../mitiv/linalg/ScaleOperator.html#ScaleOperator(mitiv.linalg.VectorSpace, double)">ScaleOperator</a></strong>(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;vsp,
-             double&nbsp;alpha)</code>
-<div class="block">Create a new scale operator which operates on a given vector space.</div>
-</td>
+<td class="colFirst"><code>protected </code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearEndomorphism.html#LinearEndomorphism(mitiv.linalg.VectorSpace)">LinearEndomorphism</a></strong>(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;vsp)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -171,23 +169,27 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/ScaleOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
-      int&nbsp;job)</code>
-<div class="block">Implement the operations performed by a linear operator out-of-place.</div>
+<td class="colFirst"><code><a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearEndomorphism.html#getInputSpace()">getInputSpace</a></strong>()</code>
+<div class="block">Get the input space of a linear operator.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>double</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/ScaleOperator.html#getScale()">getScale</a></strong>()</code>
-<div class="block">Get the scaling factor of a scale operator.</div>
+<td class="colFirst"><code><a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearEndomorphism.html#getOutputSpace()">getOutputSpace</a></strong>()</code>
+<div class="block">Get the output space of a linear operator.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/ScaleOperator.html#setScale(double)">setScale</a></strong>(double&nbsp;alpha)</code>
-<div class="block">Set the scaling factor of a scale operator.</div>
+<td class="colFirst"><code><a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearEndomorphism.html#getSpace()">getSpace</a></strong>()</code>
+<div class="block">Get the space on which operates the linear endomorphism.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearEndomorphism.html#isEndomorphism()">isEndomorphism</a></strong>()</code>
+<div class="block">Check whether a linear operator is an endomorphism.</div>
 </td>
 </tr>
 </table>
@@ -196,7 +198,7 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;mitiv.linalg.<a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></h3>
-<code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, int)">_apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkAdjoint(mitiv.linalg.Vector, mitiv.linalg.Vector)">checkAdjoint</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkLinearProblem(mitiv.linalg.LinearOperator, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">checkLinearProblem</a>, <a href="../../mitiv/linalg/LinearOperator.html#getInputSpace()">getInputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#getOutputSpace()">getOutputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#isEndomorphism()">isEndomorphism</a></code></li>
+<code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, int)">_apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkAdjoint(mitiv.linalg.Vector, mitiv.linalg.Vector)">checkAdjoint</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkLinearProblem(mitiv.linalg.LinearOperator, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">checkLinearProblem</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -219,13 +221,13 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <!--   -->
 </a>
 <h3>Field Detail</h3>
-<a name="scale">
+<a name="space">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>scale</h4>
-<pre>protected&nbsp;double scale</pre>
+<h4>space</h4>
+<pre>protected&nbsp;<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a> space</pre>
 </li>
 </ul>
 </li>
@@ -236,30 +238,13 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="ScaleOperator(mitiv.linalg.VectorSpace)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ScaleOperator</h4>
-<pre>public&nbsp;ScaleOperator(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;vsp)</pre>
-<div class="block">Create a new scale operator which operates on a given vector space.
-
- The returned operator has a scaling factor equal to 1 and is thus
- similar to the identity.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>vsp</code> - the vector space.</dd></dl>
-</li>
-</ul>
-<a name="ScaleOperator(mitiv.linalg.VectorSpace, double)">
+<a name="LinearEndomorphism(mitiv.linalg.VectorSpace)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>ScaleOperator</h4>
-<pre>public&nbsp;ScaleOperator(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;vsp,
-             double&nbsp;alpha)</pre>
-<div class="block">Create a new scale operator which operates on a given vector space.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>vsp</code> - the vector space.</dd><dd><code>alpha</code> - the scaling factor.</dd></dl>
+<h4>LinearEndomorphism</h4>
+<pre>protected&nbsp;LinearEndomorphism(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;vsp)</pre>
 </li>
 </ul>
 </li>
@@ -270,47 +255,61 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">
+<a name="getInputSpace()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>_apply</h4>
-<pre>protected&nbsp;void&nbsp;_apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
-          int&nbsp;job)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
-<div class="block">Implement the operations performed by a linear operator out-of-place.
-
- This protected method is called by the `apply` method after checking of
- the arguments.  The operation is performed out-of-place which means that
- source and destination vectors are guaranteed to be different.</div>
+<h4>getInputSpace</h4>
+<pre>public&nbsp;<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;getInputSpace()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#getInputSpace()">LinearOperator</a></code></strong></div>
+<div class="block">Get the input space of a linear operator.</div>
 <dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd><dd><code>job</code> - - The type of operation to perform.</dd></dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../mitiv/linalg/LinearOperator.html#getInputSpace()">getInputSpace</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>The input space of the linear operator.</dd></dl>
 </li>
 </ul>
-<a name="getScale()">
+<a name="getOutputSpace()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getScale</h4>
-<pre>public&nbsp;double&nbsp;getScale()</pre>
-<div class="block">Get the scaling factor of a scale operator.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>the scaling factor of the operator.</dd></dl>
+<h4>getOutputSpace</h4>
+<pre>public&nbsp;<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;getOutputSpace()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#getOutputSpace()">LinearOperator</a></code></strong></div>
+<div class="block">Get the output space of a linear operator.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../mitiv/linalg/LinearOperator.html#getOutputSpace()">getOutputSpace</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>The output space of the linear operator.</dd></dl>
 </li>
 </ul>
-<a name="setScale(double)">
+<a name="getSpace()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSpace</h4>
+<pre>public&nbsp;<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;getSpace()</pre>
+<div class="block">Get the space on which operates the linear endomorphism.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The space on which operates the linear endomorphism.</dd></dl>
+</li>
+</ul>
+<a name="isEndomorphism()">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>setScale</h4>
-<pre>public&nbsp;void&nbsp;setScale(double&nbsp;alpha)</pre>
-<div class="block">Set the scaling factor of a scale operator.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - the new scaling factor.</dd></dl>
+<h4>isEndomorphism</h4>
+<pre>public&nbsp;boolean&nbsp;isEndomorphism()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#isEndomorphism()">LinearOperator</a></code></strong></div>
+<div class="block">Check whether a linear operator is an endomorphism.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../mitiv/linalg/LinearOperator.html#isEndomorphism()">isEndomorphism</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd><tt>true</tt> is the input and output spaces of the linear
+         operator are the same; <tt>false</tt> otherwise.</dd></dl>
 </li>
 </ul>
 </li>
@@ -338,12 +337,12 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../mitiv/linalg/RankOneOperator.html" title="class in mitiv.linalg"><span class="strong">PREV CLASS</span></a></li>
-<li><a href="../../mitiv/linalg/TruncatedConjugateGradient.html" title="class in mitiv.linalg"><span class="strong">NEXT CLASS</span></a></li>
+<li><a href="../../mitiv/linalg/LinearConjugateGradient.html" title="class in mitiv.linalg"><span class="strong">PREV CLASS</span></a></li>
+<li><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../index.html?mitiv/linalg/ScaleOperator.html" target="_top">FRAMES</a></li>
-<li><a href="ScaleOperator.html" target="_top">NO FRAMES</a></li>
+<li><a href="../../index.html?mitiv/linalg/LinearEndomorphism.html" target="_top">FRAMES</a></li>
+<li><a href="LinearEndomorphism.html" target="_top">NO FRAMES</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">
 <li><a href="../../allclasses-noframe.html">All Classes</a></li>

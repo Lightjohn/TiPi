@@ -275,49 +275,55 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#multiply(mitiv.linalg.Vector)">multiply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;other)</code>
+<div class="block">Perform a component-wise multiplication by another vector.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#norm1()">norm1</a></strong>()</code>
 <div class="block">Compute the L1 norm of the vector.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#norm2()">norm2</a></strong>()</code>
 <div class="block">Compute the Euclidean (L2) norm of the vector.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#normInf()">normInf</a></strong>()</code>
 <div class="block">Compute the infinite norm of the vector.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#scale(double)">scale</a></strong>(double&nbsp;alpha)</code>
 <div class="block">Multiply the values of the vector by a constant factor.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#set(int, double)">set</a></strong>(int&nbsp;i,
    double&nbsp;value)</code>
 <div class="block">Set one of the values gathered in the vector.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#swap(mitiv.linalg.Vector)">swap</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)</code>
 <div class="block">Exchange the contents of the vector with that of another one.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#toString()">toString</a></strong>()</code>
 <div class="block">Make a string representation of the vector contents.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/Vector.html#zero()">zero</a></strong>()</code>
 <div class="block">Fill the vector with zeros.</div>
@@ -715,6 +721,26 @@ extends java.lang.Object</pre>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - all vectors must belong to the same
  vector space.</dd></dl>
+</li>
+</ul>
+<a name="multiply(mitiv.linalg.Vector)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>multiply</h4>
+<pre>public final&nbsp;void&nbsp;multiply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;other)
+                    throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
+<div class="block">Perform a component-wise multiplication by another vector.
+
+ In pseudo-code, this method performs the following operation:
+ <pre>
+ this[i] *= other[i];
+ </pre>
+ for all indices <code>i</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>other</code> - - Another vector.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - The argument must belong to this vector space.</dd></dl>
 </li>
 </ul>
 <a name="toString()">
