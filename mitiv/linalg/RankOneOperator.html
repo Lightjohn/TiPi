@@ -176,33 +176,40 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/RankOneOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/RankOneOperator.html#_apply(mitiv.linalg.Vector, int)">_apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec,
+      int&nbsp;job)</code>
+<div class="block">Implement the operations performed by a linear operator in-place.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/RankOneOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
       int&nbsp;job)</code>
 <div class="block">Implement the operations performed by a linear operator out-of-place.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/RankOneOperator.html#getU()">getU</a></strong>()</code>
 <div class="block">Get the left vector of a rank-one linear operator.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/RankOneOperator.html#getV()">getV</a></strong>()</code>
 <div class="block">Get the right vector of a rank-one linear operator.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/RankOneOperator.html#setU(mitiv.linalg.Vector)">setU</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;u)</code>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/RankOneOperator.html#setLeftVector(mitiv.linalg.Vector)">setLeftVector</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;u)</code>
 <div class="block">Set the left vector of a rank-one linear operator.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/RankOneOperator.html#setV(mitiv.linalg.Vector)">setV</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)</code>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/RankOneOperator.html#setRightVector(mitiv.linalg.Vector)">setRightVector</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)</code>
 <div class="block">Set the right vector of a rank-one linear operator.</div>
 </td>
 </tr>
@@ -212,7 +219,7 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;mitiv.linalg.<a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></h3>
-<code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, int)">_apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkAdjoint(mitiv.linalg.Vector, mitiv.linalg.Vector)">checkAdjoint</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkLinearProblem(mitiv.linalg.LinearOperator, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">checkLinearProblem</a>, <a href="../../mitiv/linalg/LinearOperator.html#getInputSpace()">getInputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#getOutputSpace()">getOutputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#isEndomorphism()">isEndomorphism</a></code></li>
+<code><a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkAdjoint(mitiv.linalg.Vector, mitiv.linalg.Vector)">checkAdjoint</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkLinearProblem(mitiv.linalg.LinearOperator, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">checkLinearProblem</a>, <a href="../../mitiv/linalg/LinearOperator.html#getInputSpace()">getInputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#getOutputSpace()">getOutputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#isEndomorphism()">isEndomorphism</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -270,10 +277,11 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <pre>public&nbsp;RankOneOperator(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;u,
                <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)</pre>
 <div class="block">Create a new rank-one linear operator.
- 
- A rank-one operator is A = u.v' thus:
- 
- A.x = (v'.x) u = <v|x> u</div>
+
+ A rank-one operator is <code>A = u.v'</code> thus:
+ <pre>
+ A.x = (v'.x) u
+ </pre></div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>u</code> - the left vector</dd><dd><code>v</code> - the right vector</dd></dl>
 </li>
 </ul>
@@ -305,8 +313,8 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <ul class="blockList">
 <li class="blockList">
 <h4>_apply</h4>
-<pre>protected&nbsp;void&nbsp;_apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+<pre>protected&nbsp;void&nbsp;_apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
           int&nbsp;job)</pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
 <div class="block">Implement the operations performed by a linear operator out-of-place.
@@ -317,7 +325,28 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd><dd><code>job</code> - - The type of operation to perform.</dd></dl>
+<dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - The destination vector.</dd><dd><code>src</code> - - The source vector.</dd><dd><code>job</code> - - The type of operation to perform.</dd></dl>
+</li>
+</ul>
+<a name="_apply(mitiv.linalg.Vector, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>_apply</h4>
+<pre>protected&nbsp;void&nbsp;_apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec,
+          int&nbsp;job)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
+<div class="block">Implement the operations performed by a linear operator in-place.
+
+ This protected method is called by the `apply` method after checking of
+ the arguments.  Operation is done in-place which is only possible for
+ endomorphisms.  If this method is not overridden by the derived class, a
+ default implementation which uses a temporary vector is provided.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, int)">_apply</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>vec</code> - - The source and destination vector.</dd><dd><code>job</code> - - The type of operation to perform.</dd></dl>
 </li>
 </ul>
 <a name="getU()">
@@ -331,14 +360,14 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <dl><dt><span class="strong">Returns:</span></dt><dd>The left vector of the rank-one linear operator.</dd></dl>
 </li>
 </ul>
-<a name="setU(mitiv.linalg.Vector)">
+<a name="setLeftVector(mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setU</h4>
-<pre>public&nbsp;void&nbsp;setU(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;u)
-          throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
+<h4>setLeftVector</h4>
+<pre>public&nbsp;void&nbsp;setLeftVector(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;u)
+                   throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Set the left vector of a rank-one linear operator.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>u</code> - the new left vector.</dd>
 <dt><span class="strong">Throws:</span></dt>
@@ -356,14 +385,14 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <dl><dt><span class="strong">Returns:</span></dt><dd>The right vector of the rank-one linear operator.</dd></dl>
 </li>
 </ul>
-<a name="setV(mitiv.linalg.Vector)">
+<a name="setRightVector(mitiv.linalg.Vector)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>setV</h4>
-<pre>public&nbsp;void&nbsp;setV(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)
-          throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
+<h4>setRightVector</h4>
+<pre>public&nbsp;void&nbsp;setRightVector(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)
+                    throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Set the right vector of a rank-one linear operator.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>v</code> - the new right vector.</dd>
 <dt><span class="strong">Throws:</span></dt>

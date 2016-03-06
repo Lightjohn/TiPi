@@ -94,7 +94,7 @@
 <li class="blockList">
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../mitiv/cost/FiniteDifferenceOperator.html" title="class in mitiv.cost">FiniteDifferenceOperator</a>, <a href="../../mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a>, <a href="../../mitiv/invpb/LeftHandSideMatrix.html" title="class in mitiv.invpb">LeftHandSideMatrix</a>, <a href="../../mitiv/linalg/LinearEndomorphism.html" title="class in mitiv.linalg">LinearEndomorphism</a>, <a href="../../mitiv/linalg/RankOneOperator.html" title="class in mitiv.linalg">RankOneOperator</a>, <a href="../../mitiv/linalg/ScaleOperator.html" title="class in mitiv.linalg">ScaleOperator</a>, <a href="../../mitiv/linalg/shaped/ShapedLinearOperator.html" title="class in mitiv.linalg.shaped">ShapedLinearOperator</a>, <a href="../../mitiv/deconv/WeightingOperator.html" title="class in mitiv.deconv">WeightingOperator</a></dd>
+<dd><a href="../../mitiv/cost/FiniteDifferenceOperator.html" title="class in mitiv.cost">FiniteDifferenceOperator</a>, <a href="../../mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim">LBFGSOperator</a>, <a href="../../mitiv/invpb/LeftHandSideMatrix.html" title="class in mitiv.invpb">LeftHandSideMatrix</a>, <a href="../../mitiv/linalg/LinearEndomorphism.html" title="class in mitiv.linalg">LinearEndomorphism</a>, <a href="../../mitiv/linalg/RankOneOperator.html" title="class in mitiv.linalg">RankOneOperator</a>, <a href="../../mitiv/linalg/shaped/ShapedLinearOperator.html" title="class in mitiv.linalg.shaped">ShapedLinearOperator</a>, <a href="../../mitiv/deconv/WeightingOperator.html" title="class in mitiv.deconv">WeightingOperator</a></dd>
 </dl>
 <hr>
 <br>
@@ -212,8 +212,8 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
       int&nbsp;job)</code>
 <div class="block">Implement the operations performed by a linear operator out-of-place.</div>
 </td>
@@ -233,15 +233,15 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src)</code>
 <div class="block">Apply linear operator.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
      int&nbsp;job)</code>
 <div class="block">Apply a given operation implemented by a linear operator.</div>
 </td>
@@ -454,15 +454,15 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>apply</h4>
-<pre>public&nbsp;void&nbsp;apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)
+<pre>public&nbsp;void&nbsp;apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src)
            throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Apply linear operator.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - The destination vector.</dd><dd><code>src</code> - - The source vector.</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - `src` must belongs to the input vector space of the operator
-             and `dst` must belongs to the output vector space of the
-             operator.</dd></dl>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - <code>src</code> must belongs to the input vector space of the operator
+         and <code>dst</code> must belongs to the output vector space of the
+         operator.</dd></dl>
 </li>
 </ul>
 <a name="apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">
@@ -471,20 +471,24 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>apply</h4>
-<pre>public&nbsp;void&nbsp;apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+<pre>public&nbsp;void&nbsp;apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
          int&nbsp;job)
-           throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
+           throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a>,
+                  <a href="../../mitiv/exception/IllegalLinearOperationException.html" title="class in mitiv.exception">IllegalLinearOperationException</a>,
+                  <a href="../../mitiv/exception/NotImplementedException.html" title="class in mitiv.exception">NotImplementedException</a></pre>
 <div class="block">Apply a given operation implemented by a linear operator.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd><dd><code>job</code> - - The type of operation to perform (<a href="../../mitiv/linalg/LinearOperator.html#DIRECT"><code>DIRECT</code></a>,
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - The destination vector.</dd><dd><code>src</code> - - The source vector.</dd><dd><code>job</code> - - The type of operation to perform (<a href="../../mitiv/linalg/LinearOperator.html#DIRECT"><code>DIRECT</code></a>,
               <a href="../../mitiv/linalg/LinearOperator.html#ADJOINT"><code>ADJOINT</code></a>, <code>INVERSE</code> or
               <code>INVERSE_ADJOINT</code>).</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - If `job` is <a href="../../mitiv/linalg/LinearOperator.html#DIRECT"><code>DIRECT</code></a>, or <code>INVERSE_ADJOINT</code>
-             (resp. <a href="../../mitiv/linalg/LinearOperator.html#ADJOINT"><code>ADJOINT</code></a> or <code>INVERSE</code>), `src`
-             (resp. `dst`) must belongs to the input vector space of the
-             operator and `dst` (resp. `src`) must belongs to the output
-             vector space of the operator.</dd></dl>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - If <code>job</code> is <a href="../../mitiv/linalg/LinearOperator.html#DIRECT"><code>DIRECT</code></a>, or <code>INVERSE_ADJOINT</code>
+         (resp. <a href="../../mitiv/linalg/LinearOperator.html#ADJOINT"><code>ADJOINT</code></a> or <code>INVERSE</code>), <code>src</code>
+         (resp. <code>dst</code>) must belongs to the input vector space of the
+         operator and <code>dst</code> (resp. <code>src</code>) must belongs to the output
+         vector space of the operator.</dd>
+<dd><code><a href="../../mitiv/exception/IllegalLinearOperationException.html" title="class in mitiv.exception">IllegalLinearOperationException</a></code> - The value of <code>job</code> is incorrect.</dd>
+<dd><code><a href="../../mitiv/exception/NotImplementedException.html" title="class in mitiv.exception">NotImplementedException</a></code> - The operation <code>job</code> is not implemented or not possible.</dd></dl>
 </li>
 </ul>
 <a name="apply(mitiv.linalg.Vector)">
@@ -501,7 +505,7 @@ extends java.lang.Object</pre>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>vec</code> - - The source and destination vector.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../mitiv/exception/IllegalLinearOperationException.html" title="class in mitiv.exception">IllegalLinearOperationException</a></code> - The operator must be an endomorphism.</dd>
-<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - `vec` must belongs to the vector space of the operator.</dd>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - <code>vec</code> must belongs to the vector space of the operator.</dd>
 <dd><code><a href="../../mitiv/exception/NotImplementedException.html" title="class in mitiv.exception">NotImplementedException</a></code> - Operation is not supported or cannot be performed
               in-place.</dd></dl>
 </li>
@@ -522,8 +526,8 @@ extends java.lang.Object</pre>
               <a href="../../mitiv/linalg/LinearOperator.html#ADJOINT"><code>ADJOINT</code></a>, <code>INVERSE</code> or
               <code>INVERSE_ADJOINT</code>).</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../mitiv/exception/IllegalLinearOperationException.html" title="class in mitiv.exception">IllegalLinearOperationException</a></code> - The operator must be an endomorphism or invalid `job`.</dd>
-<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - `vec` must belongs to the vector space of the operator.</dd>
+<dd><code><a href="../../mitiv/exception/IllegalLinearOperationException.html" title="class in mitiv.exception">IllegalLinearOperationException</a></code> - The operator must be an endomorphism or invalid <code>job</code>.</dd>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - <code>vec</code> must belongs to the vector space of the operator.</dd>
 <dd><code><a href="../../mitiv/exception/NotImplementedException.html" title="class in mitiv.exception">NotImplementedException</a></code> - Operation is not supported or cannot be performed
               in-place.</dd></dl>
 </li>
@@ -534,8 +538,8 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>_apply</h4>
-<pre>protected abstract&nbsp;void&nbsp;_apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+<pre>protected abstract&nbsp;void&nbsp;_apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
           int&nbsp;job)
                         throws <a href="../../mitiv/exception/NotImplementedException.html" title="class in mitiv.exception">NotImplementedException</a></pre>
 <div class="block">Implement the operations performed by a linear operator out-of-place.
@@ -543,7 +547,7 @@ extends java.lang.Object</pre>
  This protected method is called by the `apply` method after checking of
  the arguments.  The operation is performed out-of-place which means that
  source and destination vectors are guaranteed to be different.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd><dd><code>job</code> - - The type of operation to perform.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - The destination vector.</dd><dd><code>src</code> - - The source vector.</dd><dd><code>job</code> - - The type of operation to perform.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../mitiv/exception/NotImplementedException.html" title="class in mitiv.exception">NotImplementedException</a></code> - Operation is not supported.</dd></dl>
 </li>

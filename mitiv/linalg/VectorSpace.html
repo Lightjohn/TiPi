@@ -283,26 +283,32 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_scale(mitiv.linalg.Vector, double, mitiv.linalg.Vector)">_scale</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+      double&nbsp;alpha,
+      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_swap(mitiv.linalg.Vector, mitiv.linalg.Vector)">_swap</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_zero(mitiv.linalg.Vector)">_zero</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#check(mitiv.linalg.Vector)">check</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)</code>
 <div class="block">Make sure a given vector belongs to the vector space.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#clone(mitiv.linalg.Vector)">clone</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec)</code>
 <div class="block">Create a new vector as a clone of another vector.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine</a></strong>(double&nbsp;alpha,
        <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
@@ -311,7 +317,7 @@ extends java.lang.Object</pre>
 <div class="block">Compute a linear combination of two vectors.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
        double&nbsp;alpha,
@@ -321,7 +327,7 @@ extends java.lang.Object</pre>
 <div class="block">Compute a linear combination of two vectors.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#combine(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
        double&nbsp;alpha,
@@ -333,33 +339,33 @@ extends java.lang.Object</pre>
 <div class="block">Compute a linear combination of three vectors.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">copy</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src)</code>
 <div class="block">Copy the contents of a vector into another one.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#create()">create</a></strong>()</code>
 <div class="block">Create a new vector from this vector space with undefined contents.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>abstract <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#create(double)">create</a></strong>(double&nbsp;alpha)</code>
 <div class="block">Create a new vector from this vector space filled with given value.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">dot</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>
 <div class="block">Compute the inner product of two vectors.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">dot</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;w,
    <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
@@ -368,20 +374,20 @@ extends java.lang.Object</pre>
  of two vectors.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#fill(mitiv.linalg.Vector, double)">fill</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
     double&nbsp;alpha)</code>
 <div class="block">Fill a vector with a value.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#getNumber()">getNumber</a></strong>()</code>
 <div class="block">Get the number of components of the vectors of a vector space.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#multiply(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">multiply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
@@ -389,40 +395,48 @@ extends java.lang.Object</pre>
 <div class="block">Perform a component-wise multiplication of two vectors.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#norm1(mitiv.linalg.Vector)">norm1</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</code>
 <div class="block">Compute the L1 norm of a vector.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#norm2(mitiv.linalg.Vector)">norm2</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</code>
 <div class="block">Compute the Euclidean (L2) norm of a vector.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#normInf(mitiv.linalg.Vector)">normInf</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</code>
 <div class="block">Compute the infinite norm of a vector.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#one()">one</a></strong>()</code>
 <div class="block">Create a new vector of one's.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#owns(mitiv.linalg.Vector)">owns</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)</code>
 <div class="block">Check whether a given vector belongs to the vector space.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#scale(mitiv.linalg.Vector, double)">scale</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v,
      double&nbsp;alpha)</code>
+<div class="block">Multiply the components of a vector by a constant factor.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#scale(mitiv.linalg.Vector, double, mitiv.linalg.Vector)">scale</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+     double&nbsp;alpha,
+     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src)</code>
 <div class="block">Multiply the components of a vector by a constant factor.</div>
 </td>
 </tr>
@@ -702,7 +716,31 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;void&nbsp;scale(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v,
          double&nbsp;alpha)</pre>
 <div class="block">Multiply the components of a vector by a constant factor.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - The scale factor.</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>v</code> - - The target vector.</dd><dd><code>alpha</code> - - The scale factor.</dd></dl>
+</li>
+</ul>
+<a name="scale(mitiv.linalg.Vector, double, mitiv.linalg.Vector)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>scale</h4>
+<pre>public&nbsp;void&nbsp;scale(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+         double&nbsp;alpha,
+         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src)</pre>
+<div class="block">Multiply the components of a vector by a constant factor.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - The destination vector.</dd><dd><code>alpha</code> - - The scale factor.</dd><dd><code>src</code> - - The source vector.</dd></dl>
+</li>
+</ul>
+<a name="_scale(mitiv.linalg.Vector, double, mitiv.linalg.Vector)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>_scale</h4>
+<pre>protected abstract&nbsp;void&nbsp;_scale(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+          double&nbsp;alpha,
+          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src)</pre>
 </li>
 </ul>
 <a name="_scale(mitiv.linalg.Vector, double)">
