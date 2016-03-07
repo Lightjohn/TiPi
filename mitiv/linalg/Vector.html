@@ -447,7 +447,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>belongsTo</h4>
-<pre>public&nbsp;boolean&nbsp;belongsTo(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;space)</pre>
+<pre>public final&nbsp;boolean&nbsp;belongsTo(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;space)</pre>
 <div class="block">Check whether a vector belongs to a given vector space.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>space</code> - a vector space.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>true or false.</dd></dl>
@@ -459,8 +459,8 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>assertBelongsTo</h4>
-<pre>public&nbsp;void&nbsp;assertBelongsTo(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;space)
-                     throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
+<pre>public final&nbsp;void&nbsp;assertBelongsTo(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;space)
+                           throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Throw an exception if a vector does not belong to a given vector space.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>space</code> - The vector space.</dd>
 <dt><span class="strong">Throws:</span></dt>
@@ -569,7 +569,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>scale</h4>
-<pre>public&nbsp;void&nbsp;scale(double&nbsp;alpha)</pre>
+<pre>public final&nbsp;void&nbsp;scale(double&nbsp;alpha)</pre>
 <div class="block">Multiply the values of the vector by a constant factor.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - The scale factor.</dd></dl>
 </li>
@@ -580,7 +580,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>dot</h4>
-<pre>public&nbsp;double&nbsp;dot(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;other)</pre>
+<pre>public final&nbsp;double&nbsp;dot(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;other)</pre>
 <div class="block">Compute the inner product of this vector with another vector.
 
  The inner product, also called dot or scalar product of two vectors, is
@@ -600,7 +600,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>dot</h4>
-<pre>public&nbsp;double&nbsp;dot(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v1,
+<pre>public final&nbsp;double&nbsp;dot(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v1,
          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v2)</pre>
 <div class="block">Compute the inner product of this vector with two other vectors.
 
@@ -621,7 +621,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>norm1</h4>
-<pre>public&nbsp;double&nbsp;norm1()</pre>
+<pre>public final&nbsp;double&nbsp;norm1()</pre>
 <div class="block">Compute the L1 norm of the vector.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>The sum of absolute values of the vector.</dd></dl>
 </li>
@@ -632,7 +632,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>norm2</h4>
-<pre>public&nbsp;double&nbsp;norm2()</pre>
+<pre>public final&nbsp;double&nbsp;norm2()</pre>
 <div class="block">Compute the Euclidean (L2) norm of the vector.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>The square root of the sum of squared elements of the vector.</dd></dl>
 </li>
@@ -643,7 +643,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>normInf</h4>
-<pre>public&nbsp;double&nbsp;normInf()</pre>
+<pre>public final&nbsp;double&nbsp;normInf()</pre>
 <div class="block">Compute the infinite norm of the vector.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>The maximum absolute value of the vector.</dd></dl>
 </li>
@@ -654,7 +654,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>fill</h4>
-<pre>public&nbsp;void&nbsp;fill(double&nbsp;value)</pre>
+<pre>public final&nbsp;void&nbsp;fill(double&nbsp;value)</pre>
 <div class="block">Fill the vector with a value.
 
  Set all elements of the vector with a value.</div>
@@ -667,7 +667,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>zero</h4>
-<pre>public&nbsp;void&nbsp;zero()</pre>
+<pre>public final&nbsp;void&nbsp;zero()</pre>
 <div class="block">Fill the vector with zeros.
 
  Set to zero all elements of the vector.</div>

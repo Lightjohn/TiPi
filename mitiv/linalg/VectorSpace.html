@@ -290,7 +290,9 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/linalg/VectorSpace.html#_swap(mitiv.linalg.Vector, mitiv.linalg.Vector)">_swap</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
-     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>&nbsp;</td>
+     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</code>
+<div class="block">Exchange the contents of two vectors (low level).</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
@@ -939,9 +941,10 @@ extends java.lang.Object</pre>
         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src)
                 throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
 <div class="block">Copy the contents of a vector into another one.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - destination vector</dd><dd><code>src</code> - - source vector</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - The destination vector.</dd><dd><code>src</code> - - The source vector.</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - SRC and DST must belong to this vector space.</dd></dl>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - <code>src</code> and <code>dst</code>
+ must belong to this vector space.</dd></dl>
 </li>
 </ul>
 <a name="_copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">
@@ -954,10 +957,13 @@ extends java.lang.Object</pre>
          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src)</pre>
 <div class="block">Copy the contents of a vector into another one (low level).
 
+ Low level method which is guaranteed to be called with checked
+ arguments by <a href="../../mitiv/linalg/VectorSpace.html#copy(mitiv.linalg.Vector, mitiv.linalg.Vector)"><code>copy(mitiv.linalg.Vector, mitiv.linalg.Vector)</code></a>.
+ <p>
  This basic implementation calls <a href="../../mitiv/linalg/VectorSpace.html#_combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)"><code>_combine(double, Vector, double, Vector)</code></a>
  method and is expected to be overwritten with a more efficient version by the
  descendants of this class.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - destination vector</dd><dd><code>src</code> - - source vector</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - The destination vector.</dd><dd><code>src</code> - - The source vector.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - <code>src</code> and <code>dst</code> must belong to
  this vector space.</dd></dl>
@@ -986,6 +992,11 @@ extends java.lang.Object</pre>
 <h4>_swap</h4>
 <pre>protected abstract&nbsp;void&nbsp;_swap(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y)</pre>
+<div class="block">Exchange the contents of two vectors (low level).
+
+ Any concrete derived class must implement this low level method
+ which is guaranteed to be called with checked arguments by <a href="../../mitiv/linalg/VectorSpace.html#swap(mitiv.linalg.Vector, mitiv.linalg.Vector)"><code>swap(mitiv.linalg.Vector, mitiv.linalg.Vector)</code></a>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - A Vector.</dd><dd><code>y</code> - - Another vector</dd></dl>
 </li>
 </ul>
 <a name="clone(mitiv.linalg.Vector)">
@@ -1051,7 +1062,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>zero</h4>
-<pre>public&nbsp;void&nbsp;zero(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)</pre>
+<pre>public final&nbsp;void&nbsp;zero(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;v)</pre>
 <div class="block">Fill a vector with zeros.
 
  This method set to zero all elements of a vector.</div>
@@ -1075,7 +1086,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>fill</h4>
-<pre>public&nbsp;void&nbsp;fill(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
+<pre>public final&nbsp;void&nbsp;fill(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
         double&nbsp;alpha)</pre>
 <div class="block">Fill a vector with a value.
 

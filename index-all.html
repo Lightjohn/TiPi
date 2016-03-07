@@ -2794,9 +2794,9 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#copy(float[][], float[][])">copy(float[][], float[][])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#copy(double[], mitiv.linalg.Vector)">copy(double[], Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#copy(mitiv.linalg.Vector, double[])">copy(Vector, double[])</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html#copy(float[], mitiv.linalg.Vector)">copy(float[], Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html" title="class in mitiv.linalg.shaped">FloatShapedVectorSpace</a></dt>
+<dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html#copy(mitiv.linalg.Vector, float[])">copy(Vector, float[])</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html" title="class in mitiv.linalg.shaped">FloatShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">copy(Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>
@@ -8736,6 +8736,10 @@
 <div class="block">Get the last position of the range taking into account the length
  of the dimension of interest.</div>
 </dd>
+<dt><span class="strong"><a href="./mitiv/linalg/RankOneOperator.html#getLeftVector()">getLeftVector()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/RankOneOperator.html" title="class in mitiv.linalg">RankOneOperator</a></dt>
+<dd>
+<div class="block">Get the left vector of a rank-one linear operator.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#getLength(byte[])">getLength(byte[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/ArrayOps.html#getLength(short[])">getLength(short[])</a></span> - Static method in class mitiv.linalg.<a href="./mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg">ArrayOps</a></dt>
@@ -9683,6 +9687,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/WideFieldModel.html#getRho()">getRho()</a></span> - Method in class mitiv.microscopy.<a href="./mitiv/microscopy/WideFieldModel.html" title="class in mitiv.microscopy">WideFieldModel</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/RankOneOperator.html#getRightVector()">getRightVector()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/RankOneOperator.html" title="class in mitiv.linalg">RankOneOperator</a></dt>
+<dd>
+<div class="block">Get the right vector of a rank-one linear operator.</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearConjugateGradient.html#getRtol()">getRtol()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearConjugateGradient.html" title="class in mitiv.linalg">LinearConjugateGradient</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/cost/HyperbolicTotalVariation.html#getScale(int)">getScale(int)</a></span> - Method in class mitiv.cost.<a href="./mitiv/cost/HyperbolicTotalVariation.html" title="class in mitiv.cost">HyperbolicTotalVariation</a></dt>
@@ -9943,10 +9951,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/ShapedVectorSpace.html#getType()">getType()</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/RankOneOperator.html#getU()">getU()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/RankOneOperator.html" title="class in mitiv.linalg">RankOneOperator</a></dt>
-<dd>
-<div class="block">Get the left vector of a rank-one linear operator.</div>
-</dd>
 <dt><span class="strong"><a href="./mitiv/optim/NonmonotoneLineSearch.html#getUpperBound()">getUpperBound()</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/NonmonotoneLineSearch.html" title="class in mitiv.optim">NonmonotoneLineSearch</a></dt>
 <dd>
 <div class="block">Get upper step length relative bound to trigger bisection.</div>
@@ -9955,10 +9959,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/optim/SimpleUpperBound.html#getUpperBound()">getUpperBound()</a></span> - Method in class mitiv.optim.<a href="./mitiv/optim/SimpleUpperBound.html" title="class in mitiv.optim">SimpleUpperBound</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./mitiv/linalg/RankOneOperator.html#getV()">getV()</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/RankOneOperator.html" title="class in mitiv.linalg">RankOneOperator</a></dt>
-<dd>
-<div class="block">Get the right vector of a rank-one linear operator.</div>
-</dd>
 <dt><span class="strong"><a href="./commands/TotalVariationDeconvolution.html#getViewer()">getViewer()</a></span> - Method in class commands.<a href="./commands/TotalVariationDeconvolution.html" title="class in commands">TotalVariationDeconvolution</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/microscopy/PSF_Estimation.html#getViewer()">getViewer()</a></span> - Method in class mitiv.microscopy.<a href="./mitiv/microscopy/PSF_Estimation.html" title="class in mitiv.microscopy">PSF_Estimation</a></dt>
@@ -22983,7 +22983,11 @@ the order they are declared.</div>
 </dd>
 <dt><span class="strong"><a href="./mitiv/linalg/DiagonalOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply(Vector, Vector, int)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/DiagonalOperator.html#_apply(mitiv.linalg.Vector, int)">_apply(Vector, int)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/IdentityOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply(Vector, Vector, int)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/IdentityOperator.html" title="class in mitiv.linalg">IdentityOperator</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./mitiv/linalg/IdentityOperator.html#_apply(mitiv.linalg.Vector, int)">_apply(Vector, int)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/IdentityOperator.html" title="class in mitiv.linalg">IdentityOperator</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply(Vector, Vector, int)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></dt>
 <dd>
@@ -23043,8 +23047,6 @@ the order they are declared.</div>
 <dd>
 <div class="block">Compute a linear combination of two vectors (low level).</div>
 </dd>
-<dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#_copy(mitiv.linalg.shaped.DoubleShapedVector, mitiv.linalg.shaped.DoubleShapedVector)">_copy(DoubleShapedVector, DoubleShapedVector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html#_copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">_copy(Vector, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html#_copy(mitiv.linalg.Vector, mitiv.linalg.Vector)">_copy(Vector, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html" title="class in mitiv.linalg.shaped">FloatShapedVectorSpace</a></dt>
@@ -23142,7 +23144,9 @@ the order they are declared.</div>
 <dt><span class="strong"><a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html#_swap(mitiv.linalg.Vector, mitiv.linalg.Vector)">_swap(Vector, Vector)</a></span> - Method in class mitiv.linalg.shaped.<a href="./mitiv/linalg/shaped/FloatShapedVectorSpace.html" title="class in mitiv.linalg.shaped">FloatShapedVectorSpace</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#_swap(mitiv.linalg.Vector, mitiv.linalg.Vector)">_swap(Vector, Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Exchange the contents of two vectors (low level).</div>
+</dd>
 <dt><span class="strong"><a href="./mitiv/linalg/VectorSpace.html#_zero(mitiv.linalg.Vector)">_zero(Vector)</a></span> - Method in class mitiv.linalg.<a href="./mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a></dt>
 <dd>&nbsp;</dd>
 </dl>
