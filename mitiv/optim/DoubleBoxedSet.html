@@ -88,7 +88,12 @@
 <li><a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">mitiv.optim.BoxedSet</a></li>
 <li>
 <ul class="inheritance">
+<li><a href="../../mitiv/optim/SimpleBoxedSet.html" title="class in mitiv.optim">mitiv.optim.SimpleBoxedSet</a></li>
+<li>
+<ul class="inheritance">
 <li>mitiv.optim.DoubleBoxedSet</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -100,7 +105,7 @@
 <hr>
 <br>
 <pre>public class <strong>DoubleBoxedSet</strong>
-extends <a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></pre>
+extends <a href="../../mitiv/optim/SimpleBoxedSet.html" title="class in mitiv.optim">SimpleBoxedSet</a></pre>
 <div class="block">Implementation of boxed set for vectors of double precision floating point
  elements.</div>
 <dl><dt><span class="strong">Author:</span></dt>
@@ -214,11 +219,18 @@ extends <a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">B
 </tr>
 </table>
 <ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_mitiv.optim.SimpleBoxedSet">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;mitiv.optim.<a href="../../mitiv/optim/SimpleBoxedSet.html" title="class in mitiv.optim">SimpleBoxedSet</a></h3>
+<code><a href="../../mitiv/optim/SimpleBoxedSet.html#unsetBounds()">unsetBounds</a>, <a href="../../mitiv/optim/SimpleBoxedSet.html#unsetLowerBound()">unsetLowerBound</a>, <a href="../../mitiv/optim/SimpleBoxedSet.html#unsetUpperBound()">unsetUpperBound</a></code></li>
+</ul>
+<ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_mitiv.optim.BoxedSet">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;mitiv.optim.<a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></h3>
-<code><a href="../../mitiv/optim/BoxedSet.html#create(mitiv.linalg.VectorSpace)">create</a>, <a href="../../mitiv/optim/BoxedSet.html#unsetBounds()">unsetBounds</a>, <a href="../../mitiv/optim/BoxedSet.html#unsetLowerBound()">unsetLowerBound</a>, <a href="../../mitiv/optim/BoxedSet.html#unsetUpperBound()">unsetUpperBound</a></code></li>
+<code><a href="../../mitiv/optim/BoxedSet.html#create(mitiv.linalg.VectorSpace)">create</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -265,7 +277,7 @@ extends <a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">B
 <li class="blockList">
 <h4>setLowerBound</h4>
 <pre>public&nbsp;void&nbsp;setLowerBound(double&nbsp;val)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/BoxedSet.html#setLowerBound(double)">BoxedSet</a></code></strong></div>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/SimpleBoxedSet.html#setLowerBound(double)">SimpleBoxedSet</a></code></strong></div>
 <div class="block">Set the lower bound of the variables.
 
  This method sets the lower bound of the variables which is the same for
@@ -273,7 +285,7 @@ extends <a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">B
  unbounded below.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/optim/BoxedSet.html#setLowerBound(double)">setLowerBound</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></code></dd>
+<dd><code><a href="../../mitiv/optim/SimpleBoxedSet.html#setLowerBound(double)">setLowerBound</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/optim/SimpleBoxedSet.html" title="class in mitiv.optim">SimpleBoxedSet</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>val</code> - - The new lower bound.</dd></dl>
 </li>
 </ul>
@@ -284,7 +296,7 @@ extends <a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">B
 <li class="blockList">
 <h4>setLowerBound</h4>
 <pre>public&nbsp;void&nbsp;setLowerBound(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/BoxedSet.html#setLowerBound(mitiv.linalg.Vector)">BoxedSet</a></code></strong></div>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/SimpleBoxedSet.html#setLowerBound(mitiv.linalg.Vector)">SimpleBoxedSet</a></code></strong></div>
 <div class="block">Set the lower bound of the variables.
 
  This method sets the component-wise lower bounds of the variables.  If
@@ -293,7 +305,7 @@ extends <a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">B
  considered as being unbounded below.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/optim/BoxedSet.html#setLowerBound(mitiv.linalg.Vector)">setLowerBound</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></code></dd>
+<dd><code><a href="../../mitiv/optim/SimpleBoxedSet.html#setLowerBound(mitiv.linalg.Vector)">setLowerBound</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/optim/SimpleBoxedSet.html" title="class in mitiv.optim">SimpleBoxedSet</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>vec</code> - - A vector with the new lower bounds.</dd></dl>
 </li>
 </ul>
@@ -304,7 +316,7 @@ extends <a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">B
 <li class="blockList">
 <h4>setUpperBound</h4>
 <pre>public&nbsp;void&nbsp;setUpperBound(double&nbsp;val)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/BoxedSet.html#setUpperBound(double)">BoxedSet</a></code></strong></div>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/SimpleBoxedSet.html#setUpperBound(double)">SimpleBoxedSet</a></code></strong></div>
 <div class="block">Set the upper bound of the variables.
 
  This method sets the upper bound of the variables which is the same for
@@ -312,7 +324,7 @@ extends <a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">B
  unbounded above.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/optim/BoxedSet.html#setUpperBound(double)">setUpperBound</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></code></dd>
+<dd><code><a href="../../mitiv/optim/SimpleBoxedSet.html#setUpperBound(double)">setUpperBound</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/optim/SimpleBoxedSet.html" title="class in mitiv.optim">SimpleBoxedSet</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>val</code> - - The new upper bound.</dd></dl>
 </li>
 </ul>
@@ -323,7 +335,7 @@ extends <a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">B
 <li class="blockList">
 <h4>setUpperBound</h4>
 <pre>public&nbsp;void&nbsp;setUpperBound(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/BoxedSet.html#setUpperBound(mitiv.linalg.Vector)">BoxedSet</a></code></strong></div>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/optim/SimpleBoxedSet.html#setUpperBound(mitiv.linalg.Vector)">SimpleBoxedSet</a></code></strong></div>
 <div class="block">Set the upper bound of the variables.
 
  This method sets the component-wise upper bounds of the variables.  If
@@ -332,7 +344,7 @@ extends <a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">B
  considered as being unbounded above.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/optim/BoxedSet.html#setUpperBound(mitiv.linalg.Vector)">setUpperBound</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/optim/BoxedSet.html" title="class in mitiv.optim">BoxedSet</a></code></dd>
+<dd><code><a href="../../mitiv/optim/SimpleBoxedSet.html#setUpperBound(mitiv.linalg.Vector)">setUpperBound</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/optim/SimpleBoxedSet.html" title="class in mitiv.optim">SimpleBoxedSet</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>vec</code> - - A vector with the new upper bounds.</dd></dl>
 </li>
 </ul>

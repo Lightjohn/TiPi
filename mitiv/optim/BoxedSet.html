@@ -94,7 +94,7 @@
 <li class="blockList">
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../mitiv/optim/DoubleBoxedSet.html" title="class in mitiv.optim">DoubleBoxedSet</a>, <a href="../../mitiv/optim/FloatBoxedSet.html" title="class in mitiv.optim">FloatBoxedSet</a></dd>
+<dd><a href="../../mitiv/optim/SimpleBoxedSet.html" title="class in mitiv.optim">SimpleBoxedSet</a></dd>
 </dl>
 <hr>
 <br>
@@ -196,48 +196,6 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/BoxedSet.html#projectVariables(mitiv.linalg.Vector, mitiv.linalg.Vector)">projectVariables</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;xp,
                 <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x)</code>
 <div class="block">Project variables into the boxed set.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoxedSet.html#setLowerBound(double)">setLowerBound</a></strong>(double&nbsp;val)</code>
-<div class="block">Set the lower bound of the variables.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoxedSet.html#setLowerBound(mitiv.linalg.Vector)">setLowerBound</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec)</code>
-<div class="block">Set the lower bound of the variables.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoxedSet.html#setUpperBound(double)">setUpperBound</a></strong>(double&nbsp;val)</code>
-<div class="block">Set the upper bound of the variables.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoxedSet.html#setUpperBound(mitiv.linalg.Vector)">setUpperBound</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec)</code>
-<div class="block">Set the upper bound of the variables.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoxedSet.html#unsetBounds()">unsetBounds</a></strong>()</code>
-<div class="block">Unset the bound.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoxedSet.html#unsetLowerBound()">unsetLowerBound</a></strong>()</code>
-<div class="block">Unset the lower bound(s).</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/BoxedSet.html#unsetUpperBound()">unsetUpperBound</a></strong>()</code>
-<div class="block">Unset the upper bound(s).</div>
 </td>
 </tr>
 </table>
@@ -364,7 +322,7 @@ extends java.lang.Object</pre>
 <a name="findStepLimits(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>findStepLimits</h4>
 <pre>public abstract&nbsp;double[]&nbsp;findStepLimits(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x,
@@ -392,104 +350,6 @@ extends java.lang.Object</pre>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>x</code> - - The current variables.</dd><dd><code>d</code> - - The search direction.</dd><dd><code>orient</code> - - The orientation of the search direction (see
                   <a href="../../mitiv/optim/BoxedSet.html#projectDirection(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, int)"><code>projectDirection(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, int)</code></a>).</dd>
 <dt><span class="strong">Returns:</span></dt><dd>A 3-element array of values: <code>{smin1,smin2,smax}</code>.</dd></dl>
-</li>
-</ul>
-<a name="setLowerBound(double)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setLowerBound</h4>
-<pre>public abstract&nbsp;void&nbsp;setLowerBound(double&nbsp;val)</pre>
-<div class="block">Set the lower bound of the variables.
-
- This method sets the lower bound of the variables which is the same for
- all variables.  If the bound value is set to <code>Double.NEGATIVE_INFINITY</code>, the variables will be considered as being
- unbounded below.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>val</code> - - The new lower bound.</dd></dl>
-</li>
-</ul>
-<a name="setLowerBound(mitiv.linalg.Vector)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setLowerBound</h4>
-<pre>public abstract&nbsp;void&nbsp;setLowerBound(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec)</pre>
-<div class="block">Set the lower bound of the variables.
-
- This method sets the component-wise lower bounds of the variables.  If
- the bound value is <code>null</code>, the variables will be considered as
- being unbounded below.  Any element of <code>vec</code> equal to <code>Double.NEGATIVE_INFINITY</code> or <code>Float.NEGATIVE_INFINITY</code> will be
- considered as being unbounded below.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>vec</code> - - A vector with the new lower bounds.</dd></dl>
-</li>
-</ul>
-<a name="setUpperBound(double)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setUpperBound</h4>
-<pre>public abstract&nbsp;void&nbsp;setUpperBound(double&nbsp;val)</pre>
-<div class="block">Set the upper bound of the variables.
-
- This method sets the upper bound of the variables which is the same for
- all variables.  If the bound value is set to <code>Double.POSITIVE_INFINITY</code>, the variables will be considered as being
- unbounded above.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>val</code> - - The new upper bound.</dd></dl>
-</li>
-</ul>
-<a name="setUpperBound(mitiv.linalg.Vector)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setUpperBound</h4>
-<pre>public abstract&nbsp;void&nbsp;setUpperBound(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec)</pre>
-<div class="block">Set the upper bound of the variables.
-
- This method sets the component-wise upper bounds of the variables.  If
- the bound value is <code>null</code>, the variables will be considered as
- being unbounded above.  Any element of <code>vec</code> equal to <code>Double.POSITIVE_INFINITY</code> or <code>Float.POSITIVE_INFINITY</code> will be
- considered as being unbounded above.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>vec</code> - - A vector with the new upper bounds.</dd></dl>
-</li>
-</ul>
-<a name="unsetLowerBound()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>unsetLowerBound</h4>
-<pre>public&nbsp;void&nbsp;unsetLowerBound()</pre>
-<div class="block">Unset the lower bound(s).
-
- The variables will be considered as being unbounded below.</div>
-</li>
-</ul>
-<a name="unsetUpperBound()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>unsetUpperBound</h4>
-<pre>public&nbsp;void&nbsp;unsetUpperBound()</pre>
-<div class="block">Unset the upper bound(s).
-
- The variables will be considered as being unbounded above.</div>
-</li>
-</ul>
-<a name="unsetBounds()">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>unsetBounds</h4>
-<pre>public&nbsp;void&nbsp;unsetBounds()</pre>
-<div class="block">Unset the bound.
-
- The variables will be considered as being unbounded.</div>
 </li>
 </ul>
 </li>
