@@ -112,7 +112,7 @@
 extends <a href="../../../mitiv/linalg/shaped/ShapedVector.html" title="class in mitiv.linalg.shaped">ShapedVector</a></pre>
 <div class="block">Class for vectors which belongs to an instance of the DoubleVectorSpace
  class.
-
+ 
  Implements (flat) vectors of double precision reals.</div>
 <dl><dt><span class="strong">Author:</span></dt>
   <dd>Éric Thiébaut <eric.thiebaut@univ-lyon1.fr></dd></dl>
@@ -265,7 +265,7 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVector.html" title="class in
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;mitiv.linalg.<a href="../../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></h3>
-<code><a href="../../../mitiv/linalg/Vector.html#assertBelongsTo(mitiv.linalg.VectorSpace)">assertBelongsTo</a>, <a href="../../../mitiv/linalg/Vector.html#belongsTo(mitiv.linalg.VectorSpace)">belongsTo</a>, <a href="../../../mitiv/linalg/Vector.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine</a>, <a href="../../../mitiv/linalg/Vector.html#combine(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">combine</a>, <a href="../../../mitiv/linalg/Vector.html#copyFrom(mitiv.linalg.Vector)">copyFrom</a>, <a href="../../../mitiv/linalg/Vector.html#copyTo(mitiv.linalg.Vector)">copyTo</a>, <a href="../../../mitiv/linalg/Vector.html#dot(mitiv.linalg.Vector)">dot</a>, <a href="../../../mitiv/linalg/Vector.html#dot(mitiv.linalg.Vector, mitiv.linalg.Vector)">dot</a>, <a href="../../../mitiv/linalg/Vector.html#fill(double)">fill</a>, <a href="../../../mitiv/linalg/Vector.html#getNumber()">getNumber</a>, <a href="../../../mitiv/linalg/Vector.html#length()">length</a>, <a href="../../../mitiv/linalg/Vector.html#multiply(mitiv.linalg.Vector)">multiply</a>, <a href="../../../mitiv/linalg/Vector.html#norm1()">norm1</a>, <a href="../../../mitiv/linalg/Vector.html#norm2()">norm2</a>, <a href="../../../mitiv/linalg/Vector.html#normInf()">normInf</a>, <a href="../../../mitiv/linalg/Vector.html#scale(double)">scale</a>, <a href="../../../mitiv/linalg/Vector.html#swap(mitiv.linalg.Vector)">swap</a>, <a href="../../../mitiv/linalg/Vector.html#toString()">toString</a>, <a href="../../../mitiv/linalg/Vector.html#zero()">zero</a></code></li>
+<code><a href="../../../mitiv/linalg/Vector.html#assertBelongsTo(mitiv.linalg.VectorSpace)">assertBelongsTo</a>, <a href="../../../mitiv/linalg/Vector.html#axpby(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">axpby</a>, <a href="../../../mitiv/linalg/Vector.html#axpbypcz(double, mitiv.linalg.Vector, double, mitiv.linalg.Vector, double, mitiv.linalg.Vector)">axpbypcz</a>, <a href="../../../mitiv/linalg/Vector.html#belongsTo(mitiv.linalg.VectorSpace)">belongsTo</a>, <a href="../../../mitiv/linalg/Vector.html#copyFrom(mitiv.linalg.Vector)">copyFrom</a>, <a href="../../../mitiv/linalg/Vector.html#copyTo(mitiv.linalg.Vector)">copyTo</a>, <a href="../../../mitiv/linalg/Vector.html#dot(mitiv.linalg.Vector)">dot</a>, <a href="../../../mitiv/linalg/Vector.html#fill(double)">fill</a>, <a href="../../../mitiv/linalg/Vector.html#getNumber()">getNumber</a>, <a href="../../../mitiv/linalg/Vector.html#length()">length</a>, <a href="../../../mitiv/linalg/Vector.html#norm1()">norm1</a>, <a href="../../../mitiv/linalg/Vector.html#norm2()">norm2</a>, <a href="../../../mitiv/linalg/Vector.html#normInf()">normInf</a>, <a href="../../../mitiv/linalg/Vector.html#scale(double)">scale</a>, <a href="../../../mitiv/linalg/Vector.html#swap(mitiv.linalg.Vector)">swap</a>, <a href="../../../mitiv/linalg/Vector.html#toString()">toString</a>, <a href="../../../mitiv/linalg/Vector.html#zero()">zero</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -332,7 +332,7 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVector.html" title="class in
 <pre>public&nbsp;DoubleShapedVector(<a href="../../../mitiv/linalg/shaped/DoubleShapedVectorSpace.html" title="class in mitiv.linalg.shaped">DoubleShapedVectorSpace</a>&nbsp;owner,
                   double[]&nbsp;data)</pre>
 <div class="block">Wrap an array of doubles into a DoubleVector.
-
+ 
  The created vector will share its storage with the provided array.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>owner</code> - The vector space of the result.</dd><dd><code>data</code> - The input data.</dd>
 <dt><span class="strong">Throws:</span></dt>
@@ -387,7 +387,7 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVector.html" title="class in
 <pre>public final&nbsp;double&nbsp;get(int&nbsp;i)</pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/linalg/Vector.html#get(int)">Vector</a></code></strong></div>
 <div class="block">Get one of the values gathered in the vector.
-
+ 
  This method is not meant to be efficient, it is mainly provided for testing or
  debugging purposes.  To remain efficient, vectors should be managed at a more
  global level.</div>
@@ -409,7 +409,7 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVector.html" title="class in
        double&nbsp;value)</pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/linalg/Vector.html#set(int, double)">Vector</a></code></strong></div>
 <div class="block">Set one of the values gathered in the vector.
-
+ 
  This method is not meant to be efficient, it is mainly provided for testing or
  debugging purposes.  To remain efficient, vectors should be managed at a more
  global level.</div>
@@ -428,7 +428,7 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVector.html" title="class in
 <h4>set</h4>
 <pre>public&nbsp;void&nbsp;set(double[]&nbsp;arr)</pre>
 <div class="block">Set the values of the vector from a Java array.
-
+ 
  This method copies the values of the input array arr into the vector
  (their sizes must match). Note that it may be more efficient to wrap
  a vector around the Java array.</div>
@@ -443,7 +443,7 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVector.html" title="class in
 <h4>getData</h4>
 <pre>public&nbsp;double[]&nbsp;getData()</pre>
 <div class="block">Get the array of reals which store the coefficients of the vector.
-
+ 
  This method may be removed later when efficient set and get methods will
  be fully tested and implemented.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>the array of vector coefficients.</dd></dl>
@@ -482,7 +482,7 @@ extends <a href="../../../mitiv/linalg/shaped/ShapedVector.html" title="class in
 <pre>public&nbsp;void&nbsp;assign(<a href="../../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;arr)</pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../mitiv/linalg/shaped/ShapedVector.html#assign(mitiv.array.ShapedArray)">ShapedVector</a></code></strong></div>
 <div class="block">Assign the elements of a shaped vector form those of an array.
-
+ 
  <p>
  The shape of the array must match that of the vector. Type
  conversion is automatically performed and the copy is optimized

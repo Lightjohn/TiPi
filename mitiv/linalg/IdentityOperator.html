@@ -34,7 +34,7 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg"><span class="strong">PREV CLASS</span></a></li>
+<li><a href="../../mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg"><span class="strong">PREV CLASS</span></a></li>
 <li><a href="../../mitiv/linalg/LinearConjugateGradient.html" title="class in mitiv.linalg"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
@@ -60,7 +60,7 @@
 <ul class="subNavList">
 <li>SUMMARY:&nbsp;</li>
 <li>NESTED&nbsp;|&nbsp;</li>
-<li><a href="#fields_inherited_from_class_mitiv.linalg.DiagonalOperator">FIELD</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_mitiv.linalg.LinearOperator">FIELD</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor_summary">CONSTR</a>&nbsp;|&nbsp;</li>
 <li><a href="#method_summary">METHOD</a></li>
 </ul>
@@ -88,17 +88,7 @@
 <li><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">mitiv.linalg.LinearOperator</a></li>
 <li>
 <ul class="inheritance">
-<li><a href="../../mitiv/linalg/LinearEndomorphism.html" title="class in mitiv.linalg">mitiv.linalg.LinearEndomorphism</a></li>
-<li>
-<ul class="inheritance">
-<li><a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">mitiv.linalg.DiagonalOperator</a></li>
-<li>
-<ul class="inheritance">
 <li>mitiv.linalg.IdentityOperator</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -110,7 +100,7 @@
 <hr>
 <br>
 <pre>public class <strong>IdentityOperator</strong>
-extends <a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></pre>
+extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></pre>
 </li>
 </ul>
 </div>
@@ -123,20 +113,6 @@ extends <a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv
 <!--   -->
 </a>
 <h3>Field Summary</h3>
-<ul class="blockList">
-<li class="blockList"><a name="fields_inherited_from_class_mitiv.linalg.DiagonalOperator">
-<!--   -->
-</a>
-<h3>Fields inherited from class&nbsp;mitiv.linalg.<a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></h3>
-<code><a href="../../mitiv/linalg/DiagonalOperator.html#diag">diag</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="fields_inherited_from_class_mitiv.linalg.LinearEndomorphism">
-<!--   -->
-</a>
-<h3>Fields inherited from class&nbsp;mitiv.linalg.<a href="../../mitiv/linalg/LinearEndomorphism.html" title="class in mitiv.linalg">LinearEndomorphism</a></h3>
-<code><a href="../../mitiv/linalg/LinearEndomorphism.html#space">space</a></code></li>
-</ul>
 <ul class="blockList">
 <li class="blockList"><a name="fields_inherited_from_class_mitiv.linalg.LinearOperator">
 <!--   -->
@@ -158,7 +134,7 @@ extends <a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../mitiv/linalg/IdentityOperator.html#IdentityOperator(mitiv.linalg.VectorSpace)">IdentityOperator</a></strong>(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;space)</code>
+<td class="colOne"><code><strong><a href="../../mitiv/linalg/IdentityOperator.html#IdentityOperator(mitiv.linalg.VectorSpace)">IdentityOperator</a></strong>(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;vsp)</code>
 <div class="block">Create a new identity operator which operates on a given vector space.</div>
 </td>
 </tr>
@@ -179,45 +155,19 @@ extends <a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/IdentityOperator.html#_apply(mitiv.linalg.Vector, int)">_apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec,
-      int&nbsp;job)</code>
-<div class="block">Implement the operations performed by a linear operator in-place.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/IdentityOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-      int&nbsp;job)</code>
-<div class="block">Implement the operations performed by a linear operator out-of-place.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/IdentityOperator.html#getDiagonal()">getDiagonal</a></strong>()</code>
-<div class="block">Get the elements of a diagonal operator .</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/linalg/IdentityOperator.html#setDiagonal(mitiv.linalg.Vector)">setDiagonal</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;diag)</code>
-<div class="block">Set the elements of a diagonal operator .</div>
+<td class="colLast"><code><strong><a href="../../mitiv/linalg/IdentityOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
+         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+         int&nbsp;job)</code>
+<div class="block">Apply a linear operator (or its adjoint) to a vector.</div>
 </td>
 </tr>
 </table>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_mitiv.linalg.LinearEndomorphism">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;mitiv.linalg.<a href="../../mitiv/linalg/LinearEndomorphism.html" title="class in mitiv.linalg">LinearEndomorphism</a></h3>
-<code><a href="../../mitiv/linalg/LinearEndomorphism.html#getInputSpace()">getInputSpace</a>, <a href="../../mitiv/linalg/LinearEndomorphism.html#getOutputSpace()">getOutputSpace</a>, <a href="../../mitiv/linalg/LinearEndomorphism.html#getSpace()">getSpace</a>, <a href="../../mitiv/linalg/LinearEndomorphism.html#isEndomorphism()">isEndomorphism</a></code></li>
-</ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_mitiv.linalg.LinearOperator">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;mitiv.linalg.<a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></h3>
-<code><a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkAdjoint(mitiv.linalg.Vector, mitiv.linalg.Vector)">checkAdjoint</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkLinearProblem(mitiv.linalg.LinearOperator, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">checkLinearProblem</a></code></li>
+<code><a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkAdjoint(mitiv.linalg.Vector, mitiv.linalg.Vector)">checkAdjoint</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkLinearProblem(mitiv.linalg.LinearOperator, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">checkLinearProblem</a>, <a href="../../mitiv/linalg/LinearOperator.html#getInputSpace()">getInputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#getOutputSpace()">getOutputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#isEndomorphism()">isEndomorphism</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -246,9 +196,9 @@ extends <a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv
 <ul class="blockListLast">
 <li class="blockList">
 <h4>IdentityOperator</h4>
-<pre>public&nbsp;IdentityOperator(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;space)</pre>
+<pre>public&nbsp;IdentityOperator(<a href="../../mitiv/linalg/VectorSpace.html" title="class in mitiv.linalg">VectorSpace</a>&nbsp;vsp)</pre>
 <div class="block">Create a new identity operator which operates on a given vector space.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>space</code> - - The vector space on which operates the operator.</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>vsp</code> - the vector space</dd></dl>
 </li>
 </ul>
 </li>
@@ -259,86 +209,32 @@ extends <a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="getDiagonal()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getDiagonal</h4>
-<pre>public&nbsp;<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;getDiagonal()</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/DiagonalOperator.html#getDiagonal()">DiagonalOperator</a></code></strong></div>
-<div class="block">Get the elements of a diagonal operator .</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../mitiv/linalg/DiagonalOperator.html#getDiagonal()">getDiagonal</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></code></dd>
-<dt><span class="strong">Returns:</span></dt><dd>A vector whose elements are the diagonal of the
-         operator and whose vector space is the vector
-         space on which operates the operator.</dd></dl>
-</li>
-</ul>
-<a name="setDiagonal(mitiv.linalg.Vector)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setDiagonal</h4>
-<pre>public&nbsp;void&nbsp;setDiagonal(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;diag)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/DiagonalOperator.html#setDiagonal(mitiv.linalg.Vector)">DiagonalOperator</a></code></strong></div>
-<div class="block">Set the elements of a diagonal operator .</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../mitiv/linalg/DiagonalOperator.html#setDiagonal(mitiv.linalg.Vector)">setDiagonal</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>diag</code> - - A vector whose elements are the diagonal of the
-               operator and whose vector space is the vector
-               space on which operate the operator.</dd></dl>
-</li>
-</ul>
-<a name="_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>_apply</h4>
-<pre>protected&nbsp;void&nbsp;_apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-          int&nbsp;job)
-               throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
-<div class="block">Implement the operations performed by a linear operator out-of-place.
-
- This protected method is called by the `apply` method after checking of
- the arguments.  The operation is performed out-of-place which means that
- source and destination vectors are guaranteed to be different.</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../mitiv/linalg/DiagonalOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - The destination vector.</dd><dd><code>src</code> - - The source vector.</dd><dd><code>job</code> - - The type of operation to perform.</dd>
-<dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code></dd></dl>
-</li>
-</ul>
-<a name="_apply(mitiv.linalg.Vector, int)">
+<a name="privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>_apply</h4>
-<pre>protected&nbsp;void&nbsp;_apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec,
-          int&nbsp;job)
-               throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
-<div class="block">Implement the operations performed by a linear operator in-place.
+<h4>privApply</h4>
+<pre>protected&nbsp;void&nbsp;privApply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
+             <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+             int&nbsp;job)
+                  throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
+<div class="block">Apply a linear operator (or its adjoint) to a vector.
 
- This protected method is called by the `apply` method after checking of
- the arguments.  Operation is done in-place which is only possible for
- endomorphisms.  If this method is not overridden by the derived class, a
- default implementation which uses a temporary vector is provided.</div>
+ This protected method is called by the "apply" method after checking of
+ the arguments.</div>
 <dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../mitiv/linalg/DiagonalOperator.html#_apply(mitiv.linalg.Vector, int)">_apply</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg">DiagonalOperator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>vec</code> - - The source and destination vector.</dd><dd><code>job</code> - - The type of operation to perform.</dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../mitiv/linalg/LinearOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd><dd><code>job</code> - - The type of operation to perform (<a href="../../mitiv/linalg/LinearOperator.html#DIRECT"><code>LinearOperator.DIRECT</code></a>,
+              <a href="../../mitiv/linalg/LinearOperator.html#ADJOINT"><code>LinearOperator.ADJOINT</code></a>, <code>INVERSE</code> or
+              <code>INVERSE_ADJOINT</code>).</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code></dd></dl>
+<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code> - If adjoint is false (resp. tour), src (resp. dst) must
+             belongs to the input vector space of the operator and dst
+             (resp. src) must belongs to the output vector space of the
+             operator.</dd></dl>
 </li>
 </ul>
 </li>
@@ -366,7 +262,7 @@ extends <a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg"><span class="strong">PREV CLASS</span></a></li>
+<li><a href="../../mitiv/linalg/ArrayOps.html" title="class in mitiv.linalg"><span class="strong">PREV CLASS</span></a></li>
 <li><a href="../../mitiv/linalg/LinearConjugateGradient.html" title="class in mitiv.linalg"><span class="strong">NEXT CLASS</span></a></li>
 </ul>
 <ul class="navList">
@@ -392,7 +288,7 @@ extends <a href="../../mitiv/linalg/DiagonalOperator.html" title="class in mitiv
 <ul class="subNavList">
 <li>SUMMARY:&nbsp;</li>
 <li>NESTED&nbsp;|&nbsp;</li>
-<li><a href="#fields_inherited_from_class_mitiv.linalg.DiagonalOperator">FIELD</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_mitiv.linalg.LinearOperator">FIELD</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor_summary">CONSTR</a>&nbsp;|&nbsp;</li>
 <li><a href="#method_summary">METHOD</a></li>
 </ul>

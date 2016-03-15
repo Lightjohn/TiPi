@@ -232,40 +232,32 @@ extends <a href="../../mitiv/linalg/shaped/ShapedLinearOperator.html" title="cla
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-      int&nbsp;job)</code>
-<div class="block">Implement the operations performed by a linear operator out-of-place.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#adjustPSF(mitiv.array.ShapedArray, int[])">adjustPSF</a></strong>(<a href="../../mitiv/array/ShapedArray.html" title="interface in mitiv.array">ShapedArray</a>&nbsp;psf,
          int[]&nbsp;off)</code>
 <div class="block">Helper function to zero-pad and roll the PSF.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#backwardFFT()">backwardFFT</a></strong>()</code>
 <div class="block">Perform in-place backward FFT on the internal workspace.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#build(mitiv.linalg.shaped.ShapedVectorSpace)">build</a></strong>(<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;space)</code>
 <div class="block">Build a convolution operator.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace)">build</a></strong>(<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;inp,
      <a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;out)</code>
 <div class="block">Build a convolution operator with centered output.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../mitiv/deconv/Convolution.html" title="class in mitiv.deconv">Convolution</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#build(mitiv.linalg.shaped.ShapedVectorSpace, mitiv.linalg.shaped.ShapedVectorSpace, int[])">build</a></strong>(<a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;inp,
      <a href="../../mitiv/linalg/shaped/ShapedVectorSpace.html" title="class in mitiv.linalg.shaped">ShapedVectorSpace</a>&nbsp;out,
@@ -273,48 +265,56 @@ extends <a href="../../mitiv/linalg/shaped/ShapedLinearOperator.html" title="cla
 <div class="block">Build a convolution operator.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#center(mitiv.base.Shape)">center</a></strong>(<a href="../../mitiv/base/Shape.html" title="class in mitiv.base">Shape</a>&nbsp;shape)</code>
 <div class="block">Compute offset of array center.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#convolve(boolean)">convolve</a></strong>(boolean&nbsp;adjoint)</code>
 <div class="block">Apply the operator to the internal workspace.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#forwardFFT()">forwardFFT</a></strong>()</code>
 <div class="block">Perform in-place forward FFT on the internal workspace.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#getElapsedTime()">getElapsedTime</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#getElapsedTimeInFFT()">getElapsedTimeInFFT</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#getNumber()">getNumber</a></strong>()</code>
 <div class="block">Get the number of elements of the argument of the convolution.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#getRank()">getRank</a></strong>()</code>
 <div class="block">Retrieve the rank of the convolution.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#getType()">getType</a></strong>()</code>
 <div class="block">Retrieve the type of the elements of the argument of the convolution.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/deconv/Convolution.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
+         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+         int&nbsp;job)</code>
+<div class="block">Apply a linear operator (or its adjoint) to a vector.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -365,7 +365,7 @@ extends <a href="../../mitiv/linalg/shaped/ShapedLinearOperator.html" title="cla
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;mitiv.linalg.<a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></h3>
-<code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, int)">_apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkAdjoint(mitiv.linalg.Vector, mitiv.linalg.Vector)">checkAdjoint</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkLinearProblem(mitiv.linalg.LinearOperator, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">checkLinearProblem</a>, <a href="../../mitiv/linalg/LinearOperator.html#isEndomorphism()">isEndomorphism</a></code></li>
+<code><a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkAdjoint(mitiv.linalg.Vector, mitiv.linalg.Vector)">checkAdjoint</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkLinearProblem(mitiv.linalg.LinearOperator, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">checkLinearProblem</a>, <a href="../../mitiv/linalg/LinearOperator.html#isEndomorphism()">isEndomorphism</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -699,25 +699,26 @@ extends <a href="../../mitiv/linalg/shaped/ShapedLinearOperator.html" title="cla
          FFT.</dd></dl>
 </li>
 </ul>
-<a name="_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">
+<a name="privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>_apply</h4>
-<pre>protected&nbsp;void&nbsp;_apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-          int&nbsp;job)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
-<div class="block">Implement the operations performed by a linear operator out-of-place.
+<h4>privApply</h4>
+<pre>protected&nbsp;void&nbsp;privApply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
+             <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+             int&nbsp;job)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
+<div class="block">Apply a linear operator (or its adjoint) to a vector.
 
- This protected method is called by the `apply` method after checking of
- the arguments.  The operation is performed out-of-place which means that
- source and destination vectors are guaranteed to be different.</div>
+ This protected method is called by the "apply" method after checking of
+ the arguments.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - The destination vector.</dd><dd><code>src</code> - - The source vector.</dd><dd><code>job</code> - - The type of operation to perform.</dd></dl>
+<dd><code><a href="../../mitiv/linalg/LinearOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd><dd><code>job</code> - - The type of operation to perform (<a href="../../mitiv/linalg/LinearOperator.html#DIRECT"><code>LinearOperator.DIRECT</code></a>,
+              <a href="../../mitiv/linalg/LinearOperator.html#ADJOINT"><code>LinearOperator.ADJOINT</code></a>, <code>INVERSE</code> or
+              <code>INVERSE_ADJOINT</code>).</dd></dl>
 </li>
 </ul>
 <a name="resetTimers()">

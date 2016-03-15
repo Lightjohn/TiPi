@@ -130,7 +130,7 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected double[]</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#alpha">alpha</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#beta">beta</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
@@ -146,23 +146,23 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#mp">mp</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#mark">mark</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#mp">mp</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>protected double[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#rho">rho</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected int</code></td>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim">InverseHessianApproximation</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#rule">rule</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>[]</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#s">s</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#updates">updates</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>[]</code></td>
@@ -217,36 +217,23 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#_apply(mitiv.linalg.Vector, int)">_apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec,
-      int&nbsp;job)</code>
-<div class="block">Implement the operations performed by a linear operator in-place.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-      int&nbsp;job)</code>
-<div class="block">Implement the operations performed by a linear operator out-of-place.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;wgt,
-     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec,
-     <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#getScale()">getScale</a></strong>()</code>
 <div class="block">Get the scaling parameter.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>int</code></td>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim">InverseHessianApproximation</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#getScaling()">getScaling</a></strong>()</code>
 <div class="block">Get the current scaling strategy.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
+         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+         int&nbsp;job)</code>
+<div class="block">Apply a linear operator (or its adjoint) to a vector.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -257,7 +244,7 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#s(int)">s</a></strong>(int&nbsp;j)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#s(int)">s</a></strong>(int&nbsp;k)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -267,13 +254,13 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#setScaling(int)">setScaling</a></strong>(int&nbsp;value)</code>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#setScaling(mitiv.optim.InverseHessianApproximation)">setScaling</a></strong>(<a href="../../mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim">InverseHessianApproximation</a>&nbsp;value)</code>
 <div class="block">Set the scaling of the initial approximation of the inverse Hessian.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#slot(int)">slot</a></strong>(int&nbsp;j)</code>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#slot(int)">slot</a></strong>(int&nbsp;k)</code>
 <div class="block">Get slot index of a saved pair of variables and gradient differences.</div>
 </td>
 </tr>
@@ -288,19 +275,8 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#update(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">update</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x1,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x0,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;g1,
-      <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;g0,
-      boolean&nbsp;partial)</code>
-<div class="block">Update LBFGS operator with a new pair of variables and gradient
- differences.</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a></code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#y(int)">y</a></strong>(int&nbsp;j)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../mitiv/optim/LBFGSOperator.html#y(int)">y</a></strong>(int&nbsp;k)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -308,7 +284,7 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;mitiv.linalg.<a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></h3>
-<code><a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkAdjoint(mitiv.linalg.Vector, mitiv.linalg.Vector)">checkAdjoint</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkLinearProblem(mitiv.linalg.LinearOperator, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">checkLinearProblem</a>, <a href="../../mitiv/linalg/LinearOperator.html#getInputSpace()">getInputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#getOutputSpace()">getOutputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#isEndomorphism()">isEndomorphism</a></code></li>
+<code><a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">apply</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkAdjoint(mitiv.linalg.Vector, mitiv.linalg.Vector)">checkAdjoint</a>, <a href="../../mitiv/linalg/LinearOperator.html#checkLinearProblem(mitiv.linalg.LinearOperator, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">checkLinearProblem</a>, <a href="../../mitiv/linalg/LinearOperator.html#getInputSpace()">getInputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#getOutputSpace()">getOutputSpace</a>, <a href="../../mitiv/linalg/LinearOperator.html#isEndomorphism()">isEndomorphism</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -367,13 +343,13 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <pre>protected&nbsp;int mp</pre>
 </li>
 </ul>
-<a name="updates">
+<a name="mark">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>updates</h4>
-<pre>protected&nbsp;int updates</pre>
+<h4>mark</h4>
+<pre>protected&nbsp;int mark</pre>
 </li>
 </ul>
 <a name="rho">
@@ -394,13 +370,13 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <pre>protected&nbsp;double gamma</pre>
 </li>
 </ul>
-<a name="alpha">
+<a name="beta">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>alpha</h4>
-<pre>protected&nbsp;double[] alpha</pre>
+<h4>beta</h4>
+<pre>protected&nbsp;double[] beta</pre>
 </li>
 </ul>
 <a name="H0">
@@ -418,7 +394,7 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <ul class="blockListLast">
 <li class="blockList">
 <h4>rule</h4>
-<pre>protected&nbsp;int rule</pre>
+<pre>protected&nbsp;<a href="../../mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim">InverseHessianApproximation</a> rule</pre>
 </li>
 </ul>
 </li>
@@ -480,17 +456,18 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
  Forget all memorized pairs.</div>
 </li>
 </ul>
-<a name="setScaling(int)">
+<a name="setScaling(mitiv.optim.InverseHessianApproximation)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setScaling</h4>
-<pre>public&nbsp;void&nbsp;setScaling(int&nbsp;value)</pre>
+<pre>public&nbsp;void&nbsp;setScaling(<a href="../../mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim">InverseHessianApproximation</a>&nbsp;value)</pre>
 <div class="block">Set the scaling of the initial approximation of the inverse Hessian.
 
- The best scaling strategy is probably <code>#InverseHessianApproximation.BY_SY_OVER_YY</code> when no preconditioner
- <code>H0</code> is provided.</div>
+ The best scaling strategy is probably
+ <code>#InverseHessianApproximation.BY_SY_OVER_YY</code> when no preconditioner <code>H0</code> is
+ provided.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - - The strategy to use.</dd></dl>
 </li>
 </ul>
@@ -500,7 +477,7 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <ul class="blockList">
 <li class="blockList">
 <h4>getScaling</h4>
-<pre>public&nbsp;int&nbsp;getScaling()</pre>
+<pre>public&nbsp;<a href="../../mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim">InverseHessianApproximation</a>&nbsp;getScaling()</pre>
 <div class="block">Get the current scaling strategy.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>The identifier of the current strategy.</dd></dl>
 </li>
@@ -538,21 +515,20 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <ul class="blockList">
 <li class="blockList">
 <h4>slot</h4>
-<pre>protected&nbsp;int&nbsp;slot(int&nbsp;j)</pre>
+<pre>protected&nbsp;int&nbsp;slot(int&nbsp;k)</pre>
 <div class="block">Get slot index of a saved pair of variables and gradient differences.
 
- The offset <code>j</code> must be between <code>0</code> and <code>mp</code>
- (inclusive); <code>slot(0)</code> is the index of the slot just after the
- last saved one, that is the one which will be used for the next update;
+ The offset <code>k</code> must be between <code>0</code> and <code>mp</code>
+ (inclusive); <code>slot(0)</code> is the index of the slot just after the last
+ saved one, that is the one which will be used for the next update;
  <code>slot(1)</code> is the last saved pair (newest one), <code>slot(2)</code> is
  the previous pair, ..., <code>slot(mp)</code> is the oldest saved pair.
 
- In principle, <code>j</code> in the range <code>1</code> to <code>mp</code> (inclusive)
- is used to apply the operator; while <code>j = 0</code> is only used to
- update the operator.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>j</code> - - The offset.</dd>
-<dt><span class="strong">Returns:</span></dt><dd>The index of <code>j</code>-th slot relative to the current
- iteration.</dd></dl>
+ In principle, <code>k</code> in the range <code>1</code> to <code>mp</code> (inclusive)
+ is used to apply the operator; while <code>k = 0</code> is only used to update
+ the operator.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>k</code> - - The offset.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The index of <code>k</code>-th slot relative to the current iteration.</dd></dl>
 </li>
 </ul>
 <a name="s(int)">
@@ -561,7 +537,7 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <ul class="blockList">
 <li class="blockList">
 <h4>s</h4>
-<pre>protected&nbsp;<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;s(int&nbsp;j)</pre>
+<pre>protected&nbsp;<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;s(int&nbsp;k)</pre>
 </li>
 </ul>
 <a name="y(int)">
@@ -570,66 +546,35 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <ul class="blockList">
 <li class="blockList">
 <h4>y</h4>
-<pre>protected&nbsp;<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y(int&nbsp;j)</pre>
+<pre>protected&nbsp;<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y(int&nbsp;k)</pre>
 </li>
 </ul>
-<a name="apply(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">
+<a name="privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>apply</h4>
-<pre>public&nbsp;boolean&nbsp;apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;wgt,
-            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec,
-            <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst)</pre>
-</li>
-</ul>
-<a name="_apply(mitiv.linalg.Vector, int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>_apply</h4>
-<pre>protected&nbsp;void&nbsp;_apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;vec,
-          int&nbsp;job)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
-<div class="block">Implement the operations performed by a linear operator in-place.
+<h4>privApply</h4>
+<pre>protected&nbsp;void&nbsp;privApply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
+             <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
+             int&nbsp;job)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
+<div class="block">Apply a linear operator (or its adjoint) to a vector.
 
- This protected method is called by the `apply` method after checking of
- the arguments.  Operation is done in-place which is only possible for
- endomorphisms.  If this method is not overridden by the derived class, a
- default implementation which uses a temporary vector is provided.</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, int)">_apply</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>vec</code> - - The source and destination vector.</dd><dd><code>job</code> - - The type of operation to perform.</dd></dl>
-</li>
-</ul>
-<a name="_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>_apply</h4>
-<pre>protected&nbsp;void&nbsp;_apply(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;dst,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;src,
-          int&nbsp;job)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">LinearOperator</a></code></strong></div>
-<div class="block">Implement the operations performed by a linear operator out-of-place.
-
- This protected method is called by the `apply` method after checking of
- the arguments.  The operation is performed out-of-place which means that
- source and destination vectors are guaranteed to be different.</div>
+ This protected method is called by the "apply" method after checking of
+ the arguments.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../mitiv/linalg/LinearOperator.html#_apply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">_apply</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>dst</code> - - The destination vector.</dd><dd><code>src</code> - - The source vector.</dd><dd><code>job</code> - - The type of operation to perform.</dd></dl>
+<dd><code><a href="../../mitiv/linalg/LinearOperator.html#privApply(mitiv.linalg.Vector, mitiv.linalg.Vector, int)">privApply</a></code>&nbsp;in class&nbsp;<code><a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - The source vector.</dd><dd><code>dst</code> - - The destination vector.</dd><dd><code>job</code> - - The type of operation to perform (<a href="../../mitiv/linalg/LinearOperator.html#DIRECT"><code>LinearOperator.DIRECT</code></a>,
+              <a href="../../mitiv/linalg/LinearOperator.html#ADJOINT"><code>LinearOperator.ADJOINT</code></a>, <code>INVERSE</code> or
+              <code>INVERSE_ADJOINT</code>).</dd></dl>
 </li>
 </ul>
 <a name="update(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector)">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>update</h4>
 <pre>public&nbsp;void&nbsp;update(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x1,
@@ -640,25 +585,6 @@ extends <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.l
 <div class="block">Update LBFGS operator with a new pair of variables and gradient
  differences.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>x1</code> - - The new variables.</dd><dd><code>x0</code> - - The previous variables.</dd><dd><code>g1</code> - - The gradient at <code>x1</code>.</dd><dd><code>g0</code> - - The gradient at <code>x0</code>.</dd>
-<dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code></dd></dl>
-</li>
-</ul>
-<a name="update(mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, mitiv.linalg.Vector, boolean)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>update</h4>
-<pre>public&nbsp;void&nbsp;update(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x1,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;x0,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;g1,
-          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;g0,
-          boolean&nbsp;partial)
-            throws <a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></pre>
-<div class="block">Update LBFGS operator with a new pair of variables and gradient
- differences.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>x1</code> - - The new variables.</dd><dd><code>x0</code> - - The previous variables.</dd><dd><code>g1</code> - - The gradient at <code>x1</code>.</dd><dd><code>g0</code> - - The gradient at <code>x0</code>.</dd><dd><code>partial</code> - - Perform only partial update?</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../mitiv/exception/IncorrectSpaceException.html" title="class in mitiv.exception">IncorrectSpaceException</a></code></dd></dl>
 </li>

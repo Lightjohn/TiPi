@@ -102,7 +102,7 @@
 extends java.lang.Object
 implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="interface in mitiv.cost">DifferentiableCostFunction</a></pre>
 <div class="block">Implementation of a quadratic cost function.
-
+ 
  A general form of a quadratic cost is:
  <pre>
      f(x) = (H.x - y)'.W.(H.x - y)
@@ -415,7 +415,7 @@ implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="int
              <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;y,
              <a href="../../mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg">LinearOperator</a>&nbsp;W)</pre>
 <div class="block">Constructor for a general quadratic cost function.
-
+ 
  Create an instance of the differentiable cost function:
  <pre>
      f(x) = (H.x - y)'.W.(H.x - y)
@@ -425,7 +425,7 @@ implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="int
  space of <code>H</code> to the output space of <code>H</code>.  Operator <code>W</code> should
  be symmetric and positive definite (respectively semi-definite) for <code>f(x)</code>
  to be strictly convex (respectively convex).
-
+ 
  <p>
  Having any of these arguments equal to <code>null</code> amounts to ignore them in the
  formula.  Thats is, <code>y = null</code> is the same (but faster) as having <code>y</code>
@@ -433,7 +433,7 @@ implements <a href="../../mitiv/cost/DifferentiableCostFunction.html" title="int
  as assuming that <code>H</code> (or of <code>W</code>) is the identity.  Though not all the
  arguments can be <code>null</code> as at least one of these is needed to determine the
  input space of <code>f(x)</code>.
-
+ 
  <p>
  Note that none of the components <code>H</code>, <code>y</code>, nor <code>W</code> are copied.
  If the caller does change one of these while using the cost function, the cost

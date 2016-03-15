@@ -452,12 +452,6 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>abstract boolean</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#useDerivative()">useDerivative</a></strong>()</code>
-<div class="block">Check whether directional derivatives are needed by the line search.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../mitiv/optim/LineSearchTask.html" title="enum in mitiv.optim">LineSearchTask</a></code></td>
 <td class="colLast"><code><strong><a href="../../mitiv/optim/LineSearch.html#warning(mitiv.optim.OptimStatus)">warning</a></strong>(<a href="../../mitiv/optim/OptimStatus.html" title="enum in mitiv.optim">OptimStatus</a>&nbsp;status)</code>
 <div class="block">Set internal state to indicate a non-fatal abnormal termination.</div>
@@ -592,27 +586,13 @@ extends java.lang.Object</pre>
  derivative) at the new position to try. Upon return, this method
  indicates whether the line search has converged. Otherwise, it computes a
  new step to try.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - The value of the step (same as the value returned by
-            <a href="../../mitiv/optim/LineSearch.html#getStep()"><code>getStep()</code></a>).</dd><dd><code>f</code> - - The value of the function at <code>x = x0 + alpha*p</code> where
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - The value of the step (same as the value returned by
+            <a href="../../mitiv/optim/LineSearch.html#getStep()"><code>getStep()</code></a>).</dd><dd><code>f</code> - The value of the function at <code>x = x0 + alpha*p</code> where
             <code>x0</code> are the variables at the start of the line search
-            and <code>p</code> is the search direction.</dd><dd><code>df</code> - - The directional derivative at <code>x</code>, that is
+            and <code>p</code> is the search direction.</dd><dd><code>df</code> - The directional derivative at <code>x</code>, that is
             <code>p'.g(x)</code> the inner product between the search direction
-            and the function gradient at <code>x</code>.  The <a href="../../mitiv/optim/LineSearch.html#useDerivative()"><code>useDerivative()</code></a>
-            method may be used to check whether this term is required or is
-            ignored and may thus be set to any value saving some computations.</dd>
+            and the function gradient at <code>x</code>.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The new status of the line search instance.</dd></dl>
-</li>
-</ul>
-<a name="useDerivative()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>useDerivative</h4>
-<pre>public abstract&nbsp;boolean&nbsp;useDerivative()</pre>
-<div class="block">Check whether directional derivatives are needed by the line search.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>A boolean value, true if the line search needs the
- directional derivative of the objective function.</dd></dl>
 </li>
 </ul>
 <a name="startHook()">
