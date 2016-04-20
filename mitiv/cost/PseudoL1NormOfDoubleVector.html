@@ -161,9 +161,9 @@ extends <a href="../../mitiv/cost/PseudoL1Norm.html" title="class in mitiv.cost"
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../mitiv/cost/PseudoL1NormOfDoubleVector.html#applyProx(double, mitiv.linalg.Vector, mitiv.linalg.Vector, double)">applyProx</a></strong>(double&nbsp;alpha,
+<td class="colLast"><code><strong><a href="../../mitiv/cost/PseudoL1NormOfDoubleVector.html#applyProx(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double)">applyProx</a></strong>(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;out,
+         double&nbsp;alpha,
          <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;inp,
-         <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;out,
          double&nbsp;tol)</code>
 <div class="block">Apply the proximal operator of a cost function.</div>
 </td>
@@ -214,17 +214,17 @@ extends <a href="../../mitiv/cost/PseudoL1Norm.html" title="class in mitiv.cost"
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="applyProx(double, mitiv.linalg.Vector, mitiv.linalg.Vector, double)">
+<a name="applyProx(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>applyProx</h4>
-<pre>public&nbsp;void&nbsp;applyProx(double&nbsp;alpha,
+<pre>public&nbsp;void&nbsp;applyProx(<a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;out,
+             double&nbsp;alpha,
              <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;inp,
-             <a href="../../mitiv/linalg/Vector.html" title="class in mitiv.linalg">Vector</a>&nbsp;out,
              double&nbsp;tol)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../mitiv/cost/ProximalOperator.html#applyProx(double, mitiv.linalg.Vector, mitiv.linalg.Vector, double)">ProximalOperator</a></code></strong></div>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../mitiv/cost/ProximalOperator.html#applyProx(mitiv.linalg.Vector, double, mitiv.linalg.Vector, double)">ProximalOperator</a></code></strong></div>
 <div class="block">Apply the proximal operator of a cost function.
 
  The purpose of this method is to find the minimum of:
@@ -234,7 +234,7 @@ extends <a href="../../mitiv/cost/PseudoL1Norm.html" title="class in mitiv.cost"
  with respect to vector <code>out</code> and given weight <code>alpha</code> and
  the input vector <code>out</code>.  The argument <code>tol</code> is a relative
  tolerance parameter to find an approximate solution to the problem.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alpha</code> - - A non-negative weight for the cost.</dd><dd><code>inp</code> - - The vector of input variables.</dd><dd><code>out</code> - - The vector of output variables.</dd><dd><code>tol</code> - - A non-negative tolerance parameter.</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>out</code> - - The vector of output variables.</dd><dd><code>alpha</code> - - A non-negative weight for the cost.</dd><dd><code>inp</code> - - The vector of input variables.</dd><dd><code>tol</code> - - A non-negative tolerance parameter.</dd></dl>
 </li>
 </ul>
 </li>

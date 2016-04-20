@@ -30,6 +30,7 @@
 <li><a href="mitiv/optim/BLMVM.html" title="class in mitiv.optim" target="classFrame">BLMVM</a></li>
 <li><a href="mitiv/base/indexing/BoundaryConditions.html" title="enum in mitiv.base.indexing" target="classFrame">BoundaryConditions</a></li>
 <li><a href="mitiv/optim/BoundProjector.html" title="class in mitiv.optim" target="classFrame">BoundProjector</a></li>
+<li><a href="mitiv/optim/BoxedSet.html" title="class in mitiv.optim" target="classFrame">BoxedSet</a></li>
 <li><a href="mitiv/io/BufferedImageUtils.html" title="class in mitiv.io" target="classFrame">BufferedImageUtils</a></li>
 <li><a href="mitiv/io/BufferedInputDataStream.html" title="class in mitiv.io" target="classFrame">BufferedInputDataStream</a></li>
 <li><a href="mitiv/io/BufferedOutputDataStream.html" title="class in mitiv.io" target="classFrame">BufferedOutputDataStream</a></li>
@@ -68,6 +69,7 @@
 <li><a href="mitiv/exception/DataFormatException.html" title="class in mitiv.exception" target="classFrame">DataFormatException</a></li>
 <li><a href="mitiv/deconv/Deconvolution.html" title="class in mitiv.deconv" target="classFrame">Deconvolution</a></li>
 <li><a href="mitiv/deconv/DeconvUtils.html" title="class in mitiv.deconv" target="classFrame">DeconvUtils</a></li>
+<li><a href="mitiv/linalg/DiagonalOperator.html" title="class in mitiv.linalg" target="classFrame">DiagonalOperator</a></li>
 <li><a href="mitiv/cost/DifferentiableCostFunction.html" title="interface in mitiv.cost" target="classFrame"><i>DifferentiableCostFunction</i></a></li>
 <li><a href="mitiv/cost/DifferentiableInverseProblemCost.html" title="class in mitiv.cost" target="classFrame">DifferentiableInverseProblemCost</a></li>
 <li><a href="mitiv/array/Double1D.html" title="class in mitiv.array" target="classFrame">Double1D</a></li>
@@ -80,6 +82,7 @@
 <li><a href="mitiv/array/Double8D.html" title="class in mitiv.array" target="classFrame">Double8D</a></li>
 <li><a href="mitiv/array/Double9D.html" title="class in mitiv.array" target="classFrame">Double9D</a></li>
 <li><a href="mitiv/array/DoubleArray.html" title="interface in mitiv.array" target="classFrame"><i>DoubleArray</i></a></li>
+<li><a href="mitiv/optim/DoubleBoxedSet.html" title="class in mitiv.optim" target="classFrame">DoubleBoxedSet</a></li>
 <li><a href="mitiv/base/mapping/DoubleFunction.html" title="interface in mitiv.base.mapping" target="classFrame"><i>DoubleFunction</i></a></li>
 <li><a href="mitiv/random/DoubleGenerator.html" title="interface in mitiv.random" target="classFrame"><i>DoubleGenerator</i></a></li>
 <li><a href="mitiv/array/DoubleScalar.html" title="class in mitiv.array" target="classFrame">DoubleScalar</a></li>
@@ -153,6 +156,7 @@
 <li><a href="mitiv/array/Float8D.html" title="class in mitiv.array" target="classFrame">Float8D</a></li>
 <li><a href="mitiv/array/Float9D.html" title="class in mitiv.array" target="classFrame">Float9D</a></li>
 <li><a href="mitiv/array/FloatArray.html" title="interface in mitiv.array" target="classFrame"><i>FloatArray</i></a></li>
+<li><a href="mitiv/optim/FloatBoxedSet.html" title="class in mitiv.optim" target="classFrame">FloatBoxedSet</a></li>
 <li><a href="mitiv/base/mapping/FloatFunction.html" title="interface in mitiv.base.mapping" target="classFrame"><i>FloatFunction</i></a></li>
 <li><a href="mitiv/random/FloatGenerator.html" title="interface in mitiv.random" target="classFrame"><i>FloatGenerator</i></a></li>
 <li><a href="mitiv/array/FloatScalar.html" title="class in mitiv.array" target="classFrame">FloatScalar</a></li>
@@ -184,13 +188,13 @@
 <li><a href="mitiv/random/IntGenerator.html" title="interface in mitiv.random" target="classFrame"><i>IntGenerator</i></a></li>
 <li><a href="mitiv/array/IntScalar.html" title="class in mitiv.array" target="classFrame">IntScalar</a></li>
 <li><a href="mitiv/base/mapping/IntScanner.html" title="interface in mitiv.base.mapping" target="classFrame"><i>IntScanner</i></a></li>
-<li><a href="mitiv/optim/InverseHessianApproximation.html" title="enum in mitiv.optim" target="classFrame">InverseHessianApproximation</a></li>
 <li><a href="mitiv/optim/LBFGS.html" title="class in mitiv.optim" target="classFrame">LBFGS</a></li>
 <li><a href="mitiv/optim/LBFGSOperator.html" title="class in mitiv.optim" target="classFrame">LBFGSOperator</a></li>
 <li><a href="mitiv/invpb/LeftHandSideMatrix.html" title="class in mitiv.invpb" target="classFrame">LeftHandSideMatrix</a></li>
 <li><a href="mitiv/tests/LinearConjGradTest.html" title="class in mitiv.tests" target="classFrame">LinearConjGradTest</a></li>
 <li><a href="mitiv/linalg/LinearConjugateGradient.html" title="class in mitiv.linalg" target="classFrame">LinearConjugateGradient</a></li>
 <li><a href="mitiv/invpb/LinearDeconvolver.html" title="class in mitiv.invpb" target="classFrame">LinearDeconvolver</a></li>
+<li><a href="mitiv/linalg/LinearEndomorphism.html" title="class in mitiv.linalg" target="classFrame">LinearEndomorphism</a></li>
 <li><a href="mitiv/linalg/LinearOperator.html" title="class in mitiv.linalg" target="classFrame">LinearOperator</a></li>
 <li><a href="mitiv/optim/LineSearch.html" title="class in mitiv.optim" target="classFrame">LineSearch</a></li>
 <li><a href="mitiv/optim/LineSearchStatus.html" title="enum in mitiv.optim" target="classFrame">LineSearchStatus</a></li>
@@ -322,9 +326,11 @@
 <li><a href="mitiv/array/ShortScalar.html" title="class in mitiv.array" target="classFrame">ShortScalar</a></li>
 <li><a href="mitiv/base/mapping/ShortScanner.html" title="interface in mitiv.base.mapping" target="classFrame"><i>ShortScanner</i></a></li>
 <li><a href="mitiv/optim/SimpleBounds.html" title="class in mitiv.optim" target="classFrame">SimpleBounds</a></li>
+<li><a href="mitiv/optim/SimpleBoxedSet.html" title="class in mitiv.optim" target="classFrame">SimpleBoxedSet</a></li>
 <li><a href="mitiv/optim/SimpleLowerBound.html" title="class in mitiv.optim" target="classFrame">SimpleLowerBound</a></li>
 <li><a href="mitiv/optim/SimpleUpperBound.html" title="class in mitiv.optim" target="classFrame">SimpleUpperBound</a></li>
 <li><a href="mitiv/invpb/SimpleViewer.html" title="class in mitiv.invpb" target="classFrame">SimpleViewer</a></li>
+<li><a href="mitiv/exception/SingularOperatorException.html" title="class in mitiv.exception" target="classFrame">SingularOperatorException</a></li>
 <li><a href="mitiv/array/impl/StriddenByte1D.html" title="class in mitiv.array.impl" target="classFrame">StriddenByte1D</a></li>
 <li><a href="mitiv/array/impl/StriddenByte2D.html" title="class in mitiv.array.impl" target="classFrame">StriddenByte2D</a></li>
 <li><a href="mitiv/array/impl/StriddenByte3D.html" title="class in mitiv.array.impl" target="classFrame">StriddenByte3D</a></li>
